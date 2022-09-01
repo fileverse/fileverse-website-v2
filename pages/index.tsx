@@ -39,7 +39,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <div className={`${isMediaMax1025px ? 'w-[50%]' : "w-full"}`}>
-                <img className="" src={fileverseWindow.src}/>
+                <img className="" src={fileverseWindow.src} alt="fileverse-window"/>
               </div>
             </div>   
           </div>
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         {/* second second */}
         <div className='mt-8 flex justify-center  items-center min-h-[70vh]'>
             <div className='h-full w-[50%] mr-8 flex justify-end'>
-              <img className='h-full' src={filverseVase.src}/>
+              <img className='h-full' src={filverseVase.src} alt="fileverse-wallet-vase"/>
             </div>
             <div className='h-full w-[50%] m-8 flex items-center '>
               <div className=''>
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className=' m-4 w-[23rem]'>
                   <div className='flex justify-center'>
-                    <img className='w-32' src={Dao.src}/>
+                    <img className='w-32' src={Dao.src} alt="dao"/>
                   </div>
                   <h1 className='text-center font-semibold'>DAOs</h1>
                   <p className='text-center'>
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className='m-4 w-[23rem]'>
                   <div className='flex justify-center'>
-                    <img className='w-32' src={Nft.src}/>
+                    <img className='w-32' src={Nft.src} alt="nft-community-image"/>
                   </div>
                   <h1 className='text-center font-semibold'>NFT  Communities</h1>
                   <p className='text-center'>
@@ -129,7 +129,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className='m-4 w-[23rem]'>
                   <div className='flex justify-center'>
-                    <img className='w-32' src={Crypto.src}/>
+                    <img className='w-32' src={Crypto.src} alt="crypto-publisher"/>
                   </div>
                   <h1 className='text-center font-semibold'>Cryto Publishers</h1>
                   <p className='text-center'>
@@ -138,7 +138,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className=' m-4 w-[23rem] '>
                   <div className='flex justify-center'>
-                    <img className='w-32' src={BlockChain.src}/>
+                    <img className='w-32' src={BlockChain.src} alt="fileverse-blockchain"/>
                   </div>
                   <h1 className='text-center font-semibold'>Blockchain Natives</h1>
                   <p className='text-center'>
@@ -152,17 +152,17 @@ const Home: NextPage = () => {
 
         </div>
         {/* Fourth section */}
-        <div className='bg-[#FFE60033] mt-12 p-4'>
+        <div className='bg-[#FFE60033] w-[100vw] mt-12 p-4'>
           <h2 className="font-bold text-2xl text-center">Recent Tweets</h2>
           <div className=' mt-8'>
-            <div className='flex overflow-x-auto'>
+            <div className='flex overflow-x-auto no-scrollbar'>
               <img src={Tweets.src}/>
               <img src={Tweets.src}/>
               <img src={Tweets.src}/>
               <img src={Tweets.src}/>
               <img src={Tweets.src}/>
             </div>
-            <div className='flex overflow-x-auto'>
+            <div className='flex overflow-x-auto no-scrollbar'>
               <img src={Tweets.src}/>
               <img src={Tweets.src}/>
               <img src={Tweets.src}/>

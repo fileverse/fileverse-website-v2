@@ -8,22 +8,6 @@ const Document = () => {
           href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
           rel="stylesheet"
         />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config',"${process.env.NEXT_PUBLIC_GA_MID}", {
-              page_path: window.location.pathname,
-              });
-          `,
-          }}
-        />
         <meta property="og:title" content="Fileverse" />
         <meta
           property="og:description"
