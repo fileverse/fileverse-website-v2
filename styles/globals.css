@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes slide {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-20%, 0);
+  }
+}
+.slideContainer {
+    animation: slide 15s linear infinite;
+}
