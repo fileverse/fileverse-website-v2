@@ -1,76 +1,75 @@
 {
-    "extends": ["airbnb-base", "plugin:prettier/recommended"],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true
-        }
-      ],
-      "global-require": "off",
-      "no-param-reassign": 0
-    },
-    "overrides": [
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
       {
-        "files": ["**/*.ts", "**/*.tsx"],
-        "plugins": ["@typescript-eslint", "unused-imports"],
-        "extends": [
-          "airbnb-typescript",
-          "next/core-web-vitals",
-          "plugin:prettier/recommended"
-        ],
-        "parser": "@typescript-eslint/parser",
-        "parserOptions": {
-          "project": "./tsconfig.json"
-        },
-        "rules": {
-          "prettier/prettier": [
-            "error",
-            {
-              "singleQuote": true
-            }
-          ],
-          "react/destructuring-assignment": "off",
-          "jsx-a11y/anchor-is-valid": "off",
-          "react/require-default-props": "off",
-          "react/jsx-props-no-spreading": "off",
-          "@next/next/no-img-element": "off",
-          "import/order": [
-            "warn",
-            {
-              "groups": ["builtin", "external", "internal"],
-              "pathGroups": [
-                {
-                  "pattern": "react",
-                  "group": "external",
-                  "position": "before"
-                }
-              ],
-              "pathGroupsExcludedImportTypes": ["react"],
-              "newlines-between": "always",
-              "alphabetize": {
-                "order": "asc",
-                "caseInsensitive": true
-              }
-            }
-          ],
-          "@typescript-eslint/naming-convention": [
-            "warn",
-            {
-              "selector": "variable",
-              "format": ["camelCase"]
-            }
-          ],
-          "import/prefer-default-export": "off",
-          "class-methods-use-this": "off",
-          "@typescript-eslint/no-unused-vars": "off",
-          "unused-imports/no-unused-imports": "error",
-          "unused-imports/no-unused-vars": [
-            "error",
-            { "argsIgnorePattern": "^_" }
-          ]
-        }
+        "singleQuote": true
       }
-    ]
-  }
-  
+    ],
+    "global-require": "off",
+    "no-param-reassign": 0
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint", "unused-imports"],
+      "extends": [
+        "airbnb-typescript",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "singleQuote": true
+          }
+        ],
+        "react/destructuring-assignment": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "@next/next/no-img-element": "off",
+        "import/order": [
+          "warn",
+          {
+            "groups": ["builtin", "external", "internal"],
+            "pathGroups": [
+              {
+                "pattern": "react",
+                "group": "external",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["react"],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "selector": "variable",
+            "format": ["camelCase"]
+          }
+        ],
+        "import/prefer-default-export": "off",
+        "class-methods-use-this": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_" }
+        ]
+      }
+    }
+  ]
+}

@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @keyframes slide {
-  0% {
-    transform: translate(0, 0);
+  from {
+    left: 100%;
   }
-  100% {
-    transform: translate(-20%, 0);
+  to {
+    left: 0%;
   }
 }
 .slideContainer {
-    animation: slide 15s linear infinite;
+    animation: slide 3s linear infinite;
 }
 .no-scrollbar::-webkit-scrollbar {
       display: none;
