@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 const Document = () => {
   return (
@@ -27,6 +28,10 @@ const Document = () => {
         <meta
           property="twitter:image"
           content="https://s3.fileverse.io/assets/fileversePreview.png"
+        />
+        <Script
+          src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"
+          strategy="beforeInteractive"
         />
       </Head>
       <body>

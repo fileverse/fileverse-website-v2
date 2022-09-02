@@ -14,9 +14,7 @@ const BodyWrapper = ({ children }: BodyType) => {
   return (
     <div className="">
       <HeadNav />
-      <div className=''>
-        {children}
-      </div>
+      <div className="">{children}</div>
 
       <div className="p-4 mt-4">
         <h2 className="font-bold text-2xl text-center">Where to find us?</h2>

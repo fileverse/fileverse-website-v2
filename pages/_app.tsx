@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
-import Script from 'next/script';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -27,11 +26,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <meta
         property="twitter:image"
         content="https://s3.fileverse.io/assets/fileversePreview.png"
-      />
-
-      <Script
-        src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"
-        strategy="beforeInteractive"
       />
 
       <NextSeo
