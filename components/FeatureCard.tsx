@@ -19,7 +19,7 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
         <div className="items-center row-span-3 flex justify-center">
           <img
             src={image.src}
-            className="w-[30rem]"
+            className={`w-[30rem] ${isMediaMax1025px ? 'h-[15rem]' : ''} `}
             alt="fileverse-subdomain-window"
           />
         </div>

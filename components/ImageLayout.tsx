@@ -7,8 +7,8 @@ const ImageLayout = ({ children }: { children: JSX.Element }) => {
   return (
     <div
       className={`${
-        isMediaMax1025px ? 'h-[25rem]' : 'w-[50%] mr-8'
-      } flex items-center border border-black justify-center`}
+        isMediaMax1025px ? 'h-[20rem]' : 'w-[50%] mr-8'
+      } flex items-center justify-center`}
     >
       {children}
     </div>

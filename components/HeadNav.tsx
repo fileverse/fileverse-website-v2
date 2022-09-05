@@ -30,7 +30,7 @@ const HeadNav = () => {
     <div
       className={`flex ${
         top ? 'bg-yellow ' : 'bg-white'
-      }  fixed border border-black transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
+      }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
       <div className={`w-[90%] flex`}>
         <div

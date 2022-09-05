@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useRef } from 'react';
+import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import type { NextPage } from 'next';
 
 import BodyWrapper from '../components/BodyWrapper';
 import ContentLayout from '../components/ContentLayout';
-import FeatureCard from '../components/FeatureCard';
+import FeaturesSection from '../components/FeaturesSection';
 import HeadSectionLayout from '../components/HeadSectionLayout';
 import ImageLayout from '../components/ImageLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
@@ -16,42 +16,24 @@ import BlockChain from '../public/assets/BlockChain.svg';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.svg';
 import Dao from '../public/assets/Dao.svg';
-import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import familyIcon from '../public/assets/familyIcon.svg';
 import fileverseWindow from '../public/assets/fileSampleImage.svg';
-import fileTypes from '../public/assets/fileTypes.svg';
 import filverseVase from '../public/assets/fileVase.svg';
 import global from '../public/assets/global.svg';
 import Nft from '../public/assets/Nft.svg';
 import padLock from '../public/assets/padlock.svg';
-import subdomainWindow from '../public/assets/subdomainWindow.svg';
 import Tweets from '../public/assets/Tweets.svg';
 import Web3 from '../public/assets/Web3.svg';
 
 const Home: NextPage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
-  const featuresDiv = useRef(null);
-  const sideScroll = (
-    element: any,
-    speed: number,
-    distance: number,
-    step: number
-  ) => {
-    let scrollAmount = 0;
-    const slideTimer = setInterval(() => {
-      element.scrollLeft += step;
-      scrollAmount += Math.abs(step);
-      if (scrollAmount >= distance) {
-        clearInterval(slideTimer);
-      }
-    }, speed);
-  };
+
   return (
     <BodyWrapper>
       <div className="">
         <HeadSectionLayout>
           <>
-            <div className="flex h-[85vh] border border-black min-h-[600px] justify-center p-4">
+            <div className="flex min-h-[85vh] justify-center p-4">
               <div
                 className={`${
                   isMediaMax1025px ? 'w-full' : 'w-[90%]'
@@ -91,7 +73,7 @@ const Home: NextPage = () => {
                 <div
                   className={`${
                     isMediaMax1025px ? 'w-full' : 'w-[50%]'
-                  } flex justify-center border border-black`}
+                  } flex justify-center`}
                 >
                   <img
                     className=""
@@ -103,7 +85,6 @@ const Home: NextPage = () => {
             </div>
           </>
         </HeadSectionLayout>
-        {/* second second */}
         <SectionLayout>
           <div className={` ${isMediaMax1025px ? '' : 'flex'} `}>
             <ImageLayout>
@@ -154,68 +135,7 @@ const Home: NextPage = () => {
             </ContentLayout>
           </div>
         </SectionLayout>
-        {/* Added section */}
-        <SectionLayout>
-          <div className="flex items-center w-full">
-            <div className="w-full">
-              <div className="flex">
-                <h1 className="font-bold text-3xl">Features</h1>
-                <div className="w-full flex justify-end">
-                  <div
-                    onClick={() =>
-                      sideScroll(featuresDiv.current, -300, 300, -10)
-                    }
-                    className=" bg-[#0000001A] m-2 w-8 h-8 rounded-full flex items-center justify-center"
-                  >
-                    <img
-                      src={dropDownArrow.src}
-                      alt="back-arrow"
-                      className="changeWhite rotate-90"
-                    />
-                  </div>
-                  <div
-                    onClick={() =>
-                      sideScroll(featuresDiv.current, -300, 300, 10)
-                    }
-                    className="bg-black m-2 w-8 h-8 rounded-full flex items-center justify-center"
-                  >
-                    <img
-                      src={dropDownArrow.src}
-                      alt="back-arrow"
-                      className=" changeWhite -rotate-90"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                ref={featuresDiv}
-                className="border flex overflow-auto border-red no-scrollbar"
-              >
-                <FeatureCard
-                  image={subdomainWindow}
-                  title={'Subdomain'}
-                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                />
-                <FeatureCard
-                  image={fileTypes}
-                  title={'File Types'}
-                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                />
-                <FeatureCard
-                  image={subdomainWindow}
-                  title={'Subdomain'}
-                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                />
-                <FeatureCard
-                  image={subdomainWindow}
-                  title={'Subdomain'}
-                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                />
-              </div>
-            </div>
-          </div>
-        </SectionLayout>
-        {/* Third section */}
+        <FeaturesSection />
         <div className="flex flex-col mt-8 justify-center ">
           <div className="">
             <div className="p-4">
@@ -263,8 +183,6 @@ const Home: NextPage = () => {
                       BAYC or a membership NFT)
                     </p>
                   </div>
-                </div>
-                <div className="flex flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
                   <div className="m-2 w-[20rem] ">
                     <div className="flex justify-center">
                       <img className="w-32" src={Web3.src} />
@@ -315,7 +233,6 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        {/* Fourth section */}
         <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4">
           <h2 className="font-bold text-2xl text-center">Recent Tweets</h2>
           <div className="mt-8">

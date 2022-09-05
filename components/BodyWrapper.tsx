@@ -24,7 +24,7 @@ const BodyWrapper = ({ children }: BodyType) => {
           <div
             className={`flex flex-wrap ${
               isMediaMax1025px ? '' : 'justify-center'
-            } items-center border border-black`}
+            } items-center`}
           >
             <div className="h-full">
               <div className={`bg-[#2AA8E01A] rounded-md m-4 p-8`}>
