@@ -3,7 +3,9 @@ import React from 'react';
 import { useMediaQuery } from '@mui/material';
 
 import BodyWrapper from '../components/BodyWrapper';
+import ContentLayout from '../components/ContentLayout';
 import HeadSectionLayout from '../components/HeadSectionLayout';
+import ImageLayout from '../components/ImageLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
@@ -24,8 +26,12 @@ const Features = () => {
       <>
         <HeadSectionLayout>
           <>
-            <div className="w-[90vw] border border-black flex flex-wrap items-center">
-              <div className={`${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
+            <div className=" border border-black flex flex-wrap items-center">
+              <div
+                className={`border border-black ${
+                  isMediaMax1025px ? 'w-full' : 'w-[50%]'
+                }`}
+              >
                 <h1
                   className={`font-bold ${
                     isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
@@ -34,22 +40,38 @@ const Features = () => {
                   What you can expect
                 </h1>
                 <p className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}>
-                  Easy file sharing between blockchain addresses & built on top
-                  of decentralized protocols. Use our token-gating features to
-                  control who can access your documents, images, audio and
-                  videos.
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of Letraset
+                  sheets containing Lorem Ipsum passages, and more recently with
+                  desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum.
                 </p>
+                {isMediaMax1025px && (
+                  <div
+                    className={`mt-4  ${
+                      isMediaMax1025px ? 'flex justify-center' : ''
+                    } `}
+                  >
+                    <PrimaryButton title={'Visit Dapp'} linkTo={'/'} />
+                  </div>
+                )}
               </div>
               <div
                 className={`${
                   isMediaMax1025px ? 'w-full' : 'w-[50%]'
-                } h-full bg-center bg-no-repeat flex items-center justify-center relative`}
+                } border border-red flex items-center justify-center relative`}
               >
                 <div className="relative">
                   <img src={whyConnectWindow.src} alt="fileverse-window" />
                   <img
-                    className="absolute top-[100px] right-4"
+                    className="absolute top-[100px] w-[4rem] right-4 border border-black"
                     src={walletList.src}
+                    alt="wallet-image"
                   />
                 </div>
               </div>
@@ -58,17 +80,17 @@ const Features = () => {
         </HeadSectionLayout>
         {/* Subdomain */}
         <SectionLayout>
-          <>
-            <div
-              className={`h-full mr-8 w-[50%] flex justify-center items-center`}
-            >
+          <div
+            className={` ${isMediaMax1025px ? '' : 'flex'} border border-black`}
+          >
+            <ImageLayout>
               <img
                 className="h-full"
                 src={subdomainWindow.src}
-                alt="fileverse-wallet-vase"
+                alt="subdomain-window"
               />
-            </div>
-            <div className="h-full flex w-[50%] items-center justify-center">
+            </ImageLayout>
+            <ContentLayout>
               <div className="">
                 <div className="flex w-full">
                   <h2 className="font-bold ml-12 text-3xl">Subdomain</h2>
@@ -100,13 +122,24 @@ const Features = () => {
                   />
                 </div>
               </div>
-            </div>
-          </>
+            </ContentLayout>
+          </div>
         </SectionLayout>
         {/* Chat */}
         <SectionLayout>
-          <>
-            <div className="h-full w-[50%] mr-8 flex items-center ">
+          <div
+            className={` ${isMediaMax1025px ? '' : 'flex'} border border-black`}
+          >
+            {isMediaMax1025px && (
+              <ImageLayout>
+                <img
+                  className="h-full"
+                  src={chatWindow.src}
+                  alt="fileverse-wallet-vase"
+                />
+              </ImageLayout>
+            )}
+            <ContentLayout>
               <div className="">
                 <div className="flex w-full">
                   <h2 className="font-bold ml-12 text-3xl">Chat</h2>
@@ -132,29 +165,39 @@ const Features = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div className="h-full w-[50%] flex justify-center">
-              <img
-                className="h-full"
-                src={chatWindow.src}
-                alt="fileverse-wallet-vase"
-              />
-            </div>
-          </>
+            </ContentLayout>
+            {!isMediaMax1025px && (
+              <div
+                className={`${
+                  isMediaMax1025px ? 'h-[25rem]' : 'w-[50%] mr-8'
+                } flex items-center border border-black justify-center`}
+              >
+                <img
+                  className="h-full"
+                  src={chatWindow.src}
+                  alt="fileverse-wallet-vase"
+                />
+              </div>
+            )}
+          </div>
         </SectionLayout>
 
         <div className="bg-yellow">
           {/* File Types  */}
           <SectionLayout>
-            <>
-              <div className={`h-full w-[50%] mr-8 flex justify-center`}>
+            <div
+              className={` ${
+                isMediaMax1025px ? '' : 'flex'
+              } border border-black`}
+            >
+              <ImageLayout>
                 <img
                   className="h-full"
                   src={fileTypes.src}
                   alt="fileverse-wallet-vase"
                 />
-              </div>
-              <div className="h-full w-[50%] m-8 flex items-center ">
+              </ImageLayout>
+              <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
                     <h2 className="font-bold ml-12 text-3xl">File Types</h2>
@@ -183,13 +226,26 @@ const Features = () => {
                     />
                   </div>
                 </div>
-              </div>
-            </>
+              </ContentLayout>
+            </div>
           </SectionLayout>
           {/* Access Token */}
           <SectionLayout>
-            <>
-              <div className="h-full w-[50%] mr-8 flex items-center justify-center ">
+            <div
+              className={` ${
+                isMediaMax1025px ? '' : 'flex'
+              } border border-black`}
+            >
+              {isMediaMax1025px && (
+                <ImageLayout>
+                  <img
+                    className="h-full"
+                    src={AccessToken.src}
+                    alt="fileverse-wallet-vase"
+                  />
+                </ImageLayout>
+              )}
+              <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
                     <h2 className="font-bold ml-12 text-3xl">Access NFTS</h2>
@@ -225,28 +281,32 @@ const Features = () => {
                     />
                   </div>
                 </div>
-              </div>
-              <div className="h-full w-[50%] mr-8 flex justify-center">
-                <img
-                  className="h-full"
-                  src={AccessToken.src}
-                  alt="fileverse-wallet-vase"
-                />
-              </div>
-            </>
+              </ContentLayout>
+              {!isMediaMax1025px && (
+                <ImageLayout>
+                  <img
+                    className="h-full"
+                    src={AccessToken.src}
+                    alt="fileverse-wallet-vase"
+                  />
+                </ImageLayout>
+              )}
+            </div>
           </SectionLayout>
         </div>
         {/* Profile */}
         <SectionLayout>
-          <>
-            <div className={`h-full w-[50%] mr-8 flex justify-center`}>
+          <div
+            className={` ${isMediaMax1025px ? '' : 'flex'} border border-black`}
+          >
+            <ImageLayout>
               <img
                 className="h-full"
                 src={profileWindow.src}
                 alt="fileverse-wallet-vase"
               />
-            </div>
-            <div className="h-full w-[50%] m-8 flex items-center ">
+            </ImageLayout>
+            <ContentLayout>
               <div className="">
                 <div className="flex w-full">
                   <h2 className="font-bold ml-12 text-3xl">Profile</h2>
@@ -278,13 +338,13 @@ const Features = () => {
                   />
                 </div>
               </div>
-            </div>
-          </>
+            </ContentLayout>
+          </div>
         </SectionLayout>
         {/* More Feature */}
         <div className="mb-12">
-          <div className="p-4">
-            <h2 className="font-bold text-center ml-12 text-3xl">
+          <div className="p-4 border border-black flex justify-center">
+            <h2 className="font-bold p-4 text-center text-3xl">
               More features to come
             </h2>
           </div>

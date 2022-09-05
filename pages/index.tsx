@@ -1,25 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import type { NextPage } from 'next';
 
 import BodyWrapper from '../components/BodyWrapper';
+import ContentLayout from '../components/ContentLayout';
 import FeatureCard from '../components/FeatureCard';
 import HeadSectionLayout from '../components/HeadSectionLayout';
+import ImageLayout from '../components/ImageLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
-import backArrow from '../public/assets/backArrow.svg';
 import BlockChain from '../public/assets/BlockChain.svg';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.svg';
 import Dao from '../public/assets/Dao.svg';
+import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import familyIcon from '../public/assets/familyIcon.svg';
 import fileverseWindow from '../public/assets/fileSampleImage.svg';
 import fileTypes from '../public/assets/fileTypes.svg';
 import filverseVase from '../public/assets/fileVase.svg';
-import forwardArrow from '../public/assets/forwardArrow.svg';
 import global from '../public/assets/global.svg';
 import Nft from '../public/assets/Nft.svg';
 import padLock from '../public/assets/padlock.svg';
@@ -29,6 +30,22 @@ import Web3 from '../public/assets/Web3.svg';
 
 const Home: NextPage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const featuresDiv = useRef(null);
+  const sideScroll = (
+    element: any,
+    speed: number,
+    distance: number,
+    step: number
+  ) => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+      element.scrollLeft += step;
+      scrollAmount += Math.abs(step);
+      if (scrollAmount >= distance) {
+        clearInterval(slideTimer);
+      }
+    }, speed);
+  };
   return (
     <BodyWrapper>
       <div className="">
@@ -89,22 +106,14 @@ const Home: NextPage = () => {
         {/* second second */}
         <SectionLayout>
           <div className={` ${isMediaMax1025px ? '' : 'flex'} `}>
-            <div
-              className={`${
-                isMediaMax1025px ? '' : 'w-[50%] mr-8'
-              } flex items-center border border-black justify-center`}
-            >
+            <ImageLayout>
               <img
-                className="h-[35rem]"
+                className="h-full"
                 src={filverseVase.src}
                 alt="fileverse-wallet-vase"
               />
-            </div>
-            <div
-              className={` ${
-                isMediaMax1025px ? 'mt-12' : 'w-[50%] m-8'
-              } flex border border-black items-center `}
-            >
+            </ImageLayout>
+            <ContentLayout>
               <div className="">
                 <div className="flex w-full">
                   <h1 className="font-bold ml-12 text-3xl">
@@ -142,29 +151,46 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </ContentLayout>
           </div>
         </SectionLayout>
         {/* Added section */}
         <SectionLayout>
-          <div className="border border-black flex items-center w-full">
+          <div className="flex items-center w-full">
             <div className="w-full">
               <div className="flex">
                 <h1 className="font-bold text-3xl">Features</h1>
                 <div className="w-full flex justify-end">
-                  <img
-                    src={backArrow.src}
-                    alt="back-arrow"
-                    className="w-8 h-8 m-2"
-                  />
-                  <img
-                    src={forwardArrow.src}
-                    alt="back-arrow"
-                    className="w-8 m-2 h-8"
-                  />
+                  <div
+                    onClick={() =>
+                      sideScroll(featuresDiv.current, -300, 300, -10)
+                    }
+                    className=" bg-[#0000001A] m-2 w-8 h-8 rounded-full flex items-center justify-center"
+                  >
+                    <img
+                      src={dropDownArrow.src}
+                      alt="back-arrow"
+                      className="changeWhite rotate-90"
+                    />
+                  </div>
+                  <div
+                    onClick={() =>
+                      sideScroll(featuresDiv.current, -300, 300, 10)
+                    }
+                    className="bg-black m-2 w-8 h-8 rounded-full flex items-center justify-center"
+                  >
+                    <img
+                      src={dropDownArrow.src}
+                      alt="back-arrow"
+                      className=" changeWhite -rotate-90"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="border flex overflow-auto border-red no-scrollbar">
+              <div
+                ref={featuresDiv}
+                className="border flex overflow-auto border-red no-scrollbar"
+              >
                 <FeatureCard
                   image={subdomainWindow}
                   title={'Subdomain'}
@@ -179,7 +205,12 @@ const Home: NextPage = () => {
                   image={subdomainWindow}
                   title={'Subdomain'}
                   text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                />{' '}
+                />
+                <FeatureCard
+                  image={subdomainWindow}
+                  title={'Subdomain'}
+                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                />
               </div>
             </div>
           </div>
@@ -287,7 +318,7 @@ const Home: NextPage = () => {
         {/* Fourth section */}
         <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4">
           <h2 className="font-bold text-2xl text-center">Recent Tweets</h2>
-          <div className="relative mt-8">
+          <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
               <img src={Tweets.src} />
               <img src={Tweets.src} />
