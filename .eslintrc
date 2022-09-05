@@ -54,13 +54,6 @@
             }
           }
         ],
-        "@typescript-eslint/naming-convention": [
-          "warn",
-          {
-            "selector": "variable",
-            "format": ["camelCase"]
-          }
-        ],
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off",
         "@typescript-eslint/no-unused-vars": "off",

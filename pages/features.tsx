@@ -3,6 +3,7 @@ import React from 'react';
 import { useMediaQuery } from '@mui/material';
 
 import BodyWrapper from '../components/BodyWrapper';
+import HeadSectionLayout from '../components/HeadSectionLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
@@ -17,16 +18,22 @@ import dropDownArrow from '../public/assets/whiteArrow.svg';
 import whyConnectWindow from '../public/assets/whyConnectWindow.svg';
 
 const Features = () => {
-  const isMediaMax1025px = useMediaQuery('(min-width: 1025px)');
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
     <BodyWrapper>
       <>
-        <div className="h-[100vh] w-[100vw]  min-h-[700px] bg-yellow">
-          <div className="flex h-[95vh] w-[100vw] min-h-[600px] justify-center items-center p-4">
-            <div className="w-[90vw] flex flex-wrap items-center">
-              <div className={`${isMediaMax1025px ? 'w-[50%]' : 'w-full'}`}>
-                <h1 className="font-bold text-5xl">What you can expect</h1>
-                <p className="mt-4">
+        <HeadSectionLayout>
+          <>
+            <div className="w-[90vw] border border-black flex flex-wrap items-center">
+              <div className={`${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
+                <h1
+                  className={`font-bold ${
+                    isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
+                  } `}
+                >
+                  What you can expect
+                </h1>
+                <p className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}>
                   Easy file sharing between blockchain addresses & built on top
                   of decentralized protocols. Use our token-gating features to
                   control who can access your documents, images, audio and
@@ -35,7 +42,7 @@ const Features = () => {
               </div>
               <div
                 className={`${
-                  isMediaMax1025px ? 'w-[50%]' : 'w-full'
+                  isMediaMax1025px ? 'w-full' : 'w-[50%]'
                 } h-full bg-center bg-no-repeat flex items-center justify-center relative`}
               >
                 <div className="relative">
@@ -47,11 +54,8 @@ const Features = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-full h-[5vh] flex items-center justify-center">
-            <p>Supported by 10000+ donors on Gitcoin 💛</p>
-          </div>
-        </div>
+          </>
+        </HeadSectionLayout>
         {/* Subdomain */}
         <SectionLayout>
           <>

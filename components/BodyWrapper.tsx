@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@mui/material';
 import React from 'react';
 
 import Gitcoin from '../public/assets/gitcoin.svg';
@@ -11,6 +12,7 @@ interface BodyType {
   children: JSX.Element;
 }
 const BodyWrapper = ({ children }: BodyType) => {
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
     <div className="">
       <HeadNav />
@@ -19,7 +21,11 @@ const BodyWrapper = ({ children }: BodyType) => {
       <div className="p-4 mt-4">
         <h2 className="font-bold text-2xl text-center">Where to find us?</h2>
         <div className="w-full flex justify-center mt-4 items-center">
-          <div className="flex w-[90%] flex-wrap justify-center items-center">
+          <div
+            className={`flex flex-wrap ${
+              isMediaMax1025px ? '' : 'justify-center'
+            } items-center border border-black`}
+          >
             <div className="h-full">
               <div className={`bg-[#2AA8E01A] rounded-md m-4 p-8`}>
                 <img className="w-16 h-16" src={Twitter.src} />

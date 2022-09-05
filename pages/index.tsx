@@ -5,67 +5,106 @@ import { useMediaQuery } from '@mui/material';
 import type { NextPage } from 'next';
 
 import BodyWrapper from '../components/BodyWrapper';
+import FeatureCard from '../components/FeatureCard';
+import HeadSectionLayout from '../components/HeadSectionLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
+import backArrow from '../public/assets/backArrow.svg';
 import BlockChain from '../public/assets/BlockChain.svg';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.svg';
 import Dao from '../public/assets/Dao.svg';
 import familyIcon from '../public/assets/familyIcon.svg';
 import fileverseWindow from '../public/assets/fileSampleImage.svg';
+import fileTypes from '../public/assets/fileTypes.svg';
 import filverseVase from '../public/assets/fileVase.svg';
+import forwardArrow from '../public/assets/forwardArrow.svg';
 import global from '../public/assets/global.svg';
 import Nft from '../public/assets/Nft.svg';
 import padLock from '../public/assets/padlock.svg';
+import subdomainWindow from '../public/assets/subdomainWindow.svg';
 import Tweets from '../public/assets/Tweets.svg';
 import Web3 from '../public/assets/Web3.svg';
 
 const Home: NextPage = () => {
-  const isMediaMax1025px = useMediaQuery('(min-width: 1025px)');
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
     <BodyWrapper>
       <div className="">
-        <div className="h-[100vh] min-h-[700px] bg-yellow">
-          <div className="flex h-[95vh] min-h-[600px] justify-center p-4">
-            <div className="w-[90%] flex flex-wrap items-center">
-              <div className={`${isMediaMax1025px ? 'w-[50%]' : 'w-full'}`}>
-                <h1 className="font-bold text-5xl">File sharing for</h1>
-                <h1 className="font-bold text-5xl">Web3 communities.</h1>
-                <p className="mt-4">
-                  Easy file sharing between blockchain addresses & built on top
-                  of decentralized protocols. Use our token-gating features to
-                  control who can access your documents, images, audio and
-                  videos.
-                </p>
-                <div className="mt-4">
-                  <PrimaryButton title={'Visit Dapp'} linkTo={'/'} />
+        <HeadSectionLayout>
+          <>
+            <div className="flex h-[85vh] border border-black min-h-[600px] justify-center p-4">
+              <div
+                className={`${
+                  isMediaMax1025px ? 'w-full' : 'w-[90%]'
+                } flex flex-wrap items-center`}
+              >
+                <div className={`${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
+                  <h1
+                    className={`font-bold ${
+                      isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
+                    } `}
+                  >
+                    File sharing for
+                  </h1>
+                  <h1
+                    className={`font-bold  ${
+                      isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
+                    }`}
+                  >
+                    Web3 communities.
+                  </h1>
+                  <p
+                    className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}
+                  >
+                    Easy file sharing between blockchain addresses & built on
+                    top of decentralized protocols. Use our token-gating
+                    features to control who can access your documents, images,
+                    audio and videos.
+                  </p>
+                  <div
+                    className={`mt-4  ${
+                      isMediaMax1025px ? 'flex justify-center' : ''
+                    } `}
+                  >
+                    <PrimaryButton title={'Visit Dapp'} linkTo={'/'} />
+                  </div>
+                </div>
+                <div
+                  className={`${
+                    isMediaMax1025px ? 'w-full' : 'w-[50%]'
+                  } flex justify-center border border-black`}
+                >
+                  <img
+                    className=""
+                    src={fileverseWindow.src}
+                    alt="fileverse-window"
+                  />
                 </div>
               </div>
-              <div className={`${isMediaMax1025px ? 'w-[50%]' : 'w-full'}`}>
-                <img
-                  className=""
-                  src={fileverseWindow.src}
-                  alt="fileverse-window"
-                />
-              </div>
             </div>
-          </div>
-          <div className="w-full h-[5vh] flex justify-center">
-            <p>Supported by 10000+ donors on Gitcoin 💛</p>
-          </div>
-        </div>
+          </>
+        </HeadSectionLayout>
         {/* second second */}
         <SectionLayout>
-          <>
-            <div className="h-full w-[50%] mr-8 flex justify-center">
+          <div className={` ${isMediaMax1025px ? '' : 'flex'} `}>
+            <div
+              className={`${
+                isMediaMax1025px ? '' : 'w-[50%] mr-8'
+              } flex items-center border border-black justify-center`}
+            >
               <img
-                className="h-full"
+                className="h-[35rem]"
                 src={filverseVase.src}
                 alt="fileverse-wallet-vase"
               />
             </div>
-            <div className="h-full w-[50%] m-8 flex items-center ">
+            <div
+              className={` ${
+                isMediaMax1025px ? 'mt-12' : 'w-[50%] m-8'
+              } flex border border-black items-center `}
+            >
               <div className="">
                 <div className="flex w-full">
                   <h1 className="font-bold ml-12 text-3xl">
@@ -94,13 +133,56 @@ const Home: NextPage = () => {
                       'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
                     }
                   />
-                  <div className="mt-8 pl-12">
+                  <div
+                    className={`mt-8  ${
+                      isMediaMax1025px ? 'flex justify-center' : 'pl-12'
+                    }`}
+                  >
                     <PrimaryButton title="More ..." />
                   </div>
                 </div>
               </div>
             </div>
-          </>
+          </div>
+        </SectionLayout>
+        {/* Added section */}
+        <SectionLayout>
+          <div className="border border-black flex items-center w-full">
+            <div className="w-full">
+              <div className="flex">
+                <h1 className="font-bold text-3xl">Features</h1>
+                <div className="w-full flex justify-end">
+                  <img
+                    src={backArrow.src}
+                    alt="back-arrow"
+                    className="w-8 h-8 m-2"
+                  />
+                  <img
+                    src={forwardArrow.src}
+                    alt="back-arrow"
+                    className="w-8 m-2 h-8"
+                  />
+                </div>
+              </div>
+              <div className="border flex overflow-auto border-red no-scrollbar">
+                <FeatureCard
+                  image={subdomainWindow}
+                  title={'Subdomain'}
+                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                />
+                <FeatureCard
+                  image={fileTypes}
+                  title={'File Types'}
+                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                />
+                <FeatureCard
+                  image={subdomainWindow}
+                  title={'Subdomain'}
+                  text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                />{' '}
+              </div>
+            </div>
+          </div>
         </SectionLayout>
         {/* Third section */}
         <div className="flex flex-col mt-8 justify-center ">
@@ -206,7 +288,7 @@ const Home: NextPage = () => {
         <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4">
           <h2 className="font-bold text-2xl text-center">Recent Tweets</h2>
           <div className="relative mt-8">
-            <div className="flex overflow-x-auto justify-around slideContainer no-scrollbar">
+            <div className="flex overflow-x-auto no-scrollbar">
               <img src={Tweets.src} />
               <img src={Tweets.src} />
               <img src={Tweets.src} />
