@@ -28,6 +28,8 @@ const HeadNav = () => {
     };
   });
   const dropDownButton = useRef(null);
+  const html = typeof window !== 'undefined' && document.querySelector('html');
+
   return (
     <div
       className={`flex ${
@@ -60,7 +62,12 @@ const HeadNav = () => {
           ref={dropDownButton}
         >
           {isMediaMax1025px ? (
-            <div onClick={() => setSideMenu(!sideMenu)}>
+            <div
+              onClick={() => {
+                if (html) html.classList.add('overflow-y-hidden');
+                setSideMenu(!sideMenu);
+              }}
+            >
               <img src={hamburger.src} alt="hamburger" />
             </div>
           ) : (
@@ -110,7 +117,10 @@ const HeadNav = () => {
       <Slide direction="left" in={sideMenu}>
         <div className="h-[100vh] shadow-lg right-0 bg-white p-4 absolute w-[60vw]">
           <div
-            onClick={() => setSideMenu(!sideMenu)}
+            onClick={() => {
+              if (html) html.classList.remove('overflow-y-hidden');
+              setSideMenu(!sideMenu);
+            }}
             className="w-full flex justify-end text-3xl"
           >
             <img src={xicon.src} className="w-8" alt="x-icon" />

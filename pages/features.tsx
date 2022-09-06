@@ -13,12 +13,11 @@ import SectionLayout from '../components/SectionLayout';
 import AccessToken from '../public/assets/AccessToken.svg';
 import chatWindow from '../public/assets/chatWindow.svg';
 import fileTypes from '../public/assets/fileTypes.svg';
+import whyConnectWindow from '../public/assets/MainImage.png';
 import profileWindow from '../public/assets/profileWindow.svg';
 import subdomainWindow from '../public/assets/subdomainWindow.svg';
 import tick from '../public/assets/tick.svg';
-import walletList from '../public/assets/walletList.svg';
 import dropDownArrow from '../public/assets/whiteArrow.svg';
-import whyConnectWindow from '../public/assets/whyConnectWindow.svg';
 
 const Features = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -67,11 +66,6 @@ const Features = () => {
                 >
                   <div className="relative">
                     <img src={whyConnectWindow.src} alt="fileverse-window" />
-                    <img
-                      className="absolute top-[100px] w-[4rem] right-4"
-                      src={walletList.src}
-                      alt="wallet-image"
-                    />
                   </div>
                 </div>
               </div>

@@ -45,14 +45,7 @@ const Home: NextPage = () => {
                       isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
                     } `}
                   >
-                    File sharing for
-                  </h1>
-                  <h1
-                    className={`font-bold  ${
-                      isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
-                    }`}
-                  >
-                    Web3 communities.
+                    File sharing for <br /> Web3 communities.
                   </h1>
                   <p
                     className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}
