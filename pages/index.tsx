@@ -97,9 +97,9 @@ const Home: NextPage = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h1 className="font-bold ml-12 text-3xl">
+                  <h2 className="font-bold ml-12 text-3xl">
                     What you can expect
-                  </h1>
+                  </h2>
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
@@ -148,11 +148,15 @@ const Home: NextPage = () => {
                 <div className=" flex flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
                   <div className="m-2 w-[20rem]">
                     <div className="flex justify-center">
-                      <img className="w-32" src={familyIcon.src} />
+                      <img
+                        className="w-32"
+                        src={familyIcon.src}
+                        alt="fileverse family icon"
+                      />
                     </div>
-                    <h1 className="text-center font-semibold">
+                    <h3 className="text-center font-semibold">
                       Our Friends and Families
-                    </h1>
+                    </h3>
                     <p className="text-center">
                       We dont use Google Drive. We share files à la Web3
                     </p>
@@ -161,7 +165,7 @@ const Home: NextPage = () => {
                     <div className="flex justify-center">
                       <img className="w-32" src={Dao.src} alt="dao" />
                     </div>
-                    <h1 className="text-center font-semibold">DAOs</h1>
+                    <h3 className="text-center font-semibold">DAOs</h3>
                     <p className="text-center">
                       Share your alpha with anons that own the DAO's token.
                       Membership-gating!
@@ -175,9 +179,9 @@ const Home: NextPage = () => {
                         alt="nft-community-image"
                       />
                     </div>
-                    <h1 className="text-center font-semibold">
+                    <h3 className="text-center font-semibold">
                       NFT Communities
-                    </h1>
+                    </h3>
                     <p className="text-center">
                       Share any file with anyone that owns a specific NFT (eg.
                       BAYC or a membership NFT)
@@ -185,11 +189,15 @@ const Home: NextPage = () => {
                   </div>
                   <div className="m-2 w-[20rem] ">
                     <div className="flex justify-center">
-                      <img className="w-32" src={Web3.src} />
+                      <img
+                        className="w-32"
+                        src={Web3.src}
+                        alt="fileverse web3 icon"
+                      />
                     </div>
-                    <h1 className="text-center font-semibold">
+                    <h3 className="text-center font-semibold">
                       Web3 Companies
-                    </h1>
+                    </h3>
                     <p className="text-center">
                       Create your token/NFT & only team members it can access
                       your files
@@ -200,12 +208,12 @@ const Home: NextPage = () => {
                       <img
                         className="w-32"
                         src={Crypto.src}
-                        alt="crypto-publisher"
+                        alt="fileverse crypto-publisher"
                       />
                     </div>
-                    <h1 className="text-center font-semibold">
+                    <h3 className="text-center font-semibold">
                       Cryto Publishers
-                    </h1>
+                    </h3>
                     <p className="text-center">
                       Send exclusive content to your paying members wit hout
                       asking for emails..
@@ -219,9 +227,9 @@ const Home: NextPage = () => {
                         alt="fileverse-blockchain"
                       />
                     </div>
-                    <h1 className="text-center font-semibold">
+                    <h3 className="text-center font-semibold">
                       Blockchain Natives
-                    </h1>
+                    </h3>
                     <p className="text-center">
                       Get your fileverse sub-domain, like vitalik.fileverse.io &
                       use it as a one-stop-shop for all of your token-gated
@@ -237,11 +245,11 @@ const Home: NextPage = () => {
           <h2 className="font-bold text-2xl text-center">Recent Tweets</h2>
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
-              <img src={Tweets.src} />
-              <img src={Tweets.src} />
-              <img src={Tweets.src} />
-              <img src={Tweets.src} />
-              <img src={Tweets.src} />
+              <img src={Tweets.src} alt="tweet" />
+              <img src={Tweets.src} alt="tweet" />
+              <img src={Tweets.src} alt="tweet" />
+              <img src={Tweets.src} alt="tweet" />
+              <img src={Tweets.src} alt="tweet" />
             </div>
           </div>
         </div>

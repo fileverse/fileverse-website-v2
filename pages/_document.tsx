@@ -3,12 +3,13 @@ import Script from 'next/script';
 
 const Document = () => {
   return (
-    <Html>
+    <Html lang="en" className=" overflow-x-hidden">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta property="og:title" content="Fileverse" />
         <meta
           property="og:description"

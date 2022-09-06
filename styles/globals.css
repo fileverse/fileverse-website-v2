@@ -9,20 +9,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 }
-@keyframes slide {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-.slideContainer {
-    animation: slide 3s linear infinite;
-}
 .no-scrollbar::-webkit-scrollbar {
       display: none;
-    }
+}
 
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */

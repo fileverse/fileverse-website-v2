@@ -73,7 +73,7 @@ const FeaturesSection = () => {
       <div className="flex items-center w-full">
         <div className="w-full">
           <div className="flex">
-            <h1 className="font-bold text-3xl">Features</h1>
+            <h2 className="font-bold text-3xl">Features</h2>
             <div className="w-full flex justify-end">
               <div
                 onClick={() => {

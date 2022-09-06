@@ -7,11 +7,13 @@ import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileverseLogo from '../public/assets/fileverse.svg';
 import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
+import xicon from '../public/assets/x-icon.svg';
 
 const HeadNav = () => {
   const [menu, setMenu] = useState(false);
   const [top, setTop] = useState(true);
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const [sideMenu, setSideMenu] = useState(false);
   const handleScroll = () => {
     if (window.scrollY === 0) {
       setTop(true);
@@ -58,7 +60,7 @@ const HeadNav = () => {
           ref={dropDownButton}
         >
           {isMediaMax1025px ? (
-            <div onClick={() => setMenu(!menu)}>
+            <div onClick={() => setSideMenu(!sideMenu)}>
               <img src={hamburger.src} alt="hamburger" />
             </div>
           ) : (
@@ -105,6 +107,28 @@ const HeadNav = () => {
           </Slide>
         </div>
       </div>
+      <Slide direction="left" in={sideMenu}>
+        <div className="h-[100vh] shadow-lg right-0 bg-white p-4 absolute w-[60vw]">
+          <div
+            onClick={() => setSideMenu(!sideMenu)}
+            className="w-full flex justify-end text-3xl"
+          >
+            <img src={xicon.src} className="w-8" alt="x-icon" />
+          </div>
+          <div className="">
+            <div className=" py-2 ">
+              <Link href={'/'} passHref>
+                <a>Why fileverse</a>
+              </Link>
+            </div>
+            <div className="py-2">
+              <Link href={'/'} passHref>
+                <a>Visit Dapp</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Slide>
     </div>
   );
 };

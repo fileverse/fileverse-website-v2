@@ -34,13 +34,13 @@ const Features = () => {
                 } flex flex-wrap items-center`}
               >
                 <div className={`${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
-                  <h1
+                  <h2
                     className={`font-bold ${
                       isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
                     } `}
                   >
                     What you can expect
-                  </h1>
+                  </h2>
                   <p
                     className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}
                   >
