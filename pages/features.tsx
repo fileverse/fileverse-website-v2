@@ -55,7 +55,10 @@ const Features = () => {
                         isMediaMax1025px ? 'flex justify-center' : ''
                       } `}
                     >
-                      <PrimaryButton title={'Visit Dapp'} linkTo={'/'} />
+                      <PrimaryButton
+                        title={'Visit Dapp'}
+                        linkTo={'https://beta.fileverse.io/'}
+                      />
                     </div>
                   )}
                 </div>
@@ -333,6 +336,7 @@ const Features = () => {
               title="Go to Dapp"
               icon={dropDownArrow}
               iconStyles="ml-4"
+              linkTo="https://beta.fileverse.io/"
             />
           </div>
         </div>

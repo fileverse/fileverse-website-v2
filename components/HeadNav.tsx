@@ -105,7 +105,12 @@ const HeadNav = () => {
                   Why fileverse
                 </a>
               </Link>
-              <Link href={'/'} passHref>
+              <Link href={'/features'} passHref>
+                <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
+                  Features
+                </a>
+              </Link>
+              <Link href={'https://beta.fileverse.io/'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 ">
                   Visit Dapp
                 </a>
@@ -132,7 +137,12 @@ const HeadNav = () => {
               </Link>
             </div>
             <div className="py-2">
-              <Link href={'/'} passHref>
+              <Link href={'/features'} passHref>
+                <a>Features</a>
+              </Link>
+            </div>
+            <div className="py-2">
+              <Link href={'https://beta.fileverse.io/'} passHref>
                 <a>Visit Dapp</a>
               </Link>
             </div>
