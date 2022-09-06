@@ -12,14 +12,14 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
   return (
     <div
       className={`bg-[#FFFCE7] flex items-center flex-none ${
-        isMediaMax1025px ? 'w-[300px]' : 'w-[38rem] h-[37rem]'
-      } rounded-md p-4 m-4 `}
+        isMediaMax1025px ? 'w-[22rem]' : 'w-[500px]'
+      } rounded-ld p-4 m-4 `}
     >
-      <div className={`h-full ${isMediaMax1025px ? '' : ' grid grid-rows-4'}`}>
-        <div className="items-center row-span-3 flex justify-center">
+      <div className={``}>
+        <div className="items-center flex justify-center">
           <img
             src={image.src}
-            className={`w-[30rem] ${isMediaMax1025px ? 'h-[15rem]' : ''} `}
+            className={`w-[380px] h-[380px]  `}
             alt="fileverse-subdomain-window"
           />
         </div>

@@ -12,6 +12,8 @@ import SectionLayout from './SectionLayout';
 const FeaturesSection = () => {
   const featuresDiv = useRef(null);
   const [index, setIndex] = useState(0);
+  const [scrollX, setscrollX] = useState(0);
+  const [scrolEnd, setscrolEnd] = useState(false);
   const isMediaMax1025px = useMediaQuery('(max-width: 700px)');
   const featuresArray = [
     {
@@ -31,12 +33,7 @@ const FeaturesSection = () => {
     },
   ];
 
-  const sideScroll = (
-    element: any,
-    speed: number,
-    distance: number,
-    step: number
-  ) => {
+  const sideScroll = (element: any, distance: number, step: number) => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
       element.scrollLeft += step;
@@ -44,7 +41,7 @@ const FeaturesSection = () => {
       if (scrollAmount >= distance) {
         clearInterval(slideTimer);
       }
-    }, speed);
+    });
   };
   const handleMobileNext = (direction: string) => {
     if (direction === 'next' && index < featuresArray.length - 1) {
@@ -55,9 +52,20 @@ const FeaturesSection = () => {
   };
   const handleDesktopScroll = (direction: string) => {
     if (direction === 'forward') {
-      sideScroll(featuresDiv.current, -300, 650, 10);
+      sideScroll(featuresDiv.current, 432, 10);
     } else {
-      sideScroll(featuresDiv.current, -300, 650, -10);
+      sideScroll(featuresDiv.current, 432, -10);
+    }
+  };
+  const scrollCheck = (element: any) => {
+    setscrollX(element.scrollLeft);
+    if (
+      Math.floor(element.scrollWidth - element.scrollLeft) <=
+      element.offsetWidth
+    ) {
+      setscrolEnd(true);
+    } else {
+      setscrolEnd(false);
     }
   };
   return (
@@ -76,7 +84,10 @@ const FeaturesSection = () => {
                   }
                 }}
                 className={` bg-[#0000001A] ${
-                  index === 0 ? 'bg-[#0000001A]' : 'bg-black'
+                  (isMediaMax1025px && index === 0) ||
+                  (!isMediaMax1025px && scrollX === 0)
+                    ? 'bg-[#0000001A]'
+                    : 'bg-black'
                 } m-2 w-8 h-8 rounded-full flex items-center justify-center`}
               >
                 <img
@@ -94,7 +105,7 @@ const FeaturesSection = () => {
                   }
                 }}
                 className={`${
-                  index === featuresArray.length - 1
+                  index === featuresArray.length - 1 || scrolEnd
                     ? 'bg-[#0000001A]'
                     : 'bg-black'
                 } m-2 w-8 h-8 rounded-full flex items-center justify-center`}
@@ -109,6 +120,7 @@ const FeaturesSection = () => {
           </div>
           <div
             ref={featuresDiv}
+            onScroll={() => scrollCheck(featuresDiv.current)}
             className={`flex overflow-auto ${
               isMediaMax1025px && 'justify-center'
             }  no-scrollbar`}
