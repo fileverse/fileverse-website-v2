@@ -16,6 +16,32 @@ const HeadNav = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const [sideMenu, setSideMenu] = useState(false);
   const router = useRouter();
+  const ref: any = useRef(null);
+  const hamburgerbar: any = useRef(null);
+  const dropDownButton: any = useRef(null);
+  const html = typeof window !== 'undefined' && document.querySelector('html');
+  useEffect(() => {
+    function handleClickOutside(event: any) {
+      if (isMediaMax1025px) {
+        if (
+          ref.current &&
+          !ref.current.contains(event.target) &&
+          sideMenu &&
+          !hamburgerbar.current?.contains(event.target)
+        ) {
+          setSideMenu(false);
+          if (html) html.classList.remove('overflow-y-hidden');
+        }
+      } else if (
+        dropDownButton.current &&
+        !dropDownButton.current.contains(event.target) &&
+        menu
+      ) {
+        setMenu(false);
+      }
+    }
+    document.addEventListener('click', handleClickOutside);
+  });
   const handleScroll = () => {
     if (window.scrollY === 0) {
       setTop(true);
@@ -29,9 +55,6 @@ const HeadNav = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
-  const dropDownButton = useRef(null);
-  const html = typeof window !== 'undefined' && document.querySelector('html');
-
   return (
     <div
       className={`flex ${
@@ -65,6 +88,7 @@ const HeadNav = () => {
         >
           {isMediaMax1025px ? (
             <div
+              ref={hamburgerbar}
               onClick={() => {
                 if (html) html.classList.add('overflow-y-hidden');
                 setSideMenu(!sideMenu);
@@ -122,7 +146,10 @@ const HeadNav = () => {
         </div>
       </div>
       <Slide direction="left" in={sideMenu}>
-        <div className="h-[100vh] shadow-lg right-0 bg-white p-4 absolute w-[60vw]">
+        <div
+          ref={ref}
+          className="h-[100vh] shadow-lg right-0 bg-white p-4 absolute w-[60vw]"
+        >
           <div
             onClick={() => {
               if (html) html.classList.remove('overflow-y-hidden');
