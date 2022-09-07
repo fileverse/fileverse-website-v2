@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Slide, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileverseLogo from '../public/assets/fileverse.svg';
@@ -14,6 +15,7 @@ const HeadNav = () => {
   const [top, setTop] = useState(true);
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const [sideMenu, setSideMenu] = useState(false);
+  const router = useRouter();
   const handleScroll = () => {
     if (window.scrollY === 0) {
       setTop(true);
@@ -43,6 +45,7 @@ const HeadNav = () => {
           } duration-500 ease-in-out transition ${
             top ? 'bg-yellow ' : 'bg-white'
           }   flex items-center`}
+          onClick={() => router.push('/')}
         >
           <img
             className={`${isMediaMax1025px ? 'h-8 w-8' : 'h-12 w-12'} mr-2`}
@@ -100,7 +103,7 @@ const HeadNav = () => {
             <div
               className={`absolute rounded-b-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
             >
-              <Link href={'/'} passHref>
+              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
                   Why fileverse
                 </a>
@@ -124,24 +127,42 @@ const HeadNav = () => {
           <div
             onClick={() => {
               if (html) html.classList.remove('overflow-y-hidden');
-              setSideMenu(!sideMenu);
+              setSideMenu(false);
             }}
             className="w-full flex justify-end text-3xl"
           >
             <img src={xicon.src} className="w-8" alt="x-icon" />
           </div>
           <div className="">
-            <div className=" py-2 ">
-              <Link href={'/'} passHref>
+            <div
+              onClick={() => {
+                if (html) html.classList.remove('overflow-y-hidden');
+                setSideMenu(false);
+              }}
+              className=" py-2 "
+            >
+              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
                 <a>Why fileverse</a>
               </Link>
             </div>
-            <div className="py-2">
+            <div
+              onClick={() => {
+                if (html) html.classList.remove('overflow-y-hidden');
+                setSideMenu(false);
+              }}
+              className="py-2"
+            >
               <Link href={'/features'} passHref>
                 <a>Features</a>
               </Link>
             </div>
-            <div className="py-2">
+            <div
+              onClick={() => {
+                if (html) html.classList.remove('overflow-y-hidden');
+                setSideMenu(false);
+              }}
+              className="py-2"
+            >
               <Link href={'https://beta.fileverse.io/'} passHref>
                 <a>Visit Dapp</a>
               </Link>

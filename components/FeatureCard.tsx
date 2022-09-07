@@ -12,18 +12,18 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
   return (
     <div
       className={`bg-[#FFFCE7] flex items-center flex-none ${
-        isMediaMax1025px ? 'w-[22rem]' : 'w-[500px]'
+        isMediaMax1025px ? 'w-[300px]' : 'w-[500px]'
       } rounded-ld p-4 m-4 `}
     >
       <div className={``}>
         <div className="items-center flex justify-center">
           <img
             src={image.src}
-            className={`w-[380px] h-[380px]  `}
+            className={`w-[380px] h-[250px]  `}
             alt="fileverse-subdomain-window"
           />
         </div>
-        <div className="">
+        <div className="mt-4">
           <h2 className="text-center font-semibold text-2xl">{title}</h2>
           <p className="text-center">{text}</p>
         </div>

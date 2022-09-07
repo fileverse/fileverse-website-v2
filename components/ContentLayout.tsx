@@ -8,7 +8,7 @@ const ContentLayout = ({ children }: { children: JSX.Element }) => {
     <div
       className={` ${
         isMediaMax1025px ? 'mt-12' : 'w-[50%] m-8'
-      } flex  items-center `}
+      } flex  items-center`}
     >
       {children}
     </div>
