@@ -28,21 +28,19 @@ const Features = () => {
           <>
             <div className="flex min-h-[85vh] justify-center p-4">
               <div
-                className={`${
-                  isMediaMax1025px ? 'w-full' : 'w-[90%]'
+                className={`lg:w-[90%] ${
+                  isMediaMax1025px && 'w-full'
                 } flex flex-wrap items-center`}
               >
-                <div className={`${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
+                <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
                   <h2
-                    className={`font-bold ${
-                      isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
+                    className={`font-bold lg:text-5xl ${
+                      isMediaMax1025px && 'text-3xl text-center'
                     } `}
                   >
                     What you can expect
                   </h2>
-                  <p
-                    className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}
-                  >
+                  <p className={`mt-4   ${isMediaMax1025px && 'text-center'}`}>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the standard
                     dummy text ever since the 1500s, when an unknown printer
@@ -52,7 +50,7 @@ const Features = () => {
                   {isMediaMax1025px && (
                     <div
                       className={`mt-4  ${
-                        isMediaMax1025px ? 'flex justify-center' : ''
+                        isMediaMax1025px && 'flex justify-center'
                       } `}
                     >
                       <PrimaryButton
@@ -63,8 +61,8 @@ const Features = () => {
                   )}
                 </div>
                 <div
-                  className={`${
-                    isMediaMax1025px ? 'w-full' : 'w-[50%]'
+                  className={`lg:w-[50%] ${
+                    isMediaMax1025px && 'w-full'
                   } flex items-center justify-center relative`}
                 >
                   <div className="relative">
@@ -77,7 +75,7 @@ const Features = () => {
         </HeadSectionLayout>
         {/* Subdomain */}
         <SectionLayout>
-          <div className={` ${isMediaMax1025px ? '' : 'flex'} `}>
+          <div className={` lg:flex`}>
             <ImageLayout>
               <img
                 className="h-full"
@@ -122,7 +120,7 @@ const Features = () => {
         </SectionLayout>
         {/* Chat */}
         <SectionLayout>
-          <div className={` ${isMediaMax1025px ? '' : 'flex'}`}>
+          <div className={`lg:flex`}>
             {isMediaMax1025px && (
               <ImageLayout>
                 <img
@@ -161,8 +159,8 @@ const Features = () => {
             </ContentLayout>
             {!isMediaMax1025px && (
               <div
-                className={`${
-                  isMediaMax1025px ? 'h-[25rem]' : 'w-[50%] mr-8'
+                className={` lg:w-[50%] lg:mr-8 ${
+                  isMediaMax1025px && 'h-[25rem]'
                 } flex items-center justify-center`}
               >
                 <img
@@ -178,7 +176,7 @@ const Features = () => {
         <div className="bg-yellow py-4">
           {/* File Types  */}
           <SectionLayout>
-            <div className={` ${isMediaMax1025px ? '' : 'flex'}`}>
+            <div className={` lg:flex`}>
               <ImageLayout>
                 <img
                   className="h-full"
@@ -220,7 +218,7 @@ const Features = () => {
           </SectionLayout>
           {/* Access Token */}
           <SectionLayout>
-            <div className={` ${isMediaMax1025px ? '' : 'flex'}`}>
+            <div className={`lg:flex`}>
               {isMediaMax1025px && (
                 <ImageLayout>
                   <img
@@ -281,7 +279,7 @@ const Features = () => {
         </div>
         {/* Profile */}
         <SectionLayout>
-          <div className={` ${isMediaMax1025px ? '' : 'flex'}`}>
+          <div className={`lg:flex`}>
             <ImageLayout>
               <img
                 className="h-full"

@@ -1,5 +1,6 @@
-import { useMediaQuery } from '@mui/material';
 import React, { useRef, useState } from 'react';
+
+import { useMediaQuery } from '@mui/material';
 
 import chatWindow from '../public/assets/chatWindow.svg';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';

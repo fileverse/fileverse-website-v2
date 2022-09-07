@@ -30,26 +30,24 @@ const Home: NextPage = () => {
 
   return (
     <BodyWrapper>
-      <div className="">
+      <>
         <HeadSectionLayout>
           <>
             <div className="flex min-h-[85vh] justify-center p-4">
               <div
-                className={`${
-                  isMediaMax1025px ? 'w-full' : 'w-[90%]'
+                className={` lg:w-[90%] ${
+                  isMediaMax1025px && 'w-full'
                 } flex flex-wrap items-center`}
               >
-                <div className={`${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
+                <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
                   <h1
-                    className={`font-bold ${
-                      isMediaMax1025px ? 'text-3xl text-center' : 'text-5xl'
+                    className={`font-bold lg:text-5xl ${
+                      isMediaMax1025px && 'text-3xl text-center'
                     } `}
                   >
                     File sharing for <br /> Web3 communities.
                   </h1>
-                  <p
-                    className={`mt-4  ${isMediaMax1025px ? 'text-center' : ''}`}
-                  >
+                  <p className={`mt-4  ${isMediaMax1025px && 'text-center'}`}>
                     Easy file sharing between blockchain addresses & built on
                     top of decentralized protocols. Use our token-gating
                     features to control who can access your documents, images,
@@ -57,7 +55,7 @@ const Home: NextPage = () => {
                   </p>
                   <div
                     className={`mt-4  ${
-                      isMediaMax1025px ? 'flex justify-center' : ''
+                      isMediaMax1025px && 'flex justify-center'
                     } `}
                   >
                     <PrimaryButton
@@ -67,8 +65,8 @@ const Home: NextPage = () => {
                   </div>
                 </div>
                 <div
-                  className={`${
-                    isMediaMax1025px ? 'w-full' : 'w-[50%]'
+                  className={`lg:w-[50%] ${
+                    isMediaMax1025px && 'w-full'
                   } flex justify-center`}
                 >
                   <img
@@ -82,7 +80,7 @@ const Home: NextPage = () => {
           </>
         </HeadSectionLayout>
         <SectionLayout>
-          <div className={` ${isMediaMax1025px ? '' : 'flex'} `}>
+          <div className={`lg:flex`}>
             <ImageLayout>
               <img
                 className="h-full"
@@ -120,8 +118,8 @@ const Home: NextPage = () => {
                     }
                   />
                   <div
-                    className={`mt-8  ${
-                      isMediaMax1025px ? 'flex justify-center' : 'pl-12'
+                    className={`mt-8 lg:pl-12  ${
+                      isMediaMax1025px && 'flex justify-center'
                     }`}
                   >
                     <PrimaryButton title="More ..." />
@@ -249,7 +247,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </>
     </BodyWrapper>
   );
 };

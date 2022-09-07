@@ -40,28 +40,27 @@ const HeadNav = () => {
     >
       <div className={`w-[90%] flex`}>
         <div
-          className={`${
-            isMediaMax1025px ? 'w-full' : 'w-[50%]'
+          className={` lg:w-[50%] ${
+            isMediaMax1025px && 'w-full'
           } duration-500 ease-in-out transition ${
             top ? 'bg-yellow ' : 'bg-white'
           }   flex items-center`}
           onClick={() => router.push('/')}
         >
           <img
-            className={`${isMediaMax1025px ? 'h-8 w-8' : 'h-12 w-12'} mr-2`}
+            className={`${isMediaMax1025px && 'h-8 w-8'} lg:h-12 lg:w-12 mr-2`}
             alt="fileverse-logo"
             src={fileverseLogo.src}
           />
-          <span className={`font-xx ${isMediaMax1025px ? 'text-xs' : ''}`}>
+          <span className={`font-xx ${isMediaMax1025px && 'text-xs'}`}>
             Fileverse
           </span>
         </div>
         <div
-          className={` ${
-            isMediaMax1025px ? '' : 'w-[50%]'
-          } duration-500 ease-in-out transition relative flex ${
-            top ? 'bg-yellow ' : 'bg-white'
-          }    items-center h-full justify-end`}
+          className={`
+            lg:w-[50%] duration-500 ease-in-out transition relative flex ${
+              top ? 'bg-yellow ' : 'bg-white'
+            }    items-center h-full justify-end`}
           ref={dropDownButton}
         >
           {isMediaMax1025px ? (
