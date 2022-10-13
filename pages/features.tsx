@@ -38,14 +38,12 @@ const Features = () => {
                       isMediaMax1025px && 'text-3xl text-center'
                     } `}
                   >
-                    What you can expect
+                    All about features & the tech behind Fileverse
                   </h2>
                   <p className={`mt-4   ${isMediaMax1025px && 'text-center'}`}>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the standard
-                    dummy text ever since the 1500s, when an unknown printer
-                    took a galley of type and scrambled it to make a type
-                    specimen book. It has survived not only five centuries
+                    Fileverse is a simple on-ramp to leverage the full extent of
+                    the Web3 tech stack & experience the social web as sovereign
+                    individuals. That’s our northstar!
                   </p>
                   {isMediaMax1025px && (
                     <div
@@ -86,31 +84,31 @@ const Features = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h2 className="font-bold ml-12 text-3xl">Subdomain</h2>
+                  <h2 className="font-bold ml-12 text-3xl">Fileverse Portal</h2>
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Fileverse Portals are your door to the on-chain world. Portals are actual smart contracts. Store any multimedia file you want; you pick who and how anons can access your files.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Access management: you have a variety of options to restrict or open access to your Fileverse Portal and its content. Public, private and/or token enabled, the choice is yours.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'End-to-end encryption: you own all the keys to your Portal, including your end-to-end keys for when you share files with your private members!'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Create your Fileverse Portal to store and share files, open chat spaces, collaborate with your members, and more. It’s time to move away from centralised collaboration tools.'
                     }
                   />
                 </div>
@@ -133,25 +131,27 @@ const Features = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h2 className="font-bold ml-12 text-3xl">Chat</h2>
+                  <h2 className="font-bold ml-12 text-3xl">
+                    Chat Rooms & Spaces
+                  </h2>
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Gather your friends, collaborators or community in one place for encrypted discussions stored on p2p networks. No servers, no centralisation!'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Chat rooms: any file URL you share has its very own encrypted chat space. Anyone that has access to your file can directly chat in this room with you and other visitors.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Chat spaces: coming soon on your Fileverse Portal.. Your space to update and discuss with all your members that have access to your Fileverse Portal.'
                     }
                   />
                 </div>
@@ -187,28 +187,30 @@ const Features = () => {
               <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
-                    <h2 className="font-bold ml-12 text-3xl">File Types</h2>
+                    <h2 className="font-bold ml-12 text-3xl">
+                      Fileverse For Any File
+                    </h2>
                   </div>
                   <div className="w-full">
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                        'Upload and share any types of multimedia files. Your peers will be able to preview them on Fileverse or download them.'
                       }
                     />
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                        'Did you receive a PDF, a doc, a song, or a ZIP file via Fileverse? Click on the new download button to have access to the files without the URL.'
                       }
                     />
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                        'Fileverse Portal: want more security & privacy? Enable end-to-end encryption between you and your members of your Fileverse Portal!'
                       }
                     />
                   </div>
@@ -231,22 +233,20 @@ const Features = () => {
               <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
-                    <h2 className="font-bold ml-12 text-3xl">Access NFTS</h2>
+                    <h2 className="font-bold ml-12 text-3xl">Fileverse Solo</h2>
                   </div>
                   <div className="w-full">
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                        'Create & distribute access on-chain. Customise your own access-NFT and send it to as many addresses you want to give them access to your files.'
                       }
                     />
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
-                      paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-                      }
+                      paragraph={'Create community-specific FPOAPs.'}
                     />
                     <ListWithIconCard
                       icon={tick}

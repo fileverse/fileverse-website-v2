@@ -45,13 +45,13 @@ const Home: NextPage = () => {
                       isMediaMax1025px && 'text-3xl text-center'
                     } `}
                   >
-                    File sharing for <br /> Web3 communities.
+                    Web3’s Simplest Way <br /> to Share Files
                   </h1>
                   <p className={`mt-4  ${isMediaMax1025px && 'text-center'}`}>
-                    Easy file sharing between blockchain addresses & built on
-                    top of decentralized protocols. Use our token-gating
-                    features to control who can access your documents, images,
-                    audio and videos.
+                    Your tool for quick file sharing between blockchain
+                    addresses and beyond Share files, create on-chain access
+                    rules for them, and even dedicated chat rooms. All in a few
+                    clicks
                   </p>
                   <div
                     className={`mt-4  ${
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                     } `}
                   >
                     <PrimaryButton
-                      title={'Visit Dapp'}
+                      title={'Launch app'}
                       linkTo={'https://beta.fileverse.io/'}
                     />
                   </div>
@@ -97,24 +97,24 @@ const Home: NextPage = () => {
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
-                    title="What you can expect"
+                    title="Decentralisation"
                     icon={check}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Your files are kept on peer-to-peer storage networks and your interactions with peers managed on-chain. Oh.. and you can also enable End-to-End encryption!'
                     }
                   />
                   <ListWithIconCard
-                    title="What you can expect"
+                    title="Simplicity"
                     icon={padLock}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Everything you need to move away from centralised collaboration apps, just a few clicks away. All from the comfort of your crypto wallet.'
                     }
                   />
                   <ListWithIconCard
-                    title="What you can expect"
+                    title="Social coordination"
                     icon={global}
                     paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                      'Blockchains are like community computers, enabling you to coordinate globally with people. Fileverse shows you how. Jump into the space of permissionless coordinating & collaboration.'
                     }
                   />
                   <div
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
                       isMediaMax1025px && 'flex justify-center'
                     }`}
                   >
-                    <PrimaryButton title="More ..." />
+                    <PrimaryButton title="Learn More" />
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ const Home: NextPage = () => {
           <div className="">
             <div className="p-4">
               <h2 className="font-bold text-center text-2xl">
-                For whom did we build this tool?
+                For whom Is Fileverse Solo and Filverse Co-op?
               </h2>
             </div>
             <div className="flex justify-center">
@@ -149,10 +149,12 @@ const Home: NextPage = () => {
                       />
                     </div>
                     <h3 className="text-center font-semibold">
-                      Our Friends and Families
+                      The Web3 Curious
                     </h3>
                     <p className="text-center">
-                      We dont use Google Drive. We share files à la Web3
+                      Web3 is not only about speculation & finance. Try just
+                      sharing files peer-to-peer with no one snooping on and
+                      selling your personal data.
                     </p>
                   </div>
                   <div className=" m-2 w-[20rem]">
@@ -161,8 +163,8 @@ const Home: NextPage = () => {
                     </div>
                     <h3 className="text-center font-semibold">DAOs</h3>
                     <p className="text-center">
-                      Share your alpha with anons that own the DAO's token.
-                      Membership-gating!
+                      On-chain organisations deserve on-chain collaboration
+                      tools and analytics.
                     </p>
                   </div>
                   <div className="m-2 w-[20rem]">
@@ -174,11 +176,12 @@ const Home: NextPage = () => {
                       />
                     </div>
                     <h3 className="text-center font-semibold">
-                      NFT Communities
+                      Crypto Natives
                     </h3>
                     <p className="text-center">
-                      Share any file with anyone that owns a specific NFT (eg.
-                      BAYC or a membership NFT)
+                      Think your wallet is just for buying and selling? Your
+                      wallet is a powerful cryptography tool that unlocks new
+                      forms of social coordination!
                     </p>
                   </div>
                   <div className="m-2 w-[20rem] ">
@@ -193,8 +196,9 @@ const Home: NextPage = () => {
                       Web3 Companies
                     </h3>
                     <p className="text-center">
-                      Create your token/NFT & only team members it can access
-                      your files
+                      Start decentralising your collaboration stack. Enjoy
+                      intuitive Web3 solutions to share contant, chat, and much
+                      more, with your teams.
                     </p>
                   </div>
                   <div className="m-2 w-[20rem]">
@@ -209,8 +213,10 @@ const Home: NextPage = () => {
                       Cryto Publishers
                     </h3>
                     <p className="text-center">
-                      Send exclusive content to your paying members wit hout
-                      asking for emails..
+                      You're not going to gate that Subscriber-only article via
+                      user accounts and database entries are you…? Token-gate it
+                      and start creating on-chain analytics for your content via
+                      custom access-tokens they can mint on the go.
                     </p>
                   </div>
                   <div className=" m-2 w-[20rem] ">
@@ -222,12 +228,12 @@ const Home: NextPage = () => {
                       />
                     </div>
                     <h3 className="text-center font-semibold">
-                      Blockchain Natives
+                      NFT Communities
                     </h3>
                     <p className="text-center">
-                      Get your fileverse sub-domain, like vitalik.fileverse.io &
-                      use it as a one-stop-shop for all of your token-gated
-                      content
+                      On-chain communities deserve on-chain collaboration tools
+                      and analytics. Try Filverse Co-op for a real decentralised
+                      and on-chain experience.
                     </p>
                   </div>
                 </div>

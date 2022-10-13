@@ -50,11 +50,11 @@ const FeaturesSection = () => {
       <div className="flex items-center w-full">
         <div className="w-full">
           <div className="flex">
-            <h2 className="font-bold text-3xl">Features</h2>
+            <h2 className="font-bold text-3xl w-full">Features & More</h2>
             <div className="w-full flex justify-end">
               <div
                 onClick={() => handleDesktopScroll('back')}
-                className={` bg-[#0000001A] ${
+                className={` ${
                   scrollX === 0 ? 'bg-[#0000001A]' : 'bg-black'
                 } m-2 w-8 h-8 rounded-full flex items-center justify-center`}
               >
@@ -86,23 +86,33 @@ const FeaturesSection = () => {
             <>
               <FeatureCard
                 image={subdomainWindow}
-                title={'Subdomain'}
-                text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                title={'Chat Rooms & Spaces'}
+                text="Create encrypted chat rooms to collaborate with peers on a file. Invite people by sending them an access-token (Fil_POAP). Use your ENS as your profile."
               />
               <FeatureCard
                 image={fileTypes}
-                title={'File Types'}
-                text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                title={'Airdrop Access-Tokens'}
+                text="Access-tokens/Fil_POAPs are NFTs that you can customise from scratch and send to as many addresses you want to give them access to a file, chat room, or Fileverse Co-op."
               />
               <FeatureCard
                 image={chatWindow}
-                title={'Chat'}
-                text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                title={'3D Beauty '}
+                text="Upload your 3D models on Fileverse, and share the URL with your anons, frens, or the world. "
               />
               <FeatureCard
                 image={subdomainWindow}
-                title={'Subdomain'}
-                text="Subdomain The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                title={'Multimedia'}
+                text=" Upload and share any type of files. Your peers will be able to preview them on Fileverse or download them."
+              />
+              <FeatureCard
+                image={subdomainWindow}
+                title={'Token-gate'}
+                text="Give exclusive access to a file or chat room to existing on-chain communities or groups. Define the type and number of tokens or NFTs needed (eg. a BAYC or 10 ETH) to gain access to your file or chat room."
+              />
+              <FeatureCard
+                image={subdomainWindow}
+                title={'Live collaboration '}
+                text="Create a document or whiteboard directly on Fileverse and collaborate live with your peers. See their ENS or address as they contribute to the document."
               />
             </>
           </div>
