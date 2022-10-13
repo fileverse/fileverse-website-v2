@@ -73,7 +73,7 @@ const FeaturesSection = () => {
                 <img
                   src={dropDownArrow.src}
                   alt="back-arrow"
-                  className=" changeWhite -rotate-90"
+                  className="changeWhite -rotate-90"
                 />
               </div>
             </div>
