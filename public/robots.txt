@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: https://stunning-cendol-00ad4f.netlify.app
+Disallow: /
