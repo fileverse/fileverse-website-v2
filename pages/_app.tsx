@@ -5,29 +5,6 @@ import type { AppProps } from 'next/app';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <title>Fileverse</title>
-      <meta property="og:title" content="Fileverse" />
-      <meta
-        property="og:description"
-        content="File sharing between blockchain addresses"
-      />
-      <meta
-        property="og:image"
-        content="https://s3.fileverse.io/assets/fileversePreview.png"
-      />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@Fileverseio" />
-      <meta name="twitter:title" content="Fileverse" />
-      <meta
-        name="twitter:description"
-        content="File sharing between blockchain addresses"
-      />
-      <meta
-        property="twitter:image"
-        content="https://s3.fileverse.io/assets/fileversePreview.png"
-      />
-
       <NextSeo
         title="Fileverse | File sharing for Web3 Communities"
         description="Share file with any blockchain address!"
@@ -39,12 +16,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           site_name: 'Fileverse',
           images: [
             {
-              url: '/assets/fileversePreview.png',
+              url: 'https://s3.fileverse.io/assets/fileversePreview.png',
               width: 800,
               height: 420,
-              alt: 'Filverse',
+              alt: 'Fileverse',
             },
           ],
+        }}
+        twitter={{
+          handle: '@fileverseio',
+          site: '@fileverseio',
+          cardType: 'summary_large_image',
         }}
       />
       <Component {...pageProps} />
