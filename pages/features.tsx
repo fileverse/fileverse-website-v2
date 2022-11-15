@@ -108,7 +108,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Create your Fileverse Portal to store and share files, open chat spaces, collaborate with your members, and more. It’s time to move away from centralised collaboration tools.'
+                      'Collaborate live on documents, open chat spaces, create whiteboard files, and more. It’s time to move away from centralised collaboration tools.'
                     }
                   />
                 </div>
@@ -233,33 +233,30 @@ const Features = () => {
               <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
-                    <h2 className="font-bold ml-12 text-3xl">Fileverse Solo</h2>
+                    <h2 className="font-bold ml-12 text-3xl">
+                      Custom access-tokens
+                    </h2>
                   </div>
                   <div className="w-full">
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'Create & distribute access on-chain. Customise your own access-NFT and send it to as many addresses you want to give them access to your files.'
-                      }
-                    />
-                    <ListWithIconCard
-                      icon={tick}
-                      whiteIconBackground={true}
-                      paragraph={'Create community-specific FPOAPs.'}
-                    />
-                    <ListWithIconCard
-                      icon={tick}
-                      whiteIconBackground={true}
-                      paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                        'Create a custom access-token and send it to any EVM addresses. This gives the receivers access to your selected files, chat rooms, collaborative documents, etc.'
                       }
                     />
                     <ListWithIconCard
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+                        'Let new followers or members or your Fileverse Portal mint a membership NFT (POAP) to get access to some exclusive content and experiences.'
+                      }
+                    />
+                    <ListWithIconCard
+                      icon={tick}
+                      whiteIconBackground={true}
+                      paragraph={
+                        'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!'
                       }
                     />
                   </div>

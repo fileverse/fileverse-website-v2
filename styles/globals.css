@@ -7,17 +7,86 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
 }
 .no-scrollbar::-webkit-scrollbar {
-      display: none;
+  display: none;
 }
 
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+ul li {
+  list-style-type: disc;
+}
+.changeWhite {
+  filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(222deg)
+    brightness(119%) contrast(115%);
+}
+#flip {
+  height: 50px;
+  overflow: hidden;
+}
 
-.changeWhite{
-  filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(222deg) brightness(119%) contrast(115%);
+#flip div:first-child {
+  animation: showDesktop 5s linear infinite;
+}
+@keyframes showDesktop {
+  0% {
+    margin-top: -16.875rem;
+  }
+  5% {
+    margin-top: -10rem;
+  }
+  33% {
+    margin-top: -10rem;
+  }
+  38% {
+    margin-top: -5.625rem;
+  }
+  66% {
+    margin-top: -5.625rem;
+  }
+  71% {
+    margin-top: -0.938rem;
+  }
+  99.99% {
+    margin-top: -0.938rem;
+  }
+  100% {
+    margin-top: -16.875rem;
+  }
+}
+
+@keyframes showMobile {
+  0% {
+    margin-top: -8rem;
+  }
+  5% {
+    margin-top: -5.5rem;
+  }
+  33% {
+    margin-top: -5.5rem;
+  }
+  38% {
+    margin-top: -2.7rem;
+  }
+  66% {
+    margin-top: -2.7rem;
+  }
+  71% {
+    margin-top: 0rem;
+  }
+  99.99% {
+    margin-top: 0rem;
+  }
+  100% {
+    margin-top: -8rem;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  #flip div:first-child {
+    animation: showMobile 5s linear infinite;
+  }
 }

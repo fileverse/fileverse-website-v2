@@ -58,10 +58,7 @@ const Home: NextPage = () => {
                       isMediaMax1025px && 'flex justify-center'
                     } `}
                   >
-                    <PrimaryButton
-                      title={'Launch app'}
-                      linkTo={'https://beta.fileverse.io/'}
-                    />
+                    <PrimaryButton title={'Learn More'} linkTo={''} />
                   </div>
                 </div>
                 <div
