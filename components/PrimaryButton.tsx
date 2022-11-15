@@ -7,13 +7,25 @@ interface ButtonType {
   linkTo?: string;
   icon?: any;
   iconStyles?: string;
+  openNewTab?: boolean;
 }
-const PrimaryButton = ({ title, icon, iconStyles, linkTo }: ButtonType) => {
+const PrimaryButton = ({
+  title,
+  icon,
+  openNewTab,
+  iconStyles,
+  linkTo,
+}: ButtonType) => {
   const router = useRouter();
   return (
     <button
       onClick={() => {
-        if (linkTo) router.push(linkTo);
+        if (linkTo) {
+          if (openNewTab) window.open(linkTo, '_blank');
+          else {
+            router.push(linkTo);
+          }
+        }
       }}
       className="bg-black flex items-center text-white px-6 py-2 rounded-md"
     >

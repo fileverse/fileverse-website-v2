@@ -87,32 +87,33 @@ const FeaturesSection = () => {
               <FeatureCard
                 image={subdomainWindow}
                 title={'Chat Rooms & Spaces'}
-                text="Create encrypted chat rooms to collaborate with peers on a file. Invite people by sending them an access-token (Fil_POAP). Use your ENS as your profile."
+                text=" Create encrypted chat rooms to coordinate. Invite your peers by sending access-NFTs. Use your ENS as your chat profile."
               />
               <FeatureCard
                 image={fileTypes}
                 title={'Airdrop Access-Tokens'}
-                text="Access-tokens/Fil_POAPs are NFTs that you can customise from scratch and send to as many addresses you want to give them access to a file, chat room, or Fileverse Co-op."
+                text="These tokens are NFTs that you can fully customise and send to as many addresses you want to give them access to files.
+                "
               />
               <FeatureCard
                 image={chatWindow}
                 title={'3D Beauty '}
-                text="Upload your 3D models on Fileverse, and share the URL with your anons, frens, or the world. "
+                text="Upload your 3D files and share the URL with anons, frens, or the world. View any 3D model directly on Fileverse."
               />
               <FeatureCard
                 image={subdomainWindow}
                 title={'Multimedia'}
-                text=" Upload and share any type of files. Your peers will be able to preview them on Fileverse or download them."
+                text=" Upload and share any type of multimedia file. Your peers will be able to preview or download them directly on Fileverse."
               />
               <FeatureCard
                 image={subdomainWindow}
                 title={'Token-gate'}
-                text="Give exclusive access to a file or chat room to existing on-chain communities or groups. Define the type and number of tokens or NFTs needed (eg. a BAYC or 10 ETH) to gain access to your file or chat room."
+                text="Define the type and number of tokens (e.g. 1 CloneX) for existing on-chain groups to gain access to your file or chat room."
               />
               <FeatureCard
                 image={subdomainWindow}
                 title={'Live collaboration '}
-                text="Create a document or whiteboard directly on Fileverse and collaborate live with your peers. See their ENS or address as they contribute to the document."
+                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!"
               />
             </>
           </div>

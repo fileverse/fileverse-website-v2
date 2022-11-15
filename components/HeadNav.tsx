@@ -97,7 +97,7 @@ const HeadNav = () => {
               <img src={hamburger.src} alt="hamburger" />
             </div>
           ) : (
-            <div
+            <button
               onClick={() => setMenu(!menu)}
               className={`border rounded-md ${
                 top ? 'bg-black text-white ' : 'bg-white'
@@ -119,7 +119,7 @@ const HeadNav = () => {
                   alt="black-dropdown-arrow"
                 />
               )}
-            </div>
+            </button>
           )}
 
           <Slide direction="down" in={menu} container={dropDownButton.current}>

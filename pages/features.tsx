@@ -38,12 +38,13 @@ const Features = () => {
                       isMediaMax1025px && 'text-3xl text-center'
                     } `}
                   >
-                    All about features & the tech behind Fileverse
+                    We are building a <br /> privacy-enhancing <br /> on-chain
+                    alternative to Google Workspace.
                   </h2>
                   <p className={`mt-4   ${isMediaMax1025px && 'text-center'}`}>
                     Fileverse is a simple on-ramp to leverage the full extent of
-                    the Web3 tech stack & experience the social web as sovereign
-                    individuals. That’s our northstar!
+                    the Web3 tech stack and experience the social web as
+                    sovereign individuals. That’s our northstar!
                   </p>
                   {isMediaMax1025px && (
                     <div
@@ -51,10 +52,7 @@ const Features = () => {
                         isMediaMax1025px && 'flex justify-center'
                       } `}
                     >
-                      <PrimaryButton
-                        title={'Visit Dapp'}
-                        linkTo={'https://beta.fileverse.io/'}
-                      />
+                      <PrimaryButton title={'Learn More'} linkTo={''} />
                     </div>
                   )}
                 </div>
@@ -90,19 +88,19 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Fileverse Portals are your door to the on-chain world. Portals are actual smart contracts. Store any multimedia file you want; you pick who and how anons can access your files.'
+                      ' Fileverse Portals are your door to the on-chain world. Each Portal is a self-deployed file management smart contract, made for collaboration and full control over your data.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Access management: you have a variety of options to restrict or open access to your Fileverse Portal and its content. Public, private and/or token enabled, the choice is yours.'
+                      'Access management: you have a variety of options to restrict or open access to your Fileverse Portal and its content. Public, private and/or token enabled, the choice is yours'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'End-to-end encryption: you own all the keys to your Portal, including your end-to-end keys for when you share files with your private members!'
+                      ' End-to-end encryption: you own all the keys to your Portal, including your end-to-end encryption keys for file sharing with your members!'
                     }
                   />
                   <ListWithIconCard
@@ -139,7 +137,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Gather your friends, collaborators or community in one place for encrypted discussions stored on p2p networks. No servers, no centralisation!'
+                      'Gather friends, collaborators or communities  in one place for encrypted discussions stored on p2p networks. No servers, no centralisation. Your safe chat space.'
                     }
                   />
                   <ListWithIconCard
@@ -151,7 +149,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Chat spaces: coming soon on your Fileverse Portal.. Your space to update and discuss with all your members that have access to your Fileverse Portal.'
+                      'Chat spaces: coming soon on your Fileverse Portal. Your space to update and discuss with all your members that have access to your Fileverse Portal.'
                     }
                   />
                 </div>
@@ -173,9 +171,9 @@ const Features = () => {
           </div>
         </SectionLayout>
         <FeaturesSection />
-        <div className="bg-yellow py-4">
+        <div className="bg-yellow border border-black py-4">
           {/* File Types  */}
-          <SectionLayout>
+          <SectionLayout marginTop={'0px'}>
             <div className={` lg:flex`}>
               <ImageLayout>
                 <img
@@ -210,7 +208,7 @@ const Features = () => {
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'Fileverse Portal: want more security & privacy? Enable end-to-end encryption between you and your members of your Fileverse Portal!'
+                        'Fileverse Portal: want more security & privacy? Enable end-to-end encryption between you and your members of your Fileverse Portal.'
                       }
                     />
                   </div>
@@ -330,6 +328,7 @@ const Features = () => {
             <PrimaryButton
               title="Go to Dapp"
               icon={dropDownArrow}
+              openNewTab={true}
               iconStyles="ml-4"
               linkTo="https://beta.fileverse.io/"
             />

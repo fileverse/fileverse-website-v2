@@ -92,7 +92,7 @@ const BodyWrapper = ({ children }: BodyType) => {
         </div>
       </div>
       <div className="bg-[#FFFCE7] mt-4 p-4">
-        <p className="text-center">Supported by 10,000+ donors on Gitcoin</p>
+        <p className="text-center">Supported by 13,000+ donors on Gitcoin</p>
       </div>
     </div>
   );

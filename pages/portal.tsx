@@ -60,12 +60,12 @@ const Subdomain = () => {
             >
               <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
                 <h2
-                  className={`font-bold flex flex-wrap  lg:text-5xl ${
+                  className={`font-bold border border-black flex flex-wrap  lg:text-5xl ${
                     isMediaMax1025px && 'text-3xl justify-center'
                   } `}
                 >
                   Your On-chain Portal for
-                  <div id="flip">
+                  <div className="border border-black" id="flip">
                     <div>File sharing</div>
                     <div>Collaboration</div>
                     <div>Coordination</div>
