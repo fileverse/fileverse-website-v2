@@ -34,27 +34,32 @@ const Features = () => {
               >
                 <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
                   <h2
-                    className={`font-bold lg:text-5xl ${
-                      isMediaMax1025px && 'text-3xl text-center'
+                    className={`font-bold lg:text-4xl ${
+                      isMediaMax1025px && 'text-2xl text-center'
                     } `}
                   >
-                    We are building a <br /> privacy-enhancing <br /> on-chain
-                    alternative to Google Workspace.
+                    We are building a privacy-enhancing, on-chain alternative to
+                    Google Workspace.
                   </h2>
-                  <p className={`mt-4   ${isMediaMax1025px && 'text-center'}`}>
+                  <p
+                    className={`mt-4 w-[80%]   ${
+                      isMediaMax1025px && 'text-center'
+                    }`}
+                  >
                     Fileverse is a simple on-ramp to leverage the full extent of
                     the Web3 tech stack and experience the social web as
                     sovereign individuals. That’s our northstar!
                   </p>
-                  {isMediaMax1025px && (
-                    <div
-                      className={`mt-4  ${
-                        isMediaMax1025px && 'flex justify-center'
-                      } `}
-                    >
-                      <PrimaryButton title={'Learn More'} linkTo={''} />
-                    </div>
-                  )}
+                  <div
+                    className={`mt-4  ${
+                      isMediaMax1025px && 'flex justify-center'
+                    } `}
+                  >
+                    <PrimaryButton
+                      title={'Discover More'}
+                      linkTo={'#features'}
+                    />
+                  </div>
                 </div>
                 <div
                   className={`lg:w-[50%] ${
@@ -71,7 +76,7 @@ const Features = () => {
         </HeadSectionLayout>
         {/* Subdomain */}
         <SectionLayout>
-          <div className={` lg:flex`}>
+          <div id="features" className={` lg:flex pt-[5vh]`}>
             <ImageLayout>
               <img
                 className="h-full"
@@ -82,7 +87,15 @@ const Features = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h2 className="font-bold ml-12 text-3xl">Fileverse Portal</h2>
+                  <h2
+                    className={`font-bold  ${
+                      isMediaMax1025px
+                        ? 'text-2xl text-center w-full'
+                        : 'text-3xl ml-12'
+                    }`}
+                  >
+                    Fileverse Portal
+                  </h2>
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
@@ -114,6 +127,7 @@ const Features = () => {
             </ContentLayout>
           </div>
         </SectionLayout>
+
         {/* Chat */}
         <SectionLayout>
           <div className={`lg:flex`}>
@@ -129,7 +143,13 @@ const Features = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h2 className="font-bold ml-12 text-3xl">
+                  <h2
+                    className={`font-bold  ${
+                      isMediaMax1025px
+                        ? 'text-2xl text-center w-full'
+                        : 'text-3xl ml-12'
+                    }`}
+                  >
                     Chat Rooms & Spaces
                   </h2>
                 </div>
@@ -171,9 +191,9 @@ const Features = () => {
           </div>
         </SectionLayout>
         <FeaturesSection />
-        <div className="bg-yellow border border-black py-4">
+        <div className="bg-yellow py-4">
           {/* File Types  */}
-          <SectionLayout marginTop={'0px'}>
+          <SectionLayout marginTop="mt-0">
             <div className={` lg:flex`}>
               <ImageLayout>
                 <img
@@ -185,7 +205,13 @@ const Features = () => {
               <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
-                    <h2 className="font-bold ml-12 text-3xl">
+                    <h2
+                      className={`font-bold  ${
+                        isMediaMax1025px
+                          ? 'text-2xl text-center w-full'
+                          : 'text-3xl ml-12'
+                      }`}
+                    >
                       Fileverse For Any File
                     </h2>
                   </div>
@@ -231,7 +257,13 @@ const Features = () => {
               <ContentLayout>
                 <div className="">
                   <div className="flex w-full">
-                    <h2 className="font-bold ml-12 text-3xl">
+                    <h2
+                      className={`font-bold  ${
+                        isMediaMax1025px
+                          ? 'text-2xl text-center w-full'
+                          : 'text-3xl ml-12'
+                      }`}
+                    >
                       Custom access-tokens
                     </h2>
                   </div>
@@ -285,7 +317,15 @@ const Features = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h2 className="font-bold ml-12 text-3xl">Profile</h2>
+                  <h2
+                    className={`font-bold  ${
+                      isMediaMax1025px
+                        ? 'text-2xl text-center w-full'
+                        : 'text-3xl ml-12'
+                    }`}
+                  >
+                    Profile
+                  </h2>
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
@@ -320,7 +360,13 @@ const Features = () => {
         {/* More Feature */}
         <div className="mt-8">
           <div className="flex justify-center items-center">
-            <h2 className="font-bold p-4 text-center text-3xl">
+            <h2
+              className={`font-bold  ${
+                isMediaMax1025px
+                  ? 'text-2xl text-center w-full'
+                  : 'text-3xl ml-12'
+              }`}
+            >
               More features to come
             </h2>
           </div>

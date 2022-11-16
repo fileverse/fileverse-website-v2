@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useMediaQuery } from '@mui/material';
+import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
 import HeadSectionLayout from '../components/HeadSectionLayout';
@@ -60,16 +61,22 @@ const Subdomain = () => {
             >
               <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
                 <h2
-                  className={`font-bold border border-black flex flex-wrap  lg:text-5xl ${
-                    isMediaMax1025px && 'text-3xl justify-center'
+                  className={`font-bold lg:text-4xl ${
+                    isMediaMax1025px && 'text-2xl text-center'
                   } `}
                 >
                   Your On-chain Portal for
-                  <div className="border border-black" id="flip">
-                    <div>File sharing</div>
-                    <div>Collaboration</div>
-                    <div>Coordination</div>
-                  </div>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        'File Sharing',
+                        'Collaboration',
+                        'Coordination',
+                      ],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
                 </h2>
                 <div
                   className={`flex ${
@@ -82,7 +89,11 @@ const Subdomain = () => {
                   <h6 className="mx-3">-</h6>
                   <h6 className="font-semibold">E2EE</h6>
                 </div>
-                <p className={`mt-8   ${isMediaMax1025px && 'text-center'}`}>
+                <p
+                  className={`mt-4 ${
+                    isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'
+                  }`}
+                >
                   Fileverse is building the first privacy-enhancing, on-chain
                   alternative to Google Workspace. Owners of Portals control all
                   their data, from how it’s stored to how it’s accessed, and

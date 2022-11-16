@@ -49,14 +49,22 @@ const FeaturesSection = () => {
     <SectionLayout>
       <div className="flex items-center w-full">
         <div className="w-full">
-          <div className="flex">
-            <h2 className="font-bold text-3xl w-full">Features & More</h2>
-            <div className="w-full flex justify-end">
+          <div className="flex items-center">
+            <h2
+              className={`font-bold  w-full ${
+                isMediaMax1025px ? 'text-2xl' : 'text-3xl'
+              }`}
+            >
+              Features & More
+            </h2>
+            <div className="flex justify-end">
               <div
                 onClick={() => handleDesktopScroll('back')}
                 className={` ${
-                  scrollX === 0 ? 'bg-[#0000001A]' : 'bg-black'
-                } m-2 w-8 h-8 rounded-full flex items-center justify-center`}
+                  scrollX === 0
+                    ? 'bg-[#0000001A] cursor-not-allowed'
+                    : 'bg-black cursor-pointer'
+                } m-2 w-8 h-8  rounded-full flex items-center justify-center`}
               >
                 <img
                   src={dropDownArrow.src}
@@ -67,7 +75,9 @@ const FeaturesSection = () => {
               <div
                 onClick={() => handleDesktopScroll('forward')}
                 className={`${
-                  scrolEnd ? 'bg-[#0000001A]' : 'bg-black'
+                  scrolEnd
+                    ? 'bg-[#0000001A] cursor-not-allowed'
+                    : 'bg-black cursor-pointer'
                 } m-2 w-8 h-8 rounded-full flex items-center justify-center`}
               >
                 <img

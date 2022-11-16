@@ -3,6 +3,7 @@ import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import type { NextPage } from 'next';
+import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
 import ContentLayout from '../components/ContentLayout';
@@ -13,6 +14,7 @@ import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import ProductsDisplay from '../components/ProductsDisplay';
 import SectionLayout from '../components/SectionLayout';
+import SubHeading from '../components/SubHeading';
 import WhomCard from '../components/WhomCard';
 import BlockChain from '../public/assets/BlockChain.svg';
 import check from '../public/assets/check.svg';
@@ -29,7 +31,6 @@ import Web3 from '../public/assets/Web3.svg';
 
 const Home: NextPage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
-
   return (
     <BodyWrapper>
       <>
@@ -42,29 +43,26 @@ const Home: NextPage = () => {
                 } flex flex-wrap items-center`}
               >
                 <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
-                  <h1
-                    className={`font-bold flex flex-wrap  lg:text-5xl ${
-                      isMediaMax1025px && 'text-3xl justify-center'
+                  <div
+                    className={`font-bold  lg:text-4xl ${
+                      isMediaMax1025px &&
+                      'text-2xl flex flex-col items-center justify-center'
                     } `}
                   >
                     Web3’s Simplest Way to
-                    <div id="flip">
-                      <div>File sharing</div>
-                      <div>Collaboration</div>
-                      <div>Coordination</div>
-                    </div>
-                  </h1>
-                  <h1>
-                    <a
-                      href=""
-                      className="typewrite"
-                      data-period="2000"
-                      data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'
-                    >
-                      <span className="wrap"></span>
-                    </a>
-                  </h1>
-                  <p className={`mt-4  ${isMediaMax1025px && 'text-center'}`}>
+                    <Typewriter
+                      options={{
+                        strings: ['Share Files', 'Collaborate', 'Coordinate'],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </div>
+                  <p
+                    className={`mt-4 ${
+                      isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'
+                    }`}
+                  >
                     On-chain people and communities deserve on-chain tools for
                     private communication and collaboration. We present to you
                     Fileverse Solo & Portal!
@@ -92,20 +90,20 @@ const Home: NextPage = () => {
             </div>
           </>
         </HeadSectionLayout>
-        <HeadSectionLayout noFooter={true}>
+        <HeadSectionLayout id="product" noFooter={true}>
           <>
             <div
-              id="product"
               className={`flex ${
                 isMediaMax1025px && 'flex-wrap'
-              } justify-center p-4`}
+              } justify-center items-center p-4`}
             >
               <ProductsDisplay
                 title={`Privacy-first file sharing, simplified.`}
                 CTAButtonLink={'https://beta.fileverse.io'}
                 CTAButtonTitle={'Launch App'}
                 displayImage={fileverseWindow}
-                badgeText={'Fileverse Solo'}
+                DbadgeText={'FILEVERSE SOLO'}
+                MbadgeText={'SOLO'}
                 description={`Your personal tool for quick, encrypted file sharing between blockchain addresses and beyond. Share files, create on-chain access rules, and even dedicated chat rooms. All in a few clicks.`}
               />
               {!isMediaMax1025px && (
@@ -122,10 +120,11 @@ const Home: NextPage = () => {
               <ProductsDisplay
                 title={`Like Google Workspace but on chain & encrypted.`}
                 CTAButtonLink={'https://fileverse.on.fleek.co/'}
-                badgeText={'Fileverse Portal'}
+                DbadgeText={'FILEVRSE PORTAL'}
+                MbadgeText={'PORTAL'}
                 CTAButtonTitle={'Create Your Portal'}
                 displayImage={fileverseWindow}
-                description={`Your Smart Contract. Your Keys. Your Data.                       Store and manage files, collaborate live on docs and
+                description={`Your Smart Contract. Your Keys. Your Data. Store and manage files, collaborate live on docs and
                 whiteboards, create private chat spaces, enable End-to-End
                 encryption, and much more. All on-chain. Your keys, your
                 Fileverse Portal.`}
@@ -145,7 +144,13 @@ const Home: NextPage = () => {
             <ContentLayout>
               <div className="">
                 <div className="flex w-full">
-                  <h2 className="font-bold ml-12 text-3xl">
+                  <h2
+                    className={`font-bold  ${
+                      isMediaMax1025px
+                        ? 'text-2xl text-center w-full'
+                        : 'text-3xl ml-12'
+                    }`}
+                  >
                     What you can expect
                   </h2>
                 </div>
@@ -187,17 +192,17 @@ const Home: NextPage = () => {
         <div className="flex flex-col mt-8 justify-center ">
           <div className="">
             <div className="p-4">
-              <h2 className="font-bold text-center text-3xl">
-                For whom Is Fileverse Solo and Filverse Portal?
-              </h2>
+              <SubHeading
+                text={'For whom Is Fileverse Solo and Filverse Portal?'}
+              />
             </div>
             <div className="flex justify-center">
               <div className="w-[90%]">
-                <div className=" flex flex-wrap pb-8 bg-yellow justify-center drop-shadow-lg rounded-md w-full">
+                <div className=" flex flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
                   <WhomCard
                     image={familyIcon}
                     title={'The Web3 Curious'}
-                    description={`                      Web3 is not only about speculation & finance. Try just
+                    description={`Web3 is not only about speculation & finance. Try just
                       sharing files peer-to-peer with no one snooping on and
                       selling your personal data.`}
                   />
@@ -205,14 +210,14 @@ const Home: NextPage = () => {
                   <WhomCard
                     image={Dao}
                     title={'DAOs'}
-                    description={`                      On-chain organisations deserve on-chain collaboration
+                    description={`On-chain organisations deserve on-chain collaboration
                       tools and analytics. Fileverse Portal is built for you!`}
                   />
 
                   <WhomCard
                     image={Nft}
                     title={`Crypto Natives`}
-                    description={`                      Think your wallet is just for buying and selling? Your
+                    description={`Think your wallet is just for buying and selling? Your
                       wallet is a powerful cryptography tool that unlocks new
                       forms of social coordination. Enter the Portal!`}
                   />
@@ -220,7 +225,7 @@ const Home: NextPage = () => {
                   <WhomCard
                     image={Web3}
                     title={`Web3 Companies`}
-                    description={`                      Start decentralising your collaboration and communication
+                    description={`Start decentralising your collaboration and communication
                       stack. Enjoy intuitive Web3 tools to share content, chat,
                       live edit, etc, with your teams.`}
                   />
@@ -228,7 +233,7 @@ const Home: NextPage = () => {
                   <WhomCard
                     image={Crypto}
                     title={`Content Creators`}
-                    description={`                      You're not going to gate that Subscriber-only article via
+                    description={`You're not going to gate that Subscriber-only article via
                       user accounts and database entries are you? Token-gate it
                       & start creating on-chain analytics for your content.`}
                   />
@@ -236,7 +241,7 @@ const Home: NextPage = () => {
                   <WhomCard
                     image={BlockChain}
                     title={'NFT Communities'}
-                    description={`                      On-chain communities deserve on-chain collaboration tools
+                    description={`On-chain communities deserve on-chain collaboration tools
                       and analytics. Try Filverse Portal for a real
                       decentralised and on-chain experience.`}
                   />
@@ -246,7 +251,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4">
-          <h2 className="font-bold text-2xl text-center">Recent Tweets</h2>
+          <SubHeading text="Recent Tweets" />
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
               <img src={Tweets.src} alt="tweet" />

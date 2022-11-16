@@ -10,7 +10,9 @@ interface ProductDisplayProps {
   CTAButtonTitle: string;
   description: string;
   displayImage: any;
-  badgeText: string;
+  MbadgeText?: string;
+  DbadgeText?: string;
+  paragraph?: string;
 }
 
 const ProductsDisplay = ({
@@ -19,37 +21,40 @@ const ProductsDisplay = ({
   CTAButtonTitle,
   description,
   displayImage,
-  badgeText,
+  MbadgeText,
+  DbadgeText,
+  paragraph,
 }: ProductDisplayProps) => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
-    <div className={`relative ${isMediaMax1025px ? 'w-full' : 'w-[50%]'}`}>
+    <div className={`relative ${isMediaMax1025px ? 'w-full mt-4' : 'w-[50%]'}`}>
       <div className="badge-overlay">
-        <span className="top-left badge">{badgeText}</span>
+        {isMediaMax1025px ? (
+          <span className="top-left badge">{MbadgeText}</span>
+        ) : (
+          <span className="top-left badge">{DbadgeText}</span>
+        )}
       </div>
       <div
-        className={` mt-20 ${
+        className={` mt-10 ${
           isMediaMax1025px && 'w-full'
         } flex flex-col relative items-center`}
       >
-        <div className={`${isMediaMax1025px ? 'w-full' : 'w-[70%]'}`}>
+        <div
+          className={`${
+            isMediaMax1025px
+              ? 'w-full flex flex-col justify-center items-center'
+              : 'w-[70%]'
+          }`}
+        >
           <h1
-            className={`font-bold text-3xl  ${
-              isMediaMax1025px && 'text-center'
+            className={`font-bold   ${
+              isMediaMax1025px ? ' text-2xl w-[80%] text-center' : 'text-3xl'
             } `}
           >
             {title}
           </h1>
-          <h1>
-            <a
-              href=""
-              className="typewrite"
-              data-period="2000"
-              data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'
-            >
-              <span className="wrap"></span>
-            </a>
-          </h1>
+          {paragraph && <p>{paragraph}</p>}
           <p className={`my-2  ${isMediaMax1025px && 'text-center'}`}>
             {description}
           </p>

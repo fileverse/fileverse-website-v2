@@ -20,7 +20,7 @@ const ListWithIconCard = ({
           whiteIconBackground ? 'bg-[#FFFFFF]' : 'bg-[#FFE60033]'
         } absolute h-9 w-9 flex justify-center items-center rounded-full p-2`}
       >
-        <img className="w-4" src={icon.src} alt="list icon" />
+        <img className="w-4 h-4" src={icon.src} alt="list icon" />
       </div>
       <div className="ml-12">
         {title && <h2 className="font-semibold">{title}</h2>}

@@ -27,7 +27,7 @@ const PrimaryButton = ({
           }
         }
       }}
-      className="bg-black flex items-center text-white px-6 py-2 rounded-md"
+      className="bg-black flex items-center text-white px-6 py-4 rounded-md"
     >
       {title}
       {icon && (
