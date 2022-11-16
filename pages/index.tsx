@@ -198,7 +198,7 @@ const Home: NextPage = () => {
             </div>
             <div className="flex justify-center">
               <div className="w-[90%]">
-                <div className=" flex flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
+                <div className=" flex pb-8 flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
                   <WhomCard
                     image={familyIcon}
                     title={'The Web3 Curious'}
