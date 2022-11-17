@@ -16,16 +16,18 @@ import ProductsDisplay from '../components/ProductsDisplay';
 import SectionLayout from '../components/SectionLayout';
 import SubHeading from '../components/SubHeading';
 import WhomCard from '../components/WhomCard';
+import banner from '../public/assets/banner.svg';
 import BlockChain from '../public/assets/BlockChain.svg';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.svg';
 import Dao from '../public/assets/Dao.svg';
 import familyIcon from '../public/assets/familyIcon.svg';
-import fileverseWindow from '../public/assets/fileSampleImage.svg';
 import filverseVase from '../public/assets/fileVase.svg';
+import fileverseWindow from '../public/assets/fileverseWindow.svg';
 import global from '../public/assets/global.svg';
 import Nft from '../public/assets/Nft.svg';
 import padLock from '../public/assets/padlock.svg';
+import solo from '../public/assets/solo.svg';
 import Tweets from '../public/assets/Tweets.svg';
 import Web3 from '../public/assets/Web3.svg';
 
@@ -93,20 +95,20 @@ const Home: NextPage = () => {
         <HeadSectionLayout id="product" noFooter={true}>
           <>
             <div
-              className={`flex ${
+              className={`flex mt-[4.5vh] lg:w-[90%] ${
                 isMediaMax1025px && 'flex-wrap'
-              } justify-center items-center p-4`}
+              } justify-center items-center lg:p-4`}
             >
               <ProductsDisplay
-                title={`Privacy-first file sharing, simplified.`}
+                productName={`Fileverse Solo`}
                 CTAButtonLink={'https://beta.fileverse.io'}
                 CTAButtonTitle={'Launch App'}
-                displayImage={fileverseWindow}
-                DbadgeText={'FILEVERSE SOLO'}
-                MbadgeText={'SOLO'}
-                description={`Your personal tool for quick, encrypted file sharing between blockchain addresses and beyond. Share files, create on-chain access rules, and even dedicated chat rooms. All in a few clicks.`}
+                displayImage={solo}
+                firstDescription={'Private-first file sharing, simplified.'}
+                secondDescription={'Share private files with or without wallet'}
+                CTADescription={'Private. Decentralised. Encrypted.'}
               />
-              {!isMediaMax1025px && (
+              {/* {!isMediaMax1025px && (
                 <div className="h-full flex items-center justify-center">
                   <div className="relative w-[50px] h-[500px]">
                     <div className="line"></div>
@@ -115,19 +117,19 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
 
               <ProductsDisplay
-                title={`Like Google Workspace but on chain & encrypted.`}
+                background={'bg-white'}
+                productName={`Fileverse Portal`}
                 CTAButtonLink={'https://fileverse.on.fleek.co/'}
-                DbadgeText={'FILEVRSE PORTAL'}
-                MbadgeText={'PORTAL'}
+                firstDescription={
+                  'Like Google Workspace, but on-chain, encrypted, and privacy-enchancing'
+                }
                 CTAButtonTitle={'Create Your Portal'}
-                displayImage={fileverseWindow}
-                description={`Your Smart Contract. Your Keys. Your Data. Store and manage files, collaborate live on docs and
-                whiteboards, create private chat spaces, enable End-to-End
-                encryption, and much more. All on-chain. Your keys, your
-                Fileverse Portal.`}
+                CTAbuttonDisabled={true}
+                displayImage={banner}
+                CTADescription={'Communicate. Collabrate. Coordinate.'}
               />
             </div>
           </>
@@ -173,7 +175,7 @@ const Home: NextPage = () => {
                     title="Coordination"
                     icon={global}
                     paragraph={
-                      'Blockchains are like community computers, enabling you to coordinate globally with people. Fileverse shows you how. Jump into the space of permissionless coordinating & collaboration'
+                      'Blockchains are like community computers, enabling you to coordinate globally with people. Fileverse shows you how. Jump into the space of permissionless coordinating & collaboration.'
                     }
                   />
                   <div
@@ -197,7 +199,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="flex justify-center">
-              <div className="w-[90%]">
+              <div className="w-[75%]">
                 <div className=" flex pb-8 flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
                   <WhomCard
                     image={familyIcon}

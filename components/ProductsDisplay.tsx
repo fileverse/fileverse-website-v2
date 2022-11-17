@@ -5,69 +5,88 @@ import { useMediaQuery } from '@mui/material';
 import PrimaryButton from './PrimaryButton';
 
 interface ProductDisplayProps {
-  title: string;
+  productName: string;
   CTAButtonLink: string;
   CTAButtonTitle: string;
-  description: string;
+  firstDescription: string;
   displayImage: any;
-  MbadgeText?: string;
-  DbadgeText?: string;
-  paragraph?: string;
+  secondDescription?: string;
+  CTADescription: string;
+  CTAbuttonDisabled?: boolean;
+  background?: string;
 }
 
 const ProductsDisplay = ({
-  title,
+  background,
+  productName,
   CTAButtonLink,
   CTAButtonTitle,
-  description,
+  firstDescription,
+  secondDescription,
+  CTADescription,
   displayImage,
-  MbadgeText,
-  DbadgeText,
-  paragraph,
+  CTAbuttonDisabled,
 }: ProductDisplayProps) => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
-    <div className={`relative ${isMediaMax1025px ? 'w-full mt-4' : 'w-[50%]'}`}>
-      <div className="badge-overlay">
-        {isMediaMax1025px ? (
-          <span className="top-left badge">{MbadgeText}</span>
-        ) : (
-          <span className="top-left badge">{DbadgeText}</span>
-        )}
-      </div>
+    <div
+      className={` ${
+        background || 'bg-yellow border border-black'
+      } m-2 flex flex-col items-center justify-center rounded-md  ${
+        isMediaMax1025px ? 'w-full mt-4' : 'w-[50%]'
+      }`}
+    >
       <div
-        className={` mt-10 ${
+        className={`p-4 ${
           isMediaMax1025px && 'w-full'
         } flex flex-col relative items-center`}
       >
-        <div
-          className={`${
-            isMediaMax1025px
-              ? 'w-full flex flex-col justify-center items-center'
-              : 'w-[70%]'
-          }`}
-        >
+        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[400px]'}`}>
           <h1
-            className={`font-bold   ${
-              isMediaMax1025px ? ' text-2xl w-[80%] text-center' : 'text-3xl'
+            className={`mb-4 text-center font-bold ${
+              isMediaMax1025px ? ' text-2xl' : 'text-3xl'
             } `}
           >
-            {title}
+            {productName}
           </h1>
-          {paragraph && <p>{paragraph}</p>}
-          <p className={`my-2  ${isMediaMax1025px && 'text-center'}`}>
-            {description}
+          <p
+            className={` ${
+              isMediaMax1025px ? 'text-base' : 'text-xl'
+            } text-center font-bold`}
+          >
+            {firstDescription}
           </p>
-          <div className={`mt-4 flex justify-center `}>
+          <p
+            className={` ${
+              isMediaMax1025px ? 'text-base' : 'text-xl'
+            } text-center font-bold`}
+          >
+            {secondDescription}
+          </p>
+        </div>
+        <div>
+          <div className={`my-4 flex justify-center `}>
             <PrimaryButton
+              isDisable={CTAbuttonDisabled}
               openNewTab={true}
               title={CTAButtonTitle}
               linkTo={CTAButtonLink}
             />
           </div>
+          <p
+            className={`${
+              isMediaMax1025px ? 'text-sm' : 'text-base'
+            }  font-bold`}
+          >
+            {CTADescription}
+          </p>
         </div>
-        <div className={`w-[70%] mt-4 flex justify-center`}>
-          <img className="" src={displayImage.src} alt="fileverse-window" />
+        <div className={`mt-4 items-center flex justify-center`}>
+          <img
+            className={` ${isMediaMax1025px ? 'h-full' : 'h-[400px]'}`}
+            src={displayImage.src}
+            alt="fileverse-window"
+          />
         </div>
       </div>
     </div>

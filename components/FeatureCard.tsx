@@ -13,7 +13,7 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
     <div
       className={`bg-[#FFFCE7] lg:w-[500px]  flex items-center flex-none ${
         isMediaMax1025px && 'w-[300px]'
-      } rounded-ld p-4 m-4 `}
+      } rounded-ld py-8 px-4 m-4 `}
     >
       <div className={``}>
         <div className="items-center flex justify-center">

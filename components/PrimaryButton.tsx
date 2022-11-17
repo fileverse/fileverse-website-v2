@@ -8,6 +8,7 @@ interface ButtonType {
   icon?: any;
   iconStyles?: string;
   openNewTab?: boolean;
+  isDisable?: boolean;
 }
 const PrimaryButton = ({
   title,
@@ -15,19 +16,24 @@ const PrimaryButton = ({
   openNewTab,
   iconStyles,
   linkTo,
+  isDisable,
 }: ButtonType) => {
   const router = useRouter();
   return (
     <button
       onClick={() => {
-        if (linkTo) {
+        if (linkTo && !isDisable) {
           if (openNewTab) window.open(linkTo, '_blank');
           else {
             router.push(linkTo);
           }
         }
       }}
-      className="bg-black flex items-center text-white px-6 py-4 rounded-md"
+      className={`${
+        isDisable
+          ? ' bg-gray-200 cursor-not-allowed'
+          : 'bg-black cursor-pointer'
+      } flex items-center text-white px-6 py-4 rounded-md`}
     >
       {title}
       {icon && (

@@ -71,11 +71,21 @@ const HeadNav = () => {
           onClick={() => router.push('/')}
         >
           <img
-            className={`${isMediaMax1025px && 'h-8 w-8'} lg:h-12 lg:w-12 mr-2`}
+            className={`${isMediaMax1025px && 'h-8 w-8'} ${
+              typeof window !== 'undefined' &&
+              window.location.pathname !== '/' &&
+              'cursor-pointer'
+            } lg:h-12 lg:w-12 mr-2`}
             alt="fileverse-logo"
             src={fileverseLogo.src}
           />
-          <span className={`font-xx ${isMediaMax1025px && 'text-xs'}`}>
+          <span
+            className={`${
+              typeof window !== 'undefined' &&
+              window.location.pathname !== '/' &&
+              'cursor-pointer'
+            } font-xx ${isMediaMax1025px && 'text-xs'}`}
+          >
             Fileverse
           </span>
         </div>
@@ -124,7 +134,7 @@ const HeadNav = () => {
 
           <Slide direction="down" in={menu} container={dropDownButton.current}>
             <div
-              className={`absolute rounded-b-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
+              className={`absolute py-4 rounded-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
             >
               <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">

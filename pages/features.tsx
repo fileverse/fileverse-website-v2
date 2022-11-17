@@ -10,14 +10,12 @@ import ImageLayout from '../components/ImageLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
-import AccessToken from '../public/assets/AccessToken.svg';
 import chatWindow from '../public/assets/chatWindow.svg';
+import featureHero from '../public/assets/feature-hero.svg';
 import fileTypes from '../public/assets/fileTypes.svg';
-import whyConnectWindow from '../public/assets/MainImage.png';
-import profileWindow from '../public/assets/profileWindow.svg';
 import subdomainWindow from '../public/assets/subdomainWindow.svg';
 import tick from '../public/assets/tick.svg';
-import dropDownArrow from '../public/assets/whiteArrow.svg';
+import tokenGating from '../public/assets/tokengating.svg';
 
 const Features = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -42,8 +40,8 @@ const Features = () => {
                     Google Workspace.
                   </h2>
                   <p
-                    className={`mt-4 w-[80%]   ${
-                      isMediaMax1025px && 'text-center'
+                    className={`mt-4    ${
+                      isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'
                     }`}
                   >
                     Fileverse is a simple on-ramp to leverage the full extent of
@@ -57,7 +55,7 @@ const Features = () => {
                   >
                     <PrimaryButton
                       title={'Discover More'}
-                      linkTo={'#features'}
+                      linkTo={'#feature'}
                     />
                   </div>
                 </div>
@@ -67,19 +65,21 @@ const Features = () => {
                   } flex items-center justify-center relative`}
                 >
                   <div className="relative">
-                    <img src={whyConnectWindow.src} alt="fileverse-window" />
+                    <img src={featureHero.src} alt="fileverse-window" />
                   </div>
                 </div>
               </div>
             </div>
           </>
         </HeadSectionLayout>
-        {/* Subdomain */}
+        {/* portal */}
         <SectionLayout>
-          <div id="features" className={` lg:flex pt-[5vh]`}>
+          <div id="feature" className={` lg:flex pt-[7vh]`}>
             <ImageLayout>
               <img
-                className="h-full"
+                className={`${
+                  isMediaMax1025px ? 'h-full' : 'w-[580px] h-[450px]'
+                }`}
                 src={subdomainWindow.src}
                 alt="subdomain-window"
               />
@@ -127,15 +127,14 @@ const Features = () => {
             </ContentLayout>
           </div>
         </SectionLayout>
-
-        {/* Chat */}
+        {/* custom token */}
         <SectionLayout>
           <div className={`lg:flex`}>
             {isMediaMax1025px && (
               <ImageLayout>
                 <img
                   className="h-full"
-                  src={chatWindow.src}
+                  src={tokenGating.src}
                   alt="fileverse-wallet-vase"
                 />
               </ImageLayout>
@@ -150,54 +149,116 @@ const Features = () => {
                         : 'text-3xl ml-12'
                     }`}
                   >
-                    Chat Rooms & Spaces
+                    Custom access-tokens
                   </h2>
                 </div>
                 <div className="w-full">
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Gather friends, collaborators or communities  in one place for encrypted discussions stored on p2p networks. No servers, no centralisation. Your safe chat space.'
+                      'Create a custom access-token and send it to any EVM addresses. This gives the receivers access to your selected files, chat rooms, collaborative documents, etc.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Chat rooms: any file URL you share has its very own encrypted chat space. Anyone that has access to your file can directly chat in this room with you and other visitors.'
+                      'Let new followers or members or your Fileverse Portal mint a membership NFT (POAP) to get access to some exclusive content and experiences.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Chat spaces: coming soon on your Fileverse Portal. Your space to update and discuss with all your members that have access to your Fileverse Portal.'
+                      'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!'
                     }
                   />
                 </div>
               </div>
             </ContentLayout>
             {!isMediaMax1025px && (
-              <div
-                className={` lg:w-[50%] lg:mr-8 ${
-                  isMediaMax1025px && 'h-[25rem]'
-                } flex items-center justify-center`}
-              >
+              <ImageLayout>
                 <img
-                  className="h-full"
-                  src={chatWindow.src}
+                  className="w-[580px] h-[450px]"
+                  src={tokenGating.src}
                   alt="fileverse-wallet-vase"
                 />
-              </div>
+              </ImageLayout>
             )}
           </div>
         </SectionLayout>
+
         <FeaturesSection />
-        <div className="bg-yellow py-4">
-          {/* File Types  */}
+        <div className="bg-yellow mt-8 py-8">
+          {/* chat */}
           <SectionLayout marginTop="mt-0">
+            <div className={`lg:flex`}>
+              {isMediaMax1025px && (
+                <ImageLayout>
+                  <img
+                    className={`${
+                      isMediaMax1025px ? 'h-full' : 'w-[580px] h-[450px]'
+                    }`}
+                    src={chatWindow.src}
+                    alt="fileverse-wallet-vase"
+                  />
+                </ImageLayout>
+              )}
+              <ContentLayout>
+                <div className="">
+                  <div className="flex w-full">
+                    <h2
+                      className={`font-bold  ${
+                        isMediaMax1025px
+                          ? 'text-2xl text-center w-full'
+                          : 'text-3xl ml-12'
+                      }`}
+                    >
+                      Chat Rooms & Spaces
+                    </h2>
+                  </div>
+                  <div className="w-full">
+                    <ListWithIconCard
+                      icon={tick}
+                      whiteIconBackground={true}
+                      paragraph={
+                        'Gather friends, collaborators or communities  in one place for encrypted discussions stored on p2p networks. No servers, no centralisation. Your safe chat space.'
+                      }
+                    />
+                    <ListWithIconCard
+                      icon={tick}
+                      whiteIconBackground={true}
+                      paragraph={
+                        'Chat rooms: any file URL you share has its very own encrypted chat space. Anyone that has access to your file can directly chat in this room with you and other visitors.'
+                      }
+                    />
+                    <ListWithIconCard
+                      icon={tick}
+                      whiteIconBackground={true}
+                      paragraph={
+                        'Chat spaces: coming soon on your Fileverse Portal. Your space to update and discuss with all your members that have access to your Fileverse Portal.'
+                      }
+                    />
+                  </div>
+                </div>
+              </ContentLayout>
+              {!isMediaMax1025px && (
+                <ImageLayout>
+                  <img
+                    className={`${
+                      isMediaMax1025px ? 'h-full' : 'w-[580px] h-[450px]'
+                    }`}
+                    src={chatWindow.src}
+                    alt="fileverse-wallet-vase"
+                  />
+                </ImageLayout>
+              )}
+            </div>
+          </SectionLayout>
+          {/* any file */}
+          <SectionLayout>
             <div className={` lg:flex`}>
               <ImageLayout>
                 <img
-                  className="h-full"
+                  className={`w-[580px] h-[450px]`}
                   src={fileTypes.src}
                   alt="fileverse-wallet-vase"
                 />
@@ -242,143 +303,6 @@ const Features = () => {
               </ContentLayout>
             </div>
           </SectionLayout>
-          {/* Access Token */}
-          <SectionLayout>
-            <div className={`lg:flex`}>
-              {isMediaMax1025px && (
-                <ImageLayout>
-                  <img
-                    className="h-full"
-                    src={AccessToken.src}
-                    alt="fileverse-wallet-vase"
-                  />
-                </ImageLayout>
-              )}
-              <ContentLayout>
-                <div className="">
-                  <div className="flex w-full">
-                    <h2
-                      className={`font-bold  ${
-                        isMediaMax1025px
-                          ? 'text-2xl text-center w-full'
-                          : 'text-3xl ml-12'
-                      }`}
-                    >
-                      Custom access-tokens
-                    </h2>
-                  </div>
-                  <div className="w-full">
-                    <ListWithIconCard
-                      icon={tick}
-                      whiteIconBackground={true}
-                      paragraph={
-                        'Create a custom access-token and send it to any EVM addresses. This gives the receivers access to your selected files, chat rooms, collaborative documents, etc.'
-                      }
-                    />
-                    <ListWithIconCard
-                      icon={tick}
-                      whiteIconBackground={true}
-                      paragraph={
-                        'Let new followers or members or your Fileverse Portal mint a membership NFT (POAP) to get access to some exclusive content and experiences.'
-                      }
-                    />
-                    <ListWithIconCard
-                      icon={tick}
-                      whiteIconBackground={true}
-                      paragraph={
-                        'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!'
-                      }
-                    />
-                  </div>
-                </div>
-              </ContentLayout>
-              {!isMediaMax1025px && (
-                <ImageLayout>
-                  <img
-                    className="h-full"
-                    src={AccessToken.src}
-                    alt="fileverse-wallet-vase"
-                  />
-                </ImageLayout>
-              )}
-            </div>
-          </SectionLayout>
-        </div>
-        {/* Profile */}
-        <SectionLayout>
-          <div className={`lg:flex`}>
-            <ImageLayout>
-              <img
-                className="h-full"
-                src={profileWindow.src}
-                alt="fileverse-wallet-vase"
-              />
-            </ImageLayout>
-            <ContentLayout>
-              <div className="">
-                <div className="flex w-full">
-                  <h2
-                    className={`font-bold  ${
-                      isMediaMax1025px
-                        ? 'text-2xl text-center w-full'
-                        : 'text-3xl ml-12'
-                    }`}
-                  >
-                    Profile
-                  </h2>
-                </div>
-                <div className="w-full">
-                  <ListWithIconCard
-                    icon={tick}
-                    paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-                    }
-                  />
-                  <ListWithIconCard
-                    icon={tick}
-                    paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-                    }
-                  />
-                  <ListWithIconCard
-                    icon={tick}
-                    paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-                    }
-                  />
-                  <ListWithIconCard
-                    icon={tick}
-                    paragraph={
-                      'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-                    }
-                  />
-                </div>
-              </div>
-            </ContentLayout>
-          </div>
-        </SectionLayout>
-        {/* More Feature */}
-        <div className="mt-8">
-          <div className="flex justify-center items-center">
-            <h2
-              className={`font-bold  ${
-                isMediaMax1025px
-                  ? 'text-2xl text-center w-full'
-                  : 'text-3xl ml-12'
-              }`}
-            >
-              More features to come
-            </h2>
-          </div>
-          <div className="bg-yellow p-8 flex justify-center">
-            <PrimaryButton
-              title="Go to Dapp"
-              icon={dropDownArrow}
-              openNewTab={true}
-              iconStyles="ml-4"
-              linkTo="https://beta.fileverse.io/"
-            />
-          </div>
         </div>
       </>
     </BodyWrapper>

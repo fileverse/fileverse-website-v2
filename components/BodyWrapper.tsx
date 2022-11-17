@@ -18,7 +18,7 @@ const BodyWrapper = ({ children }: BodyType) => {
       <HeadNav />
       <div className="">{children}</div>
 
-      <div className="p-4 mt-4">
+      <div className="p-4 mt-8">
         <h2 className="font-bold text-2xl text-center">Where to find us?</h2>
         <div className="w-full flex justify-center  mt-4 items-center">
           <div className={`flex flex-wrap justify-center items-center`}>

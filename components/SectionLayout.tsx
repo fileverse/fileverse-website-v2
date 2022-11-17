@@ -7,7 +7,7 @@ interface LayoutType {
 }
 const SectionLayout = ({ children, marginTop }: LayoutType) => {
   return (
-    <div className={` ${marginTop || 'mt-8'} w-[100vw] flex justify-center`}>
+    <div className={` ${marginTop || 'mt-12'} w-[100vw] flex justify-center`}>
       <div className="flex w-[90vw] justify-center">{children}</div>
     </div>
   );
