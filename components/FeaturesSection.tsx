@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { useMediaQuery } from '@mui/material';
 
 import threeDbeauty from '../public/assets/3dbeauty.svg';
-import accessToken from '../public/assets/access-token.svg';
+import accessToken from '../public/assets/access-token.png';
 import chatWindow from '../public/assets/chatWindow.svg';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileTypes from '../public/assets/fileTypes.svg';
@@ -126,7 +126,7 @@ const FeaturesSection = () => {
               <FeatureCard
                 image={subdomainWindow}
                 title={'Live collaboration '}
-                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!"
+                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!."
               />
             </>
           </div>

@@ -11,7 +11,7 @@ const WhomCard = ({ image, title, description }: WhomCardProps) => {
       <div className="flex justify-center">
         <img className="w-32" src={image.src} alt={title} />
       </div>
-      <h3 className="text-center font-semibold">{title}</h3>
+      <h3 className="text-center text-xl font-semibold">{title}</h3>
       <p className="text-center">{description}</p>
     </div>
   );

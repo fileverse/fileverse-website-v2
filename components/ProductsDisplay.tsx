@@ -32,7 +32,7 @@ const ProductsDisplay = ({
     <div
       className={` ${
         background || 'bg-yellow border border-black'
-      } m-2 flex flex-col items-center justify-center rounded-md  ${
+      } m-2 flex py-8 flex-col items-center justify-center rounded-md  ${
         isMediaMax1025px ? 'w-full mt-4' : 'w-[50%]'
       }`}
     >
@@ -41,26 +41,18 @@ const ProductsDisplay = ({
           isMediaMax1025px && 'w-full'
         } flex flex-col relative items-center`}
       >
-        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[400px]'}`}>
+        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[300px]'}`}>
           <h1
-            className={`mb-4 text-center font-bold ${
-              isMediaMax1025px ? ' text-2xl' : 'text-3xl'
+            className={` text-center font-bold ${
+              isMediaMax1025px ? ' text-2xl' : 'text-4xl'
             } `}
           >
             {productName}
           </h1>
-          <p
-            className={` ${
-              isMediaMax1025px ? 'text-base' : 'text-xl'
-            } text-center font-bold`}
-          >
+          <p className={` ${isMediaMax1025px ? 'text-base' : ''} text-center `}>
             {firstDescription}
           </p>
-          <p
-            className={` ${
-              isMediaMax1025px ? 'text-base' : 'text-xl'
-            } text-center font-bold`}
-          >
+          <p className={` ${isMediaMax1025px ? 'text-base' : ''} text-center `}>
             {secondDescription}
           </p>
         </div>
@@ -83,7 +75,7 @@ const ProductsDisplay = ({
         </div>
         <div className={`mt-4 items-center flex justify-center`}>
           <img
-            className={` ${isMediaMax1025px ? 'h-full' : 'h-[400px]'}`}
+            className={` ${isMediaMax1025px ? 'h-full' : 'h-[300px]'}`}
             src={displayImage.src}
             alt="fileverse-window"
           />

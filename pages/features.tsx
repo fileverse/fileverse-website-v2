@@ -107,13 +107,13 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Access management: you have a variety of options to restrict or open access to your Fileverse Portal and its content. Public, private and/or token enabled, the choice is yours'
+                      'Access management: you have a variety of options to restrict or open access to your Fileverse Portal and its content. Public, private and/or token enabled, the choice is yours.'
                     }
                   />
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      ' End-to-end encryption: you own all the keys to your Portal, including your end-to-end encryption keys for file sharing with your members!'
+                      ' End-to-end encryption: you own all the keys to your Portal, including your end-to-end encryption keys for file sharing with your members!.'
                     }
                   />
                   <ListWithIconCard
@@ -149,7 +149,7 @@ const Features = () => {
                         : 'text-3xl ml-12'
                     }`}
                   >
-                    Custom access-tokens
+                    Custom Access-Tokens
                   </h2>
                 </div>
                 <div className="w-full">
@@ -168,7 +168,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!'
+                      'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!.'
                     }
                   />
                 </div>

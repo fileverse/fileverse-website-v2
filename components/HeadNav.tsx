@@ -136,9 +136,14 @@ const HeadNav = () => {
             <div
               className={`absolute py-4 rounded-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
             >
-              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
+              <Link href={''} passHref>
+                <a className="h-[34px] cursor-not-allowed flex text-gray-400 items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
+                  Fileverse Portal
+                </a>
+              </Link>
+              <Link href={'https://beta.fileverse.io/'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Why fileverse
+                  Fileverse Solo
                 </a>
               </Link>
               <Link href={'/features'} passHref>
@@ -146,9 +151,9 @@ const HeadNav = () => {
                   Features
                 </a>
               </Link>
-              <Link href={'https://beta.fileverse.io/'} passHref>
-                <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 ">
-                  Visit Dapp
+              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
+                <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom">
+                  Why Fileverse
                 </a>
               </Link>
             </div>
@@ -175,12 +180,25 @@ const HeadNav = () => {
                 if (html) html.classList.remove('overflow-y-hidden');
                 setSideMenu(false);
               }}
-              className=" py-2 "
+              className=" py-2 cursor-not-allowed
+              text-gray-400 "
             >
-              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
-                <a>Why fileverse</a>
+              <Link href={''} passHref>
+                <a>Fileverse Portal</a>
               </Link>
             </div>
+            <div
+              onClick={() => {
+                if (html) html.classList.remove('overflow-y-hidden');
+                setSideMenu(false);
+              }}
+              className=" py-2 "
+            >
+              <Link href={'https://beta.fileverse.io'} passHref>
+                <a>Fileverse Solo</a>
+              </Link>
+            </div>
+
             <div
               onClick={() => {
                 if (html) html.classList.remove('overflow-y-hidden');
@@ -197,10 +215,10 @@ const HeadNav = () => {
                 if (html) html.classList.remove('overflow-y-hidden');
                 setSideMenu(false);
               }}
-              className="py-2"
+              className=" py-2 "
             >
-              <Link href={'https://beta.fileverse.io/'} passHref>
-                <a>Visit Dapp</a>
+              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
+                <a>Why Fileverse</a>
               </Link>
             </div>
           </div>

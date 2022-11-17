@@ -67,7 +67,7 @@ const Home: NextPage = () => {
                   >
                     On-chain people and communities deserve on-chain tools for
                     private communication and collaboration. We present to you
-                    Fileverse Solo & Portal!
+                    Fileverse Solo & Fileverse Portal!
                   </p>
                   <div
                     className={`mt-4  ${
@@ -183,7 +183,7 @@ const Home: NextPage = () => {
                       isMediaMax1025px && 'flex justify-center'
                     }`}
                   >
-                    <PrimaryButton title="Learn More" />
+                    <PrimaryButton linkTo="/features" title="Learn More" />
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const Home: NextPage = () => {
           <div className="">
             <div className="p-4">
               <SubHeading
-                text={'For whom Is Fileverse Solo and Filverse Portal?'}
+                text={'For whom is Fileverse Solo and Filverse Portal?'}
               />
             </div>
             <div className="flex justify-center">
