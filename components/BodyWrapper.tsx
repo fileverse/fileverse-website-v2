@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Gitcoin from '../public/assets/gitcoin.svg';
@@ -25,8 +26,9 @@ const BodyWrapper = ({ children }: BodyType) => {
             <Link href={'https://twitter.com/fileverse'}>
               <a target="_blank" rel="noopener noreferrer" className="h-full">
                 <div className={`bg-[#2AA8E01A] rounded-md m-4 p-8`}>
-                  <img
-                    className="w-16 h-16"
+                  <Image
+                    width="64"
+                    height="64"
                     src={Twitter.src}
                     alt="twitter icon"
                   />
@@ -38,8 +40,9 @@ const BodyWrapper = ({ children }: BodyType) => {
             <Link href={'https://github.com/fileverse'}>
               <a target="_blank" rel="noopener noreferrer" className="h-full">
                 <div className={`bg-[#FFDF0A1A] rounded-md m-4 p-8`}>
-                  <img
-                    className="w-16 h-16"
+                  <Image
+                    width="64"
+                    height="64"
                     src={Github.src}
                     alt="github icon"
                   />
@@ -55,10 +58,11 @@ const BodyWrapper = ({ children }: BodyType) => {
             >
               <a target="_blank" rel="noopener noreferrer" className="h-full">
                 <div className={`bg-[#B959FF1A] rounded-md m-4 p-8`}>
-                  <img
-                    className="w-16 h-16"
+                  <Image
+                    width="64"
+                    height="64"
                     src={Radicle.src}
-                    alt="radicle icon"
+                    alt="radicle"
                   />
                 </div>
                 <p className="text-center font-semibold">{'Radicle'}</p>
@@ -71,8 +75,9 @@ const BodyWrapper = ({ children }: BodyType) => {
             >
               <a target="_blank" rel="noopener noreferrer" className="h-full">
                 <div className={`bg-[#0FCE7C1A] rounded-md m-4 p-8`}>
-                  <img
-                    className="w-16 h-16"
+                  <Image
+                    width="64"
+                    height="64"
                     src={Gitcoin.src}
                     alt="gitcoin icon"
                   />
@@ -83,7 +88,12 @@ const BodyWrapper = ({ children }: BodyType) => {
             <Link href={'mailto:hello@fileverse.io'}>
               <a target="_blank" rel="noopener noreferrer" className="h-full">
                 <div className={`bg-[#FFDF0A1A] rounded-md m-4 p-8`}>
-                  <img className="w-16 h-16" src={email.src} alt="email icon" />
+                  <Image
+                    width="64"
+                    height="64"
+                    src={email.src}
+                    alt="email icon"
+                  />
                 </div>
                 <p className="text-center font-semibold">{'Email'}</p>
               </a>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Slide, useMediaQuery } from '@mui/material';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -115,18 +116,20 @@ const HeadNav = () => {
             >
               <p className="mr-4">Show me more</p>
               {top ? (
-                <img
-                  className={`w-4 h-4 ${
-                    menu ? 'rotate-[-90deg]' : ' rotate-90'
-                  }`}
+                <Image
+                  className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
                   alt="white-dropdown-arrow"
                   src={whiteArrow.src}
+                  width="16"
+                  height="16"
                 />
               ) : (
-                <img
+                <Image
                   className={`w-4 h-4 ${menu ? 'rotate-[-180deg]' : ''}`}
                   src={dropDownArrow.src}
                   alt="black-dropdown-arrow"
+                  width={'16'}
+                  height={'16'}
                 />
               )}
             </button>

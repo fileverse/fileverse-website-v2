@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
+import Image from 'next/image';
 
 import BodyWrapper from '../components/BodyWrapper';
 import ContentLayout from '../components/ContentLayout';
@@ -257,8 +258,9 @@ const Features = () => {
           <SectionLayout>
             <div className={` lg:flex`}>
               <ImageLayout>
-                <img
-                  className={`w-[580px] h-[450px]`}
+                <Image
+                  width={'580'}
+                  height={'450'}
                   src={fileTypes.src}
                   alt="fileverse-wallet-vase"
                 />
