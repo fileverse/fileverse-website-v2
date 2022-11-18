@@ -30,6 +30,7 @@ import filverseVase from '../public/assets/fileVase.svg';
 import fileverseWindow from '../public/assets/fileverseWindow.svg';
 import global from '../public/assets/global.svg';
 import gnosischain from '../public/assets/gnosischain.svg';
+import illuani from '../public/assets/illuan.svg';
 import michealAuroraReview from '../public/assets/micheal-aurora.svg';
 import Nft from '../public/assets/Nft.svg';
 import padLock from '../public/assets/padlock.svg';
@@ -259,14 +260,16 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4">
-          <SubHeading text="Recent Tweets" />
+          <SubHeading text="Fileverse on Twitter" />
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
-              <img src={filecoinReview.src} alt="tweet" />
               <img src={developerDaoReview.src} alt="tweet" />
+
+              <img src={adly.src} alt="tweet" />
+              <img src={illuani.src} alt="tweet" />
+              <img src={filecoinReview.src} alt="tweet" />
               <img src={eurion.src} alt="tweet" />
               <img src={michealAuroraReview.src} alt="tweet" />
-              <img src={adly.src} alt="tweet" />
               <img src={rajesh.src} alt="tweet" />
               <img src={gnosischain.src} alt="tweet" />
             </div>
