@@ -7,6 +7,7 @@ import accessToken from '../public/assets/access-token.png';
 import chatWindow from '../public/assets/chatWindow.svg';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileTypes from '../public/assets/fileTypes.svg';
+import subdomainWindow from '../public/assets/subdomainWindow.svg';
 import tokenGating from '../public/assets/tokengating.svg';
 import FeatureCard from './FeatureCard';
 import SectionLayout from './SectionLayout';
@@ -123,7 +124,7 @@ const FeaturesSection = () => {
                 text="Define the type and number of tokens (e.g. 1 CloneX) for existing on-chain groups to gain access to your file or chat room."
               />
               <FeatureCard
-                image={chatWindow}
+                image={subdomainWindow}
                 title={'Live collaboration '}
                 text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!."
               />
