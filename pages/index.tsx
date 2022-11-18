@@ -16,19 +16,25 @@ import ProductsDisplay from '../components/ProductsDisplay';
 import SectionLayout from '../components/SectionLayout';
 import SubHeading from '../components/SubHeading';
 import WhomCard from '../components/WhomCard';
+import adly from '../public/assets/adly.svg';
 import banner from '../public/assets/banner.svg';
 import BlockChain from '../public/assets/BlockChain.svg';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.svg';
 import Dao from '../public/assets/Dao.svg';
+import developerDaoReview from '../public/assets/developer_dao_review.svg';
+import eurion from '../public/assets/eurion.svg';
 import familyIcon from '../public/assets/familyIcon.svg';
+import filecoinReview from '../public/assets/filecoin-review.svg';
 import filverseVase from '../public/assets/fileVase.svg';
 import fileverseWindow from '../public/assets/fileverseWindow.svg';
 import global from '../public/assets/global.svg';
+import gnosischain from '../public/assets/gnosischain.svg';
+import michealAuroraReview from '../public/assets/micheal-aurora.svg';
 import Nft from '../public/assets/Nft.svg';
 import padLock from '../public/assets/padlock.svg';
+import rajesh from '../public/assets/rajesh.svg';
 import solo from '../public/assets/solo.svg';
-import Tweets from '../public/assets/Tweets.svg';
 import Web3 from '../public/assets/Web3.svg';
 
 const Home: NextPage = () => {
@@ -256,11 +262,13 @@ const Home: NextPage = () => {
           <SubHeading text="Recent Tweets" />
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
-              <img src={Tweets.src} alt="tweet" />
-              <img src={Tweets.src} alt="tweet" />
-              <img src={Tweets.src} alt="tweet" />
-              <img src={Tweets.src} alt="tweet" />
-              <img src={Tweets.src} alt="tweet" />
+              <img src={filecoinReview.src} alt="tweet" />
+              <img src={developerDaoReview.src} alt="tweet" />
+              <img src={eurion.src} alt="tweet" />
+              <img src={michealAuroraReview.src} alt="tweet" />
+              <img src={adly.src} alt="tweet" />
+              <img src={rajesh.src} alt="tweet" />
+              <img src={gnosischain.src} alt="tweet" />
             </div>
           </div>
         </div>
