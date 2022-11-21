@@ -143,7 +143,7 @@ const Home: NextPage = () => {
           <div className={`lg:flex`}>
             <ImageLayout>
               <img
-                className={`${isMediaMax1025px ? 'h-full' : 'w-[480px]'}`}
+                className={`${isMediaMax1025px ? '' : 'w-[480px]'}`}
                 src={filverseVase.src}
                 alt="fileverse-wallet-vase"
               />
