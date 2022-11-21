@@ -192,16 +192,14 @@ const Features = () => {
               {isMediaMax1025px && (
                 <ImageLayout>
                   <img
-                    className={`${
-                      isMediaMax1025px ? '' : 'w-[480px]'
-                    } border border-black`}
+                    className={`${isMediaMax1025px ? '' : 'w-[480px]'} `}
                     src={chatWindow.src}
                     alt="fileverse-wallet-vase"
                   />
                 </ImageLayout>
               )}
               <ContentLayout>
-                <div className=" border border-black">
+                <div className=" ">
                   <div className="flex w-full">
                     <h2
                       className={`font-bold  ${
