@@ -16,10 +16,10 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
       } rounded-ld py-8 px-4 m-4 `}
     >
       <div className={``}>
-        <div className="items-center flex justify-center">
+        <div className="items-center h-[250px] flex justify-center">
           <img
             src={image.src}
-            className="w-[380px]"
+            className={`w-[380px] ${isMediaMax1025px ? '' : 'h-full'}`}
             alt="fileverse-subdomain-window"
           />
         </div>

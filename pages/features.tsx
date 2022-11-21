@@ -77,7 +77,7 @@ const Features = () => {
           <div id="feature" className={` lg:flex items-center pt-[7vh]`}>
             <ImageLayout>
               <img
-                className={`${isMediaMax1025px ? '' : 'w-[480px]'}`}
+                className={`${!isMediaMax1025px && 'w-[480px]'}`}
                 src={subdomainWindow.src}
                 alt="subdomain-window"
               />
@@ -191,11 +191,7 @@ const Features = () => {
             <div className={`lg:flex  items-center`}>
               {isMediaMax1025px && (
                 <ImageLayout>
-                  <img
-                    className={`${isMediaMax1025px ? '' : 'w-[480px]'} `}
-                    src={chatWindow.src}
-                    alt="fileverse-wallet-vase"
-                  />
+                  <img src={chatWindow.src} alt="fileverse-wallet-vase" />
                 </ImageLayout>
               )}
               <ContentLayout>
@@ -239,9 +235,7 @@ const Features = () => {
               {!isMediaMax1025px && (
                 <ImageLayout>
                   <img
-                    className={`${
-                      isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
-                    }`}
+                    className="w-[480px]"
                     src={chatWindow.src}
                     alt="fileverse-wallet-vase"
                   />
@@ -256,7 +250,7 @@ const Features = () => {
                 <img
                   src={fileTypes.src}
                   alt="fileverse-wallet-vase"
-                  className="w-[480px]"
+                  className={`${!isMediaMax1025px && 'w-[480px]'}`}
                 />
               </ImageLayout>
               <ContentLayout>
