@@ -141,7 +141,7 @@ const HeadNav = () => {
             <div
               className={`absolute py-4 rounded-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
             >
-              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
+              <Link href={'/why-fileverse'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
                   Why Fileverse?
                 </a>
@@ -200,7 +200,7 @@ const HeadNav = () => {
             <img src={xicon.src} className="w-8" alt="x-icon" />
           </div>
           <div className="">
-            <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
+            <Link href={'/why-fileverse'} passHref>
               <div
                 onClick={() => {
                   if (html) html.classList.remove('overflow-y-hidden');
