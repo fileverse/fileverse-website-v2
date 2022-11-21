@@ -2,13 +2,13 @@ import React, { useRef, useState } from 'react';
 
 import { useMediaQuery } from '@mui/material';
 
-import threeDbeauty from '../public/assets/3dbeauty.svg';
+import threeDbeauty from '../public/assets/3dbeauty.png';
 import accessToken from '../public/assets/access-token.png';
-import chatWindow from '../public/assets/chatWindow.svg';
+import chatWindow from '../public/assets/chatWindow.png';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
-import fileTypes from '../public/assets/fileTypes.svg';
-import subdomainWindow from '../public/assets/subdomainWindow.svg';
-import tokenGating from '../public/assets/tokengating.svg';
+import fileTypes from '../public/assets/fileTypes.png';
+import subdomainWindow from '../public/assets/subdomainWindow.png';
+import tokenGating from '../public/assets/tokengating.png';
 import FeatureCard from './FeatureCard';
 import SectionLayout from './SectionLayout';
 

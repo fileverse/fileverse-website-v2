@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { Slide, useMediaQuery } from '@mui/material';
+import { Slide, Tooltip, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileverseLogo from '../public/assets/fileverse.svg';
+import newTabIcon from '../public/assets/gotoIcon.svg';
 import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
@@ -21,6 +22,7 @@ const HeadNav = () => {
   const hamburgerbar: any = useRef(null);
   const dropDownButton: any = useRef(null);
   const html = typeof window !== 'undefined' && document.querySelector('html');
+  const [newTabIconVisible, setNewTabIcon] = useState('');
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (isMediaMax1025px) {
@@ -139,14 +141,9 @@ const HeadNav = () => {
             <div
               className={`absolute py-4 rounded-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
             >
-              <Link href={''} passHref>
-                <a className="h-[34px] cursor-not-allowed flex text-gray-400 items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Fileverse Portal
-                </a>
-              </Link>
-              <Link href={'https://beta.fileverse.io/'} passHref>
+              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Fileverse Solo
+                  Why Fileverse?
                 </a>
               </Link>
               <Link href={'/features'} passHref>
@@ -154,11 +151,36 @@ const HeadNav = () => {
                   Features
                 </a>
               </Link>
-              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
-                <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom">
-                  Why Fileverse
+              <Link href={'https://beta.fileverse.io/'} passHref>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onMouseEnter={() => setNewTabIcon('SOLO')}
+                  onMouseLeave={() => setNewTabIcon('')}
+                  className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b"
+                >
+                  Fileverse Solo
+                  {newTabIconVisible === 'SOLO' && (
+                    <img
+                      className="ml-2 w-4"
+                      src={newTabIcon.src}
+                      alt="new tab icon"
+                    />
+                  )}
                 </a>
               </Link>
+              <Tooltip title="Coming Soon" placement="right">
+                <div className="h-[34px] cursor-not-allowed flex text-gray-400 items-center mx-[12px] px-2 py-4 border-fade border-bottom ">
+                  Fileverse Portal
+                  {newTabIconVisible === 'PORTAL' && (
+                    <img
+                      className="ml-2 w-4"
+                      src={newTabIcon.src}
+                      alt="new tab icon"
+                    />
+                  )}
+                </div>
+              </Tooltip>
             </div>
           </Slide>
         </div>
@@ -178,52 +200,51 @@ const HeadNav = () => {
             <img src={xicon.src} className="w-8" alt="x-icon" />
           </div>
           <div className="">
-            <div
-              onClick={() => {
-                if (html) html.classList.remove('overflow-y-hidden');
-                setSideMenu(false);
-              }}
-              className=" py-2 cursor-not-allowed
-              text-gray-400 "
-            >
-              <Link href={''} passHref>
-                <a>Fileverse Portal</a>
-              </Link>
-            </div>
-            <div
-              onClick={() => {
-                if (html) html.classList.remove('overflow-y-hidden');
-                setSideMenu(false);
-              }}
-              className=" py-2 "
-            >
-              <Link href={'https://beta.fileverse.io'} passHref>
-                <a>Fileverse Solo</a>
-              </Link>
-            </div>
-
-            <div
-              onClick={() => {
-                if (html) html.classList.remove('overflow-y-hidden');
-                setSideMenu(false);
-              }}
-              className="py-2"
-            >
-              <Link href={'/features'} passHref>
+            <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
+              <div
+                onClick={() => {
+                  if (html) html.classList.remove('overflow-y-hidden');
+                  setSideMenu(false);
+                }}
+                className=" py-2 "
+              >
+                <a>Why Fileverse ?</a>
+              </div>
+            </Link>
+            <Link href={'/features'} passHref>
+              <div
+                onClick={() => {
+                  if (html) html.classList.remove('overflow-y-hidden');
+                  setSideMenu(false);
+                }}
+                className="py-2"
+              >
                 <a>Features</a>
-              </Link>
-            </div>
-            <div
-              onClick={() => {
-                if (html) html.classList.remove('overflow-y-hidden');
-                setSideMenu(false);
-              }}
-              className=" py-2 "
-            >
-              <Link href={'https://beta.fileverse.io/why-fileverse'} passHref>
-                <a>Why Fileverse</a>
-              </Link>
-            </div>
+              </div>
+            </Link>
+            <Link href={'https://beta.fileverse.io'} passHref>
+              <div
+                onClick={() => {
+                  if (html) html.classList.remove('overflow-y-hidden');
+                  setSideMenu(false);
+                }}
+                className="py-2"
+              >
+                Fileverse Solo
+              </div>
+            </Link>
+            <Link href={''} passHref>
+              <div
+                onClick={() => {
+                  if (html) html.classList.remove('overflow-y-hidden');
+                  setSideMenu(false);
+                }}
+                className="py-2  cursor-not-allowed
+                text-gray-400"
+              >
+                Fileverse Portal
+              </div>
+            </Link>
           </div>
         </div>
       </Slide>

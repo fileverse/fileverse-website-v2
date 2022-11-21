@@ -11,12 +11,12 @@ import ImageLayout from '../components/ImageLayout';
 import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
-import chatWindow from '../public/assets/chatWindow.svg';
+import chatWindow from '../public/assets/chatWindow.png';
 import featureHero from '../public/assets/feature-hero.svg';
-import fileTypes from '../public/assets/fileTypes.svg';
-import subdomainWindow from '../public/assets/subdomainWindow.svg';
+import fileTypes from '../public/assets/fileTypes.png';
+import subdomainWindow from '../public/assets/subdomainWindow.png';
 import tick from '../public/assets/tick.svg';
-import tokenGating from '../public/assets/tokengating.svg';
+import tokenGating from '../public/assets/tokengating.png';
 
 const Features = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -75,11 +75,11 @@ const Features = () => {
         </HeadSectionLayout>
         {/* portal */}
         <SectionLayout>
-          <div id="feature" className={` lg:flex pt-[7vh]`}>
+          <div id="feature" className={` lg:flex items-center pt-[7vh]`}>
             <ImageLayout>
               <img
                 className={`${
-                  isMediaMax1025px ? 'h-full' : 'w-[580px] h-[450px]'
+                  isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
                 }`}
                 src={subdomainWindow.src}
                 alt="subdomain-window"
@@ -130,7 +130,7 @@ const Features = () => {
         </SectionLayout>
         {/* custom token */}
         <SectionLayout>
-          <div className={`lg:flex`}>
+          <div className={`lg:flex items-center`}>
             {isMediaMax1025px && (
               <ImageLayout>
                 <img
@@ -177,8 +177,9 @@ const Features = () => {
             </ContentLayout>
             {!isMediaMax1025px && (
               <ImageLayout>
-                <img
-                  className="w-[580px] h-[450px]"
+                <Image
+                  width={'480'}
+                  height={'350'}
                   src={tokenGating.src}
                   alt="fileverse-wallet-vase"
                 />
@@ -191,12 +192,12 @@ const Features = () => {
         <div className="bg-yellow mt-8 py-8">
           {/* chat */}
           <SectionLayout marginTop="mt-0">
-            <div className={`lg:flex`}>
+            <div className={`lg:flex  items-center`}>
               {isMediaMax1025px && (
                 <ImageLayout>
                   <img
                     className={`${
-                      isMediaMax1025px ? 'h-full' : 'w-[580px] h-[450px]'
+                      isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
                     }`}
                     src={chatWindow.src}
                     alt="fileverse-wallet-vase"
@@ -245,7 +246,7 @@ const Features = () => {
                 <ImageLayout>
                   <img
                     className={`${
-                      isMediaMax1025px ? 'h-full' : 'w-[580px] h-[450px]'
+                      isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
                     }`}
                     src={chatWindow.src}
                     alt="fileverse-wallet-vase"
@@ -256,11 +257,11 @@ const Features = () => {
           </SectionLayout>
           {/* any file */}
           <SectionLayout>
-            <div className={` lg:flex`}>
+            <div className={` lg:flex items-center`}>
               <ImageLayout>
                 <Image
-                  width={'580'}
-                  height={'450'}
+                  width={'480'}
+                  height={'350'}
                   src={fileTypes.src}
                   alt="fileverse-wallet-vase"
                 />

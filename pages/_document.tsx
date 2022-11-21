@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 const Document = () => {
   return (
-    <Html lang="en" className=" overflow-x-hidden">
+    <Html lang="en" className=" overflow-x-hidden no-scrollbar">
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link
