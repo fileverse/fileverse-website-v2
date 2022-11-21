@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 
 interface CardTypes {
   image: any;
@@ -18,10 +17,9 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
     >
       <div className={``}>
         <div className="items-center flex justify-center">
-          <Image
+          <img
             src={image.src}
-            width="380"
-            height={'250'}
+            className="w-[380px]"
             alt="fileverse-subdomain-window"
           />
         </div>

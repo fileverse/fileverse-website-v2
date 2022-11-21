@@ -26,14 +26,14 @@ import eurion from '../public/assets/eurion.png';
 import familyIcon from '../public/assets/familyIcon.png';
 import filecoinReview from '../public/assets/filecoin-review.png';
 import filverseVase from '../public/assets/fileVase.png';
-import fileverseWindow from '../public/assets/fileverseWindow.svg';
+import fileverseWindow from '../public/assets/fileverseWindow.png';
 import global from '../public/assets/global.svg';
 import illuani from '../public/assets/illuan.png';
 import michealAuroraReview from '../public/assets/micheal-aurora.png';
 import Nft from '../public/assets/Nft.png';
 import padLock from '../public/assets/padlock.svg';
 import rajesh from '../public/assets/rajesh.png';
-import solo from '../public/assets/solo.svg';
+import solo from '../public/assets/solo.png';
 import Web3 from '../public/assets/Web3.png';
 
 const Home: NextPage = () => {
@@ -262,36 +262,20 @@ const Home: NextPage = () => {
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
               <img
-                className="w-[500px] h-[300px]"
+                className="w-[500px]"
                 src={developerDaoReview.src}
                 alt="tweet"
               />
-              <img className="w-[500px] h-[300px]" src={adly.src} alt="tweet" />
+              <img className="w-[500px]" src={adly.src} alt="tweet" />
+              <img className="w-[500px]" src={illuani.src} alt="tweet" />
+              <img className="w-[500px]" src={filecoinReview.src} alt="tweet" />
+              <img className="w-[500px]" src={eurion.src} alt="tweet" />
               <img
-                className="w-[500px] h-[300px]"
-                src={illuani.src}
-                alt="tweet"
-              />
-              <img
-                className="w-[500px] h-[300px]"
-                src={filecoinReview.src}
-                alt="tweet"
-              />
-              <img
-                className="w-[500px] h-[300px]"
-                src={eurion.src}
-                alt="tweet"
-              />
-              <img
-                className="w-[500px] h-[300px]"
+                className="w-[500px]"
                 src={michealAuroraReview.src}
                 alt="tweet"
               />
-              <img
-                className="w-[500px] h-[300px]"
-                src={rajesh.src}
-                alt="tweet"
-              />
+              <img className="w-[500px]" src={rajesh.src} alt="tweet" />
             </div>
           </div>
         </div>
