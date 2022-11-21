@@ -28,6 +28,7 @@ import filecoinReview from '../public/assets/filecoin-review.png';
 import filverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
 import global from '../public/assets/global.svg';
+import gnosischain from '../public/assets/gnosischain.png';
 import illuani from '../public/assets/illuan.png';
 import michealAuroraReview from '../public/assets/micheal-aurora.png';
 import Nft from '../public/assets/Nft.png';
@@ -262,20 +263,46 @@ const Home: NextPage = () => {
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
               <img
-                className="w-[500px]"
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
                 src={developerDaoReview.src}
                 alt="tweet"
               />
-              <img className="w-[500px]" src={adly.src} alt="tweet" />
-              <img className="w-[500px]" src={illuani.src} alt="tweet" />
-              <img className="w-[500px]" src={filecoinReview.src} alt="tweet" />
-              <img className="w-[500px]" src={eurion.src} alt="tweet" />
               <img
-                className="w-[500px]"
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+                src={adly.src}
+                alt="tweet"
+              />
+              <img
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+                src={illuani.src}
+                alt="tweet"
+              />
+              <img
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+                src={filecoinReview.src}
+                alt="tweet"
+              />
+
+              <img
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+                src={eurion.src}
+                alt="tweet"
+              />
+              <img
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
                 src={michealAuroraReview.src}
                 alt="tweet"
               />
-              <img className="w-[500px]" src={rajesh.src} alt="tweet" />
+              <img
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+                src={gnosischain.src}
+                alt="tweet"
+              />
+              <img
+                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+                src={rajesh.src}
+                alt="tweet"
+              />
             </div>
           </div>
         </div>
