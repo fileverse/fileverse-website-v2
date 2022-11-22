@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 
 interface CardTypes {
   image: any;
@@ -17,11 +16,10 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
       } rounded-ld py-8 px-4 m-4 `}
     >
       <div className={``}>
-        <div className="items-center flex justify-center">
-          <Image
+        <div className="items-center h-[250px] flex justify-center">
+          <img
             src={image.src}
-            width="380"
-            height={'250'}
+            className={`w-[380px] ${isMediaMax1025px ? '' : 'h-full'}`}
             alt="fileverse-subdomain-window"
           />
         </div>

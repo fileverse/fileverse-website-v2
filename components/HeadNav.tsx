@@ -74,20 +74,16 @@ const HeadNav = () => {
           onClick={() => router.push('/')}
         >
           <img
-            className={`${isMediaMax1025px && 'h-8 w-8'} ${
-              typeof window !== 'undefined' &&
-              window.location.pathname !== '/' &&
-              'cursor-pointer'
-            } lg:h-12 lg:w-12 mr-2`}
+            className={`${
+              isMediaMax1025px && 'h-8 w-8'
+            } cursor-pointer lg:h-12 lg:w-12 mr-2`}
             alt="fileverse-logo"
             src={fileverseLogo.src}
           />
           <span
-            className={`${
-              typeof window !== 'undefined' &&
-              window.location.pathname !== '/' &&
-              'cursor-pointer'
-            } font-xx ${isMediaMax1025px && 'text-xs'}`}
+            className={` cursor-pointer font-xx ${
+              isMediaMax1025px && 'text-xs'
+            }`}
           >
             Fileverse
           </span>
@@ -143,7 +139,7 @@ const HeadNav = () => {
             >
               <Link href={'/why-fileverse'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Why Fileverse?
+                  Why Fileverse
                 </a>
               </Link>
               <Link href={'/features'} passHref>
@@ -208,7 +204,7 @@ const HeadNav = () => {
                 }}
                 className=" py-2 "
               >
-                <a>Why Fileverse ?</a>
+                <a>Why Fileverse</a>
               </div>
             </Link>
             <Link href={'/features'} passHref>

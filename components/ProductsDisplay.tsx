@@ -73,9 +73,9 @@ const ProductsDisplay = ({
             {CTADescription}
           </p>
         </div>
-        <div className={`mt-4 items-center flex justify-center`}>
+        <div className={`mt-4  items-center flex justify-center`}>
           <img
-            className={` ${isMediaMax1025px ? 'h-full' : 'h-[300px]'}`}
+            className={`${isMediaMax1025px ? '' : 'h-[300px]'}`}
             src={displayImage.src}
             alt="fileverse-window"
           />

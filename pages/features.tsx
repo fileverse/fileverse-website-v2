@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 
 import BodyWrapper from '../components/BodyWrapper';
 import ContentLayout from '../components/ContentLayout';
@@ -12,7 +11,7 @@ import ListWithIconCard from '../components/ListWithIconCard';
 import PrimaryButton from '../components/PrimaryButton';
 import SectionLayout from '../components/SectionLayout';
 import chatWindow from '../public/assets/chatWindow.png';
-import featureHero from '../public/assets/feature-hero.svg';
+import featureHero from '../public/assets/feature-hero.png';
 import fileTypes from '../public/assets/fileTypes.png';
 import subdomainWindow from '../public/assets/subdomainWindow.png';
 import tick from '../public/assets/tick.svg';
@@ -78,9 +77,7 @@ const Features = () => {
           <div id="feature" className={` lg:flex items-center pt-[7vh]`}>
             <ImageLayout>
               <img
-                className={`${
-                  isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
-                }`}
+                className={`${!isMediaMax1025px && 'w-[480px]'}`}
                 src={subdomainWindow.src}
                 alt="subdomain-window"
               />
@@ -102,7 +99,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      ' Fileverse Portals are your door to the on-chain world. Each Portal is a self-deployed file management smart contract, made for collaboration and full control over your data.'
+                      ' Fileverse Portals are your doors to the on-chain world. Each Portal is a self-deployed file management smart contract, made for collaboration and full control over your data.'
                     }
                   />
                   <ListWithIconCard
@@ -114,7 +111,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      ' End-to-end encryption: you own all the keys to your Portal, including your end-to-end encryption keys for file sharing with your members!.'
+                      ' End-to-end encryption: you own all the keys to your Portal, including your end-to-end encryption keys for file sharing with your members.'
                     }
                   />
                   <ListWithIconCard
@@ -134,7 +131,7 @@ const Features = () => {
             {isMediaMax1025px && (
               <ImageLayout>
                 <img
-                  className="h-full"
+                  className=""
                   src={tokenGating.src}
                   alt="fileverse-wallet-vase"
                 />
@@ -177,11 +174,10 @@ const Features = () => {
             </ContentLayout>
             {!isMediaMax1025px && (
               <ImageLayout>
-                <Image
-                  width={'480'}
-                  height={'350'}
+                <img
                   src={tokenGating.src}
                   alt="fileverse-wallet-vase"
+                  className="w-[480px]"
                 />
               </ImageLayout>
             )}
@@ -195,17 +191,11 @@ const Features = () => {
             <div className={`lg:flex  items-center`}>
               {isMediaMax1025px && (
                 <ImageLayout>
-                  <img
-                    className={`${
-                      isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
-                    }`}
-                    src={chatWindow.src}
-                    alt="fileverse-wallet-vase"
-                  />
+                  <img src={chatWindow.src} alt="fileverse-wallet-vase" />
                 </ImageLayout>
               )}
               <ContentLayout>
-                <div className="">
+                <div className=" ">
                   <div className="flex w-full">
                     <h2
                       className={`font-bold  ${
@@ -245,9 +235,7 @@ const Features = () => {
               {!isMediaMax1025px && (
                 <ImageLayout>
                   <img
-                    className={`${
-                      isMediaMax1025px ? 'h-full' : 'w-[480px] h-[350px]'
-                    }`}
+                    className="w-[480px]"
                     src={chatWindow.src}
                     alt="fileverse-wallet-vase"
                   />
@@ -259,11 +247,10 @@ const Features = () => {
           <SectionLayout>
             <div className={` lg:flex items-center`}>
               <ImageLayout>
-                <Image
-                  width={'480'}
-                  height={'350'}
+                <img
                   src={fileTypes.src}
                   alt="fileverse-wallet-vase"
+                  className={`${!isMediaMax1025px && 'w-[480px]'}`}
                 />
               </ImageLayout>
               <ContentLayout>
