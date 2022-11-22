@@ -219,7 +219,9 @@ const HeadNav = () => {
               </div>
             </Link>
             <Link href={'https://beta.fileverse.io'} passHref>
-              <div
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   if (html) html.classList.remove('overflow-y-hidden');
                   setSideMenu(false);
@@ -227,7 +229,7 @@ const HeadNav = () => {
                 className="py-2"
               >
                 Fileverse Solo
-              </div>
+              </a>
             </Link>
             <Link href={''} passHref>
               <div
