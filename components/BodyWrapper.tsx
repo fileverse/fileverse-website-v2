@@ -3,11 +3,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Gitcoin from '../public/assets/gitcoin.svg';
-import Github from '../public/assets/github_logo.svg';
-import email from '../public/assets/mail.svg';
-import Radicle from '../public/assets/radicle.svg';
-import Twitter from '../public/assets/Twitter.svg';
+import Gitcoin from '../public/assets/gitcoin.png';
+import Github from '../public/assets/github_logo.png';
+import email from '../public/assets/mail.png';
+import Radicle from '../public/assets/radicle.png';
+import Twitter from '../public/assets/Twitter.png';
 import HeadNav from './HeadNav';
 
 interface BodyType {
