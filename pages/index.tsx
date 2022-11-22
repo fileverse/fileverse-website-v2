@@ -15,6 +15,7 @@ import PrimaryButton from '../components/PrimaryButton';
 import ProductsDisplay from '../components/ProductsDisplay';
 import SectionLayout from '../components/SectionLayout';
 import SubHeading from '../components/SubHeading';
+import TweetCard from '../components/TweetCard';
 import WhomCard from '../components/WhomCard';
 import adly from '../public/assets/adly.png';
 import BlockChain from '../public/assets/BlockChain.png';
@@ -262,47 +263,14 @@ const Home: NextPage = () => {
           <SubHeading text="Fileverse on Twitter" />
           <div className="mt-8">
             <div className="flex overflow-x-auto no-scrollbar">
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={developerDaoReview.src}
-                alt="tweet"
-              />
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={adly.src}
-                alt="tweet"
-              />
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={illuani.src}
-                alt="tweet"
-              />
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={filecoinReview.src}
-                alt="tweet"
-              />
-
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={eurion.src}
-                alt="tweet"
-              />
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={michealAuroraReview.src}
-                alt="tweet"
-              />
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={gnosischain.src}
-                alt="tweet"
-              />
-              <img
-                className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
-                src={rajesh.src}
-                alt="tweet"
-              />
+              <TweetCard image={developerDaoReview} />
+              <TweetCard image={adly} />
+              <TweetCard image={illuani} />
+              <TweetCard image={filecoinReview} />
+              <TweetCard image={eurion} />
+              <TweetCard image={michealAuroraReview} />
+              <TweetCard image={gnosischain} />
+              <TweetCard image={rajesh} />
             </div>
           </div>
         </div>

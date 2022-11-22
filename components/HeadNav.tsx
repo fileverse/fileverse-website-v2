@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
-import fileverseLogo from '../public/assets/fileverse.svg';
+import fileverseLogo from '../public/assets/fileverse.png';
 import newTabIcon from '../public/assets/gotoIcon.svg';
 import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
