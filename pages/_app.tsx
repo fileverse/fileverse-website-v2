@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           site_name: 'Fileverse',
           images: [
             {
-              url: '/assets/Banner1.png',
+              url: 'https://beta.fileverse.io/assets/Banner1.png',
               width: 800,
               height: 420,
               alt: 'Fileverse',
