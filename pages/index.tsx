@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                 CTAButtonTitle={'Create Your Portal'}
                 CTAbuttonDisabled={true}
                 displayImage={fileverseWindow}
-                CTADescription={'Communicate. Collabrate. Coordinate.'}
+                CTADescription={'Communicate. Collaborate. Coordinate.'}
               />
             </div>
           </>
