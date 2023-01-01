@@ -73,8 +73,7 @@ const Home: NextPage = () => {
                     }`}
                   >
                     On-chain people and communities deserve on-chain tools for
-                    private communication and collaboration. We present to you
-                    Fileverse Solo & Fileverse Portal!
+                    private communication and collaboration.
                   </p>
                   <div
                     className={`mt-4  ${
@@ -111,7 +110,7 @@ const Home: NextPage = () => {
                 CTAButtonLink={'https://beta.fileverse.io'}
                 CTAButtonTitle={'Launch App'}
                 displayImage={solo}
-                firstDescription={'Private-first file sharing, simplified.'}
+                firstDescription={'Private-first file sharing, simplified'}
                 secondDescription={'Share private files with or without wallet'}
                 CTADescription={'Private. Decentralised. Encrypted.'}
               />
