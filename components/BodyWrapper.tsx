@@ -53,7 +53,7 @@ const BodyWrapper = ({ children }: BodyType) => {
 
             <Link
               href={
-                'https://app.radicle.network/seeds/willow.radicle.garden/rad:git:hnrkj6egqcozks7f7n5dx3766e7m4z5tag8cy'
+                'https://app.radicle.xyz/seeds/willow.radicle.garden/rad:git:hnrkj6egqcozks7f7n5dx3766e7m4z5tag8cy/tree'
               }
             >
               <a target="_blank" rel="noopener noreferrer" className="h-full">
