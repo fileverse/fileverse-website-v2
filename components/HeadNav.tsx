@@ -112,7 +112,7 @@ const HeadNav = () => {
                 top ? 'bg-black text-white ' : 'bg-white'
               } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
             >
-              <p className="mr-4">Learn more</p>
+              <p className="mr-4">About</p>
               {top ? (
                 <Image
                   className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
