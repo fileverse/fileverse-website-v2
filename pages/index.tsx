@@ -26,7 +26,7 @@ import developerDaoReview from '../public/assets/developer_dao_review.png';
 import eurion from '../public/assets/eurion.png';
 import familyIcon from '../public/assets/familyIcon.png';
 import filecoinReview from '../public/assets/filecoin-review.png';
-import filverseVase from '../public/assets/fileVase.png';
+import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
 import global from '../public/assets/global.svg';
 import gnosischain from '../public/assets/gnosischain.png';
@@ -110,8 +110,8 @@ const Home: NextPage = () => {
                 CTAButtonLink={'https://beta.fileverse.io'}
                 CTAButtonTitle={'Launch App'}
                 displayImage={solo}
-                firstDescription={'Private-first file sharing, simplified'}
-                secondDescription={'Share private files with or without wallet'}
+                firstDescription={'Privacy-first file sharing, simplified'}
+                secondDescription={'Share any files with or without a wallet'}
                 CTADescription={'Private. Decentralised. Encrypted.'}
               />
               {/* {!isMediaMax1025px && (
@@ -145,7 +145,7 @@ const Home: NextPage = () => {
             <ImageLayout>
               <img
                 className={`${isMediaMax1025px ? '' : 'w-[480px]'}`}
-                src={filverseVase.src}
+                src={fileverseVase.src}
                 alt="fileverse-wallet-vase"
               />
             </ImageLayout>
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
           <div className="">
             <div className="p-4">
               <SubHeading
-                text={'For whom is Fileverse Solo and Filverse Portal?'}
+                text={'For whom is Fileverse Solo and Fileverse Portal?'}
               />
             </div>
             <div className="flex justify-center">
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
                     image={BlockChain}
                     title={'NFT Communities'}
                     description={`On-chain communities deserve on-chain collaboration tools
-                      and analytics. Try Filverse Portal for a real
+                      and analytics. Try Fileverse Portal for a real
                       decentralised and on-chain experience.`}
                   />
                 </div>
