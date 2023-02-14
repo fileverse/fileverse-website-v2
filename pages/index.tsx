@@ -28,6 +28,7 @@ import familyIcon from '../public/assets/familyIcon.png';
 import filecoinReview from '../public/assets/filecoin-review.png';
 import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
+import fileverseWindowOld from '../public/assets/fileverseWindowOld.png';
 import global from '../public/assets/global.svg';
 import gnosischain from '../public/assets/gnosischain.png';
 import illuani from '../public/assets/illuan.png';
@@ -90,7 +91,7 @@ const Home: NextPage = () => {
                 >
                   <img
                     className=""
-                    src={fileverseWindow.src}
+                    src={fileverseWindowOld.src}
                     alt="fileverse-window"
                   />
                 </div>
