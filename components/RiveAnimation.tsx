@@ -16,5 +16,9 @@ export default function RiveLaunchPortal() {
     INPUT_NAME
   );
 
-  return <RiveComponent onMouseOver={() => rive?.play()} />;
+  return (
+    <div className="h-[230px] w-[200px]">
+      <RiveComponent onMouseOver={() => rive?.play()} />
+    </div>
+  );
 }

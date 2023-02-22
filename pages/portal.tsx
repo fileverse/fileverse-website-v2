@@ -50,7 +50,11 @@ const Subdomain = () => {
       `,
     },
   ];
-
+  if (isRiveAnimation) {
+    setTimeout(() => {
+      setIsRiveAnimation(false);
+    }, 7000);
+  }
   return (
     <BodyWrapper>
       <>
@@ -106,16 +110,13 @@ const Subdomain = () => {
                   shared. This is your censorship resistant collaboration DApp!
                 </p>
                 <button
-                  className={`mt-4 w-[36%]  ${
+                  className={`mt-4   ${
                     isMediaMax1025px && 'flex justify-center'
                   } bg-black cursor-pointer
                    flex items-center text-white
-                     py-3 px-6  rounded-md`}
+                     py-3 px-6  rounded-md relative`}
                   onMouseEnter={() => {
                     setIsRiveAnimation(true);
-                    setTimeout(() => {
-                      setIsRiveAnimation(false);
-                    }, 7000);
                   }}
                   onClick={() => {
                     setTimeout(() => {
@@ -128,12 +129,13 @@ const Subdomain = () => {
                   }}
                 >
                   <>Launch Your Portal</>
+
+                  {isRiveAnimation && (
+                    <div className="absolute bottom-[4px] left-[-4px]">
+                      <RiveLaunchPortal />
+                    </div>
+                  )}
                 </button>
-                {isRiveAnimation && (
-                  <div className="mt-4 h-[230px] w-[50%] absolute top-[84px] right-[55%]">
-                    <RiveLaunchPortal />
-                  </div>
-                )}
               </div>
               <div
                 className={`lg:w-[50%] ${
