@@ -11,11 +11,13 @@ import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import nextArrow from '../public/assets/nextArrow.svg';
 import subdomainImage from '../public/assets/subdomainImage.svg';
 import whiteWeb2 from '../public/assets/whiteWeb2.svg';
+import RiveLaunchPortal from '../components/RiveAnimation';
 
 const Subdomain = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const isMediaMax700px = useMediaQuery('(max-width: 700px)');
   const [openedTab, setOpenedTab] = useState<string[]>([]);
+  const [isRiveAnimation, setIsRiveAnimation] = useState(false);
   const FAQs = [
     {
       name: 'For whom is Fileverse Portal?',
@@ -59,7 +61,11 @@ const Subdomain = () => {
                 isMediaMax1025px && 'w-full'
               } flex flex-wrap items-center`}
             >
-              <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
+              <div
+                className={`lg:w-[50%] relative ${
+                  isMediaMax1025px && 'w-full'
+                }`}
+              >
                 <h2
                   className={`font-bold lg:text-4xl ${
                     isMediaMax1025px && 'text-2xl text-center'
@@ -99,16 +105,35 @@ const Subdomain = () => {
                   their data, from how it’s stored to how it’s accessed, and
                   shared. This is your censorship resistant collaboration DApp!
                 </p>
-                <div
-                  className={`mt-4  ${
+                <button
+                  className={`mt-4 w-[36%]  ${
                     isMediaMax1025px && 'flex justify-center'
-                  } `}
+                  } bg-black cursor-pointer
+                   flex items-center text-white
+                     py-3 px-6  rounded-md`}
+                  onMouseEnter={() => {
+                    setIsRiveAnimation(true);
+                    setTimeout(() => {
+                      setIsRiveAnimation(false);
+                    }, 7000);
+                  }}
+                  onClick={() => {
+                    setTimeout(() => {
+                      window.open(
+                        'https://portal.fileverse.io/#/create',
+                        '_blank'
+                      );
+                      setIsRiveAnimation(false);
+                    }, 3000);
+                  }}
                 >
-                  <PrimaryButton
-                    title={'Launch Your Portal'}
-                    linkTo={'https://beta.fileverse.io/'}
-                  />
-                </div>
+                  <>Launch Your Portal</>
+                </button>
+                {isRiveAnimation && (
+                  <div className="mt-4 h-[230px] w-[50%] absolute top-[84px] right-[55%]">
+                    <RiveLaunchPortal />
+                  </div>
+                )}
               </div>
               <div
                 className={`lg:w-[50%] ${
