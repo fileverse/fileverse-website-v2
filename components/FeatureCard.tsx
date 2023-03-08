@@ -11,9 +11,9 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
     <div
-      className={`bg-[#FFFCE7] lg:w-[500px]  flex items-center flex-none ${
+      className={`bg-white border border-[#E2E2E2] rounded-xl lg:w-[500px]  flex items-center flex-none ${
         isMediaMax1025px && 'w-[300px]'
-      } rounded-ld py-8 px-4 m-4 `}
+      } rounded-ld py-8 px-4 mr-4 mt-4 `}
     >
       <div className={``}>
         <div className="items-center h-[250px] flex justify-center">

@@ -33,12 +33,16 @@ const PrimaryButton = ({
         isDisable
           ? ' bg-gray-200 cursor-not-allowed'
           : 'bg-black cursor-pointer'
-      } flex items-center text-white px-6 py-4 rounded-md`}
+      } flex items-center m-2 text-white py-3 px-6 rounded-md`}
     >
-      {title}
       {icon && (
-        <img className={`${iconStyles}`} src={icon.src} alt="button icon" />
+        <img
+          className={`${iconStyles} mr-2`}
+          src={icon.src}
+          alt="button icon"
+        />
       )}
+      {title}
     </button>
   );
 };

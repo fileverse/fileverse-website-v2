@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Slide, Tooltip, useMediaQuery } from '@mui/material';
@@ -12,7 +13,7 @@ import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
 
-const HeadNav = () => {
+const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
   const [menu, setMenu] = useState(false);
   const [top, setTop] = useState(true);
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -61,7 +62,7 @@ const HeadNav = () => {
   return (
     <div
       className={`flex ${
-        top ? 'bg-yellow ' : 'bg-white'
+        top && !defaultColor ? 'bg-yellow ' : 'bg-white'
       }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
       <div className={`w-[90%] flex`}>
@@ -69,7 +70,7 @@ const HeadNav = () => {
           className={` lg:w-[50%] ${
             isMediaMax1025px && 'w-full'
           } duration-500 ease-in-out transition ${
-            top ? 'bg-yellow ' : 'bg-white'
+            top && !defaultColor ? 'bg-yellow ' : 'bg-white'
           }   flex items-center`}
           onClick={() => router.push('/')}
         >
@@ -91,7 +92,7 @@ const HeadNav = () => {
         <div
           className={`
             lg:w-[50%] duration-500 ease-in-out transition relative flex ${
-              top ? 'bg-yellow ' : 'bg-white'
+              top && !defaultColor ? 'bg-yellow ' : 'bg-white'
             }    items-center h-full justify-end`}
           ref={dropDownButton}
         >
@@ -109,11 +110,11 @@ const HeadNav = () => {
             <button
               onClick={() => setMenu(!menu)}
               className={`border rounded-md ${
-                top ? 'bg-black text-white ' : 'bg-white'
+                top || defaultColor ? 'bg-black text-white ' : 'bg-white'
               } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
             >
               <p className="mr-4">About</p>
-              {top ? (
+              {top || defaultColor ? (
                 <Image
                   className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
                   alt="white-dropdown-arrow"

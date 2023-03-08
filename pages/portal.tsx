@@ -4,13 +4,13 @@ import { useMediaQuery } from '@mui/material';
 import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
+import FeaturesSection from '../components/FeaturesSection';
 import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
-import blackWeb3 from '../public/assets/blackWeb3.svg';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import nextArrow from '../public/assets/nextArrow.svg';
-import subdomainImage from '../public/assets/subdomainImage.svg';
-import whiteWeb2 from '../public/assets/whiteWeb2.svg';
+import publicView from '../public/assets/publicView.png';
+import stepImage from '../public/assets/steps.png';
 
 const Subdomain = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -52,55 +52,77 @@ const Subdomain = () => {
   return (
     <BodyWrapper>
       <>
-        <HeadSectionLayout>
-          <div className="flex min-h-[85vh] justify-center p-4">
+        <HeadSectionLayout defaultBackground={true} noFooter={true}>
+          <div className="flex w-full h-full justify-center p-4">
             <div
               className={`lg:w-[90%] ${
                 isMediaMax1025px && 'w-full'
-              } flex flex-wrap items-center`}
+              } flex flex-wrap h-full items-center`}
             >
-              <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
-                <h2
-                  className={`font-bold lg:text-4xl ${
-                    isMediaMax1025px && 'text-2xl text-center'
-                  } `}
-                >
-                  Your On-chain Portal for
-                  <Typewriter
-                    options={{
-                      strings: [
-                        'File Sharing',
-                        'Collaboration',
-                        'Coordination',
-                      ],
-                      autoStart: true,
-                      loop: true,
-                    }}
-                  />
-                </h2>
-                <div
-                  className={`flex ${
-                    isMediaMax1025px && ' justify-center'
-                  } my-4`}
-                >
-                  <h6 className="font-semibold">On-Chain</h6>
-                  <h6 className="mx-3">-</h6>
-                  <h6 className="font-semibold">Private</h6>
-                  <h6 className="mx-3">-</h6>
-                  <h6 className="font-semibold">E2EE</h6>
-                </div>
+              <div
+                className={`w-full mt-14 h-[40%] flex flex-col justify-center items-center`}
+              >
+                {isMediaMax1025px ? (
+                  <div
+                    className={`font-bold  ${
+                      isMediaMax1025px
+                        ? 'text-2xl text-center'
+                        : 'text-[3.5rem]'
+                    } `}
+                  >
+                    <h6 className="">Your On-chain Portal for</h6>
+                    <div className=" ">
+                      <Typewriter
+                        options={{
+                          strings: [
+                            'File Sharing',
+                            'Collaboration',
+                            'Coordination',
+                          ],
+                          autoStart: true,
+                          loop: true,
+                        }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className={`font-bold w-[61rem] flex ${
+                      isMediaMax1025px
+                        ? 'text-2xl text-center'
+                        : 'text-[3.5rem]'
+                    } `}
+                  >
+                    <h6 className="w-[40rem]">Your On-chain Portal for</h6>
+                    <span className=" w-[20rem]">
+                      <Typewriter
+                        options={{
+                          strings: [
+                            'File Sharing',
+                            'Collaboration',
+                            'Coordination',
+                          ],
+                          autoStart: true,
+                          loop: true,
+                        }}
+                      />
+                    </span>
+                  </div>
+                )}
+
                 <p
-                  className={`mt-4 ${
-                    isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'
+                  className={`mt-4 font-medium  text-center ${
+                    isMediaMax1025px
+                      ? ' w-full text-base'
+                      : 'w-[52rem] text-2xl'
                   }`}
                 >
                   Fileverse is building the first privacy-enhancing, on-chain
-                  alternative to Google Workspace. Owners of Portals control all
-                  their data, from how it’s stored to how it’s accessed, and
-                  shared. This is your censorship resistant collaboration DApp!
+                  alternative to Google Workspace that lets Owners have overall
+                  control all their data.
                 </p>
                 <div
-                  className={`mt-4  ${
+                  className={`mt-8  ${
                     isMediaMax1025px && 'flex justify-center'
                   } `}
                 >
@@ -109,15 +131,32 @@ const Subdomain = () => {
                     linkTo={'https://beta.fileverse.io/'}
                   />
                 </div>
+                <div
+                  className={`flex ${
+                    isMediaMax1025px && ' justify-center'
+                  } my-8`}
+                >
+                  <h6 className=" font-normal text-lg text-[#00000099]">
+                    On-Chain
+                  </h6>
+                  <h6 className="mx-3 text-lg text-[#00000099]">-</h6>
+                  <h6 className="font-normal text-[#00000099] text-lg">
+                    Private
+                  </h6>
+                  <h6 className="font-normal text-[#00000099] mx-3 text-lg">
+                    -
+                  </h6>
+                  <h6 className="font-normal text-lg text-[#00000099]">E2EE</h6>
+                </div>
               </div>
               <div
-                className={`lg:w-[50%] ${
-                  isMediaMax1025px && 'w-full'
-                } flex items-center justify-center relative`}
+                className={`w-full mt-10 h-full flex items-center justify-center relative`}
               >
-                <div className="relative">
-                  <img src={subdomainImage.src} alt="fileverse-window" />
-                </div>
+                <img
+                  src={publicView.src}
+                  alt="fileverse-window"
+                  className="w-[63rem]"
+                />
               </div>
             </div>
           </div>
@@ -125,14 +164,23 @@ const Subdomain = () => {
         <div className="mt-8 w-[100vw] flex justify-center">
           <div className="flex w-[90vw] justify-center">
             <div className="flex flex-col">
-              <h2 className="font-bold text-center text-3xl">Steps</h2>
+              <h2
+                className={`font-bold text-center  ${
+                  isMediaMax1025px ? 'text-2xl' : 'text-3xl'
+                }`}
+              >
+                Steps
+              </h2>
               <div className="flex flex-wrap justify-center mt-4">
                 <div
                   className={`${
-                    isMediaMax1025px ? 'w-52 h-56' : 'w-60 h-64'
+                    isMediaMax1025px ? 'w-52 h-56' : 'w-[25rem] h-[16rem]'
                   } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center`}
                 >
-                  <h2 className="text-lg">Pick your favourite chain</h2>
+                  <img src={stepImage.src} className="w-[9rem]" alt="steps" />
+                  <h2 className="text-lg mt-4 text-center">
+                    Pick your favourite chain
+                  </h2>
                 </div>
                 {!isMediaMax700px && (
                   <div className="flex items-center">
@@ -146,29 +194,11 @@ const Subdomain = () => {
 
                 <div
                   className={`border ${
-                    isMediaMax1025px ? 'w-52 h-56' : 'w-60 h-64'
+                    isMediaMax1025px ? 'w-52 h-56' : 'w-[25rem] h-[16rem]'
                   } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center `}
                 >
-                  <h2 className="text-lg text-center">
-                    Secure your encryption keys
-                  </h2>
-                </div>
-                {!isMediaMax700px && (
-                  <div className="flex items-center">
-                    <img
-                      alt="arrow"
-                      src={nextArrow.src}
-                      className={`${isMediaMax1025px && 'w-6'}`}
-                    />
-                  </div>
-                )}
-
-                <div
-                  className={`${
-                    isMediaMax1025px ? 'w-52 h-56' : 'w-60 h-64'
-                  } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center`}
-                >
-                  <h2 className="text-lg text-center">
+                  <img src={stepImage.src} className="w-[9rem]" alt="steps" />
+                  <h2 className="text-lg text-center mt-4">
                     Deploy your Portal smart contract.
                   </h2>
                 </div>
@@ -177,8 +207,14 @@ const Subdomain = () => {
           </div>
         </div>
 
-        <div className="h-full flex flex-col justify-center items-center my-8 p-8 bg-[#FFFCE7]">
-          <h2 className="font-bold text-center text-3xl">FAQs</h2>
+        <div className="h-full flex flex-col justify-center items-center my-8 p-8 bg-white">
+          <h2
+            className={`font-bold text-center ${
+              isMediaMax1025px ? 'text-2xl' : 'text-3xl'
+            } `}
+          >
+            Frequently Asked Questions
+          </h2>
           <div className={`${isMediaMax1025px ? 'w-full' : 'w-[70%]'} mt-4`}>
             <div>
               <div
@@ -326,52 +362,7 @@ const Subdomain = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="flex flex-wrap justify-center relative">
-            <div className="pt-12 relative">
-              <div className="m-4 pt-40 w-72 bg-black h-96 rounded-lg">
-                <div className="top-4 absolute">
-                  <img alt="web2 style" src={whiteWeb2.src} className="" />
-                </div>
-                <div className="absolute top-20 left-[70px]">
-                  <p className="text-2xl font-semibold">Web 2 </p>
-                  <p className="text-2xl font-semibold">Style</p>
-                </div>
-
-                <div className="row-span-2">
-                  <p className="text-white py-2 px-4 text-lg">
-                    Fake-free (sells your data)
-                  </p>
-                  <p className="text-white py-2 px-4 text-lg">Simple</p>
-                  <p className="text-white py-2 px-4 text-lg">Unencrypted</p>
-                  <p className="text-white py-2 px-4 text-lg">Intrusive</p>
-                  <p className="text-white py-2 px-4 text-lg">Censorable</p>
-                  <p className="text-white py-2 px-4 text-lg">Locks you in</p>
-                </div>
-              </div>
-            </div>
-            <div className="pt-12 relative">
-              <div className="m-4 pt-40 w-72 bg-yellow h-96 rounded-lg">
-                <div className=" top-4 absolute">
-                  <img alt="fileverse style" src={blackWeb3.src} className="" />
-                </div>
-                <div className="absolute top-24 left-14">
-                  <p className="text-2xl text-white font-semibold">
-                    Fileverse{' '}
-                  </p>
-                </div>
-                <div className="">
-                  <p className="py-1 px-4 text-lg">Free version</p>
-                  <p className="py-1 px-4 text-lg">Simple</p>
-                  <p className="py-1 px-4 text-lg">E2E encrypted</p>
-                  <p className="py-1 px-4 text-lg">Private by default</p>
-                  <p className="py-1 px-4 text-lg">Uncensorable</p>
-                  <p className="py-1 px-4 text-lg">Take your data anywhere</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FeaturesSection />
       </>
     </BodyWrapper>
   );
