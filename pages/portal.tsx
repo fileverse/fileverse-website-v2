@@ -14,7 +14,7 @@ import stepImage from '../public/assets/steps.png';
 
 const Subdomain = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
-  const isMediaMax1260px = useMediaQuery('(max-width: 1260px)');
+  const isMediaMax1260px = useMediaQuery('(max-width: 1262px)');
   const isMediaMax700px = useMediaQuery('(max-width: 700px)');
   const [openedTab, setOpenedTab] = useState<string[]>([]);
   const FAQs = [
@@ -72,7 +72,7 @@ const Subdomain = () => {
                     } `}
                   >
                     <h6 className="">Your On-chain Portal for</h6>
-                    <div className=" ">
+                    <div className="">
                       <Typewriter
                         options={{
                           strings: [
@@ -97,7 +97,7 @@ const Subdomain = () => {
                     <h6 className=" text-end w-[60%]">
                       Your On-chain Portal for
                     </h6>
-                    <span className="w-[40%] pl-2">
+                    <span className="w-[40%] pl-3">
                       <Typewriter
                         options={{
                           strings: [
