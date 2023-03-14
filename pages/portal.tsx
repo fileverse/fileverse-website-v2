@@ -14,6 +14,7 @@ import stepImage from '../public/assets/steps.png';
 
 const Subdomain = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const isMediaMax1260px = useMediaQuery('(max-width: 1260px)');
   const isMediaMax700px = useMediaQuery('(max-width: 700px)');
   const [openedTab, setOpenedTab] = useState<string[]>([]);
   const FAQs = [
@@ -60,12 +61,12 @@ const Subdomain = () => {
               } flex flex-wrap h-full items-center`}
             >
               <div
-                className={`w-full mt-14 h-[40%] flex flex-col justify-center items-center`}
+                className={`w-full mt-14 h-[40%]  flex flex-col justify-center items-center`}
               >
-                {isMediaMax1025px ? (
+                {isMediaMax1260px ? (
                   <div
                     className={`font-bold  ${
-                      isMediaMax1025px
+                      isMediaMax1260px
                         ? 'text-2xl text-center'
                         : 'text-[3.5rem]'
                     } `}
@@ -87,14 +88,16 @@ const Subdomain = () => {
                   </div>
                 ) : (
                   <div
-                    className={`font-bold w-[61rem] flex ${
+                    className={`font-bold w-full justify-center flex ${
                       isMediaMax1025px
                         ? 'text-2xl text-center'
                         : 'text-[3.5rem]'
                     } `}
                   >
-                    <h6 className="w-[40rem]">Your On-chain Portal for</h6>
-                    <span className=" w-[20rem]">
+                    <h6 className=" text-end w-[60%]">
+                      Your On-chain Portal for
+                    </h6>
+                    <span className="w-[40%] pl-2">
                       <Typewriter
                         options={{
                           strings: [
@@ -112,8 +115,8 @@ const Subdomain = () => {
 
                 <p
                   className={`mt-4 font-medium  text-center ${
-                    isMediaMax1025px
-                      ? ' w-full text-base'
+                    isMediaMax1260px
+                      ? ' w-full max-w-[520px] text-base'
                       : 'w-[52rem] text-2xl'
                   }`}
                 >
