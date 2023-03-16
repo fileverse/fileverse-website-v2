@@ -62,7 +62,7 @@ const Subdomain = () => {
   // ];
 
   return (
-    <BodyWrapper>
+    <BodyWrapper portalPage={true}>
       <>
         <NextSeo
           title="Fileverse Portal"

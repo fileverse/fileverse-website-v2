@@ -9,13 +9,15 @@ import Github from '../public/assets/github_logo.svg';
 import email from '../public/assets/mail.svg';
 import Radicle from '../public/assets/radicle.svg';
 import Twitter from '../public/assets/Twitter.svg';
+import { CopyrightFooter } from './CopyrightFooter';
 import HeadNav from './HeadNav';
 import PrimaryButton from './PrimaryButton';
 
 interface BodyType {
   children: JSX.Element;
+  portalPage?: boolean;
 }
-const BodyWrapper = ({ children }: BodyType) => {
+const BodyWrapper = ({ children, portalPage }: BodyType) => {
   const router = useRouter();
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
@@ -104,6 +106,7 @@ items-center font-normal w-full p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text-[#
               </div>
             </div>
           </div>
+          {portalPage && <CopyrightFooter />}
         </div>
       </div>
     </div>
