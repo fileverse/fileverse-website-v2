@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useMediaQuery } from '@mui/material';
+import { NextSeo } from 'next-seo';
 import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
@@ -9,8 +10,9 @@ import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import nextArrow from '../public/assets/nextArrow.svg';
-import publicView from '../public/assets/publicView.png';
-import stepImage from '../public/assets/steps.png';
+import portalHero from '../public/assets/portalHero.svg';
+import step1 from '../public/assets/step1.png';
+import step2 from '../public/assets/step2.png';
 
 const Subdomain = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -62,6 +64,22 @@ const Subdomain = () => {
   return (
     <BodyWrapper>
       <>
+        <NextSeo
+          title="Fileverse Portal"
+          openGraph={{
+            url: 'https://fileverse.io/portal',
+            title: 'Fileverse Portal',
+            site_name: 'Fileverse',
+            images: [
+              {
+                url: 'https://fileverse.io/assets/previewImage.jpg',
+                width: 800,
+                height: 420,
+                alt: 'Fileverse',
+              },
+            ],
+          }}
+        />
         <HeadSectionLayout defaultBackground={true} noFooter={true}>
           <div className="flex w-full h-full justify-center p-4">
             <div
@@ -169,7 +187,7 @@ const Subdomain = () => {
                 className={`w-full mt-10 h-full flex items-center justify-center relative`}
               >
                 <img
-                  src={publicView.src}
+                  src={portalHero.src}
                   alt="fileverse-window"
                   className="w-[63rem]"
                 />
@@ -193,7 +211,7 @@ const Subdomain = () => {
                     isMediaMax1025px ? 'w-52 h-56' : 'w-[25rem] h-[16rem]'
                   } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center`}
                 >
-                  <img src={stepImage.src} className="w-[9rem]" alt="steps" />
+                  <img src={step1.src} className="w-[9rem]" alt="steps" />
                   <h2 className="text-lg mt-4 text-center">
                     Pick your favourite chain
                   </h2>
@@ -213,9 +231,9 @@ const Subdomain = () => {
                     isMediaMax1025px ? 'w-52 h-56' : 'w-[25rem] h-[16rem]'
                   } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center `}
                 >
-                  <img src={stepImage.src} className="w-[9rem]" alt="steps" />
+                  <img src={step2.src} className="w-[9rem]" alt="steps" />
                   <h2 className="text-lg text-center mt-4">
-                    Deploy your Portal smart contract.
+                    Deploy your Portal smart contract
                   </h2>
                 </div>
               </div>
