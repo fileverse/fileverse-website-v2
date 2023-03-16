@@ -19,9 +19,13 @@ const Subdomain = () => {
   const [openedTab, setOpenedTab] = useState<string[]>([]);
   const FAQs = [
     {
-      name: 'For whom is Fileverse Portal?',
-      description: `Fileverse is for anyone that wants a privacy-first and sustainable alternative to centralised apps like Google Drive/Workspace, WeTransfer, Dropbox, Microsoft Office. Fileverse is for anyone that does not want to be the product. 
-        Finally, Fileverse is for you dear anon that wants a useful web3 tool, and a stress-free crypto experience, for file sharing, collaboration, communication, and much more!`,
+      name: 'Who was Fileverse Portal built for?',
+      description: `Fileverse is for you, dear anon, who wants a useful, everyday web3 tool, that offers a stress-free crypto experience, for file sharing, collaboration, communication, and much more!
+      On-chain individuals and communities deserve on-chain tools that share the same values.
+      
+      This first version of Portal is for anyone that wants a privacy-first and no central point of failure alternative to centralised collaboration apps like Google Drive/Workspace, Notion, and Microsoft Office.
+      
+      It allows you to create your own ideal collaboration tool and workspace. You will be able to pick and choose different collaboration or productivity plugins to tailor your portal to your needs.`,
     },
     {
       name: 'What is a collaboration & file management smart contract?',
@@ -29,24 +33,27 @@ const Subdomain = () => {
     },
     {
       name: 'Where is my data stored?',
-      description: `All the data you add on your Fileverse Portal is stored on a peer-to-peer network and file system called IPFS. Other networks being added: Arweave, Swarm.`,
+      description: `By default, all the data you add on your Fileverse Portal is stored on a peer-to-peer network and file system called IPFS. 
+
+      You will soon also be able to just keep files on your local machine, or upload them to Arweave and Swarm.`,
     },
     {
       name: 'What is kept on-chain?',
-      description: `Whenever you upload a file, you also update the status of your Portal. This is saved on your smart contract.`,
+      description: `Whenever you upload a file, you sign a transaction to update your Portal smart contract with a content hash of your file. You can make that hash either publicly accessible or completely private and encrypted.`,
     },
     {
       name: 'How does Portal encrypt my data?',
-      description: `All files are encrypted by default. You also have the option to use End-to-End encryption when sharing files or information with your members! Simply choose the relevant option when uploading a file. It’s that easy.`,
+      description: `When uploading a file you can decide to make it Public (not encrypted) or Private (end-to-end encrypted). By design, you are the only one with the keys to the encryption and decryption of your files. 
+
+      In just two clicks you can decide who you want to give file access to: your collaborators, your NFT community, your followers, anyone with the link to the file, etc. It’s that easy.`,
     },
     {
       name: 'Is Fileverse open source?',
-      description: `Yes, Fileverse started as an open source project on Gitcoin and received support from more than 13,000 contributors.`,
+      description: `Yes, Fileverse started as an open source project on Gitcoin and received support from over 14,000 contributors! We built this in the open, with your feedback and your needs in mind.`,
     },
     {
       name: 'Has Fileverse Portal been audited?',
-      description: `Since Fileverse Portal is a file management and collaboration smart contract, we have decided to be audited by an independent team. This takes some time and will be publicly shared once the audit has been completed. More details here.
-      `,
+      description: `Since Fileverse Portal is a file management and collaboration smart contract, we have decided to receive an audit by an independent team. This takes some time and will be publicly shared once the audit has been completed. More details here.`,
     },
   ];
 
@@ -78,7 +85,9 @@ const Subdomain = () => {
                           strings: [
                             'File Sharing',
                             'Collaboration',
-                            'Coordination',
+                            'Content Creation',
+                            '3D Visulaization',
+                            'Brainstorming',
                           ],
                           autoStart: true,
                           loop: true,
@@ -89,9 +98,7 @@ const Subdomain = () => {
                 ) : (
                   <div
                     className={`font-bold w-full justify-center flex ${
-                      isMediaMax1025px
-                        ? 'text-2xl text-center'
-                        : 'text-[3.5rem]'
+                      isMediaMax1025px ? 'text-2xl text-center' : 'text-[3rem]'
                     } `}
                   >
                     <h6 className=" text-end w-[60%]">
@@ -103,7 +110,9 @@ const Subdomain = () => {
                           strings: [
                             'File Sharing',
                             'Collaboration',
-                            'Coordination',
+                            'Content Creation',
+                            '3D Visulaization',
+                            'Brainstorming',
                           ],
                           autoStart: true,
                           loop: true,
@@ -116,13 +125,13 @@ const Subdomain = () => {
                 <p
                   className={`mt-4 font-medium  text-center ${
                     isMediaMax1260px
-                      ? ' w-full max-w-[520px] text-base'
-                      : 'w-[52rem] text-2xl'
+                      ? ' w-full max-w-[600px] text-base'
+                      : 'w-[52rem] text-[1.25rem]'
                   }`}
                 >
-                  Fileverse is building the first privacy-enhancing, on-chain
-                  alternative to Google Workspace that lets Owners have overall
-                  control all their data.
+                  Your personal collaboration tool and workspace for on-chain
+                  file management and content creation, all without cutting
+                  corners on privacy and decentralisation.
                 </p>
                 <div
                   className={`mt-8  ${
@@ -130,7 +139,7 @@ const Subdomain = () => {
                   } `}
                 >
                   <PrimaryButton
-                    title={'Launch Your Portal'}
+                    title={'Create my Portal'}
                     linkTo={'https://beta.fileverse.io/'}
                   />
                 </div>
@@ -140,16 +149,18 @@ const Subdomain = () => {
                   } my-8`}
                 >
                   <h6 className=" font-normal text-lg text-[#00000099]">
-                    On-Chain
+                    Customizable
                   </h6>
                   <h6 className="mx-3 text-lg text-[#00000099]">-</h6>
                   <h6 className="font-normal text-[#00000099] text-lg">
-                    Private
+                    Privacy preserving
                   </h6>
                   <h6 className="font-normal text-[#00000099] mx-3 text-lg">
                     -
                   </h6>
-                  <h6 className="font-normal text-lg text-[#00000099]">E2EE</h6>
+                  <h6 className="font-normal text-lg text-[#00000099]">
+                    Permissionless
+                  </h6>
                 </div>
               </div>
               <div
@@ -253,18 +264,26 @@ const Subdomain = () => {
                   <p>
                     <span className="font-semibold">Non-technical answer:</span>
                     <span className="ml-2">
-                      Fileverse Portal is a web3 alternative to Google Drive &
-                      Workspace. It has privacy by design and focuses on the
-                      healthier side of the internet where users are not the
-                      product.
+                      Fileverse Portal is a web3 alternative to Google
+                      Workspace. It is customizable and private by design and
+                      focuses on the healthier side of the internet where users
+                      are not the product.
                     </span>
                   </p>
                   <p className="mt-2">
                     <span className="font-semibold">Technical answer:</span>
                     <span className="ml-2">
-                      Each Fileverse Portal is a self-deployed file management
-                      and collaboration smart contract. You own the keys to this
-                      smart contract, it’s your smart contract!
+                      Each Portal is a self-deployed file management and
+                      collaboration smart contract. It’s yours and no one
+                      else’s. It acts as your content hash directory and allows
+                      you to set access permissions for your files, folders and
+                      Portal.
+                    </span>
+                  </p>
+                  <p className="mt-2">
+                    <span className="">
+                      The UI is also hosted IPFS, making the whole collaboration
+                      stack available to you without requiring our servers.
                     </span>
                   </p>
                 </div>
@@ -320,11 +339,27 @@ const Subdomain = () => {
                     </li>
                     <li>
                       <span className="font-semibold">Collaborate</span> with
-                      anyone via: shared documents, whiteboards, and more.
+                      anyone via: live documents, whiteboards, and more.
                     </li>
                     <li>
                       <span className="font-semibold">Chat</span> privately with
                       everyone with chat spaces.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Share</span> the public
+                      side of your Portal, for anyone to visit and see what
+                      public content you have created or uploaded.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Create</span> as many
+                      Portals as you want, for different needs, different teams,
+                      different types of content.
+                    </li>
+                    <li>
+                      <span className="font-semibold">See</span> on-chain
+                      analytics of people that became “members” of your Portal.
+                      Members receive a custom NFT of your Portal when they
+                      decide to join.
                     </li>
                   </ul>
                 </div>
