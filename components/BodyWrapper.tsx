@@ -94,11 +94,11 @@ items-center font-normal w-full p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text-[#
                 } text-left text-[#777777] pl-2`}
               >
                 <p>
-                  Filevere Portal is an on-chain collaboration & coordination
+                  Fileverse Portal is an on-chain collaboration & coordination
                   dApp built with the
                 </p>
                 <p>
-                  ❤️ and 🔥 of 14,000 contributors from the gitcoin & Ethereum
+                  ❤️ and 🔥 of 14,000 contributors from the Gitcoin & Ethereum
                   communities
                 </p>
               </div>
