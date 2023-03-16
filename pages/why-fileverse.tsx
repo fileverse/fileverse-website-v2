@@ -138,7 +138,7 @@ const Why = () => {
             sharing. This is Fileverse.
             <br />
             <br />
-            It all started with a gitcoin grant and a big dream –building a
+            It all started with a Gitcoin grant and a big dream –building a
             public good that is just as appealing to Web2 users as to Web3
             users. More than 7300 donors and some of our favourite Ethereum
             builders supported this vision to build a tool you will all love

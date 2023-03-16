@@ -10,7 +10,7 @@ import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import nextArrow from '../public/assets/nextArrow.svg';
-import portalHero from '../public/assets/portalHero.svg';
+import portalHero from '../public/assets/portalHero.png';
 import step1 from '../public/assets/step1.png';
 import step2 from '../public/assets/step2.png';
 
