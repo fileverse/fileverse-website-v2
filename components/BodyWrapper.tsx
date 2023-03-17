@@ -42,7 +42,9 @@ const BodyWrapper = ({ children, portalPage }: BodyType) => {
             </div>
 
             <div className="w-full flex justify-center  mt-4 items-center">
-              <div className={`flex flex-wrap w-full items-center`}>
+              <div
+                className={`flex flex-wrap w-full items-center justify-center`}
+              >
                 <PrimaryButton
                   icon={Twitter}
                   title={'Twitter'}
