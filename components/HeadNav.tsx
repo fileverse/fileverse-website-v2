@@ -196,19 +196,18 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
           >
             <img src={xicon.src} className="w-8" alt="x-icon" />
           </div>
-          <div className="">
-            <Link href={'/why-fileverse'} passHref>
+          <div className="font-semibold mt-6">
+            <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
               <div
                 onClick={() => {
                   if (html) html.classList.remove('overflow-y-hidden');
                   setSideMenu(false);
                 }}
-                className=" py-2 "
               >
-                <a>Why Fileverse</a>
+                <a>FAQ</a>
               </div>
             </Link>
-            <Link href={'/features'} passHref>
+            <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
               <div
                 onClick={() => {
                   if (html) html.classList.remove('overflow-y-hidden');
@@ -216,7 +215,7 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
                 }}
                 className="py-2"
               >
-                <a>Features</a>
+                <a>My Portals</a>
               </div>
             </Link>
             <Link href={'https://beta.fileverse.io'} passHref>
@@ -231,18 +230,6 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
               >
                 Fileverse Solo
               </a>
-            </Link>
-            <Link href={''} passHref>
-              <div
-                onClick={() => {
-                  if (html) html.classList.remove('overflow-y-hidden');
-                  setSideMenu(false);
-                }}
-                className="py-2  cursor-not-allowed
-                text-gray-400"
-              >
-                Fileverse Portal
-              </div>
             </Link>
           </div>
         </div>

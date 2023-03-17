@@ -170,22 +170,20 @@ const Subdomain = () => {
                 </div>
                 <div
                   className={`flex ${
-                    isMediaMax1025px && ' justify-center'
+                    isMediaMax1025px ? 'text-xs justify-center' : 'text-lg'
                   } my-8`}
                 >
-                  <h6 className=" font-normal text-lg text-[#00000099]">
+                  <div className=" font-normal  text-[#00000099]">
                     Customizable
-                  </h6>
-                  <h6 className="mx-3 text-lg text-[#00000099]">-</h6>
-                  <h6 className="font-normal text-[#00000099] text-lg">
+                  </div>
+                  <div className="mx-3  text-[#00000099]">-</div>
+                  <div className="font-normal text-[#00000099] ">
                     Privacy preserving
-                  </h6>
-                  <h6 className="font-normal text-[#00000099] mx-3 text-lg">
-                    -
-                  </h6>
-                  <h6 className="font-normal text-lg text-[#00000099]">
+                  </div>
+                  <div className="font-normal text-[#00000099] mx-3">-</div>
+                  <div className="font-normal  text-[#00000099]">
                     Permissionless
-                  </h6>
+                  </div>
                 </div>
               </div>
               <div
@@ -213,7 +211,7 @@ const Subdomain = () => {
               <div className="flex flex-wrap justify-center mt-4">
                 <div
                   className={`${
-                    isMediaMax1025px ? 'w-52 h-56' : 'w-[25rem] h-[16rem]'
+                    isMediaMax1025px ? 'w-52 h-60' : 'w-[25rem] h-[16rem]'
                   } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center`}
                 >
                   <img src={step1.src} className="w-[9rem]" alt="steps" />
@@ -233,7 +231,7 @@ const Subdomain = () => {
 
                 <div
                   className={`border ${
-                    isMediaMax1025px ? 'w-52 h-56' : 'w-[25rem] h-[16rem]'
+                    isMediaMax1025px ? 'w-52 h-60' : 'w-[25rem] h-[16rem]'
                   } m-2 bg-[#F3F3F3] rounded-xl p-4 flex flex-col justify-center items-center `}
                 >
                   <img src={step2.src} className="w-[9rem]" alt="steps" />
