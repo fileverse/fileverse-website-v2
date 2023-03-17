@@ -79,6 +79,11 @@ const Subdomain = () => {
               },
             ],
           }}
+          twitter={{
+            handle: '@fileverse',
+            site: '@fileverse',
+            cardType: 'summary_large_image',
+          }}
         />
         <HeadSectionLayout defaultBackground={true} noFooter={true}>
           <div className="flex w-full h-full justify-center p-4">
