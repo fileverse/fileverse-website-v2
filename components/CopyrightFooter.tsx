@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const CopyrightFooter = () => {
   return (
     <div className="bg-[ffffff] text-[#777777] flex px-4 py-2 justify-center items-center gap-4 font-semibold">
