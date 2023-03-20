@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useRef, useState } from 'react';
 
-import { Slide, Tooltip, useMediaQuery } from '@mui/material';
+import { Slide, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -166,18 +166,6 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
                   )}
                 </a>
               </Link>
-              {/* <Tooltip title="Coming Soon" placement="right">
-                <div className="h-[34px] cursor-not-allowed flex text-gray-400 items-center mx-[12px] px-2 py-4 border-fade border-bottom ">
-                  Fileverse Portal
-                  {newTabIconVisible === 'PORTAL' && (
-                    <img
-                      className="ml-2 w-4"
-                      src={newTabIcon.src}
-                      alt="new tab icon"
-                    />
-                  )}
-                </div>
-              </Tooltip> */}
             </div>
           </Slide>
         </div>
