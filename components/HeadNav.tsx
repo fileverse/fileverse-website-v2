@@ -136,16 +136,16 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
 
           <Slide direction="down" in={menu} container={dropDownButton.current}>
             <div
-              className={`absolute py-4 rounded-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
+              className={`absolute py-4 rounded-lg w-[12rem] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
             >
-              <Link href={'/why-fileverse'} passHref>
+              <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Why Fileverse
+                  FAQ
                 </a>
               </Link>
-              <Link href={'/features'} passHref>
+              <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Features
+                  My Portals
                 </a>
               </Link>
               <Link href={'https://beta.fileverse.io/'} passHref>
@@ -154,7 +154,7 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
                   rel="noopener noreferrer"
                   onMouseEnter={() => setNewTabIcon('SOLO')}
                   onMouseLeave={() => setNewTabIcon('')}
-                  className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b"
+                  className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade "
                 >
                   Fileverse Solo
                   {newTabIconVisible === 'SOLO' && (
@@ -166,7 +166,7 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
                   )}
                 </a>
               </Link>
-              <Tooltip title="Coming Soon" placement="right">
+              {/* <Tooltip title="Coming Soon" placement="right">
                 <div className="h-[34px] cursor-not-allowed flex text-gray-400 items-center mx-[12px] px-2 py-4 border-fade border-bottom ">
                   Fileverse Portal
                   {newTabIconVisible === 'PORTAL' && (
@@ -177,7 +177,7 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
                     />
                   )}
                 </div>
-              </Tooltip>
+              </Tooltip> */}
             </div>
           </Slide>
         </div>
