@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useMediaQuery } from '@mui/material';
+import { Tooltip, useMediaQuery } from '@mui/material';
 import { NextSeo } from 'next-seo';
 import Typewriter from 'typewriter-effect';
 
@@ -13,12 +13,29 @@ import nextArrow from '../public/assets/nextArrow.svg';
 import portalHero from '../public/assets/portalHero.png';
 import step1 from '../public/assets/step1.png';
 import step2 from '../public/assets/step2.png';
+import xicon from '../public/assets/x-icon.svg';
 
 const Subdomain = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const isMediaMax1260px = useMediaQuery('(max-width: 1262px)');
   const isMediaMax700px = useMediaQuery('(max-width: 700px)');
   const [openedTab, setOpenedTab] = useState<string[]>([]);
+  const [notification, setNotification] = useState(true);
+  const isMediaMax1280px = useMediaQuery('(max-width: 1280px)');
+  const isMediaMax1120px = useMediaQuery('(max-width: 1120px)');
+  const isMediaMax570px = useMediaQuery('(max-width: 570px)');
+  const getBannerFontSize = () => {
+    if (isMediaMax570px) {
+      return 'text-[8px]';
+    }
+    if (isMediaMax700px) {
+      return 'text-[10px]';
+    }
+    if (isMediaMax1280px) {
+      return 'text-[12px]';
+    }
+    return 'text-[14px]';
+  };
   // const FAQs = [
   //   {
   //     name: 'Who was Fileverse Portal built for?',
@@ -86,7 +103,37 @@ const Subdomain = () => {
           }}
         />
         <HeadSectionLayout defaultBackground={true} noFooter={true}>
-          <div className="flex w-full h-full justify-center p-4">
+          <div className="flex flex-col w-full h-full justify-center items-center p-4">
+            {notification && (
+              <div
+                className={` bg-black p-3 flex w-fit rounded-full mt-4 ${getBannerFontSize()}`}
+              >
+                <p className="text-white text-center mr-4">
+                  Portal soft launch was a resounding{' '}
+                  <a
+                    href="https://twitter.com/fileverse/status/1636751755936428033?s=20"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                  >
+                    success!
+                  </a>{' '}
+                  This also brought an unexpected overload on our Beta.
+                  {isMediaMax1120px && !isMediaMax570px ? <br /> : null} To
+                  focus on quality, we will transition to an invite-first &
+                  whitelist mode. Stay tuned &lt;3
+                </p>
+                <img
+                  onClick={() => setNotification(false)}
+                  style={{
+                    filter: `invert(100%) sepia(16%) saturate(7463%) hue-rotate(222deg) brightness(119%) contrast(115%)`,
+                  }}
+                  src={xicon.src}
+                  className="cursor-pointer"
+                  alt="close"
+                />
+              </div>
+            )}
             <div
               className={`lg:w-[90%] ${
                 isMediaMax1025px && 'w-full'
@@ -158,16 +205,37 @@ const Subdomain = () => {
                   file management and content creation, all without cutting
                   corners on privacy and decentralisation.
                 </p>
-                <div
-                  className={`mt-8  ${
-                    isMediaMax1025px && 'flex justify-center'
-                  } `}
+                <Tooltip
+                  title={
+                    <p>
+                      Stay tuned{' '}
+                      <a
+                        href="https://twitter.com/fileverse"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline"
+                      >
+                        here
+                      </a>{' '}
+                      &lt;3 Portal has now transitioned to invite-first &
+                      allowlists!
+                    </p>
+                  }
+                  placement="right"
                 >
-                  <PrimaryButton
-                    title={'Create My Portal'}
-                    linkTo={'https://portal.fileverse.io/#/create'}
-                  />
-                </div>
+                  <div
+                    className={`mt-8  ${
+                      isMediaMax1025px && 'flex justify-center'
+                    } `}
+                  >
+                    <PrimaryButton
+                      title={'Create My Portal'}
+                      linkTo={'https://portal.fileverse.io/#/create'}
+                      isDisable={true}
+                    />
+                  </div>
+                </Tooltip>
+
                 <div
                   className={`flex ${
                     isMediaMax1025px ? 'text-xs justify-center' : 'text-lg'
