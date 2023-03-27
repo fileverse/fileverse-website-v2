@@ -31,7 +31,7 @@ const PrimaryButton = ({
       }}
       className={`${
         isDisable
-          ? ' bg-gray-200 cursor-not-allowed'
+          ? ' bg-gray-300 cursor-not-allowed'
           : 'bg-black cursor-pointer'
       } flex items-center m-2 text-white py-3 px-6 rounded-md`}
     >
