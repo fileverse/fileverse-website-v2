@@ -129,12 +129,12 @@ const Home: NextPage = () => {
               <ProductsDisplay
                 background={'bg-white'}
                 productName={`Fileverse Portal`}
-                CTAButtonLink={'https://fileverse.on.fleek.co/'}
+                CTAButtonLink={'/portal'}
                 firstDescription={
                   'Like Google Workspace, but on-chain, encrypted, and privacy-enchancing'
                 }
                 CTAButtonTitle={'Create Your Portal'}
-                CTAbuttonDisabled={true}
+                CTAbuttonDisabled={false}
                 displayImage={fileverseWindow}
                 CTADescription={'Communicate. Collaborate. Coordinate.'}
               />
