@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Tooltip, useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import { NextSeo } from 'next-seo';
 import Typewriter from 'typewriter-effect';
 
@@ -205,36 +205,17 @@ const Subdomain = () => {
                   file management and content creation, all without cutting
                   corners on privacy and decentralisation.
                 </p>
-                <Tooltip
-                  title={
-                    <p>
-                      Stay tuned{' '}
-                      <a
-                        href="https://twitter.com/fileverse"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline"
-                      >
-                        here
-                      </a>{' '}
-                      &lt;3 Portal has now transitioned to invite-first &
-                      allowlists!
-                    </p>
-                  }
-                  placement="right"
+                <div
+                  className={`mt-8  ${
+                    isMediaMax1025px && 'flex justify-center'
+                  } `}
                 >
-                  <div
-                    className={`mt-8  ${
-                      isMediaMax1025px && 'flex justify-center'
-                    } `}
-                  >
-                    <PrimaryButton
-                      title={'Create My Portal'}
-                      linkTo={'https://portal.fileverse.io/#/create'}
-                      isDisable={true}
-                    />
-                  </div>
-                </Tooltip>
+                  <PrimaryButton
+                    title={'Create My Portal'}
+                    linkTo={'https://portal.fileverse.io/#/claim'}
+                    openNewTab={true}
+                  />
+                </div>
 
                 <div
                   className={`flex ${
