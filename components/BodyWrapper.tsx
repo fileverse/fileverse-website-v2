@@ -34,13 +34,6 @@ const BodyWrapper = ({ children, portalPage }: BodyType) => {
             >
               Where to find us?
             </h2>
-            <div className="w-full flex justify-center mt-2 mb-8">
-              <p className="text-center w-[22rem]">
-                Follow the socials below to connect with the community and earn
-                with others
-              </p>
-            </div>
-
             <div className="w-full flex justify-center  mt-4 items-center">
               <div
                 className={`flex flex-wrap w-full items-center justify-center`}
