@@ -4,8 +4,11 @@ import { useMediaQuery } from '@mui/material';
 import { NextSeo } from 'next-seo';
 import Typewriter from 'typewriter-effect';
 import { useRouter } from 'next/router';
-import fileverseLogo from '../public/assets/fileverse.png';
+import fileverseLogo from '../public/assets/profilesvg.svg';
 
+import searchIcon from '../public/assets/searchIcon.svg';
+import arrow from '../public/assets/arrow-up-right.svg';
+import exploreBanner from '../public/assets/exploreBanner.svg';
 import BodyWrapper from '../components/BodyWrapper';
 import FeaturesSection from '../components/FeaturesSection';
 import HeadSectionLayout from '../components/HeadSectionLayout';
@@ -45,54 +48,75 @@ const ExplorePage = () => {
 
   return (
     <>
-      <HeadNav defaultColor={true} />
+      <HeadNav defaultColor={true} explorePage={true} />
       <HeadSectionLayout defaultBackground={true} noFooter={true}>
-        <div className="flex flex-col w-full h-[85vh] justify-between items-center p-4 mt-6">
-          <div className="h-[10%] flex w-full items-center justify-between mb-6">
-            <div className="font-semibold text-xl ">
-              Explore popular portals
+        <div className="flex flex-col w-full h-full justify-center items-center">
+          <div className="w-[95%] h-[25vh] bg-yellow  flex flex-col items-center justify-center">
+            <div className="w-[32%] text-center text-[#000000] text-4xl font-semibold">
+              Discover Portals to collaborate and create awesome stuff
             </div>
-            <div className="w-[50%] flex justify-between">
-              <div
-                className="w-[80%] mr-12 flex px-2 items-center	 border rounded-md h-10 hover:outline 
-           outline-black"
-              >
-                <img src="" className="w-[24px] h-[24px] ml-2" />
-                <input
-                  className=" text-md px-4 w-full h-full outline-none"
-                  type="text"
-                  placeholder={'Search here...'}
-                />
-              </div>
-              <button
-                className="w-[12rem] flex items-center justify-center
-                    border-[1px] border-[#AAAAAA] rounded-lg	h-10 bg-[#ffffff]
-                   font-semibold	 text-[#000000] text-base"
-              >
-                create new portal
-              </button>
+            <div className="w-[32%] text-center text-base text-[#333333]">
+              Share and collaborate with your tribe around the world with
+              security Your data is safe and E2E Encrypted
             </div>
           </div>
-          <div className="h-[90%] w-full border-[1.5px] rounded-xl border-[#dddddd] p-4">
-            <div
-              className={`h-full w-full flex flex-wrap items-start overflow-y-scroll no-scrollbar gap-4 ${
-                isMediaMax1260px ? 'justify-evenly' : ''
-              } `}
-            >
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
-              <ContractCard />
+          <div className="flex flex-col w-[95%] h-[64vh] justify-between items-center py-4 mt-6">
+            <div className="h-[10%] flex w-full items-center justify-between mb-6">
+              <div className="font-semibold text-2xl text-[#000000]">
+                Explore popular portals
+              </div>
+              <div
+                className={`w-[50%] flex ${
+                  isMediaMax1025px ? 'justify-end' : 'justify-between'
+                }`}
+              >
+                {!isMediaMax1025px && (
+                  <div
+                    className="w-[70%] mr-12 flex px-2 items-center	 border rounded-md h-[3rem] hover:outline 
+           outline-black"
+                  >
+                    <img
+                      src={searchIcon.src}
+                      className="w-[18px] h-[18px] ml-2 mt-1"
+                    />
+                    <input
+                      className="text-lg font-medium px-4 w-full h-full outline-none text-[#777777]"
+                      type="text"
+                      placeholder={'Search portal here...'}
+                    />
+                  </div>
+                )}
+                <div
+                  className="w-[25%] min-w-[12rem] flex items-center justify-center
+                     rounded-lg	h-[3rem] bg-[#000000]
+                   font-semibold	 text-[#ffffff] text-base "
+                >
+                  <>Create your portal</>
+                  <img src={arrow.src} className="w-[20px] h-[20px] ml-2" />
+                </div>
+              </div>
+            </div>
+            <div className="h-[90%] w-full border-[1.5px] rounded-xl border-[#dddddd] p-4">
+              <div
+                className={`h-full w-full flex flex-wrap items-start overflow-y-scroll no-scrollbar gap-4 ${
+                  isMediaMax1260px ? 'justify-evenly' : ''
+                } `}
+              >
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+                <ContractCard />
+              </div>
             </div>
           </div>
         </div>

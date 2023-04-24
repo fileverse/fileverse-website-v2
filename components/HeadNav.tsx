@@ -13,7 +13,13 @@ import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
 
-const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
+const HeadNav = ({
+  defaultColor,
+  explorePage,
+}: {
+  defaultColor?: boolean;
+  explorePage?: boolean;
+}) => {
   const [menu, setMenu] = useState(false);
   const [top, setTop] = useState(true);
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -65,7 +71,7 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
         top && !defaultColor ? 'bg-yellow ' : 'bg-white'
       }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
-      <div className={`w-[90%] flex`}>
+      <div className={`${explorePage ? 'w-[95%]' : 'w-[90%]'} flex`}>
         <div
           className={` lg:w-[50%] ${
             isMediaMax1025px && 'w-full'
