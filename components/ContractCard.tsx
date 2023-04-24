@@ -13,7 +13,7 @@ const ContractCard = () => {
   const [hoverButton, setHoverButton] = useState(false);
   return (
     <div
-      className="w-[450px] h-[317px] border-[1px] rounded-xl border-[#dddddd]
+      className="w-[28rem] h-[20rem] border-[1px] rounded-xl border-[#dddddd]
        flex flex-col mb-4 cursor-pointer hover:border-[5px]  hover:border-[#FFF9CE]"
       onMouseOver={() => setHoverButton(true)}
       onMouseOut={() => setHoverButton(false)}

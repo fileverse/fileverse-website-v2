@@ -60,7 +60,7 @@ const ExplorePage = () => {
               security Your data is safe and E2E Encrypted
             </div>
           </div> */}
-          <div className="flex flex-col w-[95%] h-[90vh] justify-between items-center py-4 mt-6">
+          <div className="flex flex-col w-[95%] h-[88vh] justify-between items-center py-4 mt-6">
             <div className="h-[10%] flex w-full items-center justify-between mb-6">
               <div
                 className={`font-semibold ${
