@@ -51,7 +51,7 @@ const ExplorePage = () => {
       <HeadNav defaultColor={true} explorePage={true} />
       <HeadSectionLayout defaultBackground={true} noFooter={true}>
         <div className="flex flex-col w-full h-full justify-center items-center">
-          <div className="w-[95%] h-[25vh] bg-yellow  flex flex-col items-center justify-center">
+          {/* <div className="w-[95%] h-[24vh] bg-yellow  flex flex-col items-center justify-center  rounded-xl">
             <div className="w-[32%] text-center text-[#000000] text-4xl font-semibold">
               Discover Portals to collaborate and create awesome stuff
             </div>
@@ -59,10 +59,14 @@ const ExplorePage = () => {
               Share and collaborate with your tribe around the world with
               security Your data is safe and E2E Encrypted
             </div>
-          </div>
-          <div className="flex flex-col w-[95%] h-[64vh] justify-between items-center py-4 mt-6">
+          </div> */}
+          <div className="flex flex-col w-[95%] h-[90vh] justify-between items-center py-4 mt-6">
             <div className="h-[10%] flex w-full items-center justify-between mb-6">
-              <div className="font-semibold text-2xl text-[#000000]">
+              <div
+                className={`font-semibold ${
+                  isMediaMax700px ? 'text-xl' : 'text-2xl'
+                } text-[#000000]`}
+              >
                 Explore popular portals
               </div>
               <div
@@ -72,7 +76,7 @@ const ExplorePage = () => {
               >
                 {!isMediaMax1025px && (
                   <div
-                    className="w-[70%] mr-12 flex px-2 items-center	 border rounded-md h-[3rem] hover:outline 
+                    className="w-[70%] mr-12 flex px-6 items-center	 border rounded-xl h-[3rem] hover:outline 
            outline-black"
                   >
                     <img
@@ -80,16 +84,16 @@ const ExplorePage = () => {
                       className="w-[18px] h-[18px] ml-2 mt-1"
                     />
                     <input
-                      className="text-lg font-medium px-4 w-full h-full outline-none text-[#777777]"
+                      className="text-lg px-4 w-full h-full outline-none text-[#777777]"
                       type="text"
                       placeholder={'Search portal here...'}
                     />
                   </div>
                 )}
                 <div
-                  className="w-[25%] min-w-[12rem] flex items-center justify-center
-                     rounded-lg	h-[3rem] bg-[#000000]
-                   font-semibold	 text-[#ffffff] text-base "
+                  className="w-[290px] min-w-[12rem] flex items-center justify-center
+                     rounded-xl	h-[3rem] bg-[#000000]
+                   	 text-[#ffffff] text-lg "
                 >
                   <>Create your portal</>
                   <img src={arrow.src} className="w-[20px] h-[20px] ml-2" />
