@@ -26,8 +26,8 @@ const ExplorePage = () => {
               security Your data is safe and E2E Encrypted
             </div>
           </div> */}
-          <div className="flex flex-col w-[95%] h-[88vh] justify-between items-center py-4 mt-6">
-            <div className="h-[10%] flex w-full items-center justify-between mb-6">
+          <div className="flex flex-col w-[97%] h-[88vh] justify-between items-center py-4 mt-6">
+            <div className="h-[10%] flex w-full items-center justify-between mb-4">
               <div
                 className={`font-semibold ${
                   isMediaMax700px ? 'text-xl' : 'text-2xl'
@@ -57,16 +57,20 @@ const ExplorePage = () => {
                   </div>
                 )}
                 <div
-                  className="w-[290px] min-w-[12rem] flex items-center justify-center
+                  className={`  flex items-center justify-center
                      rounded-xl	h-[3rem] bg-[#000000]
-                   	 text-[#ffffff] text-lg "
+                   	 text-[#ffffff]  ${
+                       isMediaMax700px
+                         ? 'w-[150px] text-xs px-1'
+                         : 'w-[290px] text-lg'
+                     }`}
                 >
                   <>Create your portal</>
                   <img src={arrow.src} className="w-[20px] h-[20px] ml-2" />
                 </div>
               </div>
             </div>
-            <div className="h-[90%] w-full border-[1.5px] rounded-xl border-[#dddddd] p-4">
+            <div className="h-[86%] w-full ">
               <div
                 className={`h-full w-full flex flex-wrap items-start overflow-y-scroll no-scrollbar gap-4 ${
                   isMediaMax1260px ? 'justify-evenly' : ''

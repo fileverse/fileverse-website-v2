@@ -32,13 +32,13 @@ const ContractCard = () => {
             </div>
           </div>
           <div
-            className={`flex justify-center absolute h-[32px] border  border-[#E2E2E2] rounded-lg bottom-0 right-4 w-[90px] items-center`}
+            className={`flex justify-center absolute h-[32px] border-[1px]  border-[#E2E2E2] rounded-lg bottom-0  right-4 w-[90px] items-center`}
           >
             <img src={likeIcon.src} alt="logo" className="h-[12px] mr-2" />
             300
           </div>
           <div
-            className={`flex justify-center absolute h-[32px] border border-[#E2E2E2] rounded-lg bottom-0 right-28 w-[90px] items-center`}
+            className={`flex justify-center absolute h-[32px] border-[1px] border-[#E2E2E2] rounded-lg bottom-0 right-28 w-[90px] items-center`}
           >
             <img src={boltIcon.src} alt="logo" className="h-[14px] mr-2" />
             15.8k
@@ -55,17 +55,19 @@ const ContractCard = () => {
             <div className=" font-semibold text-[#000000] text-xl mb-2">
               {'Fileverse'}
             </div>
-            <div className=" flex text-xs mb-4">
+            <div className="h-[60px] flex text-xs mb-4 overflow-y-scroll no-scrollbar">
               Breathe in. Breathe out. Follow our content for smooth visual
               breathing techniques. Send our GIF files to anyone that needs help
-              breathing . Visit us before your Google or Zoom calls.
-              Wooooooooosah [woo-sah]
+              breathing . Visit us before your Google or Zoom calls. breathing
+              [woo-sah]
             </div>
             <div
               className={`w-[10rem] flex items-center justify-center
-                    border-[1px] border-[#AAAAAA] rounded-lg	h-[42px] 
+                   rounded-lg	h-[42px] 
                    font-semibold	 text-[#000000] text-base ${
-                     hoverButton ? 'bg-yellow' : 'bg-[#ffffff]'
+                     hoverButton
+                       ? 'bg-yellow'
+                       : 'bg-[#ffffff]   border-[2px] border-[#E2E2E2]'
                    }`}
             >
               Explore Portal
