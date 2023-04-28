@@ -7,11 +7,128 @@ import HeadSectionLayout from '../components/HeadSectionLayout';
 import HeadNav from '../components/HeadNav';
 import ContractCard from '../components/ContractCard';
 
+import profile from '../public/assets/profilesvg.svg';
+import cover from '../public/assets/cover.svg';
 const ExplorePage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const isMediaMax1260px = useMediaQuery('(max-width: 1262px)');
   const isMediaMax700px = useMediaQuery('(max-width: 700px)');
-
+  const allPortal = [
+    {
+      name: 'Bug portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+    {
+      name: 'Fileveser portal',
+      description:
+        'Breathe in. Breathe out. Follow our content for smooth visua breathing techniques. Send our GIF files to anyone that needs helbreathing . Visit us before your Google or Zoom calls. breathing',
+      logo: profile.src,
+      cover: cover.src,
+      public_page: 'portal.fileverse.io',
+      follows: '300',
+      members: '2',
+    },
+  ];
+  const [portalList, setPortalList] = useState(allPortal);
+  const getPortal = (query: string) => {
+    if (query === '') {
+      setPortalList(allPortal);
+    } else {
+      const searchPortal = allPortal.filter((portal) => {
+        return (
+          portal.name.toLowerCase().includes(query.toLowerCase()) ||
+          portal.description.toLowerCase().includes(query.toLowerCase())
+        );
+      });
+      setPortalList(searchPortal);
+    }
+  };
   return (
     <>
       <HeadNav defaultColor={true} explorePage={true} />
@@ -53,6 +170,9 @@ const ExplorePage = () => {
                       className="text-lg px-4 w-full h-full outline-none text-[#777777]"
                       type="text"
                       placeholder={'Search portal here...'}
+                      onChange={(e) => {
+                        getPortal(e.target.value);
+                      }}
                     />
                   </div>
                 )}
@@ -76,20 +196,16 @@ const ExplorePage = () => {
                   isMediaMax1260px ? 'justify-evenly' : ''
                 } `}
               >
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
-                <ContractCard />
+                {portalList.map((portal, index) => {
+                  return (
+                    <ContractCard
+                      name={portal.name}
+                      logo={portal.logo}
+                      cover={portal.cover}
+                      key={index}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -3,12 +3,18 @@ import React, { useState } from 'react';
 import { useMediaQuery } from '@mui/material';
 import arrow from '../public/assets/arrow-up-right.svg';
 
-import profile from '../public/assets/profilesvg.svg';
-import cover from '../public/assets/cover.svg';
 import likeIcon from '../public/assets/likeIcon.svg';
 import boltIcon from '../public/assets/boltIcon.svg';
-
-const ContractCard = () => {
+const allContract = [{}];
+const ContractCard = ({
+  name,
+  logo,
+  cover,
+}: {
+  name: string;
+  logo: string;
+  cover: string;
+}) => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const [hoverButton, setHoverButton] = useState(false);
   return (
@@ -24,11 +30,7 @@ const ContractCard = () => {
             className={`flex absolute h-[5rem] border rounded-lg bottom-0 left-5 w-[5rem] items-center`}
           >
             <div className="w-full justify-center flex bg-white overflow-hidden rounded-lg h-full">
-              <img
-                src={profile.src}
-                alt="logo"
-                className="object-cover h-full"
-              />
+              <img src={logo} alt="logo" className="object-cover h-full" />
             </div>
           </div>
           <div
@@ -45,7 +47,7 @@ const ContractCard = () => {
           </div>
           <div className={`w-full  h-[75%]`}>
             <img
-              src={cover.src}
+              src={cover}
               className={`h-full w-full object-cover rounded-t-lg`}
             />
           </div>
@@ -53,7 +55,7 @@ const ContractCard = () => {
         <div className="h-[55%] w-full px-4">
           <div className="w-full h-full flex flex-col ">
             <div className=" font-semibold text-[#000000] text-xl mb-2">
-              {'Fileverse'}
+              {name}
             </div>
             <div className="h-[60px] flex text-xs mb-4 overflow-y-scroll no-scrollbar">
               Breathe in. Breathe out. Follow our content for smooth visual
