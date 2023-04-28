@@ -9,6 +9,7 @@ import ContractCard from '../components/ContractCard';
 
 import profile from '../public/assets/profilesvg.svg';
 import cover from '../public/assets/cover.svg';
+import Link from 'next/link';
 const ExplorePage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const isMediaMax1260px = useMediaQuery('(max-width: 1262px)');
@@ -176,18 +177,21 @@ const ExplorePage = () => {
                     />
                   </div>
                 )}
-                <div
-                  className={`  flex items-center justify-center
+                <Link href={'https://portal.fileverse.io/#/manifesto'}>
+                  <a
+                    className={`  flex items-center justify-center
                      rounded-xl	h-[3rem] bg-[#000000]
                    	 text-[#ffffff]  ${
                        isMediaMax700px
                          ? 'w-[150px] text-xs px-1'
                          : 'w-[290px] text-lg'
                      }`}
-                >
-                  <>Create your portal</>
-                  <img src={arrow.src} className="w-[20px] h-[20px] ml-2" />
-                </div>
+                    target="_blank"
+                  >
+                    <>Create your portal</>
+                    <img src={arrow.src} className="w-[20px] h-[20px] ml-2" />
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="h-[86%] w-full ">

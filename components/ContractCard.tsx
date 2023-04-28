@@ -15,7 +15,7 @@ const ContractCard = ({
   logo: string;
   cover: string;
 }) => {
-  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const isMediaMax350px = useMediaQuery('(max-width: 350px)');
   const [hoverButton, setHoverButton] = useState(false);
   return (
     <div
@@ -33,18 +33,22 @@ const ContractCard = ({
               <img src={logo} alt="logo" className="object-cover h-full" />
             </div>
           </div>
-          <div
-            className={`flex justify-center absolute h-[32px] border-[1px]  border-[#E2E2E2] rounded-lg bottom-0  right-4 w-[90px] items-center`}
-          >
-            <img src={likeIcon.src} alt="logo" className="h-[12px] mr-2" />
-            300
-          </div>
-          <div
-            className={`flex justify-center absolute h-[32px] border-[1px] border-[#E2E2E2] rounded-lg bottom-0 right-28 w-[90px] items-center`}
-          >
-            <img src={boltIcon.src} alt="logo" className="h-[14px] mr-2" />
-            15.8k
-          </div>
+          {!isMediaMax350px && (
+            <>
+              <div
+                className={`flex justify-center absolute h-[32px] border-[1px]  border-[#E2E2E2] rounded-lg bottom-0  right-4 w-[90px] items-center`}
+              >
+                <img src={likeIcon.src} alt="logo" className="h-[12px] mr-2" />
+                300
+              </div>
+              <div
+                className={`flex justify-center absolute h-[32px] border-[1px] border-[#E2E2E2] rounded-lg bottom-0 right-28 w-[90px] items-center`}
+              >
+                <img src={boltIcon.src} alt="logo" className="h-[14px] mr-2" />
+                15.8k
+              </div>
+            </>
+          )}
           <div className={`w-full  h-[75%]`}>
             <img
               src={cover}
