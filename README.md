@@ -1,3 +1,11 @@
+# Fileverse
+
+Web3’s Simplest Way to Share Files, Collaborate and Coordinate.
+
+Your personal collaboration tool and workspace for on-chain file management and content creation, all without cutting corners on privacy and decentralisation.
+
+Visit [Fileverse](https://fileverse.io/) now to experience it live.
+
 # Getting Started
 
 Clone the repository using the following git command:
