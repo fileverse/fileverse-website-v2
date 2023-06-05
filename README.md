@@ -1,4 +1,4 @@
-# Fileverse
+# Fileverse | About
 
 Web3’s Simplest Way to Share Files, Collaborate and Coordinate.
 
@@ -6,12 +6,12 @@ Your personal collaboration tool and workspace for on-chain file management and 
 
 Visit [Fileverse](https://fileverse.io/) now to experience it live.
 
-# Getting Started
+## Getting Started
 
 Clone the repository using the following git command:
 
 ```
-$ git clone git@github.com:fileverse/fileverse-dapp.git
+$ git clone https://github.com/fileverse/fileverse-website-v2.git
 ```
 
 Make sure you have Node.js and npm installed in your system and then run:
@@ -43,7 +43,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The basic folder structure of the project is:
 
 ```
-fileverse-dapp
+fileverse-website-v2
 │
 ├─── components
 ├─── pages
@@ -54,19 +54,20 @@ fileverse-dapp
 |   .eslint
 |   .gitignore
 |   .prettierrc
-|   config-overrides.js
+|   next.config.js
 |   package-lock.json
 |   package.json
+|   postcss.config.js
 |   tailwind.config.js
 |   tsconfig.json
 ```
 
-### Folders
+## Folders
 
-## `components/`
-
-This folder contains all the source code that are built into the project.
+**`components/`** This folder contains all the source code that are built into the project.
 
 **`pages/`** Contains code for pages displayed in each route.
 
 **`public/`** All the assets like image and icons are stored in this folder.
+
+**`styles/`** Related styling is stored in this folder.
