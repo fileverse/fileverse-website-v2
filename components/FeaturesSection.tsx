@@ -126,7 +126,7 @@ const FeaturesSection = () => {
               <FeatureCard
                 image={subdomainWindow}
                 title={'Live collaboration '}
-                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!."
+                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!"
               />
             </>
           </div>
