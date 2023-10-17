@@ -212,7 +212,7 @@ const Subdomain = () => {
                 >
                   <PrimaryButton
                     title={'Create My Portal'}
-                    linkTo={'https://portal.fileverse.io/#/create?code=ANN'}
+                    linkTo={'https://portal.fileverse.io/#/claim'}
                     openNewTab={true}
                   />
                 </div>
