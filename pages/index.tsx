@@ -26,8 +26,9 @@ import developerDaoReview from '../public/assets/developer_dao_review.png';
 import eurion from '../public/assets/eurion.png';
 import familyIcon from '../public/assets/familyIcon.png';
 import filecoinReview from '../public/assets/filecoin-review.png';
-import filverseVase from '../public/assets/fileVase.png';
+import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
+import fileverseWindowOld from '../public/assets/fileverseWindowOld.png';
 import global from '../public/assets/global.svg';
 import gnosischain from '../public/assets/gnosischain.png';
 import illuani from '../public/assets/illuan.png';
@@ -73,8 +74,7 @@ const Home: NextPage = () => {
                     }`}
                   >
                     On-chain people and communities deserve on-chain tools for
-                    private communication and collaboration. We present to you
-                    Fileverse Solo & Fileverse Portal!
+                    private communication and collaboration.
                   </p>
                   <div
                     className={`mt-4  ${
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
                 >
                   <img
                     className=""
-                    src={fileverseWindow.src}
+                    src={fileverseWindowOld.src}
                     alt="fileverse-window"
                   />
                 </div>
@@ -111,8 +111,8 @@ const Home: NextPage = () => {
                 CTAButtonLink={'https://beta.fileverse.io'}
                 CTAButtonTitle={'Launch App'}
                 displayImage={solo}
-                firstDescription={'Private-first file sharing, simplified.'}
-                secondDescription={'Share private files with or without wallet'}
+                firstDescription={'Privacy-first file sharing, simplified'}
+                secondDescription={'Share any files with or without a wallet'}
                 CTADescription={'Private. Decentralised. Encrypted.'}
               />
               {/* {!isMediaMax1025px && (
@@ -129,14 +129,14 @@ const Home: NextPage = () => {
               <ProductsDisplay
                 background={'bg-white'}
                 productName={`Fileverse Portal`}
-                CTAButtonLink={'https://fileverse.on.fleek.co/'}
+                CTAButtonLink={'/portal'}
                 firstDescription={
                   'Like Google Workspace, but on-chain, encrypted, and privacy-enchancing'
                 }
                 CTAButtonTitle={'Create Your Portal'}
-                CTAbuttonDisabled={true}
+                CTAbuttonDisabled={false}
                 displayImage={fileverseWindow}
-                CTADescription={'Communicate. Collabrate. Coordinate.'}
+                CTADescription={'Communicate. Collaborate. Coordinate.'}
               />
             </div>
           </>
@@ -146,7 +146,7 @@ const Home: NextPage = () => {
             <ImageLayout>
               <img
                 className={`${isMediaMax1025px ? '' : 'w-[480px]'}`}
-                src={filverseVase.src}
+                src={fileverseVase.src}
                 alt="fileverse-wallet-vase"
               />
             </ImageLayout>
@@ -202,7 +202,7 @@ const Home: NextPage = () => {
           <div className="">
             <div className="p-4">
               <SubHeading
-                text={'For whom is Fileverse Solo and Filverse Portal?'}
+                text={'For whom is Fileverse Solo and Fileverse Portal?'}
               />
             </div>
             <div className="flex justify-center">
@@ -251,7 +251,7 @@ const Home: NextPage = () => {
                     image={BlockChain}
                     title={'NFT Communities'}
                     description={`On-chain communities deserve on-chain collaboration tools
-                      and analytics. Try Filverse Portal for a real
+                      and analytics. Try Fileverse Portal for a real
                       decentralised and on-chain experience.`}
                   />
                 </div>

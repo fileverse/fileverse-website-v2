@@ -1,6 +1,7 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useRef, useState } from 'react';
 
-import { Slide, Tooltip, useMediaQuery } from '@mui/material';
+import { Slide, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -12,7 +13,7 @@ import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
 
-const HeadNav = () => {
+const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
   const [menu, setMenu] = useState(false);
   const [top, setTop] = useState(true);
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -61,7 +62,7 @@ const HeadNav = () => {
   return (
     <div
       className={`flex ${
-        top ? 'bg-yellow ' : 'bg-white'
+        top && !defaultColor ? 'bg-yellow ' : 'bg-white'
       }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
       <div className={`w-[90%] flex`}>
@@ -69,7 +70,7 @@ const HeadNav = () => {
           className={` lg:w-[50%] ${
             isMediaMax1025px && 'w-full'
           } duration-500 ease-in-out transition ${
-            top ? 'bg-yellow ' : 'bg-white'
+            top && !defaultColor ? 'bg-yellow ' : 'bg-white'
           }   flex items-center`}
           onClick={() => router.push('/')}
         >
@@ -91,7 +92,7 @@ const HeadNav = () => {
         <div
           className={`
             lg:w-[50%] duration-500 ease-in-out transition relative flex ${
-              top ? 'bg-yellow ' : 'bg-white'
+              top && !defaultColor ? 'bg-yellow ' : 'bg-white'
             }    items-center h-full justify-end`}
           ref={dropDownButton}
         >
@@ -109,11 +110,11 @@ const HeadNav = () => {
             <button
               onClick={() => setMenu(!menu)}
               className={`border rounded-md ${
-                top ? 'bg-black text-white ' : 'bg-white'
+                top || defaultColor ? 'bg-black text-white ' : 'bg-white'
               } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
             >
-              <p className="mr-4">Show me more</p>
-              {top ? (
+              <p className="mr-4">About</p>
+              {top || defaultColor ? (
                 <Image
                   className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
                   alt="white-dropdown-arrow"
@@ -135,16 +136,16 @@ const HeadNav = () => {
 
           <Slide direction="down" in={menu} container={dropDownButton.current}>
             <div
-              className={`absolute py-4 rounded-lg w-[12rem] -z-[999999] shadow-lg bg-white top-[80px]`}
+              className={`absolute py-4 rounded-lg w-[12rem] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
             >
-              <Link href={'/why-fileverse'} passHref>
+              <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Why Fileverse
+                  FAQ
                 </a>
               </Link>
-              <Link href={'/features'} passHref>
+              <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
                 <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  Features
+                  My Portals
                 </a>
               </Link>
               <Link href={'https://beta.fileverse.io/'} passHref>
@@ -153,7 +154,7 @@ const HeadNav = () => {
                   rel="noopener noreferrer"
                   onMouseEnter={() => setNewTabIcon('SOLO')}
                   onMouseLeave={() => setNewTabIcon('')}
-                  className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b"
+                  className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade "
                 >
                   Fileverse Solo
                   {newTabIconVisible === 'SOLO' && (
@@ -165,18 +166,6 @@ const HeadNav = () => {
                   )}
                 </a>
               </Link>
-              <Tooltip title="Coming Soon" placement="right">
-                <div className="h-[34px] cursor-not-allowed flex text-gray-400 items-center mx-[12px] px-2 py-4 border-fade border-bottom ">
-                  Fileverse Portal
-                  {newTabIconVisible === 'PORTAL' && (
-                    <img
-                      className="ml-2 w-4"
-                      src={newTabIcon.src}
-                      alt="new tab icon"
-                    />
-                  )}
-                </div>
-              </Tooltip>
             </div>
           </Slide>
         </div>
@@ -195,19 +184,18 @@ const HeadNav = () => {
           >
             <img src={xicon.src} className="w-8" alt="x-icon" />
           </div>
-          <div className="">
-            <Link href={'/why-fileverse'} passHref>
+          <div className="font-semibold mt-6">
+            <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
               <div
                 onClick={() => {
                   if (html) html.classList.remove('overflow-y-hidden');
                   setSideMenu(false);
                 }}
-                className=" py-2 "
               >
-                <a>Why Fileverse</a>
+                <a>FAQ</a>
               </div>
             </Link>
-            <Link href={'/features'} passHref>
+            <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
               <div
                 onClick={() => {
                   if (html) html.classList.remove('overflow-y-hidden');
@@ -215,7 +203,7 @@ const HeadNav = () => {
                 }}
                 className="py-2"
               >
-                <a>Features</a>
+                <a>My Portals</a>
               </div>
             </Link>
             <Link href={'https://beta.fileverse.io'} passHref>
@@ -230,18 +218,6 @@ const HeadNav = () => {
               >
                 Fileverse Solo
               </a>
-            </Link>
-            <Link href={''} passHref>
-              <div
-                onClick={() => {
-                  if (html) html.classList.remove('overflow-y-hidden');
-                  setSideMenu(false);
-                }}
-                className="py-2  cursor-not-allowed
-                text-gray-400"
-              >
-                Fileverse Portal
-              </div>
             </Link>
           </div>
         </div>
