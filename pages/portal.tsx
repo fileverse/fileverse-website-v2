@@ -109,19 +109,19 @@ const Subdomain = () => {
                 className={` bg-black p-3 flex w-fit rounded-full mt-4 ${getBannerFontSize()}`}
               >
                 <p className="text-white text-center mr-4">
-                  Portal soft launch was a resounding{' '}
+                  The{' '}
                   <a
-                    href="https://twitter.com/fileverse/status/1636751755936428033?s=20"
+                    href="https://twitter.com/fileverse/status/1714288331570471336"
                     target="_blank"
                     rel="noreferrer"
                     className="underline"
                   >
-                    success!
+                    Fileverse Beta
                   </a>{' '}
-                  This also brought an unexpected overload on our Beta.
-                  {isMediaMax1120px && !isMediaMax570px ? <br /> : null} To
-                  focus on quality, we will transition to an invite-first &
-                  whitelist mode. Stay tuned &lt;3
+                  is currently in invite-first & whitelist mode, to focus on
+                  quality.
+                  {isMediaMax1120px && !isMediaMax570px ? <br /> : null} Stay
+                  tuned &lt;3
                 </p>
                 <img
                   onClick={() => setNotification(false)}
