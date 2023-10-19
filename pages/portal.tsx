@@ -109,7 +109,7 @@ const Subdomain = () => {
                 className={` bg-black p-3 flex w-fit rounded-full mt-4 ${getBannerFontSize()}`}
               >
                 <p className="text-white text-center mr-4">
-                  The{' '}
+                  Your{' '}
                   <a
                     href="https://twitter.com/fileverse/status/1714288331570471336"
                     target="_blank"
@@ -118,8 +118,8 @@ const Subdomain = () => {
                   >
                     Fileverse Beta
                   </a>{' '}
-                  is currently in invite-first & whitelist mode, to focus on
-                  quality.
+                  is currently in invite-first & allowlist mode, to focus on
+                  quality & existing users.
                   {isMediaMax1120px && !isMediaMax570px ? <br /> : null} Stay
                   tuned &lt;3
                 </p>
