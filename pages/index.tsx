@@ -45,7 +45,7 @@ const Home: NextPage = () => {
   return (
     <BodyWrapper>
       <>
-        <HeadSectionLayout>
+        <HeadSectionLayout noFooter={true}>
           <>
             <div className="flex min-h-[85vh] justify-center p-4">
               <div
