@@ -78,7 +78,7 @@ const BodyWrapper = ({ children, portalPage }: BodyType) => {
           <div className="w-full h-[10rem] p-2 flex items-center justify-center">
             <div
               className="flex 
-items-center font-normal w-full p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text-[#777777]"
+items-center font-normal w-[42rem] p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text-[#777777]"
             >
               <img
                 src={fileverseLogo.src}
@@ -87,16 +87,13 @@ items-center font-normal w-full p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text-[#
               />
               <div
                 className={` ${
-                  isMediaMax1025px ? 'text-sm' : 'text-lg'
-                } text-left text-[#777777] pl-2`}
+                  isMediaMax1025px ? 'text-sm text-center' : 'text-lg text-left'
+                }  text-[#777777] pl-2`}
               >
                 <p>
-                  Fileverse Portal is an on-chain collaboration & coordination
-                  dApp built with the
-                </p>
-                <p>
-                  ❤️ and 🔥 of 14,000 contributors from the Gitcoin & Ethereum
-                  communities
+                  Fileverse is an trustless collaboration dApp supported by
+                  14,000+ Gitcoin & Ethereum donors as well as leading
+                  protocols, investors & angels 💛
                 </p>
               </div>
             </div>
