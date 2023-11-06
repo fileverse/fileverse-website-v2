@@ -17,25 +17,26 @@ import SectionLayout from '../components/SectionLayout';
 import SubHeading from '../components/SubHeading';
 import TweetCard from '../components/TweetCard';
 import WhomCard from '../components/WhomCard';
-import adly from '../public/assets/adly.png';
+import devDaoTweet1 from '../public/assets/1devdao.png';
+import coinbaseTweet2 from '../public/assets/2Coinbase.png';
+import filecoinTweet3 from '../public/assets/3filecoin.png';
+import scrollTweet4 from '../public/assets/4scroll.png';
+import gnosisTweet5 from '../public/assets/5gnosis.png';
+import tweet6 from '../public/assets/6.png';
+import tweet7 from '../public/assets/7.png';
+import tweet8 from '../public/assets/8.png';
 import BlockChain from '../public/assets/BlockChain.png';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.png';
 import Dao from '../public/assets/Dao.png';
-import developerDaoReview from '../public/assets/developer_dao_review.png';
-import eurion from '../public/assets/eurion.png';
+import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import familyIcon from '../public/assets/familyIcon.png';
-import filecoinReview from '../public/assets/filecoin-review.png';
 import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
 import fileverseWindowOld from '../public/assets/fileverseWindowOld.png';
 import global from '../public/assets/global.svg';
-import gnosischain from '../public/assets/gnosischain.png';
-import illuani from '../public/assets/illuan.png';
-import michealAuroraReview from '../public/assets/micheal-aurora.png';
 import Nft from '../public/assets/Nft.png';
 import padLock from '../public/assets/padlock.svg';
-import rajesh from '../public/assets/rajesh.png';
 import solo from '../public/assets/solo.png';
 import Web3 from '../public/assets/Web3.png';
 
@@ -44,7 +45,7 @@ const Home: NextPage = () => {
   return (
     <BodyWrapper>
       <>
-        <HeadSectionLayout>
+        <HeadSectionLayout noFooter={true}>
           <>
             <div className="flex min-h-[85vh] justify-center p-4">
               <div
@@ -131,7 +132,7 @@ const Home: NextPage = () => {
                 productName={`Fileverse Portal`}
                 CTAButtonLink={'/portal'}
                 firstDescription={
-                  'Like Google Workspace, but on-chain, encrypted, and privacy-enchancing'
+                  'Like Google Workspace, but on-chain, encrypted, and privacy-enhancing'
                 }
                 CTAButtonTitle={'Create Your Portal'}
                 CTAbuttonDisabled={false}
@@ -259,18 +260,27 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4">
+        <div className="bg-[#FFE60033] w-[100vw] mt-12 p-4 relative">
           <SubHeading text="Fileverse on Twitter" />
           <div className="mt-8">
-            <div className="flex overflow-x-auto no-scrollbar">
-              <TweetCard image={developerDaoReview} />
-              <TweetCard image={adly} />
-              <TweetCard image={illuani} />
-              <TweetCard image={filecoinReview} />
-              <TweetCard image={eurion} />
-              <TweetCard image={michealAuroraReview} />
-              <TweetCard image={gnosischain} />
-              <TweetCard image={rajesh} />
+            <div className=" flex overflow-auto no-scrollbar items-start gap-10">
+              <div
+                className={`absolute right-2 top-[50%] m-2 w-8 h-8 bg-black opacity-30 rounded-full flex items-center justify-center`}
+              >
+                <img
+                  src={dropDownArrow.src}
+                  alt="back-arrow"
+                  className="changeWhite -rotate-90"
+                />
+              </div>
+              <TweetCard image={devDaoTweet1} />
+              <TweetCard image={coinbaseTweet2} />
+              <TweetCard image={filecoinTweet3} />
+              <TweetCard image={scrollTweet4} />
+              <TweetCard image={gnosisTweet5} />
+              <TweetCard image={tweet6} />
+              <TweetCard image={tweet7} />
+              <TweetCard image={tweet8} />
             </div>
           </div>
         </div>
