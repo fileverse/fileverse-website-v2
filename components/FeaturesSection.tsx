@@ -5,6 +5,7 @@ import { useMediaQuery } from '@mui/material';
 import threeDbeauty from '../public/assets/3dbeauty.png';
 import accessToken from '../public/assets/access-token.png';
 import chatWindow from '../public/assets/chatWindow.png';
+import dPages from '../public/assets/dPages.png';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileTypes from '../public/assets/fileTypes.png';
 import subdomainWindow from '../public/assets/subdomainWindow.png';
@@ -97,6 +98,11 @@ const FeaturesSection = () => {
             className={`flex overflow-auto no-scrollbar`}
           >
             <>
+              <FeatureCard
+                image={dPages}
+                title={'Decentralized Pages'}
+                text="Your Notion alternative - publish decentralized websites, blogs, technical docs, write your notes or create personal wikis/databases, and more."
+              />
               <FeatureCard
                 image={chatWindow}
                 title={'Chat Rooms & Spaces'}
