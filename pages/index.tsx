@@ -132,7 +132,7 @@ const Home: NextPage = () => {
                 productName={`Fileverse Portal`}
                 CTAButtonLink={'/portal'}
                 firstDescription={
-                  'Like Google Workspace, but on-chain, encrypted, and privacy-enchancing'
+                  'Like Google Workspace, but on-chain, encrypted, and privacy-enhancing'
                 }
                 CTAButtonTitle={'Create Your Portal'}
                 CTAbuttonDisabled={false}
