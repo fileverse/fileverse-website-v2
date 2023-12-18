@@ -82,7 +82,8 @@ const Subdomain = () => {
     <BodyWrapper portalPage={true}>
       <>
         <NextSeo
-          title="Fileverse Portal"
+          title="Fileverse Portal | Notion Alternative |  Web3 Collaboration"
+          description="Your Web3 collaboration tool! Peer-to-peer file sharing with end-to-end encryption & token gating; decentralized websites publishing; decentralized Excalidraw whiteboards; and more!"
           openGraph={{
             url: 'https://fileverse.io/portal',
             title: 'Fileverse Portal',
