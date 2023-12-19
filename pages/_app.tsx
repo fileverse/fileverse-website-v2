@@ -6,8 +6,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextSeo
-        title="Fileverse | File sharing for Web3 Communities"
-        description="Share file with any blockchain address!"
+        title="Fileverse | Peer to Peer File Sharing dApp"
+        description="Onchain peer-to-peer file sharing and Web3 collaboration. Share files with end-to-end encryption & token gating; publish decentralized websites; create decentralized Excalidraw whiteboards; and more!"
         openGraph={{
           url: 'https://beta.fileverse.io',
           title: 'Fileverse',
