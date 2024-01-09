@@ -13,7 +13,7 @@ import tokenGating from '../public/assets/tokengating.png';
 import FeatureCard from './FeatureCard';
 import SectionLayout from './SectionLayout';
 
-const FeaturesSection = () => {
+const FeaturesSection = ({ portalPage }: { portalPage: boolean }) => {
   const featuresDiv = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
@@ -97,44 +97,89 @@ const FeaturesSection = () => {
             onScroll={() => scrollCheck(featuresDiv.current)}
             className={`flex overflow-auto no-scrollbar`}
           >
-            <>
-              <FeatureCard
-                image={dPages}
-                title={'Decentralized Pages'}
-                text="Your Notion alternative - publish decentralized websites, blogs, technical docs, write your notes or create personal wikis/databases, and more."
-              />
-              <FeatureCard
-                image={chatWindow}
-                title={'Chat Rooms & Spaces'}
-                text=" Create encrypted chat rooms to coordinate. Invite your peers by sending access-NFTs. Use your ENS as your chat profile."
-              />
-              <FeatureCard
-                image={accessToken}
-                title={'Airdrop Access-Tokens'}
-                text="These tokens are NFTs that you can fully customise and send to as many addresses you want to give them access to files.
+            {portalPage ? (
+              <>
+                <FeatureCard
+                  image={dPages}
+                  title={'Decentralized Pages'}
+                  text="Your Notion alternative - publish decentralized websites, blogs, technical docs, write your notes or create personal wikis/databases, and more."
+                />
+                <FeatureCard
+                  image={fileTypes}
+                  title={'Peer-to-Peer File Sharing'}
+                  text=" Upload and share any type of multimedia file. Your peers will be able to preview or download them directly on Fileverse."
+                />
+                <FeatureCard
+                  image={tokenGating}
+                  title={'Token Gating'}
+                  text={
+                    'Define the type and number of tokens (e.g. 1 CloneX) for onchain groups to gain access to your file, page, docs, etc.'
+                  }
+                />
+                <FeatureCard
+                  image={subdomainWindow}
+                  title={'Live collaboration '}
+                  text="Create a doc, whiteboard, or web page directly on Fileverse and collaborate with your peers. Stored on IPFS/Arweave!"
+                />
+                <FeatureCard
+                  image={accessToken}
+                  title={'Airdrop Access-Tokens'}
+                  text="These tokens are NFTs that you can fully customise and send to as many addresses you want to give them access to files.
                 "
-              />
-              <FeatureCard
-                image={threeDbeauty}
-                title={'3D Beauty '}
-                text="Upload your 3D files and share the URL with anons, frens, or the world. View any 3D model directly on Fileverse."
-              />
-              <FeatureCard
-                image={fileTypes}
-                title={'Multimedia'}
-                text=" Upload and share any type of multimedia file. Your peers will be able to preview or download them directly on Fileverse."
-              />
-              <FeatureCard
-                image={tokenGating}
-                title={'Token-gate'}
-                text="Define the type and number of tokens (e.g. 1 CloneX) for existing on-chain groups to gain access to your file or chat room."
-              />
-              <FeatureCard
-                image={subdomainWindow}
-                title={'Live collaboration '}
-                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!"
-              />
-            </>
+                />
+                <FeatureCard
+                  image={chatWindow}
+                  title={'Chat Rooms & Spaces'}
+                  text=" Create encrypted chat rooms to coordinate. Invite your peers by sending access-NFTs. Use your ENS as your chat profile."
+                />
+                <FeatureCard
+                  image={threeDbeauty}
+                  title={'3D Beauty '}
+                  text="Upload your 3D files and share the URL with anons, frens, or the world. View any 3D model directly on Fileverse."
+                />
+              </>
+            ) : (
+              <>
+                <FeatureCard
+                  image={dPages}
+                  title={'Decentralized Pages'}
+                  text="Your Notion alternative - publish decentralized websites, blogs, technical docs, write your notes or create personal wikis/databases, and more."
+                />
+                <FeatureCard
+                  image={accessToken}
+                  title={'Airdrop Access-Tokens'}
+                  text="These tokens are NFTs that you can fully customise and send to as many addresses you want to give them access to files.
+                "
+                />
+                <FeatureCard
+                  image={threeDbeauty}
+                  title={'3D Beauty '}
+                  text="Upload your 3D files and share the URL with anons, frens, or the world. View any 3D model directly on Fileverse."
+                />
+                <FeatureCard
+                  image={tokenGating}
+                  title={'Token Gating'}
+                  text={
+                    'Create granular permissions for individuals or communities accessing your files and content. All via onchain rules.'
+                  }
+                />
+                <FeatureCard
+                  image={fileTypes}
+                  title={'Multimedia'}
+                  text=" Upload and share any type of multimedia file. Your peers will be able to preview or download them directly on Fileverse."
+                />
+                <FeatureCard
+                  image={subdomainWindow}
+                  title={'Live collaboration '}
+                  text="Create a doc, whiteboard, or web page directly on Fileverse and collaborate with your peers. Stored on IPFS/Arweave!"
+                />
+                <FeatureCard
+                  image={chatWindow}
+                  title={'Chat Rooms & Spaces'}
+                  text=" Create encrypted chat rooms to coordinate. Invite your peers by sending access-NFTs. Use your ENS as your chat profile."
+                />
+              </>
+            )}
           </div>
         </div>
       </div>
