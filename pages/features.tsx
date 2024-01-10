@@ -184,7 +184,7 @@ const Features = () => {
           </div>
         </SectionLayout>
 
-        <FeaturesSection />
+        <FeaturesSection portalPage={false} />
         <div className="bg-yellow mt-8 py-8">
           {/* chat */}
           <SectionLayout marginTop="mt-0">

@@ -1,5 +1,6 @@
-import { useMediaQuery } from '@mui/material';
 import React from 'react';
+
+import { useMediaQuery } from '@mui/material';
 
 export const CopyrightFooter = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
