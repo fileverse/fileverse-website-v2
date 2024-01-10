@@ -74,9 +74,7 @@ const FeaturesSection = ({ portalPage }: { portalPage: boolean }) => {
       id: 3,
       image: tokenGating,
       title: 'Token Gating',
-      text: portalPage
-        ? '‘Define the type and number of tokens (e.g. 1 CloneX) for onchain groups to gain access to your file, page, docs, etc.’ '
-        : 'Create granular permissions for individuals or communities accessing your files and content. All via onchain rules.',
+      text: 'Create granular permissions for individuals or communities accessing your files and content. All via onchain rules.',
     },
     {
       id: 4,
