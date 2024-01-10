@@ -36,7 +36,7 @@ const BodyWrapper = ({ children, portalPage }: BodyType) => {
             </h2>
             <div className="w-full flex justify-center  mt-4 items-center">
               <div
-                className={`flex flex-wrap w-full items-center justify-center`}
+                className={`flex flex-wrap w-full items-center justify-center gap-2`}
               >
                 <PrimaryButton
                   icon={Twitter}

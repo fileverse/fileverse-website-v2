@@ -207,7 +207,7 @@ const Home: NextPage = () => {
         <div className="flex flex-col mt-8 justify-center ">
           <div className="">
             <div className="p-4">
-              <SubHeading text={'‘Who can benefit from Fileverse?'} />
+              <SubHeading text={'Who can benefit from Fileverse?'} />
             </div>
             <div className="flex justify-center">
               <div className="w-[75%]">
@@ -244,7 +244,7 @@ const Home: NextPage = () => {
 
                   <WhomCard
                     image={BlockChain}
-                    title={'‘Hackathon Participants and researchers'}
+                    title={'Hackathon Participants and researchers'}
                     description={`Publish your project info on a decentralised web page and share your code, database, and files authoritatively. Show the world what you are capable of!`}
                   />
                 </div>
