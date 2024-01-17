@@ -33,8 +33,8 @@ import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import familyIcon from '../public/assets/familyIcon.png';
 import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
-import fileverseWindowOld from '../public/assets/fileverseWindowOld.png';
 import global from '../public/assets/global.svg';
+import hero from '../public/assets/hero.png';
 import Nft from '../public/assets/Nft.png';
 import padLock from '../public/assets/padlock.svg';
 import solo from '../public/assets/solo.png';
@@ -95,11 +95,7 @@ const Home: NextPage = () => {
                     isMediaMax1025px && 'w-full'
                   } flex justify-center`}
                 >
-                  <img
-                    className=""
-                    src={fileverseWindowOld.src}
-                    alt="fileverse-window"
-                  />
+                  <img className="" src={hero.src} alt="fileverse-window" />
                 </div>
               </div>
             </div>
