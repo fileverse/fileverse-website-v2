@@ -137,7 +137,7 @@ const Subdomain = () => {
             )}
             <div
               className={`lg:w-[90%] ${
-                isMediaMax1025px && 'w-full'
+                isMediaMax1025px && 'w-[100vw]'
               } flex flex-wrap h-full items-center`}
             >
               <div
@@ -240,7 +240,7 @@ const Subdomain = () => {
                 <img
                   src={portalHero.src}
                   alt="fileverse-window"
-                  className="w-[63rem]"
+                  className={isMediaMax1025px ? 'w-[97vw]' : 'w-[63rem]'}
                 />
               </div>
             </div>
