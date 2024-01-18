@@ -92,7 +92,7 @@ const Home: NextPage = () => {
                 </div>
                 <div
                   className={`lg:w-[50%] ${
-                    isMediaMax1025px && 'w-full'
+                    isMediaMax1025px && 'w-[100vw]'
                   } flex justify-center`}
                 >
                   <img className="" src={hero.src} alt="fileverse-window" />
