@@ -240,7 +240,7 @@ const Home: NextPage = () => {
 
                   <WhomCard
                     image={BlockChain}
-                    title={'Hackathon Participants and researchers'}
+                    title={'Hackathon Participants and Researchers'}
                     description={`Publish your project info on a decentralised web page and share your code, database, and files authoritatively. Show the world what you are capable of!`}
                   />
                 </div>

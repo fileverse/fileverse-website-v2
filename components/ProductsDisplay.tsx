@@ -41,7 +41,7 @@ const ProductsDisplay = ({
           isMediaMax1025px && 'w-full'
         } flex flex-col relative items-center`}
       >
-        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[300px]'}`}>
+        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[350px]'}`}>
           <h1
             className={` text-center font-bold ${
               isMediaMax1025px ? ' text-2xl' : 'text-4xl'

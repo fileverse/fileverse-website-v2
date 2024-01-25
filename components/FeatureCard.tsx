@@ -12,11 +12,17 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
   return (
     <div
       className={`bg-white border border-[#E2E2E2] rounded-xl lg:w-[500px]  flex items-center flex-none ${
-        isMediaMax1025px && 'w-[300px]'
+        isMediaMax1025px && 'w-[300px] h-[480px]'
       } rounded-ld py-8 px-4 mr-4 mt-4 `}
     >
       <div className={``}>
-        <div className="items-center h-[250px] flex justify-center">
+        <div
+          className={`${
+            isMediaMax1025px
+              ? 'items-start h-[200px]'
+              : ' items-center h-[250px]'
+          }  flex justify-center`}
+        >
           <img
             src={image.src}
             className={`w-[380px] ${isMediaMax1025px ? '' : 'h-full'}`}
@@ -25,7 +31,7 @@ const FeatureCard = ({ image, title, text }: CardTypes) => {
         </div>
         <div className="mt-4">
           <h2 className="text-center font-semibold text-2xl">{title}</h2>
-          <p className="text-center">{text}</p>
+          <p className="text-center h-[75px]">{text}</p>
         </div>
       </div>
     </div>
