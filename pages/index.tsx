@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       <>
         <HeadSectionLayout noFooter={true}>
           <>
-            <div className="flex min-h-[85vh] justify-center p-4">
+            <div className="flex min-h-[85vh] justify-center">
               <div
                 className={` lg:w-[90%] ${
                   isMediaMax1025px && 'w-full'
