@@ -33,8 +33,8 @@ import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import familyIcon from '../public/assets/familyIcon.png';
 import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
-import fileverseWindowOld from '../public/assets/fileverseWindowOld.png';
 import global from '../public/assets/global.svg';
+import hero from '../public/assets/hero.png';
 import Nft from '../public/assets/Nft.png';
 import padLock from '../public/assets/padlock.svg';
 import solo from '../public/assets/solo.png';
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       <>
         <HeadSectionLayout noFooter={true}>
           <>
-            <div className="flex min-h-[85vh] justify-center p-4">
+            <div className="flex min-h-[85vh] justify-center">
               <div
                 className={` lg:w-[90%] ${
                   isMediaMax1025px && 'w-full'
@@ -60,10 +60,15 @@ const Home: NextPage = () => {
                       'text-2xl flex flex-col items-center justify-center'
                     } `}
                   >
-                    Web3’s Simplest Way to
+                    Your simplest way to
                     <Typewriter
                       options={{
-                        strings: ['Share Files', 'Collaborate', 'Coordinate'],
+                        strings: [
+                          'collaborate',
+                          'share knowledge',
+                          'manage files',
+                          'create content',
+                        ],
                         autoStart: true,
                         loop: true,
                       }}
@@ -74,8 +79,8 @@ const Home: NextPage = () => {
                       isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'
                     }`}
                   >
-                    On-chain people and communities deserve on-chain tools for
-                    private communication and collaboration.
+                    Onchain communities and individuals deserve onchain tools
+                    for collaboration and productivity.
                   </p>
                   <div
                     className={`mt-4  ${
@@ -87,14 +92,10 @@ const Home: NextPage = () => {
                 </div>
                 <div
                   className={`lg:w-[50%] ${
-                    isMediaMax1025px && 'w-full'
+                    isMediaMax1025px && 'w-[100vw]'
                   } flex justify-center`}
                 >
-                  <img
-                    className=""
-                    src={fileverseWindowOld.src}
-                    alt="fileverse-window"
-                  />
+                  <img className="" src={hero.src} alt="fileverse-window" />
                 </div>
               </div>
             </div>
@@ -132,12 +133,12 @@ const Home: NextPage = () => {
                 productName={`Fileverse Portal`}
                 CTAButtonLink={'/portal'}
                 firstDescription={
-                  'Like Google Workspace, but on-chain, encrypted, and privacy-enchancing'
+                  'Privacy-enhancing and onchain alternative to Google Workspace & Notion'
                 }
                 CTAButtonTitle={'Create Your Portal'}
                 CTAbuttonDisabled={false}
                 displayImage={fileverseWindow}
-                CTADescription={'Communicate. Collaborate. Coordinate.'}
+                CTADescription={'Create. Collaborate. Communicate.'}
               />
             </div>
           </>
@@ -169,21 +170,21 @@ const Home: NextPage = () => {
                     title="Decentralisation"
                     icon={check}
                     paragraph={
-                      'Your files are kept on peer-to-peer storage networks and your interactions with peers are managed on-chain. Oh.. and you can also enable End-to-End encryption!'
+                      'Your files are stored on peer-to-peer storage networks and access permissions are done via a smart contract and User Controlled Authorization Networks (UCANs). Oh.. and everything is end-to-end encrypted!'
                     }
                   />
                   <ListWithIconCard
                     title="Simplicity"
                     icon={padLock}
                     paragraph={
-                      'Everything you need to move away from centralised apps, just a few clicks away. All from the comfort of your crypto wallet. All without cutting corners on privacy and security.'
+                      'Everything you need to move away from centralised servers and predatory surveillance practices, in just a few clicks. All from the comfort of your own wallet and key pair. Yes, it’s all yours.'
                     }
                   />
                   <ListWithIconCard
                     title="Coordination"
                     icon={global}
                     paragraph={
-                      'Blockchains are like community computers, enabling you to coordinate globally with people. Fileverse shows you how. Jump into the space of permissionless coordinating & collaboration.'
+                      'Blockchains are community computers, enabling you to coordinate globally with people. Use Fileverse to explore permissionless coordination & collaboration.'
                     }
                   />
                   <div
@@ -198,13 +199,11 @@ const Home: NextPage = () => {
             </ContentLayout>
           </div>
         </SectionLayout>
-        <FeaturesSection />
+        <FeaturesSection portalPage={false} />
         <div className="flex flex-col mt-8 justify-center ">
           <div className="">
             <div className="p-4">
-              <SubHeading
-                text={'For whom is Fileverse Solo and Fileverse Portal?'}
-              />
+              <SubHeading text={'Who can benefit from Fileverse?'} />
             </div>
             <div className="flex justify-center">
               <div className="w-[75%]">
@@ -212,48 +211,37 @@ const Home: NextPage = () => {
                   <WhomCard
                     image={familyIcon}
                     title={'The Web3 Curious'}
-                    description={`Web3 is not only about speculation & finance. Try just
-                      sharing files peer-to-peer with no one snooping on and
-                      selling your personal data.`}
+                    description={`Web3 is more than finance. It offers tools to better control your data, coordinate with peers without relying on centralized servers, and unleash your creativity. All without the need to buy tokens.`}
                   />
 
                   <WhomCard
                     image={Dao}
                     title={'DAOs'}
-                    description={`On-chain organisations deserve on-chain collaboration
-                      tools and analytics. Fileverse Portal is built for you!`}
+                    description={`Onchain organisations deserve onchain collaboration tools. Use Fileverse to co-create and share public knowledge-bases. Share trustlessly and keep important information available to all, forever, uncensorable.`}
                   />
 
                   <WhomCard
                     image={Nft}
                     title={`Crypto Natives`}
-                    description={`Think your wallet is just for buying and selling? Your
-                      wallet is a powerful cryptography tool that unlocks new
-                      forms of social coordination. Enter the Portal!`}
+                    description={`Your wallet can do a lot more than just financial transactions: use it to unlock new forms of social coordination and content production! Use Fileverse as your safe haven connected to your centralised tools.`}
                   />
 
                   <WhomCard
                     image={Web3}
-                    title={`Web3 Companies`}
-                    description={`Start decentralising your collaboration and communication
-                      stack. Enjoy intuitive Web3 tools to share content, chat,
-                      live edit, etc, with your teams.`}
+                    title={`Decentralised Teams`}
+                    description={`Create a workspace from your Safe Multisig; publish your documentation or knowledgebase on our Notion alternative; live edit dDocs & whiteboards; and use perma storage for important public content.`}
                   />
 
                   <WhomCard
                     image={Crypto}
                     title={`Content Creators`}
-                    description={`You're not going to gate that Subscriber-only article via
-                      user accounts and database entries are you? Token-gate it
-                      & start creating on-chain analytics for your content.`}
+                    description={`Move away from apps that limit you and your followers. Gain full independence, create a community through token-gating / access-token airdrop, enable direct subscribers & discover new engagement metrics.`}
                   />
 
                   <WhomCard
                     image={BlockChain}
-                    title={'NFT Communities'}
-                    description={`On-chain communities deserve on-chain collaboration tools
-                      and analytics. Try Fileverse Portal for a real
-                      decentralised and on-chain experience.`}
+                    title={'Hackathon Participants and Researchers'}
+                    description={`Publish your project info on a decentralised web page and share your code, database, and files authoritatively. Show the world what you are capable of!`}
                   />
                 </div>
               </div>

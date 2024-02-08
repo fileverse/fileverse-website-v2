@@ -166,7 +166,7 @@ const Features = () => {
                   <ListWithIconCard
                     icon={tick}
                     paragraph={
-                      'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!.'
+                      'Create on-chain analytics about your Portal’s reach, your files, and community support. On-chain individuals and communities deserve on-chain tools!'
                     }
                   />
                 </div>
@@ -184,7 +184,7 @@ const Features = () => {
           </div>
         </SectionLayout>
 
-        <FeaturesSection />
+        <FeaturesSection portalPage={false} />
         <div className="bg-yellow mt-8 py-8">
           {/* chat */}
           <SectionLayout marginTop="mt-0">
@@ -271,7 +271,7 @@ const Features = () => {
                       icon={tick}
                       whiteIconBackground={true}
                       paragraph={
-                        'Upload and share any types of multimedia files. Your peers will be able to preview them on Fileverse or download them.'
+                        'Upload and share any type of multimedia files. Your peers will be able to preview them on Fileverse or download them.'
                       }
                     />
                     <ListWithIconCard

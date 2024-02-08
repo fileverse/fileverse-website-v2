@@ -82,7 +82,8 @@ const Subdomain = () => {
     <BodyWrapper portalPage={true}>
       <>
         <NextSeo
-          title="Fileverse Portal"
+          title="Fileverse Portal | Notion Alternative |  Web3 Collaboration"
+          description="Your Web3 collaboration tool! Peer-to-peer file sharing with end-to-end encryption & token gating; decentralized websites publishing; decentralized Excalidraw whiteboards; and more!"
           openGraph={{
             url: 'https://fileverse.io/portal',
             title: 'Fileverse Portal',
@@ -136,7 +137,7 @@ const Subdomain = () => {
             )}
             <div
               className={`lg:w-[90%] ${
-                isMediaMax1025px && 'w-full'
+                isMediaMax1025px && 'w-[100vw]'
               } flex flex-wrap h-full items-center`}
             >
               <div
@@ -150,16 +151,15 @@ const Subdomain = () => {
                         : 'text-[3.5rem]'
                     } `}
                   >
-                    <h6 className="">Your On-chain Portal for</h6>
+                    <h6 className="">Your Onchain Portal for</h6>
                     <div className="">
                       <Typewriter
                         options={{
                           strings: [
+                            'Knowledge Bases',
                             'File Sharing',
                             'Collaboration',
-                            'Content Creation',
-                            '3D Visualization',
-                            'Brainstorming',
+                            'Data Bases',
                           ],
                           autoStart: true,
                           loop: true,
@@ -174,17 +174,16 @@ const Subdomain = () => {
                     } `}
                   >
                     <h6 className=" text-end w-[60%]">
-                      Your On-chain Portal for
+                      Your Onchain Portal for
                     </h6>
                     <span className="w-[40%] pl-3">
                       <Typewriter
                         options={{
                           strings: [
+                            'Knowledge Bases',
                             'File Sharing',
                             'Collaboration',
-                            'Content Creation',
-                            '3D Visualization',
-                            'Brainstorming',
+                            'Data Bases',
                           ],
                           autoStart: true,
                           loop: true,
@@ -201,9 +200,9 @@ const Subdomain = () => {
                       : 'w-[52rem] text-[1.25rem]'
                   }`}
                 >
-                  Your personal collaboration tool and workspace for on-chain
-                  file management and content creation, all without cutting
-                  corners on privacy and decentralisation.
+                  A decentralised collaboration App and workspace. <br />
+                  Discover new forms of group coordination, regain your privacy,
+                  and master your productivity.
                 </p>
                 <div
                   className={`mt-8  ${
@@ -241,7 +240,7 @@ const Subdomain = () => {
                 <img
                   src={portalHero.src}
                   alt="fileverse-window"
-                  className="w-[63rem]"
+                  className={isMediaMax1025px ? 'w-[97vw]' : 'w-[63rem]'}
                 />
               </div>
             </div>
@@ -820,7 +819,7 @@ const Subdomain = () => {
             ))} */}
           </div>
         </div>
-        <FeaturesSection />
+        <FeaturesSection portalPage={true} />
       </>
     </BodyWrapper>
   );

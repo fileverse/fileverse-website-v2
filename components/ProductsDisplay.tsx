@@ -33,7 +33,7 @@ const ProductsDisplay = ({
       className={` ${
         background || 'bg-yellow border border-black'
       } m-2 flex py-8 flex-col items-center justify-center rounded-md  ${
-        isMediaMax1025px ? 'w-full mt-4' : 'w-[50%]'
+        isMediaMax1025px ? 'w-full mt-4' : 'w-[50%] max-h-[636px]'
       }`}
     >
       <div
@@ -41,7 +41,7 @@ const ProductsDisplay = ({
           isMediaMax1025px && 'w-full'
         } flex flex-col relative items-center`}
       >
-        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[300px]'}`}>
+        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[350px]'}`}>
           <h1
             className={` text-center font-bold ${
               isMediaMax1025px ? ' text-2xl' : 'text-4xl'

@@ -5,14 +5,16 @@ import { useMediaQuery } from '@mui/material';
 import threeDbeauty from '../public/assets/3dbeauty.png';
 import accessToken from '../public/assets/access-token.png';
 import chatWindow from '../public/assets/chatWindow.png';
+import dPages from '../public/assets/dPages.png';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileTypes from '../public/assets/fileTypes.png';
 import subdomainWindow from '../public/assets/subdomainWindow.png';
 import tokenGating from '../public/assets/tokengating.png';
+import rearrangeArrayByIDs from '../utils/rearrangeArrayByIDs';
 import FeatureCard from './FeatureCard';
 import SectionLayout from './SectionLayout';
 
-const FeaturesSection = () => {
+const FeaturesSection = ({ portalPage }: { portalPage: boolean }) => {
   const featuresDiv = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
@@ -48,6 +50,57 @@ const FeaturesSection = () => {
       setscrolEnd(false);
     }
   };
+
+  const features = [
+    {
+      id: 0,
+      image: dPages,
+      title: 'Decentralized Pages',
+      text: 'Your Notion alternative - publish decentralized websites, blogs, technical docs, write your notes or create personal wikis/databases, and more.',
+    },
+    {
+      id: 1,
+      image: accessToken,
+      title: 'Airdrop Access-Tokens',
+      text: 'These tokens are NFTs that you can fully customise and send to as many addresses you want to give them access to files.',
+    },
+    {
+      id: 2,
+      image: threeDbeauty,
+      title: '3D Beauty',
+      text: 'Upload your 3D files and share the URL with anons, frens, or the world. View any 3D model directly on Fileverse.',
+    },
+    {
+      id: 3,
+      image: tokenGating,
+      title: 'Token Gating',
+      text: 'Create granular permissions for individuals or communities accessing your files and content. All via onchain rules.',
+    },
+    {
+      id: 4,
+      image: fileTypes,
+      title: portalPage ? 'Peer-to-Peer File Sharing' : 'Multimedia',
+      text: 'Upload and share any type of multimedia file. Your peers will be able to preview or download them directly on Fileverse.',
+    },
+    {
+      id: 5,
+      image: subdomainWindow,
+      title: 'Live collaboration',
+      text: 'Create a doc, whiteboard, or web page directly on Fileverse and collaborate with your peers. Stored on IPFS/Arweave!',
+    },
+    {
+      id: 6,
+      image: chatWindow,
+      title: 'Chat Rooms & Spaces',
+      text: 'Create encrypted chat rooms to coordinate. Invite your peers by sending access-NFTs. Use your ENS as your chat profile.',
+    },
+  ];
+
+  const portalPageFeatures = rearrangeArrayByIDs(
+    features,
+    [0, 4, 3, 5, 1, 6, 2]
+  );
+
   return (
     <SectionLayout>
       <div className="flex items-center w-full">
@@ -96,39 +149,23 @@ const FeaturesSection = () => {
             onScroll={() => scrollCheck(featuresDiv.current)}
             className={`flex overflow-auto no-scrollbar`}
           >
-            <>
-              <FeatureCard
-                image={chatWindow}
-                title={'Chat Rooms & Spaces'}
-                text=" Create encrypted chat rooms to coordinate. Invite your peers by sending access-NFTs. Use your ENS as your chat profile."
-              />
-              <FeatureCard
-                image={accessToken}
-                title={'Airdrop Access-Tokens'}
-                text="These tokens are NFTs that you can fully customise and send to as many addresses you want to give them access to files.
-                "
-              />
-              <FeatureCard
-                image={threeDbeauty}
-                title={'3D Beauty '}
-                text="Upload your 3D files and share the URL with anons, frens, or the world. View any 3D model directly on Fileverse."
-              />
-              <FeatureCard
-                image={fileTypes}
-                title={'Multimedia'}
-                text=" Upload and share any type of multimedia file. Your peers will be able to preview or download them directly on Fileverse."
-              />
-              <FeatureCard
-                image={tokenGating}
-                title={'Token-gate'}
-                text="Define the type and number of tokens (e.g. 1 CloneX) for existing on-chain groups to gain access to your file or chat room."
-              />
-              <FeatureCard
-                image={subdomainWindow}
-                title={'Live collaboration '}
-                text="Create a document or Whiteboard directly on Fileverse Portal and collaborate live with your peers. All stored on IPFS!."
-              />
-            </>
+            {portalPage
+              ? portalPageFeatures.map((item) => (
+                  <FeatureCard
+                    key={item.id}
+                    image={item.image}
+                    title={item.title}
+                    text={item.text}
+                  />
+                ))
+              : features.map((item) => (
+                  <FeatureCard
+                    key={item.id}
+                    image={item.image}
+                    title={item.title}
+                    text={item.text}
+                  />
+                ))}
           </div>
         </div>
       </div>

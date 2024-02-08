@@ -33,7 +33,7 @@ const PrimaryButton = ({
         isDisable
           ? ' bg-gray-300 cursor-not-allowed'
           : 'bg-black cursor-pointer'
-      } flex items-center m-2 text-white py-3 px-6 rounded-md`}
+      } flex items-center text-white py-3 px-6 rounded-md`}
     >
       {icon && (
         <img
