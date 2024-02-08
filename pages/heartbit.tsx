@@ -42,13 +42,13 @@ export default function HeartBit() {
           </p>
           <div
             className={` ${
-              isMediaMax1025px ? 'w-[80%] p-7' : 'w-[40%] p-9'
+              isMediaMax1025px ? 'w-[80%] p-7' : 'w-fit py-9 px-24'
             }   border-[#FFF9CE] border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6`}
           >
             <img
               src={heartbit.src}
               alt="heart bit"
-              className={`mb-6 ${isMediaMax1025px ? 'w-[90%]' : 'w-[403px]'} `}
+              className={`mb-6 ${isMediaMax1025px ? 'w-[90%]' : 'w-[350px]'} `}
             />
             <p
               className={` font-bold ${
