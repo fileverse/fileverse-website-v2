@@ -12,7 +12,6 @@ import newTabIcon from '../public/assets/gotoIcon.svg';
 import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
-import PrimaryButton from './PrimaryButton';
 
 const HeadNav = ({
   defaultColor,
@@ -97,12 +96,21 @@ const HeadNav = ({
           </span>
         </div>
         {heartbitPage ? (
-          <div className="lg:w-[50%] w-full flex justify-end items-center">
-            <PrimaryButton
-              width={`${isMediaMax1025px ? '100px' : '191px'}`}
-              title={'Get Started'}
-              linkTo={'https://twitter.com/fileverse'}
-            />
+          <div
+            className={`
+            lg:w-[50%] duration-500 ease-in-out transition relative flex ${
+              top && !defaultColor ? 'bg-yellow ' : 'bg-white'
+            }    items-center h-full justify-end`}
+          >
+            <button
+              className={`border rounded-md ${
+                top || defaultColor ? 'bg-black text-white ' : 'bg-white'
+              } ${
+                isMediaMax1025px ? 'w-[8rem]' : ' w-[12rem] '
+              } flex transition duration-500 ease-in-out p-4 justify-center h-[3rem] items-center border-black`}
+            >
+              <p className={`${isMediaMax1025px && 'text-sm'}`}>Get Started</p>
+            </button>
           </div>
         ) : (
           <div

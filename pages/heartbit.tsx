@@ -23,18 +23,18 @@ export default function HeartBit() {
       >
         <div
           id="hero"
-          className="w-full flex flex-col justify-center items-center mt-28"
+          className="w-full flex flex-col justify-center items-center gap-2 mt-28"
         >
           <p
             className={`font-bold ${
-              isMediaMax1025px ? 'text-xl' : 'text-[40px]'
+              isMediaMax1025px ? 'text-2xl text-center' : 'text-[3rem]'
             } `}
           >
             HeartBit SDK - New Onchain Metric
           </p>
           <p
             className={` text-center ${
-              isMediaMax1025px ? 'text-sm w-[90%]' : 'text-2xl'
+              isMediaMax1025px ? 'text-base w-[90%]' : 'text-[1.25rem]'
             }`}
           >
             Deploy onchain likes to your dApp with this free and easy to plugin
@@ -121,13 +121,11 @@ export default function HeartBit() {
           id="getstarted"
           className="flex flex-col justify-between items-center gap-8"
         >
-          <span className={`${isMediaMax1025px ? 'text-xl' : 'text-3xl'}`}>
-            <PrimaryButton
-              width={` ${!isMediaMax1025px && '337px'}`}
-              title={'Get Started'}
-              linkTo={'https://twitter.com/fileverse'}
-            />
-          </span>
+          <PrimaryButton
+            title={'Get Started'}
+            linkTo={'https://twitter.com/fileverse'}
+            openNewTab={true}
+          />
           {!isMediaMax1025px && (
             <div className="flex gap-14 font-bold">
               <div className="flex gap-1.5">
