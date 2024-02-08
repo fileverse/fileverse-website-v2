@@ -13,7 +13,13 @@ import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
 
-const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
+const HeadNav = ({
+  defaultColor,
+  heartbitPage,
+}: {
+  defaultColor?: boolean;
+  heartbitPage?: boolean;
+}) => {
   const [menu, setMenu] = useState(false);
   const [top, setTop] = useState(true);
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -89,86 +95,109 @@ const HeadNav = ({ defaultColor }: { defaultColor?: boolean }) => {
             Fileverse
           </span>
         </div>
-        <div
-          className={`
+        {heartbitPage ? (
+          <div
+            className={`
             lg:w-[50%] duration-500 ease-in-out transition relative flex ${
               top && !defaultColor ? 'bg-yellow ' : 'bg-white'
             }    items-center h-full justify-end`}
-          ref={dropDownButton}
-        >
-          {isMediaMax1025px ? (
-            <div
-              ref={hamburgerbar}
-              onClick={() => {
-                if (html) html.classList.add('overflow-y-hidden');
-                setSideMenu(!sideMenu);
-              }}
-            >
-              <img src={hamburger.src} alt="hamburger" />
-            </div>
-          ) : (
+          >
             <button
-              onClick={() => setMenu(!menu)}
               className={`border rounded-md ${
                 top || defaultColor ? 'bg-black text-white ' : 'bg-white'
-              } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
+              } ${
+                isMediaMax1025px ? 'w-[8rem]' : ' w-[12rem] '
+              } flex transition duration-500 ease-in-out p-4 justify-center h-[3rem] items-center border-black`}
             >
-              <p className="mr-4">About</p>
-              {top || defaultColor ? (
-                <Image
-                  className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
-                  alt="white-dropdown-arrow"
-                  src={whiteArrow.src}
-                  width="16"
-                  height="16"
-                />
-              ) : (
-                <Image
-                  className={`w-4 h-4 ${menu ? 'rotate-[-180deg]' : ''}`}
-                  src={dropDownArrow.src}
-                  alt="black-dropdown-arrow"
-                  width={'16'}
-                  height={'16'}
-                />
-              )}
+              <p className={`${isMediaMax1025px && 'text-sm'}`}>Get Started</p>
             </button>
-          )}
+          </div>
+        ) : (
+          <div
+            className={`
+            lg:w-[50%] duration-500 ease-in-out transition relative flex ${
+              top && !defaultColor ? 'bg-yellow ' : 'bg-white'
+            }    items-center h-full justify-end`}
+            ref={dropDownButton}
+          >
+            {isMediaMax1025px ? (
+              <div
+                ref={hamburgerbar}
+                onClick={() => {
+                  if (html) html.classList.add('overflow-y-hidden');
+                  setSideMenu(!sideMenu);
+                }}
+              >
+                <img src={hamburger.src} alt="hamburger" />
+              </div>
+            ) : (
+              <button
+                onClick={() => setMenu(!menu)}
+                className={`border rounded-md ${
+                  top || defaultColor ? 'bg-black text-white ' : 'bg-white'
+                } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
+              >
+                <p className="mr-4">About</p>
+                {top || defaultColor ? (
+                  <Image
+                    className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
+                    alt="white-dropdown-arrow"
+                    src={whiteArrow.src}
+                    width="16"
+                    height="16"
+                  />
+                ) : (
+                  <Image
+                    className={`w-4 h-4 ${menu ? 'rotate-[-180deg]' : ''}`}
+                    src={dropDownArrow.src}
+                    alt="black-dropdown-arrow"
+                    width={'16'}
+                    height={'16'}
+                  />
+                )}
+              </button>
+            )}
 
-          <Slide direction="down" in={menu} container={dropDownButton.current}>
-            <div
-              className={`absolute py-4 rounded-lg w-[12rem] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
+            <Slide
+              direction="down"
+              in={menu}
+              container={dropDownButton.current}
             >
-              <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
-                <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  FAQ
-                </a>
-              </Link>
-              <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
-                <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
-                  My Portals
-                </a>
-              </Link>
-              <Link href={'https://beta.fileverse.io/'} passHref>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onMouseEnter={() => setNewTabIcon('SOLO')}
-                  onMouseLeave={() => setNewTabIcon('')}
-                  className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade "
-                >
-                  Fileverse Solo
-                  {newTabIconVisible === 'SOLO' && (
-                    <img
-                      className="ml-2 w-4"
-                      src={newTabIcon.src}
-                      alt="new tab icon"
-                    />
-                  )}
-                </a>
-              </Link>
-            </div>
-          </Slide>
-        </div>
+              <div
+                className={`absolute py-4 rounded-lg w-[12rem] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
+              >
+                <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
+                  <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
+                    FAQ
+                  </a>
+                </Link>
+                <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
+                  <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b">
+                    My Portals
+                  </a>
+                </Link>
+                <Link href={'https://beta.fileverse.io/'} passHref>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setNewTabIcon('SOLO')}
+                    onMouseLeave={() => setNewTabIcon('')}
+                    className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade "
+                  >
+                    Fileverse Solo
+                    {newTabIconVisible === 'SOLO' && (
+                      <img
+                        className="ml-2 w-4"
+                        src={newTabIcon.src}
+                        alt="new tab icon"
+                      />
+                    )}
+                  </a>
+                </Link>
+              </div>
+            </Slide>
+          </div>
+        )}
       </div>
       <Slide direction="left" in={sideMenu}>
         <div

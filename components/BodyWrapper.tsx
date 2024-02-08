@@ -8,7 +8,7 @@ import Gitcoin from '../public/assets/gitcoin.svg';
 import Github from '../public/assets/github_logo.svg';
 import email from '../public/assets/mail.svg';
 import Radicle from '../public/assets/radicle.svg';
-import Twitter from '../public/assets/Twitter.svg';
+import Xicon from '../public/assets/xicon.svg';
 import { CopyrightFooter } from './CopyrightFooter';
 import HeadNav from './HeadNav';
 import PrimaryButton from './PrimaryButton';
@@ -16,13 +16,19 @@ import PrimaryButton from './PrimaryButton';
 interface BodyType {
   children: JSX.Element;
   portalPage?: boolean;
+  heartbitPage?: boolean;
 }
-const BodyWrapper = ({ children, portalPage }: BodyType) => {
+const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
   const router = useRouter();
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
     <div className="">
-      <HeadNav defaultColor={router.asPath === '/portal'} />
+      <HeadNav
+        heartbitPage={heartbitPage}
+        defaultColor={
+          router.asPath === '/portal' || router.asPath === '/heartbit'
+        }
+      />
       <div className="">{children}</div>
       <div className="flex flex-col items-center  justify-center">
         <div className={` ${isMediaMax1025px ? 'w-full' : 'w-[47rem]'}`}>
@@ -32,46 +38,56 @@ const BodyWrapper = ({ children, portalPage }: BodyType) => {
                 isMediaMax1025px ? 'text-2xl' : 'text-3xl'
               } text-center`}
             >
-              Where to find us?
+              {heartbitPage ? 'Learn More' : 'Where to find us?'}
             </h2>
             <div className="w-full flex justify-center  mt-4 items-center">
               <div
                 className={`flex flex-wrap w-full items-center justify-center gap-2`}
               >
                 <PrimaryButton
-                  icon={Twitter}
-                  title={'Twitter'}
+                  icon={Xicon}
+                  title={isMediaMax1025px ? '' : 'Twitter'}
                   iconStyles={'w-5'}
                   linkTo={'https://twitter.com/fileverse'}
                 />
+                {heartbitPage && (
+                  <PrimaryButton
+                    title={'Documentation'}
+                    linkTo={'https://github.com/fileverse'}
+                  />
+                )}
                 <PrimaryButton
                   icon={Github}
                   title={'Github'}
                   iconStyles={'w-5'}
                   linkTo={'https://github.com/fileverse'}
                 />
-                <PrimaryButton
-                  icon={Radicle}
-                  title={'Radicle'}
-                  iconStyles={'w-5'}
-                  linkTo={
-                    'https://app.radicle.xyz/seeds/willow.radicle.garden/rad:git:hnrkj6egqcozks7f7n5dx3766e7m4z5tag8cy/tree'
-                  }
-                />
-                <PrimaryButton
-                  icon={Gitcoin}
-                  title={'Gitcoin'}
-                  iconStyles={'w-5'}
-                  linkTo={
-                    'https://gitcoin.co/grants/4846/fileverseio-file-sharing-between-blockchain-addre'
-                  }
-                />
-                <PrimaryButton
-                  icon={email}
-                  title={'Email'}
-                  iconStyles={'w-5'}
-                  linkTo={'mailto:hello@fileverse.io'}
-                />
+                {!heartbitPage && (
+                  <>
+                    <PrimaryButton
+                      icon={Radicle}
+                      title={'Radicle'}
+                      iconStyles={'w-5'}
+                      linkTo={
+                        'https://app.radicle.xyz/seeds/willow.radicle.garden/rad:git:hnrkj6egqcozks7f7n5dx3766e7m4z5tag8cy/tree'
+                      }
+                    />
+                    <PrimaryButton
+                      icon={Gitcoin}
+                      title={'Gitcoin'}
+                      iconStyles={'w-5'}
+                      linkTo={
+                        'https://gitcoin.co/grants/4846/fileverseio-file-sharing-between-blockchain-addre'
+                      }
+                    />
+                    <PrimaryButton
+                      icon={email}
+                      title={'Email'}
+                      iconStyles={'w-5'}
+                      linkTo={'mailto:hello@fileverse.io'}
+                    />
+                  </>
+                )}
               </div>
             </div>
           </div>
