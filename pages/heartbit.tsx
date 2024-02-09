@@ -3,6 +3,7 @@ import React from 'react';
 import { useMediaQuery } from '@mui/material';
 
 import BodyWrapper from '../components/BodyWrapper';
+import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import code from '../public/assets/code.png';
 import downArrow from '../public/assets/downArrowGray.svg';
@@ -18,62 +19,71 @@ export default function HeartBit() {
     <BodyWrapper heartbitPage={true}>
       <div
         className={`flex flex-col w-[80%] h-full justify-center items-center mx-auto ${
-          isMediaMax1025px ? 'gap-6' : 'gap-20'
+          isMediaMax1025px ? '' : ''
         } `}
       >
-        <div
-          id="hero"
-          className="w-full flex flex-col justify-center items-center gap-2 mt-28"
-        >
-          <p
-            className={`font-bold ${
-              isMediaMax1025px ? 'text-2xl text-center' : 'text-[3rem]'
+        <HeadSectionLayout noFooter={true} defaultBackground={true}>
+          <div
+            id="hero"
+            className={`w-full flex flex-col justify-between items-center gap-2 ${
+              isMediaMax1025px ? 'mt-10' : 'mt-5'
             } `}
           >
-            HeartBit SDK - New Onchain Metric
-          </p>
-          <p
-            className={` text-center ${
-              isMediaMax1025px ? 'text-base w-[90%]' : 'text-[1.25rem]'
-            }`}
-          >
-            Deploy onchain likes to your dApp with this free and easy to plugin
-            SDK.
-          </p>
-          <div
-            className={` ${
-              isMediaMax1025px ? 'w-[80%] p-7' : 'w-fit py-9 px-24'
-            }   border-[#FFF9CE] border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6`}
-          >
+            <p
+              className={`font-bold ${
+                isMediaMax1025px ? 'text-2xl text-center' : 'text-[3rem]'
+              } `}
+            >
+              HeartBit SDK - New Onchain Metric
+            </p>
+            <p
+              className={` text-center ${
+                isMediaMax1025px ? 'text-base w-[90%]' : 'text-[1.25rem]'
+              }`}
+            >
+              Deploy onchain likes to your dApp with this free and easy to
+              plugin SDK.
+            </p>
+            <div
+              className={` ${
+                isMediaMax1025px ? 'p-7' : 'py-9 px-24'
+              }  border-[#FFF9CE] border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6`}
+            >
+              <img
+                src={heartbit.src}
+                alt="heart bit"
+                className={`mb-6 w-[260px] ${isMediaMax1025px ? '' : ''} `}
+              />
+              <p
+                className={` font-bold ${
+                  isMediaMax1025px ? 'text-2xl' : 'text-4xl'
+                }`}
+              >
+                114K
+              </p>
+              <p
+                className={` font-bold text-center ${
+                  isMediaMax1025px ? 'text-lg' : 'text-2xl'
+                }`}
+              >
+                HeartBits Minted
+              </p>
+            </div>
+            <p
+              className={`${
+                isMediaMax1025px ? 'text-xs' : 'text-2xl'
+              } font-bold text-[#000000] opacity-60`}
+            >
+              Create Yours
+            </p>
             <img
-              src={heartbit.src}
-              alt="heart bit"
-              className={`mb-6 ${isMediaMax1025px ? 'w-[90%]' : 'w-[350px]'} `}
+              src={downArrow.src}
+              alt="Heart Bit"
+              className="my-2 animate-bounce"
             />
-            <p
-              className={` font-bold ${
-                isMediaMax1025px ? 'text-2xl' : 'text-4xl'
-              }`}
-            >
-              114K
-            </p>
-            <p
-              className={` font-bold ${
-                isMediaMax1025px ? 'text-lg' : 'text-2xl'
-              }`}
-            >
-              Heart Bits Minted
-            </p>
           </div>
-          <p
-            className={`${
-              isMediaMax1025px ? 'text-xs' : 'text-2xl'
-            } font-bold text-[#000000] opacity-60`}
-          >
-            Create Yours
-          </p>
-          <img src={downArrow.src} alt="Heart Bit" className="my-2" />
-        </div>
+        </HeadSectionLayout>
+
         <div
           id="cards"
           className={`w-full flex justify-between items-center ${
@@ -119,29 +129,49 @@ export default function HeartBit() {
         </div>
         <div
           id="getstarted"
-          className="flex flex-col justify-between items-center gap-8"
+          className={`flex flex-col justify-between items-center gap-20 mt-20`}
         >
           <PrimaryButton
             title={'Get Started'}
             linkTo={'https://twitter.com/fileverse'}
             openNewTab={true}
           />
-          {!isMediaMax1025px && (
-            <div className="flex gap-14 font-bold">
-              <div className="flex gap-1.5">
-                <img src={heart50.src} alt="heart50" className="w-[24px]" />
-                <p>Free</p>
-              </div>
-              <div className="flex gap-1.5">
-                <img src={heart50.src} alt="heart50" className="w-[24px]" />
-                <p>Open-Source</p>
-              </div>
-              <div className="flex gap-1.5">
-                <img src={heart50.src} alt="heart50" className="w-[24px]" />
-                <p>Instant</p>
-              </div>
+          <div
+            className={`w-full flex justify-center items-start font-bold mb-20  ${
+              isMediaMax1025px ? 'gap-4 text-lg flex-col' : 'gap-14 text-2xl'
+            }`}
+          >
+            <div className="flex gap-3 items-center">
+              <img
+                src={heart50.src}
+                alt="heart50"
+                className={` ${
+                  isMediaMax1025px ? 'w-[24px] h-[24px]' : 'w-[36px] h-[36px]'
+                } `}
+              />
+              <p>Free</p>
             </div>
-          )}
+            <div className="flex gap-3 items-center">
+              <img
+                src={heart50.src}
+                alt="heart50"
+                className={` ${
+                  isMediaMax1025px ? 'w-[24px] h-[24px]' : 'w-[36px] h-[36px]'
+                } `}
+              />
+              <p>Open-Source</p>
+            </div>
+            <div className="flex gap-3 items-center">
+              <img
+                src={heart50.src}
+                alt="heart50"
+                className={` ${
+                  isMediaMax1025px ? 'w-[24px] h-[24px]' : 'w-[36px] h-[36px]'
+                } `}
+              />
+              <p>Instant</p>
+            </div>
+          </div>
         </div>
         <div
           className={` ${
