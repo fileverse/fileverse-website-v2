@@ -15,6 +15,8 @@ import {
 } from '@fileverse/heartbit-react';
 import { useMediaQuery } from '@mui/material';
 import clsx from 'clsx';
+import { NextSeo } from 'next-seo';
+import Confetti from 'react-confetti';
 import { SiweMessage } from 'siwe';
 import { keccak256, toBytes } from 'viem';
 import { useSignMessage, useConnect, useAccount } from 'wagmi';
@@ -37,11 +39,16 @@ const HeartBitWithProvider = () => {
   const [totalMints, setTotalMints] = useState('0');
   const { mintHeartBit, getTotalHeartBitByHash } = useHeartBit();
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const [isLoading, setLoading] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
   const onMouseDown = () => {
     setStartTime(Math.floor(Date.now() / 1000));
   };
-  const { address } = useAccount();
 
+  const { address } = useAccount();
+  const scale = isMediaMax1025px ? 20 : 25;
+  const canvasWidth = isMediaMax1025px ? 324 : 525;
+  const canvasHeight = isMediaMax1025px ? 387 : 490;
   const fetchTotalMints = useCallback(async () => {
     if (!getTotalHeartBitByHash) return;
     const hash = keccak256(toBytes(window?.location?.href));
@@ -52,11 +59,17 @@ const HeartBitWithProvider = () => {
 
   useEffect(() => {
     fetchTotalMints();
+    const interval = setInterval(() => {
+      fetchTotalMints();
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, [fetchTotalMints]);
 
   const onMouseUp = async () => {
-    if (!startTime) return;
+    if (!startTime || isLoading) return;
     try {
+      setLoading(true);
       const endTime = Math.floor(Date.now() / 1000);
       const accounts: any[] = [];
       if (!address) {
@@ -86,20 +99,40 @@ const HeartBitWithProvider = () => {
         message, // raw message that was signed
         signature, // signed message
       });
+      setShowConfetti(true);
     } catch (err) {
       heartRef.current?.onReset();
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center gap-[10px]">
       <HeartBitUI
         ref={heartRef}
         disableBeatingAnimation={true}
-        scale={25}
+        scale={scale}
         defaultFillPos={4}
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
+        isDisabled={isLoading}
+      />
+      <Confetti
+        width={canvasWidth}
+        height={canvasHeight}
+        numberOfPieces={showConfetti ? 50 : 0}
+        recycle={false}
+        onConfettiComplete={(confetti) => {
+          setShowConfetti(false);
+          confetti?.reset();
+        }}
+        confettiSource={{
+          w: 10,
+          h: 10,
+          x: canvasWidth / 2,
+          y: canvasHeight / 3,
+        }}
       />
       <p
         className={clsx(
@@ -117,7 +150,7 @@ const HeartBitWithProvider = () => {
       >
         HeartBits Minted
       </p>
-    </>
+    </div>
   );
 };
 
@@ -133,6 +166,30 @@ export default function HeartBit() {
   return (
     <BodyWrapper heartbitPage={true}>
       <>
+        <NextSeo
+          title="Fileverse | Peer to Peer File Sharing dApp"
+          description="Onchain peer-to-peer file sharing and Web3 collaboration. Share files with end-to-end encryption & token gating; publish decentralized websites; create decentralized Excalidraw whiteboards; and more!"
+          openGraph={{
+            url: 'https://fileverse.io/hearbit',
+            title: 'Fileverse',
+            description: 'File sharing between blockchain addresses',
+            locale: 'en',
+            site_name: 'Fileverse',
+            images: [
+              {
+                url: 'https://s3.eu-west-2.amazonaws.com/assets.fileverse.io/web/public/heartbit-preview.png',
+                width: 800,
+                height: 420,
+                alt: 'Fileverse',
+              },
+            ],
+          }}
+          twitter={{
+            handle: '@fileverseio',
+            site: '@fileverseio',
+            cardType: 'summary_large_image',
+          }}
+        />
         <div
           className={
             'flex flex-col w-[80%] h-full justify-center items-center mx-auto'
@@ -166,7 +223,7 @@ export default function HeartBit() {
               <div
                 className={clsx(
                   isMediaMax1025px ? 'p-7' : 'py-9 px-24',
-                  'border-[#FFF9CE] border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6'
+                  'border-[#FFF9CE] relative border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6'
                 )}
               >
                 <HeartBitProvider coreOptions={coreOptions}>
