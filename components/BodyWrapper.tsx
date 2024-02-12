@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
+import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
 import fileverseLogo from '../public/assets/fileverse.png';
@@ -31,12 +32,13 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
       />
       <div className="">{children}</div>
       <div className="flex flex-col items-center  justify-center">
-        <div className={` ${isMediaMax1025px ? 'w-full' : 'w-[47rem]'}`}>
+        <div className={clsx(isMediaMax1025px ? 'w-full' : 'w-[47rem]')}>
           <div className="p-4 mt-8 w-full">
             <h2
-              className={`font-bold ${
-                isMediaMax1025px ? 'text-2xl' : 'text-3xl'
-              } text-center`}
+              className={clsx(
+                isMediaMax1025px ? 'text-2xl' : 'text-3xl',
+                'text-center font-bold'
+              )}
             >
               {heartbitPage ? 'Learn More' : 'Where to find us?'}
             </h2>
@@ -102,9 +104,12 @@ items-center font-normal w-[42rem] p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text
                 alt="fileverse"
               />
               <div
-                className={` ${
-                  isMediaMax1025px ? 'text-sm text-center' : 'text-lg text-left'
-                }  text-[#777777] pl-2`}
+                className={clsx(
+                  isMediaMax1025px
+                    ? 'text-sm text-center'
+                    : 'text-lg text-left',
+                  'text-[#777777] pl-2'
+                )}
               >
                 <p>
                   Fileverse is an trustless collaboration dApp supported by
