@@ -1,13 +1,26 @@
-import React, { useRef } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
-import { HeartBitUI } from '@fileverse/heartbit-react';
+import {
+  type SupportedChain,
+  HeartBitProvider,
+  HeartBitUI,
+  useHeartBit,
+  InternalHandlerRef,
+} from '@fileverse/heartbit-react';
 import { useMediaQuery } from '@mui/material';
 import clsx from 'clsx';
 import { SiweMessage } from 'siwe';
-import { useAccount, useSignMessage } from 'wagmi';
+import { keccak256, toBytes } from 'viem';
+import { useSignMessage, useConnect, useAccount } from 'wagmi';
+import { injected } from 'wagmi/connectors';
 
 import BodyWrapper from '../components/BodyWrapper';
-import { CustomConnectButton } from '../components/CustomConnectButton';
 import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import code from '../public/assets/code.png';
@@ -16,47 +29,110 @@ import erospixie from '../public/assets/erospixel.png';
 import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
 
-export default function HeartBit() {
-  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
-  const { address } = useAccount();
+const HeartBitWithProvider = () => {
+  const heartRef = useRef<InternalHandlerRef | null>(null);
+  const { connectAsync } = useConnect();
   const { signMessageAsync } = useSignMessage();
+  const [startTime, setStartTime] = useState<number | null>(null);
+  const [totalMints, setTotalMints] = useState('0');
+  const { mintHeartBit, getTotalHeartBitByHash } = useHeartBit();
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const onMouseDown = () => {
+    setStartTime(Math.floor(Date.now() / 1000));
+  };
+  const { address } = useAccount();
 
-  const connectButtonRef = useRef<HTMLButtonElement>(null);
+  const fetchTotalMints = useCallback(async () => {
+    if (!getTotalHeartBitByHash) return;
+    const hash = keccak256(toBytes(window?.location?.href));
+    const totalSupply = await getTotalHeartBitByHash({ hash });
 
-  const signRequest = async () => {
-    if (!address) return;
+    setTotalMints(totalSupply.toString());
+  }, [getTotalHeartBitByHash]);
+
+  useEffect(() => {
+    fetchTotalMints();
+  }, [fetchTotalMints]);
+
+  const onMouseUp = async () => {
+    if (!startTime) return;
     try {
+      const endTime = Math.floor(Date.now() / 1000);
+      const accounts: any[] = [];
+      if (!address) {
+        const connectData = await connectAsync({
+          connector: injected(),
+        });
+        connectData?.accounts?.forEach((account) => {
+          accounts.push(account);
+        });
+      }
       const messageObject = new SiweMessage({
         domain: window.location.host,
-        address,
-        statement: `You just supported this author with your time onchain and collected their dPage! Thanks <3`,
+        address: address || accounts[0],
+        statement: `Thank you for liking this page!`,
         uri: window.location.origin,
         version: '1',
       });
-      const signature = await signMessageAsync({
-        message: messageObject.prepareMessage(),
-      });
-      const message = messageObject.prepareMessage();
-      console.log({ message, signature });
-    } catch (error: any) {
-      console.log(error);
-    }
-  };
 
-  const onMouseDown = async () => {
-    if (address) {
-      signRequest();
-    } else {
-      connectButtonRef.current?.click();
+      const message = messageObject.prepareMessage();
+      const signature = await signMessageAsync({
+        message,
+      });
+      await mintHeartBit({
+        startTime,
+        endTime,
+        hash: keccak256(toBytes(window?.location?.href)),
+        message, // raw message that was signed
+        signature, // signed message
+      });
+    } catch (err) {
+      heartRef.current?.onReset();
     }
   };
 
   return (
+    <>
+      <HeartBitUI
+        ref={heartRef}
+        disableBeatingAnimation={true}
+        scale={25}
+        defaultFillPos={4}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+      />
+      <p
+        className={clsx(
+          isMediaMax1025px ? 'text-2xl' : 'text-4xl',
+          'font-bold'
+        )}
+      >
+        {totalMints}
+      </p>
+      <p
+        className={clsx(
+          isMediaMax1025px ? 'text-lg' : 'text-2xl',
+          'font-bold text-[#000000'
+        )}
+      >
+        HeartBits Minted
+      </p>
+    </>
+  );
+};
+
+export default function HeartBit() {
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+
+  const coreOptions = useMemo(() => {
+    return {
+      chain: '0xaa36a7' as SupportedChain,
+    };
+  }, []);
+
+  return (
     <BodyWrapper heartbitPage={true}>
       <>
-        <div className="hidden">
-          <CustomConnectButton connectButtonRef={connectButtonRef} />
-        </div>
         <div
           className={
             'flex flex-col w-[80%] h-full justify-center items-center mx-auto'
@@ -93,28 +169,9 @@ export default function HeartBit() {
                   'border-[#FFF9CE] border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6'
                 )}
               >
-                <HeartBitUI
-                  disableBeatingAnimation={true}
-                  scale={25}
-                  defaultFillPos={4}
-                  onMouseDown={onMouseDown}
-                />
-                <p
-                  className={clsx(
-                    isMediaMax1025px ? 'text-2xl' : 'text-4xl',
-                    'font-bold'
-                  )}
-                >
-                  114K
-                </p>
-                <p
-                  className={clsx(
-                    isMediaMax1025px ? 'text-lg' : 'text-2xl',
-                    'font-bold text-[#000000'
-                  )}
-                >
-                  HeartBits Minted
-                </p>
+                <HeartBitProvider coreOptions={coreOptions}>
+                  <HeartBitWithProvider />
+                </HeartBitProvider>
               </div>
               <p
                 className={clsx(
