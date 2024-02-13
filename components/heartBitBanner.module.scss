@@ -1,0 +1,15 @@
+@keyframes expand {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 65px;
+  }
+}
+
+.banner {
+  display: block;
+  overflow: hidden !important;
+  height: 0px;
+  animation: expand 1s ease-in-out forwards;
+}
