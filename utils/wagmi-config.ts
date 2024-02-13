@@ -9,4 +9,5 @@ export const rainbowkitConfig = getDefaultConfig({
   transports: {
     [base.id]: http(),
   },
+  ssr: true,
 });
