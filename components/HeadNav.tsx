@@ -120,10 +120,12 @@ const HeadNav = ({
                 className={`border rounded-md ${
                   top || defaultColor ? 'bg-black text-white ' : 'bg-white'
                 } ${
-                  isMediaMax1025px ? 'w-[8rem]' : ' w-[12rem] '
-                } flex transition duration-500 ease-in-out p-4 justify-center h-[3rem] items-center border-black`}
+                  isMediaMax1025px
+                    ? 'w-[6rem] h-[2rem]'
+                    : 'w-[12rem] h-[3rem] p-4'
+                } flex transition duration-500 ease-in-out justify-center items-center border-black`}
               >
-                <p className={`${isMediaMax1025px && 'text-sm'}`}>
+                <p className={`${isMediaMax1025px && 'text-xs'}`}>
                   Get Started
                 </p>
               </button>

@@ -46,7 +46,7 @@ const HeartBitWithProvider = () => {
   };
 
   const { address } = useAccount();
-  const scale = isMediaMax1025px ? 20 : 25;
+  const scale = isMediaMax1025px ? 18 : 23;
   const canvasWidth = isMediaMax1025px ? 324 : 525;
   const canvasHeight = isMediaMax1025px ? 387 : 490;
   const fetchTotalMints = useCallback(async () => {
@@ -108,15 +108,24 @@ const HeartBitWithProvider = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-[10px]">
+    <div className="flex flex-col items-center gap-[10px] relative">
+      <p
+        className={clsx(
+          'absolute flex justify-center items-center font-bold w-full text-center',
+          isMediaMax1025px ? 'mt-8 p-9' : 'mt-20 text-[2rem]'
+        )}
+      >
+        {isMediaMax1025px ? 'Click Me for some on-chain love!' : 'Click Me!'}
+      </p>
       <HeartBitUI
         ref={heartRef}
-        disableBeatingAnimation={true}
+        disableBeatingAnimation={false}
         scale={scale}
         defaultFillPos={4}
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
         isDisabled={isLoading}
+        fillInterval={500}
       />
       <Confetti
         width={canvasWidth}
@@ -137,7 +146,7 @@ const HeartBitWithProvider = () => {
       <p
         className={clsx(
           isMediaMax1025px ? 'text-2xl' : 'text-4xl',
-          'font-bold'
+          'font-bold mt-5'
         )}
       >
         {totalMints}
@@ -222,7 +231,7 @@ export default function HeartBit() {
               </p>
               <div
                 className={clsx(
-                  isMediaMax1025px ? 'p-7' : 'py-9 px-24',
+                  isMediaMax1025px ? 'px-11 pt-11 pb-5' : 'pt-11 pb-7 px-24',
                   'border-[#FFF9CE] relative border-4 rounded-2xl shadow-xl flex flex-col justify-center items-center my-6'
                 )}
               >
@@ -295,7 +304,10 @@ export default function HeartBit() {
           </div>
           <div
             id="getstarted"
-            className={`flex flex-col justify-between items-center gap-20 mt-20`}
+            className={clsx(
+              `flex flex-col justify-between items-center`,
+              isMediaMax1025px ? 'gap-10 mt-10' : 'gap-20 mt-20'
+            )}
           >
             <PrimaryButton
               title={'Get Started'}
@@ -304,8 +316,10 @@ export default function HeartBit() {
             />
             <div
               className={clsx(
-                isMediaMax1025px ? 'gap-4 text-lg flex-col' : 'gap-14 text-2xl',
-                'w-full flex justify-center items-start font-bold mb-20'
+                isMediaMax1025px
+                  ? 'gap-4 text-lg flex-col mb-10'
+                  : 'gap-14 text-2xl mb-20',
+                'w-full flex justify-center items-start font-bold'
               )}
             >
               <div className="flex gap-3 items-center">
