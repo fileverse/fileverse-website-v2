@@ -107,6 +107,53 @@ const HeartBitWithProvider = () => {
     }
   };
 
+  function drawHeart(ctx: CanvasRenderingContext2D): void {
+    const x = 200;
+    const y = 200;
+    const width = 25;
+    const height = 25;
+    ctx.beginPath();
+    const topCurveHeight: number = height * 0.3; // Adjust the top curve of the heart
+    ctx.moveTo(x, y + topCurveHeight); // Move to the starting point
+
+    // Top left curve
+    ctx.bezierCurveTo(
+      x,
+      y,
+      x - width / 2,
+      y,
+      x - width / 2,
+      y + topCurveHeight
+    );
+
+    // Bottom left curve
+    ctx.bezierCurveTo(
+      x - width / 2,
+      y + (height + topCurveHeight) / 2,
+      x,
+      y + (height + topCurveHeight) / 2,
+      x,
+      y + height
+    );
+
+    // Bottom right curve
+    ctx.bezierCurveTo(
+      x,
+      y + (height + topCurveHeight) / 2,
+      x + width / 2,
+      y + (height + topCurveHeight) / 2,
+      x + width / 2,
+      y + topCurveHeight
+    );
+
+    // Top right curve
+    ctx.bezierCurveTo(x + width / 2, y, x, y, x, y + topCurveHeight);
+
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
   return (
     <div className="flex flex-col items-center gap-[10px] relative">
       <p
@@ -128,9 +175,16 @@ const HeartBitWithProvider = () => {
         fillInterval={500}
       />
       <Confetti
+        initialVelocityX={2}
+        initialVelocityY={5}
+        gravity={0.1}
+        wind={0}
+        friction={1}
+        drawShape={drawHeart}
+        colors={['red']}
         width={canvasWidth}
         height={canvasHeight}
-        numberOfPieces={showConfetti ? 50 : 0}
+        numberOfPieces={showConfetti ? 10 : 0}
         recycle={false}
         onConfettiComplete={(confetti) => {
           setShowConfetti(false);
