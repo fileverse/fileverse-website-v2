@@ -114,7 +114,7 @@ const HeartBitWithProvider = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-[10px] relative">
+    <div className="flex flex-col items-center relative">
       <p
         className={clsx(
           'absolute flex justify-center items-center font-bold w-full text-center',
@@ -159,7 +159,7 @@ const HeartBitWithProvider = () => {
       <p
         className={clsx(
           isMediaMax1025px ? 'text-lg' : 'text-2xl',
-          'font-bold text-[#000000'
+          'font-bold text-[#000000] leading-4'
         )}
       >
         HeartBits Minted
@@ -224,7 +224,7 @@ export default function HeartBit() {
                     'font-bold'
                   )}
                 >
-                  HeartBit SDK - New Onchain Metric
+                  Your SDK for Onchain Love
                 </p>
                 <p
                   className={clsx(
@@ -232,8 +232,9 @@ export default function HeartBit() {
                     'text-center'
                   )}
                 >
-                  Deploy onchain likes to your dApp with this free and easy to
-                  plugin SDK.
+                  An open SDK to add onchain Likes & Minting to your dApp or
+                  website. Let your users express themselves with onchain
+                  time-based engagement!
                 </p>
               </div>
 
@@ -275,17 +276,14 @@ export default function HeartBit() {
                 'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
               )}
             >
-              <p
-                className={clsx(
-                  // isMediaMax1025px ? 'text-lg' : 'text-2xl',
-                  'font-bold text-2xl'
-                )}
-              >
-                A new engagement Metric
+              <p className={clsx('font-bold text-2xl text-center')}>
+                Onchain Engagement Analytics
               </p>
               <p className={'text-base text-center w-[80%]'}>
-                Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum
-                Lorem impsum Lorem impsum Lorem impsum Lorem impsu
+                Each second spent clicking on the heart mints HeartBits (ERC1155
+                tokens) containing the hash of the content. Now every
+                online/onchain content can have granular onchain analytics
+                showing levels of user engagement!
               </p>
               <img src={metric.src} alt="metric" className="w-[50px]" />
             </div>
@@ -295,17 +293,13 @@ export default function HeartBit() {
                 'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
               )}
             >
-              <p
-                className={clsx(
-                  // isMediaMax1025px ? 'text-lg' : 'text-2xl',
-                  'font-bold text-2xl'
-                )}
-              >
-                A new engagement Metric
+              <p className={clsx('font-bold text-2xl text-center')}>
+                Quick & Simple Integration
               </p>
               <p className={'text-base text-center w-[80%]'}>
-                Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum
-                Lorem impsum Lorem impsum Lorem impsum Lorem impsu
+                A free and open SDK that can be plugged into your dApp/website
+                in less than 10 minutes, allowing you to easily deploy a unique
+                Mint + Like onchain experience.
               </p>
               <img src={code.src} alt="metric" className="w-[50px]" />
             </div>
@@ -321,6 +315,7 @@ export default function HeartBit() {
               title={'Get Started'}
               linkTo={'https://twitter.com/fileverse'}
               openNewTab={true}
+              width={'12rem'}
             />
             <div
               className={clsx(
@@ -371,19 +366,20 @@ export default function HeartBit() {
             <img
               src={erospixie.src}
               alt="Erospixie"
-              className={clsx(isMediaMax1025px ? 'w-[125px]' : 'w-[195px]')}
+              className={clsx(isMediaMax1025px ? 'w-[125px]' : 'w-[165px] m-4')}
             />
-            <p className="px-2">
-              Bring onchain love to your dApp for Valentine’s Day!
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
+              A traditional ‘like’ button is all air. Fugazi. Fairy dust. An
+              ephemeral entry on a centralized database.
             </p>
             <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
-              When you click on a Like button it’s all air; fugazi; dairy dust.
-              An ephemeral entry an a centralized database...
+              HeartBit allows you to gift your time, onchain. You can now create
+              a provable and measurable token of appreciation for content,
+              creators, dApps, and any website you love.
             </p>
             <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
-              When someone use HeartBit, instead of air or a minting fee, they
-              gift their time: a public measure of appreciation for onchain
-              content
+              A new way to interact onchain with content while creating a
+              provable time-based footprint of engagement!
             </p>
           </div>
         </div>
