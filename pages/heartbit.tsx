@@ -176,12 +176,12 @@ export default function HeartBit() {
     <BodyWrapper heartbitPage={true}>
       <>
         <NextSeo
-          title="Fileverse | Peer to Peer File Sharing dApp"
+          title="HeartBit SDK | Onchain Like Metric"
           description="Onchain peer-to-peer file sharing and Web3 collaboration. Share files with end-to-end encryption & token gating; publish decentralized websites; create decentralized Excalidraw whiteboards; and more!"
           openGraph={{
             url: 'https://fileverse.io/hearbit',
-            title: 'Fileverse',
-            description: 'File sharing between blockchain addresses',
+            title: 'HeartBit SDK',
+            description: `Onchain ‘like’ metric to measure engagement in time`,
             locale: 'en',
             site_name: 'Fileverse',
             images: [
@@ -208,27 +208,30 @@ export default function HeartBit() {
             <div
               id="hero"
               className={clsx(
-                isMediaMax1025px ? 'mt-10' : 'mt-5',
+                isMediaMax1025px ? 'mt-10' : 'mt-10',
                 'w-full flex flex-col justify-between items-center gap-2'
               )}
             >
-              <p
-                className={clsx(
-                  isMediaMax1025px ? 'text-2xl text-center' : 'text-[3rem]',
-                  'font-bold'
-                )}
-              >
-                HeartBit SDK - New Onchain Metric
-              </p>
-              <p
-                className={clsx(
-                  isMediaMax1025px ? 'text-base w-[90%]' : 'text-[1.25rem]',
-                  'text-center'
-                )}
-              >
-                Deploy onchain likes to your dApp with this free and easy to
-                plugin SDK.
-              </p>
+              <div className="w-full flex flex-col gap-4 justify-center items-center">
+                <p
+                  className={clsx(
+                    isMediaMax1025px ? 'text-2xl text-center' : 'text-4xl',
+                    'font-bold'
+                  )}
+                >
+                  HeartBit SDK - New Onchain Metric
+                </p>
+                <p
+                  className={clsx(
+                    isMediaMax1025px ? 'w-[90%]' : '',
+                    'text-center'
+                  )}
+                >
+                  Deploy onchain likes to your dApp with this free and easy to
+                  plugin SDK.
+                </p>
+              </div>
+
               <div
                 className={clsx(
                   isMediaMax1025px ? 'px-11 pt-11 pb-5' : 'pt-11 pb-7 px-24',
@@ -269,8 +272,8 @@ export default function HeartBit() {
             >
               <p
                 className={clsx(
-                  isMediaMax1025px ? 'text-lg' : 'text-2xl',
-                  'font-bold'
+                  // isMediaMax1025px ? 'text-lg' : 'text-2xl',
+                  'font-bold text-2xl'
                 )}
               >
                 A new engagement Metric
@@ -289,8 +292,8 @@ export default function HeartBit() {
             >
               <p
                 className={clsx(
-                  isMediaMax1025px ? 'text-lg' : 'text-2xl',
-                  'font-bold'
+                  // isMediaMax1025px ? 'text-lg' : 'text-2xl',
+                  'font-bold text-2xl'
                 )}
               >
                 A new engagement Metric
@@ -306,7 +309,7 @@ export default function HeartBit() {
             id="getstarted"
             className={clsx(
               `flex flex-col justify-between items-center`,
-              isMediaMax1025px ? 'gap-10 mt-10' : 'gap-20 mt-20'
+              isMediaMax1025px ? 'gap-10 my-10' : 'gap-16 my-20'
             )}
           >
             <PrimaryButton
@@ -316,9 +319,7 @@ export default function HeartBit() {
             />
             <div
               className={clsx(
-                isMediaMax1025px
-                  ? 'gap-4 text-lg flex-col mb-10'
-                  : 'gap-14 text-2xl mb-20',
+                isMediaMax1025px ? 'gap-4 text-lg flex-col' : 'gap-14 text-2xl',
                 'w-full flex justify-center items-start font-bold'
               )}
             >
@@ -356,16 +357,20 @@ export default function HeartBit() {
           </div>
           <div
             className={clsx(
-              isMediaMax1025px ? 'p-4 gap-2' : 'w-[80%] text-[32px] gap-8 py-8',
+              isMediaMax1025px
+                ? 'p-4 gap-2 w-[100%] max-w-[440px]'
+                : 'w-[60%] text-[24px] gap-8 py-8',
               'text-center bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center  shadow-xl'
             )}
           >
             <img
               src={erospixie.src}
               alt="Erospixie"
-              className={clsx(isMediaMax1025px ? 'w-[40%]' : 'w-[195px]')}
+              className={clsx(isMediaMax1025px ? 'w-[125px]' : 'w-[195px]')}
             />
-            <p>Bring onchain love to your dApp for Valentine’s Day!</p>
+            <p className="px-2">
+              Bring onchain love to your dApp for Valentine’s Day!
+            </p>
             <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
               When you click on a Like button it’s all air; fugazi; dairy dust.
               An ephemeral entry an a centralized database...

@@ -4,6 +4,7 @@ import { useMediaQuery } from '@mui/material';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
+import documentationIcon from '../public/assets/documentation.svg';
 import fileverseLogo from '../public/assets/fileverse.png';
 import Gitcoin from '../public/assets/gitcoin.svg';
 import Github from '../public/assets/github_logo.svg';
@@ -54,6 +55,8 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                 />
                 {heartbitPage && (
                   <PrimaryButton
+                    icon={documentationIcon}
+                    iconStyles={'w-6'}
                     title={'Documentation'}
                     linkTo={'https://github.com/fileverse'}
                   />
@@ -61,7 +64,7 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                 <PrimaryButton
                   icon={Github}
                   title={'Github'}
-                  iconStyles={'w-5'}
+                  iconStyles={'w-6'}
                   linkTo={'https://github.com/fileverse'}
                 />
                 {!heartbitPage && (
