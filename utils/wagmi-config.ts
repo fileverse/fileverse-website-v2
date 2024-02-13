@@ -4,7 +4,7 @@ import { mainnet } from 'wagmi/chains';
 
 export const rainbowkitConfig = getDefaultConfig({
   appName: 'fileverse.io',
-  projectId: 'YOUR_PROJECT_ID',
+  projectId: 'ff71575e67eb530fe9b1a99d0a1d8a37',
   chains: [mainnet],
   transports: {
     [mainnet.id]: http(),
