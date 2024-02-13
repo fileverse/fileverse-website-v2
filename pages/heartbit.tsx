@@ -14,13 +14,13 @@ import {
   InternalHandlerRef,
 } from '@fileverse/heartbit-react';
 import { useMediaQuery } from '@mui/material';
+import { useConnectModal } from '@rainbow-me/rainbowkit';
 import clsx from 'clsx';
 import { NextSeo } from 'next-seo';
 import Confetti from 'react-confetti';
 import { SiweMessage } from 'siwe';
 import { keccak256, toBytes } from 'viem';
-import { useSignMessage, useConnect, useAccount } from 'wagmi';
-import { injected } from 'wagmi/connectors';
+import { useSignMessage, useAccount } from 'wagmi';
 
 import BodyWrapper from '../components/BodyWrapper';
 import HeadSectionLayout from '../components/HeadSectionLayout';
@@ -33,7 +33,7 @@ import metric from '../public/assets/metric.png';
 
 const HeartBitWithProvider = () => {
   const heartRef = useRef<InternalHandlerRef | null>(null);
-  const { connectAsync } = useConnect();
+
   const { signMessageAsync } = useSignMessage();
   const [startTime, setStartTime] = useState<number | null>(null);
   const [totalMints, setTotalMints] = useState('0');
@@ -41,14 +41,29 @@ const HeartBitWithProvider = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const [isLoading, setLoading] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const onMouseDown = () => {
-    setStartTime(Math.floor(Date.now() / 1000));
+  const { address } = useAccount();
+  const { openConnectModal, connectModalOpen } = useConnectModal();
+
+  const openModal = () => {
+    if (typeof openConnectModal === 'function') openConnectModal();
   };
 
-  const { address } = useAccount();
+  useEffect(() => {
+    if (connectModalOpen) setLoading(true);
+    else setLoading(false);
+
+    heartRef.current?.onReset();
+  }, [connectModalOpen]);
+
+  const onMouseDown = () => {
+    if (!address) openModal();
+    else setStartTime(Math.floor(Date.now() / 1000));
+  };
+
   const scale = isMediaMax1025px ? 18 : 23;
   const canvasWidth = isMediaMax1025px ? 324 : 525;
   const canvasHeight = isMediaMax1025px ? 387 : 490;
+
   const fetchTotalMints = useCallback(async () => {
     if (!getTotalHeartBitByHash) return;
     const hash = keccak256(toBytes(window?.location?.href));
@@ -67,22 +82,13 @@ const HeartBitWithProvider = () => {
   }, [fetchTotalMints]);
 
   const onMouseUp = async () => {
-    if (!startTime || isLoading) return;
+    if (!startTime || isLoading || !address) return;
     try {
       setLoading(true);
       const endTime = Math.floor(Date.now() / 1000);
-      const accounts: any[] = [];
-      if (!address) {
-        const connectData = await connectAsync({
-          connector: injected(),
-        });
-        connectData?.accounts?.forEach((account) => {
-          accounts.push(account);
-        });
-      }
       const messageObject = new SiweMessage({
         domain: window.location.host,
-        address: address || accounts[0],
+        address: address as string,
         statement: `Thank you for liking this page!`,
         uri: window.location.origin,
         version: '1',
@@ -119,7 +125,6 @@ const HeartBitWithProvider = () => {
       </p>
       <HeartBitUI
         ref={heartRef}
-        disableBeatingAnimation={false}
         scale={scale}
         defaultFillPos={4}
         onMouseDown={onMouseDown}

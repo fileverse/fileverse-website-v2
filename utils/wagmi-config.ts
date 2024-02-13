@@ -1,13 +1,13 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { http } from 'wagmi';
-import { base } from 'wagmi/chains';
+import { mainnet } from 'wagmi/chains';
 
 export const rainbowkitConfig = getDefaultConfig({
   appName: 'fileverse.io',
   projectId: 'YOUR_PROJECT_ID',
-  chains: [base],
+  chains: [mainnet],
   transports: {
-    [base.id]: http(),
+    [mainnet.id]: http(),
   },
   ssr: true,
 });
