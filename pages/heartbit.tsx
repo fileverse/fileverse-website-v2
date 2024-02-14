@@ -136,8 +136,6 @@ const HeartBitWithProvider = () => {
   useEffect(() => {
     if (connectModalOpen) setLoading(true);
     else setLoading(false);
-
-    heartRef.current?.onReset();
   }, [connectModalOpen]);
 
   useEffect(() => {
