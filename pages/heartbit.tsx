@@ -142,7 +142,7 @@ const HeartBitWithProvider = () => {
   }, [address, minted]);
 
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative cursor-pointer">
       <p
         className={clsx(
           'absolute flex justify-center items-center font-bold w-full text-center select-none',
