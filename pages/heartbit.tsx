@@ -31,7 +31,6 @@ import downArrow from '../public/assets/downArrowGray.svg';
 import erospixie from '../public/assets/erospixel.png';
 import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
-
 import 'react-toastify/dist/ReactToastify.css';
 import { CORE_CHAIN_ID } from '../utils';
 
@@ -137,8 +136,6 @@ const HeartBitWithProvider = () => {
   useEffect(() => {
     if (connectModalOpen) setLoading(true);
     else setLoading(false);
-
-    heartRef.current?.onReset();
   }, [connectModalOpen]);
 
   useEffect(() => {
