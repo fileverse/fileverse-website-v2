@@ -19,7 +19,6 @@ import { useConnectModal } from '@rainbow-me/rainbowkit';
 import clsx from 'clsx';
 import { NextSeo } from 'next-seo';
 import Confetti from 'react-confetti';
-import { ToastContainer } from 'react-toastify';
 import { SiweMessage } from 'siwe';
 import { keccak256, toBytes } from 'viem';
 import { useSignMessage, useAccount } from 'wagmi';
@@ -312,34 +311,44 @@ export default function HeartBit() {
             <div
               className={clsx(
                 isMediaMax1025px ? 'py-8' : 'w-[45%] h-[350px]',
-                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
+                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
               )}
             >
-              <p className={clsx('font-bold text-2xl text-center px-8')}>
-                Onchain Engagement Analytics
-              </p>
-              <p className={'text-base text-center w-[80%]'}>
-                Each second spent clicking on the heart mints HeartBits (ERC1155
-                tokens) containing the hash of the content. Now every
-                online/onchain content can have granular onchain analytics
-                showing levels of user engagement!
-              </p>
+              <div className="h-[30%] flex items-end">
+                <p className={clsx('font-bold text-2xl text-center px-8')}>
+                  Onchain Engagement Analytics
+                </p>
+              </div>
+              <div className="h-[30%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[80%]'}>
+                  Each second spent clicking on the heart mints HeartBits
+                  (ERC1155 tokens) containing the hash of the content. Now every
+                  online/onchain content can have granular onchain analytics
+                  showing levels of user engagement!
+                </p>
+              </div>
+
               <img src={metric.src} alt="metric" className="w-[50px]" />
             </div>
             <div
               className={clsx(
                 isMediaMax1025px ? 'py-8' : 'w-[45%] h-[350px]',
-                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
+                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
               )}
             >
-              <p className={clsx('font-bold text-2xl text-center px-8')}>
-                Quick & Simple Integration
-              </p>
-              <p className={'text-base text-center w-[80%]'}>
-                A free and open SDK that can be plugged into your dApp/website
-                in less than 10 minutes, allowing you to easily deploy a unique
-                Mint + Like onchain experience.
-              </p>
+              <div className="h-[30%] flex items-end">
+                <p className={clsx('font-bold text-2xl text-center px-8')}>
+                  Quick & Simple Integration
+                </p>
+              </div>
+              <div className="h-[30%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[80%]'}>
+                  A free and open SDK that can be plugged into your dApp/website
+                  in less than 10 minutes, allowing you to easily deploy a
+                  unique Mint + Like onchain experience.
+                </p>
+              </div>
+
               <img src={code.src} alt="metric" className="w-[50px]" />
             </div>
           </div>
@@ -424,7 +433,7 @@ export default function HeartBit() {
               provable time-based footprint of engagement!
             </p>
           </div>
-          <ToastContainer
+          {/* <ToastContainer
             position="bottom-left"
             autoClose={5000}
             hideProgressBar={false}
@@ -435,7 +444,7 @@ export default function HeartBit() {
             draggable
             pauseOnHover
             theme="light"
-          />
+          /> */}
         </div>
       </>
     </BodyWrapper>
