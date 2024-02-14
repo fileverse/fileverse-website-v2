@@ -180,7 +180,8 @@ const HeartBitWithProvider = () => {
         recycle={false}
         onConfettiComplete={(confetti) => {
           setShowConfetti(false);
-          confetti?.reset();
+          if (confetti && typeof confetti.reset === 'function')
+            confetti.reset();
         }}
         confettiSource={{
           w: 10,
