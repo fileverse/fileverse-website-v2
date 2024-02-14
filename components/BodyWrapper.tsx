@@ -118,7 +118,7 @@ items-center font-normal w-[42rem] p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text
                 )}
               >
                 <p>
-                  Fileverse is an trustless collaboration dApp supported by
+                  Fileverse is a trustless collaboration dApp supported by
                   14,000+ Gitcoin & Ethereum donors as well as leading
                   protocols, investors & angels 💛
                 </p>
