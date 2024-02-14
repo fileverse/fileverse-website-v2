@@ -108,10 +108,22 @@ const HeartBitWithProvider = () => {
     }
   };
 
+  const formatMint = (input: number): string => {
+    if (input < 1000) return input.toString();
+    if (input < 10000)
+      return `${input.toString().slice(0, 1)},${input.toString().slice(1)}`;
+    if (input < 1000000) {
+      if (input % 1000 === 0) return `${input / 1000}K`;
+      return `${(input / 1000).toFixed(1)}K`;
+    }
+    if (input % 1000000 === 0) return `${input / 1000000}M`;
+    return `${(input / 1000000).toFixed(1)}M`;
+  };
+
   const scale = isMediaMax1025px ? 18 : 23;
-  const canvasWidth = isMediaMax1025px ? 324 : 525;
+  const canvasWidth = isMediaMax1025px ? 275 : 525;
   const canvasHeight = isMediaMax1025px ? 387 : 490;
-  const xDividingFactor = isMediaMax1025px ? 3 : 3.45;
+  const xDividingFactor = isMediaMax1025px ? 1.8 : 2.2;
 
   const fetchTotalMints = useCallback(async () => {
     if (!getTotalHeartBitByHash) return;
@@ -142,7 +154,7 @@ const HeartBitWithProvider = () => {
   }, [address, minted]);
 
   return (
-    <div className="flex flex-col items-center relative cursor-pointer">
+    <div className="flex flex-col items-center cursor-pointer">
       <p
         className={clsx(
           'absolute flex justify-center items-center font-bold w-full text-center select-none',
@@ -164,7 +176,7 @@ const HeartBitWithProvider = () => {
       <Confetti
         width={canvasWidth}
         height={canvasHeight}
-        numberOfPieces={showConfetti ? 50 : 0}
+        numberOfPieces={showConfetti ? 60 : 0}
         recycle={false}
         onConfettiComplete={(confetti) => {
           setShowConfetti(false);
@@ -183,7 +195,7 @@ const HeartBitWithProvider = () => {
           'font-bold mt-5'
         )}
       >
-        {totalMints}
+        {formatMint(Number(totalMints))}
       </p>
       <p
         className={clsx(
