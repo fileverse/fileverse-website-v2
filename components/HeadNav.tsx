@@ -116,19 +116,25 @@ const HeadNav = ({
               top && !defaultColor ? 'bg-yellow ' : 'bg-white'
             }    items-center h-full justify-end`}
             >
-              <button
-                className={`border rounded-md ${
-                  top || defaultColor ? 'bg-black text-white ' : 'bg-white'
-                } ${
-                  isMediaMax1025px
-                    ? 'w-[6rem] h-[2rem]'
-                    : 'w-[12rem] h-[3rem] p-4'
-                } flex transition duration-500 ease-in-out justify-center items-center border-black`}
+              <a
+                href="https://www.npmjs.com/package/@fileverse/heartbit-react"
+                target="_blank"
+                rel="noreferrer"
               >
-                <p className={`${isMediaMax1025px && 'text-xs'}`}>
-                  Get Started
-                </p>
-              </button>
+                <button
+                  className={`border rounded-md ${
+                    top || defaultColor ? 'bg-black text-white ' : 'bg-white'
+                  } ${
+                    isMediaMax1025px
+                      ? 'w-[6rem] h-[2rem]'
+                      : 'w-[12rem] h-[3rem] p-4'
+                  } flex transition duration-500 ease-in-out justify-center items-center border-black`}
+                >
+                  <p className={`${isMediaMax1025px && 'text-xs'}`}>
+                    Get Started
+                  </p>
+                </button>
+              </a>
             </div>
           ) : (
             <div

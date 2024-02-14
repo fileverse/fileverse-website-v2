@@ -58,7 +58,10 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                     icon={documentationIcon}
                     iconStyles={'w-6'}
                     title={'Documentation'}
-                    linkTo={'https://github.com/fileverse'}
+                    linkTo={
+                      'https://www.npmjs.com/package/@fileverse/heartbit-react'
+                    }
+                    openNewTab={true}
                   />
                 )}
                 <PrimaryButton

@@ -18,6 +18,7 @@ import { useConnectModal } from '@rainbow-me/rainbowkit';
 import clsx from 'clsx';
 import { NextSeo } from 'next-seo';
 import Confetti from 'react-confetti';
+import { ToastContainer, toast } from 'react-toastify';
 import { SiweMessage } from 'siwe';
 import { keccak256, toBytes } from 'viem';
 import { useSignMessage, useAccount } from 'wagmi';
@@ -30,6 +31,8 @@ import downArrow from '../public/assets/downArrowGray.svg';
 import erospixie from '../public/assets/erospixel.png';
 import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const HeartBitWithProvider = () => {
   const heartRef = useRef<InternalHandlerRef | null>(null);
@@ -47,6 +50,18 @@ const HeartBitWithProvider = () => {
   const openModal = () => {
     if (typeof openConnectModal === 'function') openConnectModal();
   };
+
+  const notify = () =>
+    toast.error('Something went wrong, Please try again.', {
+      position: 'bottom-left',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   useEffect(() => {
     if (connectModalOpen) setLoading(true);
@@ -108,6 +123,7 @@ const HeartBitWithProvider = () => {
       setShowConfetti(true);
     } catch (err) {
       heartRef.current?.onReset();
+      notify();
     } finally {
       setLoading(false);
     }
@@ -170,6 +186,7 @@ const HeartBitWithProvider = () => {
 
 export default function HeartBit() {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const isMediaMax390px = useMediaQuery('(max-width: 390px)');
 
   const coreOptions = useMemo(() => {
     return {
@@ -321,14 +338,15 @@ export default function HeartBit() {
           >
             <PrimaryButton
               title={'Get Started'}
-              linkTo={'https://twitter.com/fileverse'}
+              linkTo={'https://www.npmjs.com/package/@fileverse/heartbit-react'}
               openNewTab={true}
               width={'12rem'}
             />
             <div
               className={clsx(
-                isMediaMax1025px ? 'gap-6 text-sm' : 'gap-14 text-lg',
-                'w-full flex justify-center items-start font-bold'
+                isMediaMax1025px ? 'gap-6 text-sm' : 'gap-14 text-lg w-full',
+                isMediaMax390px ? 'w-[100vw] gap-0 justify-evenly' : '',
+                'flex justify-center items-start font-bold'
               )}
             >
               <div className="flex gap-3 items-center">
@@ -367,29 +385,43 @@ export default function HeartBit() {
             className={clsx(
               isMediaMax1025px
                 ? 'p-4 gap-2 w-[100%] max-w-[440px]'
-                : 'w-[60%] text-[24px] gap-8 py-8',
+                : 'w-[60%] text-[24px] py-8',
               'text-center bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center  shadow-xl'
             )}
           >
             <img
               src={erospixie.src}
               alt="Erospixie"
-              className={clsx(isMediaMax1025px ? 'w-[125px]' : 'w-[165px] m-4')}
+              className={clsx(
+                isMediaMax1025px ? 'w-[125px]' : 'w-[150px] mb-4'
+              )}
             />
             <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
               A traditional ‘like’ button is all air. Fugazi. Fairy dust. An
               ephemeral entry on a centralized database.
             </p>
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'p-8')}>
               HeartBit allows you to gift your time, onchain. You can now create
               a provable and measurable token of appreciation for content,
               creators, dApps, and any website you love.
             </p>
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8 pb-8')}>
               A new way to interact onchain with content while creating a
               provable time-based footprint of engagement!
             </p>
           </div>
+          <ToastContainer
+            position="bottom-left"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </div>
       </>
     </BodyWrapper>
