@@ -226,16 +226,24 @@ export default function HeartBit() {
                 >
                   Your SDK for Onchain Love
                 </p>
-                <p
-                  className={clsx(
-                    isMediaMax1025px ? 'w-[90%]' : '',
-                    'text-center'
-                  )}
-                >
-                  An open SDK to add onchain Likes & Minting to your dApp or
-                  website. Let your users express themselves with onchain
-                  time-based engagement!
-                </p>
+                <div className="w-full flex flex-col justify-center items-center">
+                  <p
+                    className={clsx(
+                      isMediaMax1025px ? 'w-[90%]' : '',
+                      'text-center'
+                    )}
+                  >
+                    <span>
+                      An open SDK to add onchain Likes & Minting to your dApp or
+                      website.
+                    </span>
+                    {!isMediaMax1025px && <br />}{' '}
+                    <span>
+                      Let your users express themselves with onchain time-based
+                      engagement!
+                    </span>
+                  </p>
+                </div>
               </div>
 
               <div
@@ -276,7 +284,7 @@ export default function HeartBit() {
                 'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
               )}
             >
-              <p className={clsx('font-bold text-2xl text-center')}>
+              <p className={clsx('font-bold text-2xl text-center px-8')}>
                 Onchain Engagement Analytics
               </p>
               <p className={'text-base text-center w-[80%]'}>
@@ -293,7 +301,7 @@ export default function HeartBit() {
                 'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
               )}
             >
-              <p className={clsx('font-bold text-2xl text-center')}>
+              <p className={clsx('font-bold text-2xl text-center px-8')}>
                 Quick & Simple Integration
               </p>
               <p className={'text-base text-center w-[80%]'}>
@@ -308,7 +316,7 @@ export default function HeartBit() {
             id="getstarted"
             className={clsx(
               `flex flex-col justify-between items-center`,
-              isMediaMax1025px ? 'gap-10 my-10' : 'gap-16 my-20'
+              isMediaMax1025px ? 'gap-10 my-10' : 'gap-8 my-20'
             )}
           >
             <PrimaryButton
@@ -319,7 +327,7 @@ export default function HeartBit() {
             />
             <div
               className={clsx(
-                isMediaMax1025px ? 'gap-4 text-lg flex-col' : 'gap-14 text-2xl',
+                isMediaMax1025px ? 'gap-6 text-sm' : 'gap-14 text-lg',
                 'w-full flex justify-center items-start font-bold'
               )}
             >
@@ -328,7 +336,7 @@ export default function HeartBit() {
                   src={heart50.src}
                   alt="heart50"
                   className={clsx(
-                    isMediaMax1025px ? 'w-[24px] h-[24px]' : 'w-[36px] h-[36px]'
+                    isMediaMax1025px ? 'w-[18px] h-[18px]' : 'w-[24px] h-[24px]'
                   )}
                 />
                 <p>Free</p>
@@ -338,7 +346,7 @@ export default function HeartBit() {
                   src={heart50.src}
                   alt="heart50"
                   className={clsx(
-                    isMediaMax1025px ? 'w-[24px] h-[24px]' : 'w-[36px] h-[36px]'
+                    isMediaMax1025px ? 'w-[18px] h-[18px]' : 'w-[24px] h-[24px]'
                   )}
                 />
                 <p>Open-Source</p>
@@ -348,7 +356,7 @@ export default function HeartBit() {
                   src={heart50.src}
                   alt="heart50"
                   className={clsx(
-                    isMediaMax1025px ? 'w-[24px] h-[24px]' : 'w-[36px] h-[36px]'
+                    isMediaMax1025px ? 'w-[18px] h-[18px]' : 'w-[24px] h-[24px]'
                   )}
                 />
                 <p>Instant</p>
@@ -368,16 +376,16 @@ export default function HeartBit() {
               alt="Erospixie"
               className={clsx(isMediaMax1025px ? 'w-[125px]' : 'w-[165px] m-4')}
             />
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
               A traditional ‘like’ button is all air. Fugazi. Fairy dust. An
               ephemeral entry on a centralized database.
             </p>
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
               HeartBit allows you to gift your time, onchain. You can now create
               a provable and measurable token of appreciation for content,
               creators, dApps, and any website you love.
             </p>
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'w-[85%] px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
               A new way to interact onchain with content while creating a
               provable time-based footprint of engagement!
             </p>
