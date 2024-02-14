@@ -49,7 +49,7 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
               >
                 <PrimaryButton
                   icon={Xicon}
-                  title={isMediaMax1025px ? '' : 'Twitter'}
+                  title={'Twitter'}
                   iconStyles={'w-5'}
                   linkTo={'https://twitter.com/fileverse'}
                 />
@@ -57,7 +57,7 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                   <PrimaryButton
                     icon={documentationIcon}
                     iconStyles={'w-6'}
-                    title={'Documentation'}
+                    title={'Docs'}
                     linkTo={
                       'https://www.npmjs.com/package/@fileverse/heartbit-react'
                     }

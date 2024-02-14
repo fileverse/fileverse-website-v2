@@ -92,7 +92,10 @@ const HeadNav = ({
             } duration-500 ease-in-out transition ${
               top && !defaultColor ? 'bg-yellow ' : 'bg-white'
             }   flex items-center`}
-            onClick={() => router.push('/')}
+            onClick={() => {
+              if (heartbitPage) window.open('/', '_blank');
+              router.push('/');
+            }}
           >
             <img
               className={`${

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useCallback,
   useEffect,
@@ -18,7 +19,7 @@ import { useConnectModal } from '@rainbow-me/rainbowkit';
 import clsx from 'clsx';
 import { NextSeo } from 'next-seo';
 import Confetti from 'react-confetti';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { SiweMessage } from 'siwe';
 import { keccak256, toBytes } from 'viem';
 import { useSignMessage, useAccount } from 'wagmi';
@@ -37,67 +38,45 @@ import 'react-toastify/dist/ReactToastify.css';
 const HeartBitWithProvider = () => {
   const heartRef = useRef<InternalHandlerRef | null>(null);
 
+  const { address } = useAccount();
   const { signMessageAsync } = useSignMessage();
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const { mintHeartBit, getTotalHeartBitByHash } = useHeartBit();
+  const { openConnectModal, connectModalOpen } = useConnectModal();
+
   const [startTime, setStartTime] = useState<number | null>(null);
   const [totalMints, setTotalMints] = useState('0');
-  const { mintHeartBit, getTotalHeartBitByHash } = useHeartBit();
-  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const [isLoading, setLoading] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const { address } = useAccount();
-  const { openConnectModal, connectModalOpen } = useConnectModal();
+  const [minted, setMinted] = useState<boolean>(false);
 
   const openModal = () => {
     if (typeof openConnectModal === 'function') openConnectModal();
   };
 
-  const notify = () =>
-    toast.error('Something went wrong, Please try again.', {
-      position: 'bottom-left',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-    });
-
-  useEffect(() => {
-    if (connectModalOpen) setLoading(true);
-    else setLoading(false);
-
-    heartRef.current?.onReset();
-  }, [connectModalOpen]);
-
-  const onMouseDown = () => {
-    if (!address) openModal();
-    else setStartTime(Math.floor(Date.now() / 1000));
-  };
-
-  const scale = isMediaMax1025px ? 18 : 23;
-  const canvasWidth = isMediaMax1025px ? 324 : 525;
-  const canvasHeight = isMediaMax1025px ? 387 : 490;
-
-  const fetchTotalMints = useCallback(async () => {
-    if (!getTotalHeartBitByHash) return;
-    const hash = keccak256(toBytes(window?.location?.href));
-    const totalSupply = await getTotalHeartBitByHash({ hash });
-
-    setTotalMints(totalSupply.toString());
-  }, [getTotalHeartBitByHash]);
-
-  useEffect(() => {
-    fetchTotalMints();
-    const interval = setInterval(() => {
-      fetchTotalMints();
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [fetchTotalMints]);
+  // const notify = () =>
+  //   toast.error('Something went wrong, Please try again.', {
+  //     position: 'bottom-left',
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: 'light',
+  //   });
 
   const onMouseUp = async () => {
-    if (!startTime || isLoading || !address) return;
+    if (!address) openModal();
+    setMinted(true);
+  };
+
+  const onMouseDown = () => {
+    setStartTime(Math.floor(Date.now() / 1000));
+  };
+
+  const mintHeart = async () => {
+    if (!startTime) return;
     try {
       setLoading(true);
       const endTime = Math.floor(Date.now() / 1000);
@@ -123,21 +102,55 @@ const HeartBitWithProvider = () => {
       setShowConfetti(true);
     } catch (err) {
       heartRef.current?.onReset();
-      notify();
+      // notify();
     } finally {
       setLoading(false);
+      setMinted(false);
     }
   };
+
+  const scale = isMediaMax1025px ? 18 : 23;
+  const canvasWidth = isMediaMax1025px ? 324 : 525;
+  const canvasHeight = isMediaMax1025px ? 387 : 490;
+  const xDividingFactor = isMediaMax1025px ? 3 : 3.45;
+
+  const fetchTotalMints = useCallback(async () => {
+    if (!getTotalHeartBitByHash) return;
+    const hash = keccak256(toBytes(window?.location?.href));
+    const totalSupply = await getTotalHeartBitByHash({ hash });
+
+    setTotalMints(totalSupply.toString());
+  }, [getTotalHeartBitByHash]);
+
+  useEffect(() => {
+    if (connectModalOpen) setLoading(true);
+    else setLoading(false);
+
+    heartRef.current?.onReset();
+  }, [connectModalOpen]);
+
+  useEffect(() => {
+    fetchTotalMints();
+    const interval = setInterval(() => {
+      fetchTotalMints();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [fetchTotalMints]);
+
+  useEffect(() => {
+    if (address && minted) mintHeart();
+  }, [address, minted]);
 
   return (
     <div className="flex flex-col items-center relative">
       <p
         className={clsx(
-          'absolute flex justify-center items-center font-bold w-full text-center',
+          'absolute flex justify-center items-center font-bold w-full text-center select-none',
           isMediaMax1025px ? 'mt-8 p-9' : 'mt-20 text-[2rem]'
         )}
       >
-        {isMediaMax1025px ? 'Click Me for some on-chain love!' : 'Click Me!'}
+        Stay Clicked!
       </p>
       <HeartBitUI
         ref={heartRef}
@@ -147,6 +160,7 @@ const HeartBitWithProvider = () => {
         onMouseUp={onMouseUp}
         isDisabled={isLoading}
         fillInterval={500}
+        disableBeatingAnimation={false}
       />
       <Confetti
         width={canvasWidth}
@@ -160,7 +174,7 @@ const HeartBitWithProvider = () => {
         confettiSource={{
           w: 10,
           h: 10,
-          x: canvasWidth / 2,
+          x: canvasWidth / xDividingFactor,
           y: canvasHeight / 3,
         }}
       />
