@@ -33,6 +33,7 @@ import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { CORE_CHAIN_ID } from '../utils';
 
 const HeartBitWithProvider = () => {
   const heartRef = useRef<InternalHandlerRef | null>(null);
@@ -216,7 +217,7 @@ export default function HeartBit() {
 
   const coreOptions = useMemo(() => {
     return {
-      chain: '0xaa36a7' as SupportedChain,
+      chain: CORE_CHAIN_ID as SupportedChain,
     };
   }, []);
 
