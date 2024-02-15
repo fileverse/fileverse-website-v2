@@ -49,7 +49,7 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
               >
                 <PrimaryButton
                   icon={Xicon}
-                  title={isMediaMax1025px ? '' : 'Twitter'}
+                  title={'Twitter'}
                   iconStyles={'w-5'}
                   linkTo={'https://twitter.com/fileverse'}
                 />
@@ -57,8 +57,11 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                   <PrimaryButton
                     icon={documentationIcon}
                     iconStyles={'w-6'}
-                    title={'Documentation'}
-                    linkTo={'https://github.com/fileverse'}
+                    title={'Docs'}
+                    linkTo={
+                      'https://www.npmjs.com/package/@fileverse/heartbit-react'
+                    }
+                    openNewTab={true}
                   />
                 )}
                 <PrimaryButton
@@ -115,7 +118,7 @@ items-center font-normal w-[42rem] p-4 px-2 text-sm bg-[#F8F8F8] rounded-xl	text
                 )}
               >
                 <p>
-                  Fileverse is an trustless collaboration dApp supported by
+                  Fileverse is a trustless collaboration dApp supported by
                   14,000+ Gitcoin & Ethereum donors as well as leading
                   protocols, investors & angels 💛
                 </p>

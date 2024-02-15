@@ -50,7 +50,7 @@ const Home: NextPage = () => {
             <div className="flex min-h-[85vh] justify-center">
               <div
                 className={` lg:w-[90%] ${
-                  isMediaMax1025px && 'w-full flex-col justify-evenly mt-16'
+                  isMediaMax1025px && 'w-full flex-col justify-evenly mt-24'
                 } flex items-center`}
               >
                 <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>

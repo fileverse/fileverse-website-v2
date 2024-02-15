@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useCallback,
   useEffect,
@@ -30,59 +31,51 @@ import downArrow from '../public/assets/downArrowGray.svg';
 import erospixie from '../public/assets/erospixel.png';
 import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
+import 'react-toastify/dist/ReactToastify.css';
+import { CORE_CHAIN_ID } from '../utils';
 
 const HeartBitWithProvider = () => {
   const heartRef = useRef<InternalHandlerRef | null>(null);
 
+  const { address } = useAccount();
   const { signMessageAsync } = useSignMessage();
+  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const { mintHeartBit, getTotalHeartBitByHash } = useHeartBit();
+  const { openConnectModal, connectModalOpen } = useConnectModal();
+
   const [startTime, setStartTime] = useState<number | null>(null);
   const [totalMints, setTotalMints] = useState('0');
-  const { mintHeartBit, getTotalHeartBitByHash } = useHeartBit();
-  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   const [isLoading, setLoading] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const { address } = useAccount();
-  const { openConnectModal, connectModalOpen } = useConnectModal();
+  const [minted, setMinted] = useState<boolean>(false);
 
   const openModal = () => {
     if (typeof openConnectModal === 'function') openConnectModal();
   };
 
-  useEffect(() => {
-    if (connectModalOpen) setLoading(true);
-    else setLoading(false);
-
-    heartRef.current?.onReset();
-  }, [connectModalOpen]);
-
-  const onMouseDown = () => {
-    if (!address) openModal();
-    else setStartTime(Math.floor(Date.now() / 1000));
-  };
-
-  const scale = isMediaMax1025px ? 18 : 23;
-  const canvasWidth = isMediaMax1025px ? 324 : 525;
-  const canvasHeight = isMediaMax1025px ? 387 : 490;
-
-  const fetchTotalMints = useCallback(async () => {
-    if (!getTotalHeartBitByHash) return;
-    const hash = keccak256(toBytes(window?.location?.href));
-    const totalSupply = await getTotalHeartBitByHash({ hash });
-
-    setTotalMints(totalSupply.toString());
-  }, [getTotalHeartBitByHash]);
-
-  useEffect(() => {
-    fetchTotalMints();
-    const interval = setInterval(() => {
-      fetchTotalMints();
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [fetchTotalMints]);
+  // const notify = () =>
+  //   toast.error('Something went wrong, Please try again.', {
+  //     position: 'bottom-left',
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: 'light',
+  //   });
 
   const onMouseUp = async () => {
-    if (!startTime || isLoading || !address) return;
+    if (!address) openModal();
+    setMinted(true);
+  };
+
+  const onMouseDown = () => {
+    setStartTime(Math.floor(Date.now() / 1000));
+  };
+
+  const mintHeart = async () => {
+    if (!startTime) return;
     try {
       setLoading(true);
       const endTime = Math.floor(Date.now() / 1000);
@@ -108,20 +101,65 @@ const HeartBitWithProvider = () => {
       setShowConfetti(true);
     } catch (err) {
       heartRef.current?.onReset();
+      // notify();
     } finally {
       setLoading(false);
+      setMinted(false);
     }
   };
 
+  const formatMint = (input: number): string => {
+    if (input < 1000) return input.toString();
+    if (input < 10000)
+      return `${input.toString().slice(0, 1)},${input.toString().slice(1)}`;
+    if (input < 1000000) {
+      if (input % 1000 === 0) return `${input / 1000}K`;
+      return `${(input / 1000).toFixed(1)}K`;
+    }
+    if (input % 1000000 === 0) return `${input / 1000000}M`;
+    return `${(input / 1000000).toFixed(1)}M`;
+  };
+
+  const scale = isMediaMax1025px ? 18 : 23;
+  const canvasWidth = isMediaMax1025px ? 275 : 525;
+  const canvasHeight = isMediaMax1025px ? 387 : 490;
+  const xDividingFactor = isMediaMax1025px ? 1.8 : 2.2;
+
+  const fetchTotalMints = useCallback(async () => {
+    if (!getTotalHeartBitByHash) return;
+    const hash = keccak256(toBytes(window?.location?.href));
+    const totalSupply = await getTotalHeartBitByHash({ hash });
+
+    setTotalMints(totalSupply.toString());
+  }, [getTotalHeartBitByHash]);
+
+  useEffect(() => {
+    if (connectModalOpen) setLoading(true);
+    else setLoading(false);
+  }, [connectModalOpen]);
+
+  useEffect(() => {
+    fetchTotalMints();
+    const interval = setInterval(() => {
+      fetchTotalMints();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [fetchTotalMints]);
+
+  useEffect(() => {
+    if (address && minted) mintHeart();
+  }, [address, minted]);
+
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center cursor-pointer">
       <p
         className={clsx(
-          'absolute flex justify-center items-center font-bold w-full text-center',
+          'absolute flex justify-center items-center font-bold w-full text-center select-none',
           isMediaMax1025px ? 'mt-8 p-9' : 'mt-20 text-[2rem]'
         )}
       >
-        {isMediaMax1025px ? 'Click Me for some on-chain love!' : 'Click Me!'}
+        Stay Clicked!
       </p>
       <HeartBitUI
         ref={heartRef}
@@ -131,20 +169,22 @@ const HeartBitWithProvider = () => {
         onMouseUp={onMouseUp}
         isDisabled={isLoading}
         fillInterval={500}
+        disableBeatingAnimation={false}
       />
       <Confetti
         width={canvasWidth}
         height={canvasHeight}
-        numberOfPieces={showConfetti ? 50 : 0}
+        numberOfPieces={showConfetti ? 60 : 0}
         recycle={false}
         onConfettiComplete={(confetti) => {
           setShowConfetti(false);
-          confetti?.reset();
+          if (confetti && typeof confetti.reset === 'function')
+            confetti.reset();
         }}
         confettiSource={{
           w: 10,
           h: 10,
-          x: canvasWidth / 2,
+          x: canvasWidth / xDividingFactor,
           y: canvasHeight / 3,
         }}
       />
@@ -154,7 +194,7 @@ const HeartBitWithProvider = () => {
           'font-bold mt-5'
         )}
       >
-        {totalMints}
+        {formatMint(Number(totalMints))}
       </p>
       <p
         className={clsx(
@@ -170,10 +210,11 @@ const HeartBitWithProvider = () => {
 
 export default function HeartBit() {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const isMediaMax390px = useMediaQuery('(max-width: 390px)');
 
   const coreOptions = useMemo(() => {
     return {
-      chain: '0xaa36a7' as SupportedChain,
+      chain: CORE_CHAIN_ID as SupportedChain,
     };
   }, []);
 
@@ -281,34 +322,44 @@ export default function HeartBit() {
             <div
               className={clsx(
                 isMediaMax1025px ? 'py-8' : 'w-[45%] h-[350px]',
-                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
+                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
               )}
             >
-              <p className={clsx('font-bold text-2xl text-center px-8')}>
-                Onchain Engagement Analytics
-              </p>
-              <p className={'text-base text-center w-[80%]'}>
-                Each second spent clicking on the heart mints HeartBits (ERC1155
-                tokens) containing the hash of the content. Now every
-                online/onchain content can have granular onchain analytics
-                showing levels of user engagement!
-              </p>
+              <div className="h-[30%] flex items-end">
+                <p className={clsx('font-bold text-2xl text-center px-8')}>
+                  Onchain Engagement Analytics
+                </p>
+              </div>
+              <div className="h-[30%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[80%]'}>
+                  Each second spent clicking on the heart mints HeartBits
+                  (ERC1155 tokens) containing the hash of the content. Now every
+                  online/onchain content can have granular onchain analytics
+                  showing levels of user engagement!
+                </p>
+              </div>
+
               <img src={metric.src} alt="metric" className="w-[50px]" />
             </div>
             <div
               className={clsx(
                 isMediaMax1025px ? 'py-8' : 'w-[45%] h-[350px]',
-                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center gap-4 shadow-lg'
+                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
               )}
             >
-              <p className={clsx('font-bold text-2xl text-center px-8')}>
-                Quick & Simple Integration
-              </p>
-              <p className={'text-base text-center w-[80%]'}>
-                A free and open SDK that can be plugged into your dApp/website
-                in less than 10 minutes, allowing you to easily deploy a unique
-                Mint + Like onchain experience.
-              </p>
+              <div className="h-[30%] flex items-end">
+                <p className={clsx('font-bold text-2xl text-center px-8')}>
+                  Quick & Simple Integration
+                </p>
+              </div>
+              <div className="h-[30%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[80%]'}>
+                  A free and open SDK that can be plugged into your dApp/website
+                  in less than 10 minutes, allowing you to easily deploy a
+                  unique Mint + Like onchain experience.
+                </p>
+              </div>
+
               <img src={code.src} alt="metric" className="w-[50px]" />
             </div>
           </div>
@@ -321,14 +372,15 @@ export default function HeartBit() {
           >
             <PrimaryButton
               title={'Get Started'}
-              linkTo={'https://twitter.com/fileverse'}
+              linkTo={'https://www.npmjs.com/package/@fileverse/heartbit-react'}
               openNewTab={true}
               width={'12rem'}
             />
             <div
               className={clsx(
-                isMediaMax1025px ? 'gap-6 text-sm' : 'gap-14 text-lg',
-                'w-full flex justify-center items-start font-bold'
+                isMediaMax1025px ? 'gap-6 text-sm' : 'gap-14 text-lg w-full',
+                isMediaMax390px ? 'w-[100vw] gap-0 justify-evenly' : '',
+                'flex justify-center items-start font-bold'
               )}
             >
               <div className="flex gap-3 items-center">
@@ -367,29 +419,43 @@ export default function HeartBit() {
             className={clsx(
               isMediaMax1025px
                 ? 'p-4 gap-2 w-[100%] max-w-[440px]'
-                : 'w-[60%] text-[24px] gap-8 py-8',
+                : 'w-[60%] text-[24px] py-8',
               'text-center bg-[#FFF9CE] rounded-2xl flex flex-col justify-center items-center  shadow-xl'
             )}
           >
             <img
               src={erospixie.src}
               alt="Erospixie"
-              className={clsx(isMediaMax1025px ? 'w-[125px]' : 'w-[165px] m-4')}
+              className={clsx(
+                isMediaMax1025px ? 'w-[125px]' : 'w-[150px] mb-4'
+              )}
             />
             <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
               A traditional ‘like’ button is all air. Fugazi. Fairy dust. An
               ephemeral entry on a centralized database.
             </p>
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'p-8')}>
               HeartBit allows you to gift your time, onchain. You can now create
               a provable and measurable token of appreciation for content,
               creators, dApps, and any website you love.
             </p>
-            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8')}>
+            <p className={clsx(isMediaMax1025px ? 'px-2' : 'px-8 pb-8')}>
               A new way to interact onchain with content while creating a
               provable time-based footprint of engagement!
             </p>
           </div>
+          {/* <ToastContainer
+            position="bottom-left"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          /> */}
         </div>
       </>
     </BodyWrapper>
