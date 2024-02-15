@@ -59,7 +59,7 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                     iconStyles={'w-6'}
                     title={'Docs'}
                     linkTo={
-                      'https://www.npmjs.com/package/@fileverse/heartbit-react'
+                      'https://portal.fileverse.io/#/0xc7b5eda8cfC005f5fF6425Ac269Ee1b21A6ef7ec/file/0?chainId=100'
                     }
                     openNewTab={true}
                   />
