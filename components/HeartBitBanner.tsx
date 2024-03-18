@@ -36,16 +36,12 @@ export default function HeartBitBanner() {
               'text-xl': !isMediaMax1025px,
             })}
           >
-            Send Onchain Love to ETHDenver Speakers!
+            HeartBit SDK - Add Onchain Likes to your dApp/website
           </p>
           {isMediaMax1025px && <HeartBitUI startFillPos={10} scale={2} />}
         </div>
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
-          <PrimaryButton
-            title="Send Love"
-            linkTo="https://ethdenver.fileverse.io/"
-            openNewTab={true}
-          />
+          <PrimaryButton title="Discover" linkTo="/heartbit" />
         </div>
       </div>
     </div>
