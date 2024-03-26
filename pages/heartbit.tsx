@@ -360,7 +360,7 @@ export default function HeartBit() {
                 </p>
               </div>
 
-              <img src={code.src} alt="metric" className="w-[50px]" />
+              <img src={code.src} alt="code" className="w-[50px]" />
             </div>
           </div>
           <div
@@ -386,7 +386,7 @@ export default function HeartBit() {
               <div className="flex gap-3 items-center">
                 <img
                   src={heart50.src}
-                  alt="heart50"
+                  alt="heart"
                   className={clsx(
                     isMediaMax1025px ? 'w-[18px] h-[18px]' : 'w-[24px] h-[24px]'
                   )}
@@ -396,7 +396,7 @@ export default function HeartBit() {
               <div className="flex gap-3 items-center">
                 <img
                   src={heart50.src}
-                  alt="heart50"
+                  alt="heart"
                   className={clsx(
                     isMediaMax1025px ? 'w-[18px] h-[18px]' : 'w-[24px] h-[24px]'
                   )}
@@ -406,7 +406,7 @@ export default function HeartBit() {
               <div className="flex gap-3 items-center">
                 <img
                   src={heart50.src}
-                  alt="heart50"
+                  alt="heart"
                   className={clsx(
                     isMediaMax1025px ? 'w-[18px] h-[18px]' : 'w-[24px] h-[24px]'
                   )}

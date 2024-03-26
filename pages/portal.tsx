@@ -83,7 +83,7 @@ const Subdomain = () => {
       <>
         <NextSeo
           title="Fileverse Portal | Notion Alternative |  Web3 Collaboration"
-          description="Your Web3 collaboration tool! Peer-to-peer file sharing with end-to-end encryption & token gating; decentralized websites publishing; decentralized Excalidraw whiteboards; and more!"
+          description="Onchain alternative to Notion & Google Workspace. Write, sketch, code, share, store, and more!"
           openGraph={{
             url: 'https://fileverse.io/portal',
             title: 'Fileverse Portal',

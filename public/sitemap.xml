@@ -1,0 +1,13 @@
+   <!-- public/sitemap.xml -->
+   <xml version="1.0" encoding="UTF-8">
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+       <loc>https://fileverse.io/</loc>
+       <loc>https://fileverse.io/features</loc>
+       <loc>https://fileverse.io/portal</loc>
+       <loc>https://fileverse.io/heartbit</loc>
+       <loc>https://fileverse.io/why-fileverse</loc>
+       <lastmod>2024-03-27</lastmod>
+     </url>
+   </urlset>
+   </xml>

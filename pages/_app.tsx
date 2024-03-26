@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '../styles/globals.css';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { WagmiProvider } from 'wagmi';
 
 import { rainbowkitConfig } from '../utils/wagmi-config';
@@ -15,8 +16,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextSeo
-        title="Fileverse | Peer to Peer File Sharing dApp"
-        description="Onchain peer-to-peer file sharing and Web3 collaboration. Share files with end-to-end encryption & token gating; publish decentralized websites; create decentralized Excalidraw whiteboards; and more!"
+        title="Fileverse | Peer to Peer File Sharing | Onchain Collaboration"
+        description="Your onchain collaboration space for peer-to-peer file sharing; decentralized website publishing; crypto whiteboards & documents; token gating; and more!"
         openGraph={{
           url: 'https://beta.fileverse.io',
           title: 'Fileverse',
@@ -38,6 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
+      <Head>
+        <link rel="canonical" href="https://beta.fileverse.io/" />
+      </Head>
       <WagmiProvider config={rainbowkitConfig}>
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider>
