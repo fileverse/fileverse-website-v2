@@ -161,11 +161,11 @@ const HeadNav = ({
                 <button
                   onClick={() => setMenu(!menu)}
                   className={`border rounded-md ${
-                    top || defaultColor ? 'bg-black text-white ' : 'bg-white'
+                    top && !defaultColor ? 'bg-black text-white ' : 'bg-white'
                   } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
                 >
-                  <p className="mr-4">About</p>
-                  {top || defaultColor ? (
+                  <p className="mr-4">Show me more</p>
+                  {top && !defaultColor ? (
                     <Image
                       className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
                       alt="white-dropdown-arrow"
@@ -235,7 +235,7 @@ const HeadNav = ({
         <Slide direction="left" in={sideMenu}>
           <div
             ref={ref}
-            className="h-[100vh] shadow-lg right-0 bg-white p-4 absolute w-[60vw]"
+            className="h-[100vh] shadow-lg top-0 right-0 absolute bg-white p-4  w-[60vw]"
           >
             <div
               onClick={() => {

@@ -34,9 +34,10 @@ import familyIcon from '../public/assets/familyIcon.png';
 import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
 import global from '../public/assets/global.svg';
-import hero from '../public/assets/hero.png';
+import heroMobile from '../public/assets/hero-mobile.png';
 import Nft from '../public/assets/Nft.png';
 import padLock from '../public/assets/padlock.svg';
+import hero from '../public/assets/portalHero.png';
 import solo from '../public/assets/solo.png';
 import Web3 from '../public/assets/Web3.png';
 
@@ -45,7 +46,7 @@ const Home: NextPage = () => {
   return (
     <BodyWrapper>
       <>
-        <HeadSectionLayout noFooter={true}>
+        <HeadSectionLayout noFooter={true} defaultBackground={true}>
           <>
             <div className="flex min-h-[85vh] justify-center">
               <div
@@ -95,18 +96,25 @@ const Home: NextPage = () => {
                     isMediaMax1025px && 'w-[100vw]'
                   } flex justify-center`}
                 >
-                  <img className="" src={hero.src} alt="fileverse-window" />
+                  <img
+                    src={isMediaMax1025px ? heroMobile.src : hero.src}
+                    alt="fileverse-window"
+                  />
                 </div>
               </div>
             </div>
           </>
         </HeadSectionLayout>
-        <HeadSectionLayout id="product" noFooter={true}>
+        <HeadSectionLayout
+          id="product"
+          noFooter={true}
+          defaultBackground={true}
+        >
           <>
             <div
               className={`flex mt-[4.5vh] lg:w-[90%] ${
                 isMediaMax1025px && 'flex-wrap'
-              } justify-center items-center lg:p-4`}
+              } justify-evenly items-center lg:p-4`}
             >
               <ProductsDisplay
                 productName={`Fileverse Solo`}

@@ -14,7 +14,7 @@ export default function HeartBitBanner() {
     <div
       className={clsx(
         styles.banner,
-        'bg-[#ffffff] flex justify-center items-center w-[100%]'
+        'bg-[#000000] text-white flex justify-center items-center w-[100%]'
       )}
     >
       <div
@@ -41,7 +41,11 @@ export default function HeartBitBanner() {
           {isMediaMax1025px && <HeartBitUI startFillPos={10} scale={2} />}
         </div>
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
-          <PrimaryButton title="Discover" linkTo="/heartbit" />
+          <PrimaryButton
+            title="Discover"
+            linkTo="/heartbit"
+            whiteButton={true}
+          />
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
+import heroMobile from '../public/assets/hero-mobile.png';
 import nextArrow from '../public/assets/nextArrow.svg';
 import portalHero from '../public/assets/portalHero.png';
 import step1 from '../public/assets/step1.png';
@@ -238,7 +239,7 @@ const Subdomain = () => {
                 className={`w-full mt-10 h-full flex items-center justify-center relative`}
               >
                 <img
-                  src={portalHero.src}
+                  src={isMediaMax1025px ? heroMobile.src : portalHero.src}
                   alt="fileverse-window"
                   className={isMediaMax1025px ? 'w-[97vw]' : 'w-[63rem]'}
                 />

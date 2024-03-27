@@ -1,5 +1,6 @@
 import React from 'react';
 
+import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
 interface ButtonType {
@@ -10,6 +11,7 @@ interface ButtonType {
   openNewTab?: boolean;
   isDisable?: boolean;
   width?: string;
+  whiteButton?: boolean;
 }
 const PrimaryButton = ({
   title,
@@ -19,6 +21,7 @@ const PrimaryButton = ({
   linkTo,
   isDisable,
   width,
+  whiteButton,
 }: ButtonType) => {
   const router = useRouter();
   return (
@@ -31,13 +34,14 @@ const PrimaryButton = ({
           }
         }
       }}
-      className={`${
-        isDisable
-          ? ' bg-gray-300 cursor-not-allowed'
-          : 'bg-black cursor-pointer'
-      } ${
-        width && `w-[${width}] justify-center`
-      } flex items-center text-white py-3 px-6 rounded-md`}
+      className={clsx(
+        'flex items-center text-white py-3 px-6 rounded-md',
+        width && `w-[${width}] justify-center`,
+        whiteButton
+          ? 'bg-white border border-black text-black'
+          : 'bg-black text-white',
+        isDisable ? ' bg-gray-300 cursor-not-allowed' : 'cursor-pointer'
+      )}
     >
       {icon && (
         <img
