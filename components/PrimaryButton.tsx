@@ -35,7 +35,7 @@ const PrimaryButton = ({
         }
       }}
       className={clsx(
-        'flex items-center text-white py-3 px-6 rounded-md',
+        'flex items-center py-3 px-6 rounded-md',
         width && `w-[${width}] justify-center`,
         customCSS || 'bg-black text-white',
         isDisable ? ' bg-gray-300 cursor-not-allowed' : 'cursor-pointer'

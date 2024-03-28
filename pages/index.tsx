@@ -84,7 +84,7 @@ const Home: NextPage = () => {
                     for collaboration and productivity.
                   </p>
                   <div
-                    className={`mt-4  ${
+                    className={`my-4  ${
                       isMediaMax1025px && 'flex justify-center'
                     } `}
                   >
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
                 </div>
                 <div
                   className={`lg:w-[50%] ${
-                    isMediaMax1025px && 'w-[100vw]'
+                    isMediaMax1025px && 'w-[90vw]'
                   } flex justify-center`}
                 >
                   <img
