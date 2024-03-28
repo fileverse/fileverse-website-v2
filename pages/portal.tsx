@@ -9,6 +9,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
+import heroMobile from '../public/assets/hero-mobile.png';
 import nextArrow from '../public/assets/nextArrow.svg';
 import portalHero from '../public/assets/portalHero.png';
 import step1 from '../public/assets/step1.png';
@@ -83,7 +84,7 @@ const Subdomain = () => {
       <>
         <NextSeo
           title="Fileverse Portal | Notion Alternative |  Web3 Collaboration"
-          description="Your Web3 collaboration tool! Peer-to-peer file sharing with end-to-end encryption & token gating; decentralized websites publishing; decentralized Excalidraw whiteboards; and more!"
+          description="Onchain alternative to Notion & Google Workspace. Write, sketch, code, share, store, and more!"
           openGraph={{
             url: 'https://fileverse.io/portal',
             title: 'Fileverse Portal',
@@ -144,29 +145,27 @@ const Subdomain = () => {
                 className={`w-full mt-14 h-[40%]  flex flex-col justify-center items-center`}
               >
                 {isMediaMax1260px ? (
-                  <div
+                  <h1
                     className={`font-bold  ${
                       isMediaMax1260px
                         ? 'text-2xl text-center'
                         : 'text-[3.5rem]'
                     } `}
                   >
-                    <h6 className="">Your Onchain Portal for</h6>
-                    <div className="">
-                      <Typewriter
-                        options={{
-                          strings: [
-                            'Knowledge Bases',
-                            'File Sharing',
-                            'Collaboration',
-                            'Data Bases',
-                          ],
-                          autoStart: true,
-                          loop: true,
-                        }}
-                      />
-                    </div>
-                  </div>
+                    Your Onchain Portal for
+                    <Typewriter
+                      options={{
+                        strings: [
+                          'Knowledge Bases',
+                          'File Sharing',
+                          'Collaboration',
+                          'Data Bases',
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </h1>
                 ) : (
                   <div
                     className={`font-bold w-full justify-center flex ${
@@ -238,7 +237,7 @@ const Subdomain = () => {
                 className={`w-full mt-10 h-full flex items-center justify-center relative`}
               >
                 <img
-                  src={portalHero.src}
+                  src={isMediaMax1025px ? heroMobile.src : portalHero.src}
                   alt="fileverse-window"
                   className={isMediaMax1025px ? 'w-[97vw]' : 'w-[63rem]'}
                 />

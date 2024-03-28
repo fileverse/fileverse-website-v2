@@ -28,7 +28,9 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
       <HeadNav
         heartbitPage={heartbitPage}
         defaultColor={
-          router.asPath === '/portal' || router.asPath === '/heartbit'
+          router.asPath === '/portal' ||
+          router.asPath === '/heartbit' ||
+          router.asPath === '/'
         }
       />
       <div className="">{children}</div>

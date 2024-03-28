@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fileverse.io/
+
+# Sitemaps
+Sitemap: https://fileverse.io/sitemap.xml
