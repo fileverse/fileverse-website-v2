@@ -201,6 +201,19 @@ const HeadNav = ({
                       My Portals
                     </a>
                   </Link>
+                  <Link
+                    href={'https://portal.fileverse.io/#/manifesto'}
+                    passHref
+                  >
+                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade cursor-pointer">
+                      FAQ
+                    </a>
+                  </Link>
+                  <Link href={'https://fileverse.io/portal'} passHref>
+                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
+                      Portal
+                    </a>
+                  </Link>
                   <Link href={'https://beta.fileverse.io/'} passHref>
                     <a
                       target="_blank"
@@ -219,32 +232,14 @@ const HeadNav = ({
                       )}
                     </a>
                   </Link>
-                  <Link href={'https://fileverse.io/portal'} passHref>
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      Fileverse Portal
-                    </a>
-                  </Link>
-                  <Link href={'https://fileverse.io/heartbit'} passHref>
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      HeartBit SDK
-                    </a>
-                  </Link>
                   <Link href={'https://fileverse.io/features'} passHref>
                     <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
                       Features
                     </a>
                   </Link>
-                  <Link href={'https://fileverse.io/why-fileverse'} passHref>
+                  <Link href={'https://fileverse.io/heartbit'} passHref>
                     <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      Why Fileverse
-                    </a>
-                  </Link>
-                  <Link
-                    href={'https://portal.fileverse.io/#/manifesto'}
-                    passHref
-                  >
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade cursor-pointer">
-                      FAQ
+                      HeartBit SDK
                     </a>
                   </Link>
                 </div>
