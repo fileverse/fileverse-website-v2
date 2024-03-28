@@ -11,7 +11,7 @@ interface ButtonType {
   openNewTab?: boolean;
   isDisable?: boolean;
   width?: string;
-  whiteButton?: boolean;
+  customCSS?: string;
 }
 const PrimaryButton = ({
   title,
@@ -21,7 +21,7 @@ const PrimaryButton = ({
   linkTo,
   isDisable,
   width,
-  whiteButton,
+  customCSS,
 }: ButtonType) => {
   const router = useRouter();
   return (
@@ -37,9 +37,7 @@ const PrimaryButton = ({
       className={clsx(
         'flex items-center text-white py-3 px-6 rounded-md',
         width && `w-[${width}] justify-center`,
-        whiteButton
-          ? 'bg-white border border-black text-black'
-          : 'bg-black text-white',
+        customCSS || 'bg-black text-white',
         isDisable ? ' bg-gray-300 cursor-not-allowed' : 'cursor-pointer'
       )}
     >

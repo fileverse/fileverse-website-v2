@@ -44,7 +44,7 @@ export default function HeartBitBanner() {
           <PrimaryButton
             title="Discover"
             linkTo="/heartbit"
-            whiteButton={true}
+            customCSS="bg-white text-black"
           />
         </div>
       </div>
