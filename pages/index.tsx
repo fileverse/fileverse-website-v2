@@ -55,7 +55,7 @@ const Home: NextPage = () => {
                 } flex items-center`}
               >
                 <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
-                  <div
+                  <h1
                     className={`font-bold  lg:text-4xl ${
                       isMediaMax1025px &&
                       'text-2xl flex flex-col items-center justify-center'
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
                         loop: true,
                       }}
                     />
-                  </div>
+                  </h1>
                   <p
                     className={`mt-4 ${
                       isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'

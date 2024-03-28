@@ -145,29 +145,27 @@ const Subdomain = () => {
                 className={`w-full mt-14 h-[40%]  flex flex-col justify-center items-center`}
               >
                 {isMediaMax1260px ? (
-                  <div
+                  <h1
                     className={`font-bold  ${
                       isMediaMax1260px
                         ? 'text-2xl text-center'
                         : 'text-[3.5rem]'
                     } `}
                   >
-                    <h6 className="">Your Onchain Portal for</h6>
-                    <div className="">
-                      <Typewriter
-                        options={{
-                          strings: [
-                            'Knowledge Bases',
-                            'File Sharing',
-                            'Collaboration',
-                            'Data Bases',
-                          ],
-                          autoStart: true,
-                          loop: true,
-                        }}
-                      />
-                    </div>
-                  </div>
+                    Your Onchain Portal for
+                    <Typewriter
+                      options={{
+                        strings: [
+                          'Knowledge Bases',
+                          'File Sharing',
+                          'Collaboration',
+                          'Data Bases',
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </h1>
                 ) : (
                   <div
                     className={`font-bold w-full justify-center flex ${

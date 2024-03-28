@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         title="Fileverse | Peer to Peer File Sharing | Onchain Collaboration"
         description="Your onchain collaboration space for peer-to-peer file sharing; decentralized website publishing; crypto whiteboards & documents; token gating; and more!"
         openGraph={{
-          url: 'https://beta.fileverse.io',
+          url: 'https://fileverse.io/',
           title: 'Fileverse',
           description: 'File sharing between blockchain addresses',
           locale: 'en',
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <Head>
-        <link rel="canonical" href="https://beta.fileverse.io/" />
+        <link rel="canonical" href="https://fileverse.io/" />
       </Head>
       <WagmiProvider config={rainbowkitConfig}>
         <QueryClientProvider client={queryClient}>

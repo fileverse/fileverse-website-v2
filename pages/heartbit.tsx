@@ -259,14 +259,14 @@ export default function HeartBit() {
               )}
             >
               <div className="w-full flex flex-col gap-4 justify-center items-center">
-                <p
+                <h1
                   className={clsx(
                     isMediaMax1025px ? 'text-2xl text-center' : 'text-4xl',
                     'font-bold'
                   )}
                 >
                   Your SDK for Onchain Love
-                </p>
+                </h1>
                 <div className="w-full flex flex-col justify-center items-center">
                   <p
                     className={clsx(
