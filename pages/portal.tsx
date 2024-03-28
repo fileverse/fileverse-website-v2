@@ -193,15 +193,15 @@ const Subdomain = () => {
                 )}
 
                 <p
-                  className={`mt-4 font-medium  text-center ${
+                  className={`mt-4 p-[2px] font-medium  text-center ${
                     isMediaMax1260px
                       ? ' w-full max-w-[600px] text-base'
                       : 'w-[52rem] text-[1.25rem]'
                   }`}
                 >
-                  A decentralised collaboration App and workspace. <br />
-                  Discover new forms of group coordination, regain your privacy,
-                  and master your productivity.
+                  A decentralised collaboration App and workspace. Discover new
+                  forms of group coordination, regain your privacy, and master
+                  your productivity.
                 </p>
                 <div
                   className={`mt-8  ${
@@ -234,12 +234,12 @@ const Subdomain = () => {
                 </div>
               </div>
               <div
-                className={`w-full mt-10 h-full flex items-center justify-center relative`}
+                className={`w-full h-full flex items-center justify-center relative`}
               >
                 <img
                   src={isMediaMax1025px ? heroMobile.src : portalHero.src}
                   alt="fileverse-window"
-                  className={isMediaMax1025px ? 'w-[97vw]' : 'w-[63rem]'}
+                  className={isMediaMax1025px ? 'w-[90vw]' : 'w-[63rem]'}
                 />
               </div>
             </div>

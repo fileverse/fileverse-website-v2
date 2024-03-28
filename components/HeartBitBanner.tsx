@@ -32,7 +32,7 @@ export default function HeartBitBanner() {
           <HeartBitUI startFillPos={10} scale={heartScale} />
           <p
             className={clsx('font-bold text-center', {
-              'text-[12px]': isMediaMax1025px,
+              'text-[10px]': isMediaMax1025px,
               'text-xl': !isMediaMax1025px,
             })}
           >
