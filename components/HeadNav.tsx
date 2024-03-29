@@ -195,52 +195,50 @@ const HeadNav = ({
                 >
                   <Link
                     href={'https://portal.fileverse.io/#/contracts'}
-                    passHref
+                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
                   >
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      My Portals
-                    </a>
+                    My Portals
                   </Link>
                   <Link
                     href={'https://portal.fileverse.io/#/manifesto'}
-                    passHref
+                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
                   >
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      FAQ
-                    </a>
+                    FAQ
                   </Link>
-                  <Link href={'https://fileverse.io/portal'} passHref>
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      Portal
-                    </a>
+                  <Link
+                    href={'https://fileverse.io/portal'}
+                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
+                  >
+                    Portal
                   </Link>
-                  <Link href={'https://beta.fileverse.io/'} passHref>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onMouseEnter={() => setNewTabIcon('SOLO')}
-                      onMouseLeave={() => setNewTabIcon('')}
-                      className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade cursor-pointer border-bottom border-b"
-                    >
-                      Fileverse Solo
-                      {newTabIconVisible === 'SOLO' && (
-                        <img
-                          className="ml-2 w-4"
-                          src={newTabIcon.src}
-                          alt="new tab icon"
-                        />
-                      )}
-                    </a>
+                  <Link
+                    href={'https://beta.fileverse.io/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setNewTabIcon('SOLO')}
+                    onMouseLeave={() => setNewTabIcon('')}
+                    className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade cursor-pointer border-bottom border-b"
+                  >
+                    Fileverse Solo
+                    {newTabIconVisible === 'SOLO' && (
+                      <img
+                        className="ml-2 w-4"
+                        src={newTabIcon.src}
+                        alt="new tab icon"
+                      />
+                    )}
                   </Link>
-                  <Link href={'https://fileverse.io/features'} passHref>
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
-                      Features
-                    </a>
+                  <Link
+                    href={'https://fileverse.io/features'}
+                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
+                  >
+                    Features
                   </Link>
-                  <Link href={'https://fileverse.io/heartbit'} passHref>
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 cursor-pointer">
-                      HeartBit SDK
-                    </a>
+                  <Link
+                    href={'https://fileverse.io/heartbit'}
+                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
+                  >
+                    HeartBit SDK
                   </Link>
                 </div>
               </Slide>
@@ -269,7 +267,7 @@ const HeadNav = ({
                     setSideMenu(false);
                   }}
                 >
-                  <a>My Portals</a>
+                  My Portals
                 </div>
               </Link>
               <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
@@ -279,7 +277,7 @@ const HeadNav = ({
                     setSideMenu(false);
                   }}
                 >
-                  <a>FAQ</a>
+                  FAQ
                 </div>
               </Link>
               <Link href={'https://fileverse.io/portal'} passHref>
@@ -289,20 +287,19 @@ const HeadNav = ({
                     setSideMenu(false);
                   }}
                 >
-                  <a>Portal</a>
+                  Portal
                 </div>
               </Link>
-              <Link href={'https://beta.fileverse.io'} passHref>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    if (html) html.classList.remove('overflow-y-hidden');
-                    setSideMenu(false);
-                  }}
-                >
-                  Fileverse Solo
-                </a>
+              <Link
+                href={'https://beta.fileverse.io'}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (html) html.classList.remove('overflow-y-hidden');
+                  setSideMenu(false);
+                }}
+              >
+                Fileverse Solo
               </Link>
               <Link href={'https://fileverse.io/features'} passHref>
                 <div
@@ -311,7 +308,7 @@ const HeadNav = ({
                     setSideMenu(false);
                   }}
                 >
-                  <a>Features</a>
+                  Features
                 </div>
               </Link>
               <Link href={'https://fileverse.io/heartbit'} passHref>
@@ -321,7 +318,7 @@ const HeadNav = ({
                     setSideMenu(false);
                   }}
                 >
-                  <a>HeartBit SDK</a>
+                  HeartBit SDK
                 </div>
               </Link>
             </div>
