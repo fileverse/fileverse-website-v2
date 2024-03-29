@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
+import Image from 'next/image';
 
 import PrimaryButton from './PrimaryButton';
 
@@ -73,11 +74,11 @@ const ProductsDisplay = ({
             {CTADescription}
           </p>
         </div>
-        <div className={`mt-4  items-center flex justify-center`}>
-          <img
-            className={`${isMediaMax1025px ? '' : 'h-[300px]'}`}
-            src={displayImage.src}
+        <div className={`mt-4 max-w-[420px] items-center flex justify-center`}>
+          <Image
+            src={displayImage}
             alt="fileverse-window"
+            style={{ width: '100%' }}
           />
         </div>
       </div>

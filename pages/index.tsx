@@ -3,6 +3,7 @@ import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
@@ -96,8 +97,9 @@ const Home: NextPage = () => {
                     isMediaMax1025px && 'w-[90vw]'
                   } flex justify-center`}
                 >
-                  <img
-                    src={isMediaMax1025px ? heroMobile.src : hero.src}
+                  <Image
+                    src={isMediaMax1025px ? heroMobile : hero}
+                    style={{ width: '100%', height: 'auto' }}
                     alt="fileverse-window"
                   />
                 </div>
@@ -154,10 +156,10 @@ const Home: NextPage = () => {
         <SectionLayout>
           <div className={`lg:flex`}>
             <ImageLayout>
-              <img
-                className={`${isMediaMax1025px ? '' : 'w-[480px]'}`}
-                src={fileverseVase.src}
+              <Image
+                src={fileverseVase}
                 alt="fileverse-wallet-vase"
+                style={{ width: isMediaMax1025px ? '480px' : '100%' }}
               />
             </ImageLayout>
             <ContentLayout>
@@ -261,7 +263,7 @@ const Home: NextPage = () => {
           <div className="mt-8">
             <div className=" flex overflow-auto no-scrollbar items-start gap-10">
               <div
-                className={`absolute right-2 top-[50%] m-2 w-8 h-8 bg-black opacity-30 rounded-full flex items-center justify-center`}
+                className={`absolute right-2 top-[50%] m-2 w-8 h-8 bg-black opacity-30 rounded-full flex items-center justify-center z-10`}
               >
                 <img
                   src={dropDownArrow.src}
