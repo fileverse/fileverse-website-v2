@@ -1,16 +1,15 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 
 const TweetCard = ({ image }: { image: any }) => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
     <div className={`${isMediaMax1025px ? 'min-w-[100%]' : 'min-w-[33%]'}`}>
-      <Image
-        src={image}
+      <img
+        className={`${isMediaMax1025px ? 'w-full' : 'w-[500px]'}`}
+        src={image.src}
         alt="tweet"
-        style={{ width: isMediaMax1025px ? '100%' : '500px' }}
       />
     </div>
   );
