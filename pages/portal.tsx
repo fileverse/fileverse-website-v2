@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
@@ -9,6 +10,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
+import heroMobile from '../public/assets/hero-mobile.png';
 import nextArrow from '../public/assets/nextArrow.svg';
 import portalHero from '../public/assets/portalHero.png';
 import step1 from '../public/assets/step1.png';
@@ -83,7 +85,7 @@ const Subdomain = () => {
       <>
         <NextSeo
           title="Fileverse Portal | Notion Alternative |  Web3 Collaboration"
-          description="Your Web3 collaboration tool! Peer-to-peer file sharing with end-to-end encryption & token gating; decentralized websites publishing; decentralized Excalidraw whiteboards; and more!"
+          description="Onchain alternative to Notion & Google Workspace. Write, sketch, code, share, store, and more!"
           openGraph={{
             url: 'https://fileverse.io/portal',
             title: 'Fileverse Portal',
@@ -144,29 +146,27 @@ const Subdomain = () => {
                 className={`w-full mt-14 h-[40%]  flex flex-col justify-center items-center`}
               >
                 {isMediaMax1260px ? (
-                  <div
+                  <h1
                     className={`font-bold  ${
                       isMediaMax1260px
                         ? 'text-2xl text-center'
                         : 'text-[3.5rem]'
                     } `}
                   >
-                    <h6 className="">Your Onchain Portal for</h6>
-                    <div className="">
-                      <Typewriter
-                        options={{
-                          strings: [
-                            'Knowledge Bases',
-                            'File Sharing',
-                            'Collaboration',
-                            'Data Bases',
-                          ],
-                          autoStart: true,
-                          loop: true,
-                        }}
-                      />
-                    </div>
-                  </div>
+                    Your Onchain Portal for
+                    <Typewriter
+                      options={{
+                        strings: [
+                          'Knowledge Bases',
+                          'File Sharing',
+                          'Collaboration',
+                          'Data Bases',
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </h1>
                 ) : (
                   <div
                     className={`font-bold w-full justify-center flex ${
@@ -194,15 +194,15 @@ const Subdomain = () => {
                 )}
 
                 <p
-                  className={`mt-4 font-medium  text-center ${
+                  className={`mt-4 p-[2px] font-medium  text-center ${
                     isMediaMax1260px
                       ? ' w-full max-w-[600px] text-base'
                       : 'w-[52rem] text-[1.25rem]'
                   }`}
                 >
-                  A decentralised collaboration App and workspace. <br />
-                  Discover new forms of group coordination, regain your privacy,
-                  and master your productivity.
+                  A decentralised collaboration App and workspace. Discover new
+                  forms of group coordination, regain your privacy, and master
+                  your productivity.
                 </p>
                 <div
                   className={`mt-8  ${
@@ -235,12 +235,12 @@ const Subdomain = () => {
                 </div>
               </div>
               <div
-                className={`w-full mt-10 h-full flex items-center justify-center relative`}
+                className={`w-full h-full flex items-center justify-center relative`}
               >
-                <img
-                  src={portalHero.src}
+                <Image
+                  src={isMediaMax1025px ? heroMobile : portalHero}
                   alt="fileverse-window"
-                  className={isMediaMax1025px ? 'w-[97vw]' : 'w-[63rem]'}
+                  style={{ width: isMediaMax1025px ? '90vw' : '63rem' }}
                 />
               </div>
             </div>

@@ -14,7 +14,7 @@ export default function HeartBitBanner() {
     <div
       className={clsx(
         styles.banner,
-        'bg-[#ffffff] flex justify-center items-center w-[100%]'
+        'bg-[#000000] text-white flex justify-center items-center w-[100%]'
       )}
     >
       <div
@@ -32,11 +32,11 @@ export default function HeartBitBanner() {
           <HeartBitUI startFillPos={10} scale={heartScale} />
           <p
             className={clsx('font-bold text-center', {
-              'text-[12px]': isMediaMax1025px,
+              'text-[10px]': isMediaMax1025px,
               'text-xl': !isMediaMax1025px,
             })}
           >
-            HeartBit SDK - Send Onchain Love for Valentine&apos;s
+            HeartBit SDK - Add Onchain Likes to your dApp/website
           </p>
           {isMediaMax1025px && <HeartBitUI startFillPos={10} scale={2} />}
         </div>
@@ -44,7 +44,7 @@ export default function HeartBitBanner() {
           <PrimaryButton
             title="Discover"
             linkTo="/heartbit"
-            openNewTab={true}
+            customCSS="bg-white text-black"
           />
         </div>
       </div>

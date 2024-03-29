@@ -3,6 +3,7 @@ import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
@@ -34,9 +35,10 @@ import familyIcon from '../public/assets/familyIcon.png';
 import fileverseVase from '../public/assets/fileVase.png';
 import fileverseWindow from '../public/assets/fileverseWindow.png';
 import global from '../public/assets/global.svg';
-import hero from '../public/assets/hero.png';
+import heroMobile from '../public/assets/hero-mobile.png';
 import Nft from '../public/assets/Nft.png';
 import padLock from '../public/assets/padlock.svg';
+import hero from '../public/assets/portalHero.png';
 import solo from '../public/assets/solo.png';
 import Web3 from '../public/assets/Web3.png';
 
@@ -45,7 +47,7 @@ const Home: NextPage = () => {
   return (
     <BodyWrapper>
       <>
-        <HeadSectionLayout noFooter={true}>
+        <HeadSectionLayout noFooter={true} defaultBackground={true}>
           <>
             <div className="flex min-h-[85vh] justify-center">
               <div
@@ -54,7 +56,7 @@ const Home: NextPage = () => {
                 } flex items-center`}
               >
                 <div className={`lg:w-[50%] ${isMediaMax1025px && 'w-full'}`}>
-                  <div
+                  <h1
                     className={`font-bold  lg:text-4xl ${
                       isMediaMax1025px &&
                       'text-2xl flex flex-col items-center justify-center'
@@ -73,7 +75,7 @@ const Home: NextPage = () => {
                         loop: true,
                       }}
                     />
-                  </div>
+                  </h1>
                   <p
                     className={`mt-4 ${
                       isMediaMax1025px ? 'text-center w-full' : 'w-[80%]'
@@ -83,7 +85,7 @@ const Home: NextPage = () => {
                     for collaboration and productivity.
                   </p>
                   <div
-                    className={`mt-4  ${
+                    className={`my-4  ${
                       isMediaMax1025px && 'flex justify-center'
                     } `}
                   >
@@ -92,21 +94,29 @@ const Home: NextPage = () => {
                 </div>
                 <div
                   className={`lg:w-[50%] ${
-                    isMediaMax1025px && 'w-[100vw]'
+                    isMediaMax1025px && 'w-[90vw]'
                   } flex justify-center`}
                 >
-                  <img className="" src={hero.src} alt="fileverse-window" />
+                  <Image
+                    src={isMediaMax1025px ? heroMobile : hero}
+                    style={{ width: '100%', height: 'auto' }}
+                    alt="fileverse-window"
+                  />
                 </div>
               </div>
             </div>
           </>
         </HeadSectionLayout>
-        <HeadSectionLayout id="product" noFooter={true}>
+        <HeadSectionLayout
+          id="product"
+          noFooter={true}
+          defaultBackground={true}
+        >
           <>
             <div
               className={`flex mt-[4.5vh] lg:w-[90%] ${
                 isMediaMax1025px && 'flex-wrap'
-              } justify-center items-center lg:p-4`}
+              } justify-evenly items-center lg:p-4`}
             >
               <ProductsDisplay
                 productName={`Fileverse Solo`}
@@ -146,10 +156,10 @@ const Home: NextPage = () => {
         <SectionLayout>
           <div className={`lg:flex`}>
             <ImageLayout>
-              <img
-                className={`${isMediaMax1025px ? '' : 'w-[480px]'}`}
-                src={fileverseVase.src}
+              <Image
+                src={fileverseVase}
                 alt="fileverse-wallet-vase"
+                style={{ width: isMediaMax1025px ? '480px' : '100%' }}
               />
             </ImageLayout>
             <ContentLayout>
@@ -253,7 +263,7 @@ const Home: NextPage = () => {
           <div className="mt-8">
             <div className=" flex overflow-auto no-scrollbar items-start gap-10">
               <div
-                className={`absolute right-2 top-[50%] m-2 w-8 h-8 bg-black opacity-30 rounded-full flex items-center justify-center`}
+                className={`absolute right-2 top-[50%] m-2 w-8 h-8 bg-black opacity-30 rounded-full flex items-center justify-center z-10`}
               >
                 <img
                   src={dropDownArrow.src}

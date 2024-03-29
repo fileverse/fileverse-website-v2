@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
+import Image from 'next/image';
 
 import PrimaryButton from './PrimaryButton';
 
@@ -31,9 +32,9 @@ const ProductsDisplay = ({
   return (
     <div
       className={` ${
-        background || 'bg-yellow border border-black'
-      } m-2 flex py-8 flex-col items-center justify-center rounded-md  ${
-        isMediaMax1025px ? 'w-full mt-4' : 'w-[50%] max-h-[636px]'
+        background ? `${background} border border-black` : 'bg-yellow'
+      } m-2 flex py-8 flex-col items-center justify-center rounded-[36px]   ${
+        isMediaMax1025px ? 'w-full mt-4' : 'w-[566px] max-h-[636px]'
       }`}
     >
       <div
@@ -73,11 +74,11 @@ const ProductsDisplay = ({
             {CTADescription}
           </p>
         </div>
-        <div className={`mt-4  items-center flex justify-center`}>
-          <img
-            className={`${isMediaMax1025px ? '' : 'h-[300px]'}`}
-            src={displayImage.src}
+        <div className={`mt-4 max-w-[420px] items-center flex justify-center`}>
+          <Image
+            src={displayImage}
             alt="fileverse-window"
+            style={{ width: '100%' }}
           />
         </div>
       </div>
