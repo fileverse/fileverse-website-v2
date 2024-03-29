@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   reactStrictMode: false,
-  output: 'standalone',
+  // output: 'standalone',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
