@@ -18,29 +18,27 @@ import SectionLayout from '../components/SectionLayout';
 import SubHeading from '../components/SubHeading';
 import TweetCard from '../components/TweetCard';
 import WhomCard from '../components/WhomCard';
-import devDaoTweet1 from '../public/assets/1devdao.png';
-import coinbaseTweet2 from '../public/assets/2Coinbase.png';
-import filecoinTweet3 from '../public/assets/3filecoin.png';
-import scrollTweet4 from '../public/assets/4scroll.png';
-import gnosisTweet5 from '../public/assets/5gnosis.png';
-import tweet6 from '../public/assets/6.png';
-import tweet7 from '../public/assets/7.png';
-import tweet8 from '../public/assets/8.png';
-import BlockChain from '../public/assets/BlockChain.png';
-import check from '../public/assets/check.svg';
-import Crypto from '../public/assets/Crypto.png';
-import Dao from '../public/assets/Dao.png';
-import dropDownArrow from '../public/assets/dropDownArrow.svg';
-import familyIcon from '../public/assets/familyIcon.png';
-import fileverseVase from '../public/assets/fileVase.png';
-import fileverseWindow from '../public/assets/fileverseWindow.png';
-import global from '../public/assets/global.svg';
-import heroMobile from '../public/assets/hero-mobile.png';
-import Nft from '../public/assets/Nft.png';
-import padLock from '../public/assets/padlock.svg';
-import hero from '../public/assets/portalHero.png';
-import solo from '../public/assets/solo.png';
-import Web3 from '../public/assets/Web3.png';
+
+// import devDaoTweet1 from '../public/assets/1devdao.png';
+// import coinbaseTweet2 from '../public/assets/2Coinbase.png';
+// import filecoinTweet3 from '../public/assets/3filecoin.png';
+// import scrollTweet4 from '../public/assets/4scroll.png';
+// import gnosisTweet5 from '../public/assets/5gnosis.png';
+// import tweet6 from '../public/assets/6.png';
+// import tweet7 from '../public/assets/7.png';
+// import tweet8 from '../public/assets/8.png';
+// import BlockChain from '../public/assets/BlockChain.png';
+// import check from '../public/assets/check.svg';
+// import Crypto from '../public/assets/Crypto.png';
+// import Dao from '../public/assets/Dao.png';
+// import dropDownArrow from '../public/assets/dropDownArrow.svg';
+// import familyIcon from '../public/assets/familyIcon.png';
+// import fileverseWindow from '../public/assets/fileverseWindow.png';
+// import global from '../public/assets/global.svg';
+// import Nft from '../public/assets/Nft.png';
+// import padLock from '../public/assets/padlock.svg';
+// import solo from '../public/assets/solo.png';
+// import Web3 from '../public/assets/Web3.png';
 
 const Home: NextPage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
@@ -98,8 +96,13 @@ const Home: NextPage = () => {
                   } flex justify-center`}
                 >
                   <Image
-                    src={isMediaMax1025px ? heroMobile : hero}
-                    style={{ width: '100%', height: 'auto' }}
+                    src={
+                      isMediaMax1025px
+                        ? '/assets/hero-mobile.png'
+                        : '/assets/portalHero.png'
+                    }
+                    width={'100%'}
+                    height={'auto'}
                     alt="fileverse-window"
                   />
                 </div>
@@ -122,7 +125,7 @@ const Home: NextPage = () => {
                 productName={`Fileverse Solo`}
                 CTAButtonLink={'https://beta.fileverse.io'}
                 CTAButtonTitle={'Launch App'}
-                displayImage={solo}
+                displayImage={'/assets/solo.png'}
                 firstDescription={'Privacy-first file sharing, simplified'}
                 secondDescription={'Share any files with or without a wallet'}
                 CTADescription={'Private. Decentralised. Encrypted.'}
@@ -147,7 +150,7 @@ const Home: NextPage = () => {
                 }
                 CTAButtonTitle={'Create Your Portal'}
                 CTAbuttonDisabled={false}
-                displayImage={fileverseWindow}
+                displayImage={'/assets/fileverseWindow.png'}
                 CTADescription={'Create. Collaborate. Communicate.'}
               />
             </div>
@@ -157,9 +160,10 @@ const Home: NextPage = () => {
           <div className={`lg:flex`}>
             <ImageLayout>
               <Image
-                src={fileverseVase}
+                src="/assets/fileVase.png"
                 alt="fileverse-wallet-vase"
-                style={{ width: isMediaMax1025px ? '480px' : '100%' }}
+                width={isMediaMax1025px ? 480 : '100%'}
+                // style={{ width: isMediaMax1025px ? '480px' : '100%' }}
               />
             </ImageLayout>
             <ContentLayout>
@@ -178,14 +182,14 @@ const Home: NextPage = () => {
                 <div className="w-full">
                   <ListWithIconCard
                     title="Decentralisation"
-                    icon={check}
+                    icon={'/assets/check.svg'}
                     paragraph={
                       'Your files are stored on peer-to-peer storage networks and access permissions are done via a smart contract and User Controlled Authorization Networks (UCANs). Oh.. and everything is end-to-end encrypted!'
                     }
                   />
                   <ListWithIconCard
                     title="Simplicity"
-                    icon={padLock}
+                    icon={'/assets/padlock.svg'}
                     paragraph={
                       'Everything you need to move away from centralised servers and predatory surveillance practices, in just a few clicks. All from the comfort of your own wallet and key pair. Yes, it’s all yours.'
                     }
@@ -219,37 +223,37 @@ const Home: NextPage = () => {
               <div className="w-[75%]">
                 <div className=" flex pb-8 flex-wrap bg-yellow justify-center drop-shadow-lg rounded-md w-full">
                   <WhomCard
-                    image={familyIcon}
+                    image={'/assets/familyIcon.png'}
                     title={'The Web3 Curious'}
                     description={`Web3 is more than finance. It offers tools to better control your data, coordinate with peers without relying on centralized servers, and unleash your creativity. All without the need to buy tokens.`}
                   />
 
                   <WhomCard
-                    image={Dao}
+                    image={'/assets/Dao.png'}
                     title={'DAOs'}
                     description={`Onchain organisations deserve onchain collaboration tools. Use Fileverse to co-create and share public knowledge-bases. Share trustlessly and keep important information available to all, forever, uncensorable.`}
                   />
 
                   <WhomCard
-                    image={Nft}
+                    image={'/assets/Nft.png'}
                     title={`Crypto Natives`}
                     description={`Your wallet can do a lot more than just financial transactions: use it to unlock new forms of social coordination and content production! Use Fileverse as your safe haven connected to your centralised tools.`}
                   />
 
                   <WhomCard
-                    image={Web3}
+                    image={'/assets/Web3.png'}
                     title={`Decentralised Teams`}
                     description={`Create a workspace from your Safe Multisig; publish your documentation or knowledgebase on our Notion alternative; live edit dDocs & whiteboards; and use perma storage for important public content.`}
                   />
 
                   <WhomCard
-                    image={Crypto}
+                    image={'/assets/Crypto.png'}
                     title={`Content Creators`}
                     description={`Move away from apps that limit you and your followers. Gain full independence, create a community through token-gating / access-token airdrop, enable direct subscribers & discover new engagement metrics.`}
                   />
 
                   <WhomCard
-                    image={BlockChain}
+                    image={'/assets/BlockChain.png'}
                     title={'Hackathon Participants and Researchers'}
                     description={`Publish your project info on a decentralised web page and share your code, database, and files authoritatively. Show the world what you are capable of!`}
                   />
@@ -266,19 +270,19 @@ const Home: NextPage = () => {
                 className={`absolute right-2 top-[50%] m-2 w-8 h-8 bg-black opacity-30 rounded-full flex items-center justify-center z-10`}
               >
                 <img
-                  src={dropDownArrow.src}
+                  src={'/assets/dropDownArrow.svg'}
                   alt="back-arrow"
                   className="changeWhite -rotate-90"
                 />
               </div>
-              <TweetCard image={devDaoTweet1} />
-              <TweetCard image={coinbaseTweet2} />
-              <TweetCard image={filecoinTweet3} />
-              <TweetCard image={scrollTweet4} />
-              <TweetCard image={gnosisTweet5} />
-              <TweetCard image={tweet6} />
-              <TweetCard image={tweet7} />
-              <TweetCard image={tweet8} />
+              <TweetCard image={'/assets/1devdao.png'} />
+              <TweetCard image={'/assets/2Coinbase.png'} />
+              <TweetCard image={'/assets/3filecoin.png'} />
+              <TweetCard image={'/assets/4scroll.png'} />
+              <TweetCard image={'/assets/5gnosis.png'} />
+              <TweetCard image={'/assets/6.png'} />
+              <TweetCard image={'/assets/7.png'} />
+              <TweetCard image={'/assets/8.png'} />
             </div>
           </div>
         </div>
