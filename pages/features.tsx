@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 
 import BodyWrapper from '../components/BodyWrapper';
 import ContentLayout from '../components/ContentLayout';
@@ -66,11 +65,7 @@ const Features = () => {
                   } flex items-center justify-center relative`}
                 >
                   <div className="relative">
-                    <Image
-                      src={featureHero}
-                      alt="fileverse-feature-hero"
-                      style={{ width: '100%', height: 'auto' }}
-                    />
+                    <img src={featureHero.src} alt="fileverse-window" />
                   </div>
                 </div>
               </div>
