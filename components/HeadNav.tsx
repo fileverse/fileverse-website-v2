@@ -164,7 +164,7 @@ const HeadNav = ({
                     top && !defaultColor ? 'bg-black text-white ' : 'bg-white'
                   } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
                 >
-                  <p className="mr-4">Show me more</p>
+                  <p className="mr-4">Explore</p>
                   {top && !defaultColor ? (
                     <Image
                       className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
@@ -205,7 +205,7 @@ const HeadNav = ({
                     href={'https://portal.fileverse.io/#/manifesto'}
                     passHref
                   >
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade cursor-pointer">
+                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
                       FAQ
                     </a>
                   </Link>
@@ -238,7 +238,7 @@ const HeadNav = ({
                     </a>
                   </Link>
                   <Link href={'https://fileverse.io/heartbit'} passHref>
-                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer">
+                    <a className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 cursor-pointer">
                       HeartBit SDK
                     </a>
                   </Link>
@@ -261,7 +261,17 @@ const HeadNav = ({
             >
               <img src={xicon.src} className="w-8" alt="x-icon" />
             </div>
-            <div className="font-semibold mt-6">
+            <div className="font-semibold mt-6 flex flex-col gap-[6px]">
+              <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
+                <div
+                  onClick={() => {
+                    if (html) html.classList.remove('overflow-y-hidden');
+                    setSideMenu(false);
+                  }}
+                >
+                  <a>My Portals</a>
+                </div>
+              </Link>
               <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
                 <div
                   onClick={() => {
@@ -272,15 +282,14 @@ const HeadNav = ({
                   <a>FAQ</a>
                 </div>
               </Link>
-              <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
+              <Link href={'https://fileverse.io/portal'} passHref>
                 <div
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
                     setSideMenu(false);
                   }}
-                  className="py-2"
                 >
-                  <a>My Portals</a>
+                  <a>Portal</a>
                 </div>
               </Link>
               <Link href={'https://beta.fileverse.io'} passHref>
@@ -291,10 +300,29 @@ const HeadNav = ({
                     if (html) html.classList.remove('overflow-y-hidden');
                     setSideMenu(false);
                   }}
-                  className="py-2"
                 >
                   Fileverse Solo
                 </a>
+              </Link>
+              <Link href={'https://fileverse.io/features'} passHref>
+                <div
+                  onClick={() => {
+                    if (html) html.classList.remove('overflow-y-hidden');
+                    setSideMenu(false);
+                  }}
+                >
+                  <a>Features</a>
+                </div>
+              </Link>
+              <Link href={'https://fileverse.io/heartbit'} passHref>
+                <div
+                  onClick={() => {
+                    if (html) html.classList.remove('overflow-y-hidden');
+                    setSideMenu(false);
+                  }}
+                >
+                  <a>HeartBit SDK</a>
+                </div>
               </Link>
             </div>
           </div>
