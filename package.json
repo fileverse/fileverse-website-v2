@@ -11,6 +11,9 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix"
   },
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
