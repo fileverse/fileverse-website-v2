@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { useMediaQuery } from '@mui/material';
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 
 import BodyWrapper from '../components/BodyWrapper';
@@ -236,10 +237,10 @@ const Subdomain = () => {
               <div
                 className={`w-full h-full flex items-center justify-center relative`}
               >
-                <img
-                  src={isMediaMax1025px ? heroMobile.src : portalHero.src}
+                <Image
+                  src={isMediaMax1025px ? heroMobile : portalHero}
                   alt="fileverse-window"
-                  className={isMediaMax1025px ? 'w-[90vw]' : 'w-[63rem]'}
+                  style={{ width: isMediaMax1025px ? '90vw' : '63rem' }}
                 />
               </div>
             </div>
