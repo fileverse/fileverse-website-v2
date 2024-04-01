@@ -61,7 +61,7 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                     iconStyles={'w-6'}
                     title={'Docs'}
                     linkTo={
-                      'https://portal.fileverse.io/#/0xc7b5eda8cfC005f5fF6425Ac269Ee1b21A6ef7ec/file/0?chainId=100'
+                      'https://portal.fileverse.io/#/0x3d3dcEd1cb7676cbd90C4C4339D50AD52Bac37Fa/file/4?chainId=100'
                     }
                     openNewTab={true}
                   />
