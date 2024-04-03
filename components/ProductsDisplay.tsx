@@ -43,13 +43,13 @@ const ProductsDisplay = ({
         } flex flex-col relative items-center`}
       >
         <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[350px]'}`}>
-          <h1
+          <h2
             className={` text-center font-bold ${
               isMediaMax1025px ? ' text-2xl' : 'text-4xl'
             } `}
           >
             {productName}
-          </h1>
+          </h2>
           <p className={` ${isMediaMax1025px ? 'text-base' : ''} text-center `}>
             {firstDescription}
           </p>
