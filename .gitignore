@@ -40,3 +40,4 @@ next-env.d.ts
 
 # sitemap
 sitemap*.xml
+.env
