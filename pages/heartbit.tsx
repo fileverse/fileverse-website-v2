@@ -29,6 +29,7 @@ import PrimaryButton from '../components/PrimaryButton';
 import code from '../public/assets/code.png';
 import downArrow from '../public/assets/downArrowGray.svg';
 import erospixie from '../public/assets/erospixel.png';
+import frames from '../public/assets/framebutton.svg';
 import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
 import 'react-toastify/dist/ReactToastify.css';
@@ -381,7 +382,7 @@ export default function HeartBit() {
                   seamlessly converted into HeartBit NFTs.
                 </p>
               </div>
-              <img src={code.src} alt="code" className="w-[50px]" />
+              <img src={frames.src} alt="code" className="w-[50px]" />
             </div>
           </div>
           <div
