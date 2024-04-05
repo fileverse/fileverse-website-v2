@@ -23,6 +23,9 @@ interface BodyType {
 const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
   const router = useRouter();
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const radicleLink = heartbitPage
+    ? 'https://app.radicle.xyz/nodes/seed.radicle.garden/rad:z3NcpGXUHFEggJabxoS9zVmLifoR1'
+    : 'https://app.radicle.xyz/nodes/seed.radicle.garden/rad:zFem1Hm7f5Mqz9J81PpZ722Eqswa';
   return (
     <div className="">
       <HeadNav
@@ -72,16 +75,14 @@ const BodyWrapper = ({ children, portalPage, heartbitPage }: BodyType) => {
                   iconStyles={'w-6'}
                   linkTo={'https://github.com/fileverse'}
                 />
+                <PrimaryButton
+                  icon={Radicle}
+                  title={'Radicle'}
+                  iconStyles={'w-5'}
+                  linkTo={radicleLink}
+                />
                 {!heartbitPage && (
                   <>
-                    <PrimaryButton
-                      icon={Radicle}
-                      title={'Radicle'}
-                      iconStyles={'w-5'}
-                      linkTo={
-                        'https://app.radicle.xyz/seeds/willow.radicle.garden/rad:git:hnrkj6egqcozks7f7n5dx3766e7m4z5tag8cy/tree'
-                      }
-                    />
                     <PrimaryButton
                       icon={Gitcoin}
                       title={'Gitcoin'}
