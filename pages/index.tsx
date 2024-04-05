@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                   <h1
                     className={`font-bold  lg:text-4xl ${
                       isMediaMax1025px &&
-                      'text-2xl flex flex-col items-center justify-center'
+                      'text-2xl flex flex-col items-center justify-center mt-4'
                     } `}
                   >
                     Your simplest way to
