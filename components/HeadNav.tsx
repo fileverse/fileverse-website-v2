@@ -93,7 +93,6 @@ const HeadNav = ({
               top && !defaultColor ? 'bg-yellow ' : 'bg-white'
             }   flex items-center`}
             onClick={() => {
-              if (heartbitPage) window.open('/', '_blank');
               router.push('/');
             }}
           >
@@ -206,7 +205,7 @@ const HeadNav = ({
                     FAQ
                   </Link>
                   <Link
-                    href={'https://fileverse.io/portal'}
+                    href={'/portal'}
                     className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
                   >
                     Portal
@@ -229,14 +228,14 @@ const HeadNav = ({
                     )}
                   </Link>
                   <Link
-                    href={'https://fileverse.io/features'}
+                    href={'/features'}
                     className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
                   >
                     Features
                   </Link>
                   <Link
-                    href={'https://fileverse.io/heartbit'}
-                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
+                    href={'/heartbit'}
+                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 cursor-pointer"
                   >
                     HeartBit SDK
                   </Link>
@@ -280,7 +279,7 @@ const HeadNav = ({
                   FAQ
                 </div>
               </Link>
-              <Link href={'https://fileverse.io/portal'} passHref>
+              <Link href={'/portal'} passHref>
                 <div
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
@@ -301,7 +300,7 @@ const HeadNav = ({
               >
                 Fileverse Solo
               </Link>
-              <Link href={'https://fileverse.io/features'} passHref>
+              <Link href={'/features'} passHref>
                 <div
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
@@ -311,7 +310,7 @@ const HeadNav = ({
                   Features
                 </div>
               </Link>
-              <Link href={'https://fileverse.io/heartbit'} passHref>
+              <Link href={'/heartbit'} passHref>
                 <div
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');

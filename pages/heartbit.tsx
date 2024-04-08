@@ -29,6 +29,7 @@ import PrimaryButton from '../components/PrimaryButton';
 import code from '../public/assets/code.png';
 import downArrow from '../public/assets/downArrowGray.svg';
 import erospixie from '../public/assets/erospixel.png';
+import frames from '../public/assets/framebutton.svg';
 import heart50 from '../public/assets/heart50.png';
 import metric from '../public/assets/metric.png';
 import 'react-toastify/dist/ReactToastify.css';
@@ -315,23 +316,23 @@ export default function HeartBit() {
 
           <div
             id="cards"
-            className={clsx('w-full flex justify-between items-center', {
+            className={clsx('w-[95vw] flex justify-between items-center', {
               'flex-col gap-8': isMediaMax1025px,
             })}
           >
             <div
               className={clsx(
-                isMediaMax1025px ? 'py-8' : 'w-[45%] h-[350px]',
+                isMediaMax1025px ? 'py-8' : 'w-[32%] h-[400px]',
                 'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
               )}
             >
-              <div className="h-[30%] flex items-end">
+              <div className="h-[30%] flex items-center">
                 <p className={clsx('font-bold text-2xl text-center px-8')}>
                   Onchain Engagement Analytics
                 </p>
               </div>
-              <div className="h-[30%] w-full flex items-start justify-center">
-                <p className={'text-base text-center w-[80%]'}>
+              <div className="h-[40%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[90%]'}>
                   Each second spent clicking on the heart mints HeartBits
                   (ERC1155 tokens) containing the hash of the content. Now every
                   online/onchain content can have granular onchain analytics
@@ -343,17 +344,17 @@ export default function HeartBit() {
             </div>
             <div
               className={clsx(
-                isMediaMax1025px ? 'py-8' : 'w-[45%] h-[350px]',
+                isMediaMax1025px ? 'py-8' : 'w-[32%] h-[400px]',
                 'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
               )}
             >
-              <div className="h-[30%] flex items-end">
+              <div className="h-[30%] flex items-center">
                 <p className={clsx('font-bold text-2xl text-center px-8')}>
                   Quick & Simple Integration
                 </p>
               </div>
-              <div className="h-[30%] w-full flex items-start justify-center">
-                <p className={'text-base text-center w-[80%]'}>
+              <div className="h-[40%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[90%]'}>
                   A free and open SDK that can be plugged into your dApp/website
                   in less than 10 minutes, allowing you to easily deploy a
                   unique Mint + Like onchain experience.
@@ -361,6 +362,27 @@ export default function HeartBit() {
               </div>
 
               <img src={code.src} alt="code" className="w-[50px]" />
+            </div>
+            <div
+              className={clsx(
+                isMediaMax1025px ? 'py-8' : 'w-[32%] h-[400px]',
+                'bg-[#FFF9CE] rounded-2xl flex flex-col justify-start items-center gap-4 shadow-lg'
+              )}
+            >
+              <div className="h-[30%] flex items-center">
+                <p className={clsx('font-bold text-2xl text-center px-8')}>
+                  Frames & Open Actions
+                </p>
+              </div>
+              <div className="h-[40%] w-full flex items-start justify-center">
+                <p className={'text-base text-center w-[90%]'}>
+                  The SDK facilitates easy Frame & OpenAction deployment on DeSo
+                  (Farcaster & Lens Protocol), enhancing user experience with
+                  gasless transactions. Every interaction on frames is
+                  seamlessly converted into HeartBit NFTs.
+                </p>
+              </div>
+              <img src={frames.src} alt="code" className="w-[50px]" />
             </div>
           </div>
           <div
