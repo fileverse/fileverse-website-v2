@@ -39,7 +39,7 @@ export default function HeartBitBanner() {
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
           <PrimaryButton
             title="Get Started"
-            linkTo="https://portal.fileverse.io/#/create"
+            linkTo="https://portal.fileverse.io/#/create?code=FILEVERSE_SUMMER"
             customCSS={clsx('bg-white text-black', {
               'px-3 py-2': isMediaMax1025px,
             })}
