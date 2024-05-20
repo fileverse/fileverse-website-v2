@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { HeartBitUI } from '@fileverse/heartbit-react';
 import { useMediaQuery } from '@mui/material';
 import clsx from 'clsx';
 
@@ -9,18 +8,17 @@ import PrimaryButton from './PrimaryButton';
 
 export default function HeartBitBanner() {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
-  const heartScale = isMediaMax1025px ? 2 : undefined;
   return (
     <div
       className={clsx(
         styles.banner,
-        'bg-[#000000] text-white flex justify-center items-center w-[100%]'
+        'bg-[#000000] text-white flex justify-center items-center w-[100%] px-2'
       )}
     >
       <div
         className={clsx(
           `w-full flex justify-center items-center`,
-          isMediaMax1025px ? 'flex-col gap-2' : 'gap-5'
+          isMediaMax1025px ? 'flex-wrap gap-2' : 'gap-5'
         )}
       >
         <div
@@ -29,22 +27,22 @@ export default function HeartBitBanner() {
             isMediaMax1025px ? 'gap-2' : 'gap-5'
           )}
         >
-          <HeartBitUI startFillPos={10} scale={heartScale} />
           <p
             className={clsx('font-bold text-center', {
-              'text-[10px]': isMediaMax1025px,
+              'text-[12px]': isMediaMax1025px,
               'text-xl': !isMediaMax1025px,
             })}
           >
-            HeartBit SDK - Add Onchain Likes to your dApp/website
+            The Fileverse Beta is open for a limited time!
           </p>
-          {isMediaMax1025px && <HeartBitUI startFillPos={10} scale={2} />}
         </div>
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
           <PrimaryButton
-            title="Discover"
-            linkTo="/heartbit"
-            customCSS="bg-white text-black"
+            title="Get Started"
+            linkTo="https://portal.fileverse.io/#/create"
+            customCSS={clsx('bg-white text-black', {
+              'px-3 py-2': isMediaMax1025px,
+            })}
           />
         </div>
       </div>
