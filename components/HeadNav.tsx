@@ -13,7 +13,6 @@ import newTabIcon from '../public/assets/gotoIcon.svg';
 import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
-import HeartBitBanner from './HeartBitBanner';
 
 const HeadNav = ({
   defaultColor,
@@ -32,8 +31,8 @@ const HeadNav = ({
   const dropDownButton: any = useRef(null);
   const html = typeof window !== 'undefined' && document.querySelector('html');
   const [newTabIconVisible, setNewTabIcon] = useState('');
-  const [showBanner, setShowBanner] = useState(false);
-  const isIndexPage = router.asPath === '/';
+  // const [showBanner, setShowBanner] = useState(false);
+  // const isIndexPage = router.asPath === '/';
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (isMediaMax1025px) {
@@ -69,13 +68,13 @@ const HeadNav = ({
       window.removeEventListener('scroll', handleScroll);
     };
   });
-  useEffect(() => {
-    if (isIndexPage) {
-      setTimeout(() => {
-        setShowBanner(true);
-      }, 2000);
-    }
-  }, [isIndexPage]);
+  // useEffect(() => {
+  //   if (isIndexPage) {
+  //     setTimeout(() => {
+  //       setShowBanner(true);
+  //     }, 2000);
+  //   }
+  // }, [isIndexPage]);
   return (
     <div
       className={`flex ${
@@ -83,7 +82,7 @@ const HeadNav = ({
       }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
       <div className="flex flex-col w-full justify-center items-center">
-        {isIndexPage && top && showBanner && <HeartBitBanner />}
+        {/* {isIndexPage && top && showBanner && <HeartBitBanner />} */}
 
         <div className={clsx(`w-[90%] flex`, { 'my-4': top })}>
           <div
