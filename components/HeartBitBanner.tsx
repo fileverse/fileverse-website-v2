@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { HeartBitUI } from '@fileverse/heartbit-react';
 import { useMediaQuery } from '@mui/material';
 import clsx from 'clsx';
 
+// import dDocsIcon from '../public/assets/file-text.svg';
 import styles from './heartBitBanner.module.scss';
 import PrimaryButton from './PrimaryButton';
 
@@ -27,21 +29,36 @@ export default function HeartBitBanner() {
             isMediaMax1025px ? 'gap-2' : 'gap-5'
           )}
         >
+          {/* <img src={dDocsIcon.src} alt="dDocs" className="invert" /> */}
+          <HeartBitUI
+            disableBeatingAnimation={true}
+            scale={isMediaMax1025px ? 2 : 3}
+            startFillPos={10}
+          />
           <p
             className={clsx('font-bold text-center', {
               'text-[12px]': isMediaMax1025px,
               'text-xl': !isMediaMax1025px,
             })}
           >
-            The Fileverse Beta is open for a limited time!
+            Ditch Google Docs. Explore Onchain dDocs!
           </p>
+          {isMediaMax1025px && (
+            <HeartBitUI
+              disableBeatingAnimation={true}
+              scale={2}
+              startFillPos={10}
+            />
+          )}
         </div>
+        {isMediaMax1025px && <br />}
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
           <PrimaryButton
-            title="Get Started"
-            linkTo="https://portal.fileverse.io/#/create?code=FILEVERSE_SUMMER"
+            title="Try Now"
+            linkTo="https://ddocs.new"
             customCSS={clsx('bg-white text-black', {
               'px-3 py-2': isMediaMax1025px,
+              'py-1 px-3': !isMediaMax1025px,
             })}
           />
         </div>
