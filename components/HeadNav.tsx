@@ -211,6 +211,23 @@ const HeadNav = ({
                     Portal
                   </Link>
                   <Link
+                    href={'https://ddocs.new/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setNewTabIcon('dDocs')}
+                    onMouseLeave={() => setNewTabIcon('')}
+                    className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade cursor-pointer border-bottom border-b"
+                  >
+                    dDocs
+                    {newTabIconVisible === 'dDocs' && (
+                      <img
+                        className="ml-2 w-4"
+                        src={newTabIcon.src}
+                        alt="new tab icon"
+                      />
+                    )}
+                  </Link>
+                  <Link
                     href={'https://beta.fileverse.io/'}
                     target="_blank"
                     rel="noopener noreferrer"
