@@ -109,10 +109,9 @@ const Subdomain = () => {
           <div className="flex flex-col w-full h-full justify-center items-center p-4">
             {notification && (
               <div
-                className={` bg-black p-3 flex w-fit rounded-full mt-4 ${getBannerFontSize()}`}
+                className={`bg-black p-2 lg:p-4 flex w-fit items-center rounded-md mt-6 ${getBannerFontSize()}`}
               >
-                <p className="text-white text-center mr-4">
-                  Your{' '}
+                <p className="text-xs lg:text-base text-white text-center mr-4">
                   <a
                     href="https://twitter.com/fileverse/status/1714288331570471336"
                     target="_blank"
@@ -121,10 +120,17 @@ const Subdomain = () => {
                   >
                     Fileverse Beta
                   </a>{' '}
-                  is currently in invite-first & allowlist mode, to focus on
-                  quality & existing users.
-                  {isMediaMax1120px && !isMediaMax570px ? <br /> : null} Stay
-                  tuned &lt;3
+                  is in a private beta. However, you can already explore our
+                  public app called{' '}
+                  <a
+                    href="https://ddocs.new/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                  >
+                    ddocs.new
+                  </a>{' '}
+                  💛
                 </p>
                 <img
                   onClick={() => setNotification(false)}
