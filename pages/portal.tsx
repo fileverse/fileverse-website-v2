@@ -24,7 +24,7 @@ const Subdomain = () => {
   const [openedTab, setOpenedTab] = useState<string[]>([]);
   const [notification, setNotification] = useState(true);
   const isMediaMax1280px = useMediaQuery('(max-width: 1280px)');
-  const isMediaMax1120px = useMediaQuery('(max-width: 1120px)');
+  // const isMediaMax1120px = useMediaQuery('(max-width: 1120px)');
   const isMediaMax570px = useMediaQuery('(max-width: 570px)');
   const getBannerFontSize = () => {
     if (isMediaMax570px) {
