@@ -12,7 +12,7 @@ export const CopyrightFooter = () => {
       }bg-[ffffff] text-[#777777] flex px-4 
     py-2 justify-center items-center gap-4 font-semibold`}
     >
-      <p> &#169; 2022-2024 Fileverse PTE. LTD.</p>
+      <p> &#169; 2024-2025 Fileverse PTE. LTD.</p>
       <p>|</p>
       <p>
         <a
