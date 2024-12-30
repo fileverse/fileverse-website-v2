@@ -45,7 +45,7 @@ import Web3 from '../public/assets/Web3.png';
 const Home: NextPage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
   return (
-    <BodyWrapper>
+    <BodyWrapper portalPage={true}>
       <>
         <HeadSectionLayout noFooter={true} defaultBackground={true}>
           <>
