@@ -1,73 +1,31 @@
-# Fileverse | About
+# Fileverse
+**Self-sovereign collaboration suite –onchain, p2p, encrypted**
 
-Web3’s Simplest Way to Share Files, Collaborate and Coordinate.
 
-Your personal collaboration tool and workspace for on-chain file management and content creation, all without cutting corners on privacy and decentralisation.
+### Fileverse - Discover Trustless Collaboration 
 
-Visit [Fileverse](https://fileverse.io/) now to experience it live.
+Fileverse is your decentralized alternative to Notion and Google Workspace. Use it to write notes, live collab on docs, sketch ideas, organize your files, manage a knowledgebase, create a personal webpage and more - individually or as a group. 
 
-## Getting Started
+<a href="https://excalidraw.com/" target="_blank" rel="noopener">
+  <picture>
+    <img alt="Excalidraw" src="https://files.slack.com/files-pri/T031N5YENTU-F06T1MAFFPU/image.png?pub_secret=04a043277d" />
+  </picture>
+</a>
 
-Clone the repository using the following git command:
+### About Fileverse
+In an era where online collaboration is mostly dictated by monopolistic platforms compromising both privacy and creativity, Fileverse focuses on the healthier side of the internet where users are not the product. 
 
-```
-$ git clone https://github.com/fileverse/fileverse-website-v2.git
-```
+The dApp offers a suite of tools similar to Google Workspace and Notion but with the difference that it enhances your privacy, independence, and creativity. Onchain is the new Online so it's time for a new type of collaboration!
 
-Make sure you have Node.js and npm installed in your system and then run:
+Create your own ideal space for everyday online/onchain activities: 
+- peer-to-peer file-sharing and cheap file storage via IPFS & Arweave
+- writing a document with multiple people 
+- publishing a decentralised website, blog or a portfolio
+- brainstorming ideas on a whiteboard with collaborators 
+- creating an onchain community or team that share access to all of the above 
+- Trustless co-management of collaboration spaces, digital gardens, & knowledge bases via Safe Multisigs
 
-```
-$ cd fileverse-website-v2
-$ npm install
-```
+Fileverse also released the [HeartBit SDK](https://fileverse.io/heartbit): provable, time-based onchain "Likes" that people generate by simply engaging with your app, website, onchain media, Frame or OpenAction for Farcaster and Lens protocols! 
 
-### To run in development mode:
-
-```
-$ npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits. You will also see any lint errors in the console.
-
-### To make production build:
-
-```
-$ npm run build
-```
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Directory Structure
-
-The basic folder structure of the project is:
-
-```
-fileverse-website-v2
-│
-├─── components
-├─── pages
-├─── public
-|   ├── assets
-├─── styles
-|   .env
-|   .eslint
-|   .gitignore
-|   .prettierrc
-|   next.config.js
-|   package-lock.json
-|   package.json
-|   postcss.config.js
-|   tailwind.config.js
-|   tsconfig.json
-```
-
-## Folders
-
-**`components/`** This folder contains all the source code that are built into the project.
-
-**`pages/`** Contains code for pages displayed in each route.
-
-**`public/`** All the assets like image and icons are stored in this folder.
-
-**`styles/`** Related styling is stored in this folder.
+### Learn More
+Visit [fileverse.io](https://fileverse.io/?ref=fileverse.ghost.io) or follow us on [Twitter](https://twitter.com/fileverse?ref=fileverse.ghost.io) for the latest updates. Fileverse is in private beta but you can ping the team a DM if you want a sneak peek into the future of trustless collaboration <3
