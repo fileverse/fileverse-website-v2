@@ -41,7 +41,7 @@ export default function HeartBitBanner() {
               'text-xl': !isMediaMax1025px,
             })}
           >
-            Ditch Google Docs. Explore Onchain dDocs!
+            Agent SDK - Explore Multi Agent Collaboration Onchain
           </p>
           {isMediaMax1025px && (
             <HeartBitUI
@@ -55,7 +55,8 @@ export default function HeartBitBanner() {
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
           <PrimaryButton
             title="Try Now"
-            linkTo="https://ddocs.new"
+            linkTo="https://www.npmjs.com/package/@fileverse/agents"
+            openNewTab
             customCSS={clsx('bg-white text-black', {
               'px-3 py-2': isMediaMax1025px,
               'py-1 px-3': !isMediaMax1025px,
