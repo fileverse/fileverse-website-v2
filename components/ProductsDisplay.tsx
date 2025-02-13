@@ -28,32 +28,32 @@ const ProductsDisplay = ({
   displayImage,
   CTAbuttonDisabled,
 }: ProductDisplayProps) => {
-  const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const isMediaMax1440px = useMediaQuery('(max-width: 1440px)');
   return (
     <div
       className={` ${
-        background ? `${background} border border-black` : 'bg-yellow'
-      } m-2 flex py-8 flex-col items-center justify-center rounded-[36px]   ${
-        isMediaMax1025px ? 'w-full mt-4' : 'w-[566px] max-h-[636px]'
+        background ? `${background} p-10` : 'bg-yellow p-20'
+      } m-2 flex flex-col items-center justify-center rounded-[16px]   ${
+        isMediaMax1440px ? 'w-full mt-4' : 'w-[400px] max-h-[636px]'
       }`}
     >
       <div
-        className={`p-4 ${
-          isMediaMax1025px && 'w-full'
+        className={`${
+          isMediaMax1440px && 'w-full'
         } flex flex-col relative items-center`}
       >
-        <div className={`mb-4 ${isMediaMax1025px ? 'w-full' : 'w-[350px]'}`}>
+        <div className={`mb-4 ${isMediaMax1440px ? 'w-full' : 'w-[350px]'}`}>
           <h2
             className={` text-center font-bold ${
-              isMediaMax1025px ? ' text-2xl' : 'text-4xl'
+              isMediaMax1440px ? ' text-2xl' : 'text-4xl'
             } `}
           >
             {productName}
           </h2>
-          <p className={` ${isMediaMax1025px ? 'text-base' : ''} text-center `}>
+          <p className={` ${isMediaMax1440px ? 'text-base' : ''} text-center `}>
             {firstDescription}
           </p>
-          <p className={` ${isMediaMax1025px ? 'text-base' : ''} text-center `}>
+          <p className={` ${isMediaMax1440px ? 'text-base' : ''} text-center `}>
             {secondDescription}
           </p>
         </div>
@@ -68,7 +68,7 @@ const ProductsDisplay = ({
           </div>
           <p
             className={`${
-              isMediaMax1025px ? 'text-sm' : 'text-base'
+              isMediaMax1440px ? 'text-sm' : 'text-base'
             }  font-bold`}
           >
             {CTADescription}

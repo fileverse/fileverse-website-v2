@@ -9,7 +9,6 @@ import { useRouter } from 'next/router';
 
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import fileverseLogo from '../public/assets/fileverse.png';
-import newTabIcon from '../public/assets/gotoIcon.svg';
 import hamburger from '../public/assets/hamburger.svg';
 import whiteArrow from '../public/assets/whiteArrow.svg';
 import xicon from '../public/assets/x-icon.svg';
@@ -31,7 +30,7 @@ const HeadNav = ({
   const hamburgerbar: any = useRef(null);
   const dropDownButton: any = useRef(null);
   const html = typeof window !== 'undefined' && document.querySelector('html');
-  const [newTabIconVisible, setNewTabIcon] = useState('');
+  // const [newTabIconVisible, setNewTabIcon] = useState('');
   const [showBanner, setShowBanner] = useState(false);
   const isIndexPage = router.asPath === '/';
   useEffect(() => {
@@ -159,11 +158,11 @@ const HeadNav = ({
               ) : (
                 <button
                   onClick={() => setMenu(!menu)}
-                  className={`border rounded-md ${
+                  className={`rounded-md ${
                     top && !defaultColor ? 'bg-black text-white ' : 'bg-white'
                   } flex transition duration-500 ease-in-out p-4 w-[12rem] justify-center h-[3rem] items-center border-black`}
                 >
-                  <p className="mr-4">Explore</p>
+                  <p className="mr-4">Solutions</p>
                   {top && !defaultColor ? (
                     <Image
                       className={` ${menu ? 'rotate-[-90deg]' : ' rotate-90'}`}
@@ -190,71 +189,68 @@ const HeadNav = ({
                 container={dropDownButton.current}
               >
                 <div
-                  className={`absolute py-4 rounded-lg w-[12rem] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
+                  className={`absolute p-1 rounded-lg w-[160px] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
                 >
                   <Link
-                    href={'https://portal.fileverse.io/#/contracts'}
-                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
+                    href={'https://ddocs.new'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer flex items-center p-2 hover:bg-[#F2F4F5] rounded text-base font-medium gap-1"
                   >
-                    My Portals
-                  </Link>
-                  <Link
-                    href={'https://portal.fileverse.io/#/manifesto'}
-                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
-                  >
-                    FAQ
+                    dDocs
                   </Link>
                   <Link
                     href={'/portal'}
-                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
-                  >
-                    Portal
-                  </Link>
-                  <Link
-                    href={'https://ddocs.new/'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onMouseEnter={() => setNewTabIcon('dDocs')}
-                    onMouseLeave={() => setNewTabIcon('')}
-                    className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade cursor-pointer border-bottom border-b"
+                    className="cursor-pointer flex items-center p-2 hover:bg-[#F2F4F5] rounded text-base font-medium gap-1"
                   >
-                    dDocs
-                    {newTabIconVisible === 'dDocs' && (
-                      <img
-                        className="ml-2 w-4"
-                        src={newTabIcon.src}
-                        alt="new tab icon"
-                      />
-                    )}
+                    Portal
+                    <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A]">
+                      Private beta
+                    </p>
                   </Link>
                   <Link
                     href={'https://beta.fileverse.io/'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onMouseEnter={() => setNewTabIcon('SOLO')}
-                    onMouseLeave={() => setNewTabIcon('')}
-                    className="flex h-[34px] hover:cursor-pointer  items-center mx-[12px] px-2 py-4 border-fade cursor-pointer border-bottom border-b"
+                    // onMouseEnter={() => setNewTabIcon('SOLO')}
+                    // onMouseLeave={() => setNewTabIcon('')}
+                    className="cursor-pointer flex items-center p-2 hover:bg-[#F2F4F5] rounded text-base font-medium gap-1"
                   >
-                    Fileverse Solo
-                    {newTabIconVisible === 'SOLO' && (
+                    Solo
+                    {/* {newTabIconVisible === 'SOLO' && (
                       <img
                         className="ml-2 w-4"
                         src={newTabIcon.src}
                         alt="new tab icon"
                       />
-                    )}
+                    )} */}
+                    <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A]">
+                      Public alpha
+                    </p>
                   </Link>
                   <Link
-                    href={'/features'}
-                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 border-fade border-bottom border-b cursor-pointer"
+                    href={'https://agents.fileverse.io/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer flex items-center p-2 hover:bg-[#F2F4F5] rounded text-base font-medium gap-1"
                   >
-                    Features
+                    AI Agent
+                    <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A]">
+                      SDK
+                    </p>
                   </Link>
                   <Link
                     href={'/heartbit'}
-                    className="h-[34px] hover:cursor-pointer flex items-center mx-[12px] px-2 py-4 cursor-pointer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer flex items-center p-2 hover:bg-[#F2F4F5] rounded text-base font-medium gap-1"
                   >
-                    HeartBit SDK
+                    HeartBit
+                    <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A]">
+                      SDK
+                    </p>
                   </Link>
                 </div>
               </Slide>

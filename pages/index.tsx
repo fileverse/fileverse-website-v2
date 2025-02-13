@@ -30,6 +30,7 @@ import BlockChain from '../public/assets/BlockChain.png';
 import check from '../public/assets/check.svg';
 import Crypto from '../public/assets/Crypto.png';
 import Dao from '../public/assets/Dao.png';
+import ddocsImg from '../public/assets/dDocsImg.png';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import familyIcon from '../public/assets/familyIcon.png';
 import fileverseVase from '../public/assets/fileVase.png';
@@ -44,6 +45,8 @@ import Web3 from '../public/assets/Web3.png';
 
 const Home: NextPage = () => {
   const isMediaMax1025px = useMediaQuery('(max-width: 1025px)');
+  const isMediaMax1440px = useMediaQuery('(max-width: 1440px)');
+
   return (
     <BodyWrapper portalPage={true}>
       <>
@@ -115,17 +118,31 @@ const Home: NextPage = () => {
           <>
             <div
               className={`flex mt-[4.5vh] lg:w-[90%] ${
-                isMediaMax1025px && 'flex-wrap'
+                isMediaMax1440px && 'flex-wrap'
               } justify-evenly items-center lg:p-4`}
             >
               <ProductsDisplay
-                productName={`Fileverse Solo`}
-                CTAButtonLink={'https://beta.fileverse.io'}
-                CTAButtonTitle={'Launch App'}
-                displayImage={solo}
-                firstDescription={'Privacy-first file sharing, simplified'}
-                secondDescription={'Share any files with or without a wallet'}
-                CTADescription={'Private. Decentralised. Encrypted.'}
+                background={'bg-[#F8F9FA]'}
+                productName={`Fileverse Portal`}
+                CTAButtonLink={'/portal'}
+                firstDescription={
+                  'Privacy-enhancing and onchain alternative to Google Workspace & Notion'
+                }
+                CTAButtonTitle={'Create Your Portal'}
+                CTAbuttonDisabled={false}
+                displayImage={fileverseWindow}
+                CTADescription={''}
+              />
+              <ProductsDisplay
+                productName={`dDocs.new`}
+                CTAButtonLink={'https://docs.fileverse.io/'}
+                firstDescription={
+                  'Time to ditch Go*gle d*cs ddocs.new: Privacy-enhancing. Peer-to-peer. Self-sovereign.'
+                }
+                CTAButtonTitle={'Open document'}
+                CTAbuttonDisabled={false}
+                displayImage={ddocsImg}
+                CTADescription={''}
               />
               {/* {!isMediaMax1025px && (
                 <div className="h-full flex items-center justify-center">
@@ -137,18 +154,15 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               )} */}
-
               <ProductsDisplay
-                background={'bg-white'}
-                productName={`Fileverse Portal`}
-                CTAButtonLink={'/portal'}
-                firstDescription={
-                  'Privacy-enhancing and onchain alternative to Google Workspace & Notion'
-                }
-                CTAButtonTitle={'Create Your Portal'}
-                CTAbuttonDisabled={false}
-                displayImage={fileverseWindow}
-                CTADescription={'Create. Collaborate. Communicate.'}
+                background={'bg-[#F8F9FA]'}
+                productName={`Fileverse Solo`}
+                CTAButtonLink={'https://beta.fileverse.io'}
+                CTAButtonTitle={'Launch App'}
+                displayImage={solo}
+                firstDescription={'Privacy-first file sharing, simplified'}
+                secondDescription={'Share any files with or without a wallet'}
+                CTADescription={''}
               />
             </div>
           </>
