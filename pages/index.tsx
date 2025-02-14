@@ -119,7 +119,7 @@ const Home: NextPage = () => {
             <div
               className={`flex mt-[4.5vh] lg:w-[90%] ${
                 isMediaMax1440px && 'flex-wrap'
-              } justify-evenly items-center lg:p-4`}
+              } justify-evenly items-center 2xl:gap-8 lg:p-4`}
             >
               <ProductsDisplay
                 background={'bg-[#F8F9FA]'}

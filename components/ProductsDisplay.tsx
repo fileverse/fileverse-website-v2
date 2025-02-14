@@ -34,7 +34,7 @@ const ProductsDisplay = ({
       className={` ${
         background ? `${background} p-10` : 'bg-yellow p-20'
       } m-2 flex flex-col items-center justify-center rounded-[16px]   ${
-        isMediaMax1440px ? 'w-full mt-4' : 'w-[400px] max-h-[636px]'
+        isMediaMax1440px ? 'w-full mt-4' : 'min-w-[400px] w-full max-h-[636px]'
       }`}
     >
       <div

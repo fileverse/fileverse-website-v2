@@ -81,7 +81,11 @@ const HeadNav = ({
         top && !defaultColor ? 'bg-yellow' : 'bg-white'
       }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
-      <div className="flex flex-col w-full justify-center items-center">
+      <div
+        className={`flex flex-col w-full justify-center items-center ${
+          top && !defaultColor ? 'bg-yellow' : 'bg-white'
+        }`}
+      >
         {isIndexPage && top && showBanner && <HeartBitBanner />}
 
         <div className={clsx(`w-[90%] flex`, { 'my-4': top })}>
@@ -189,7 +193,7 @@ const HeadNav = ({
                 container={dropDownButton.current}
               >
                 <div
-                  className={`absolute p-1 rounded-lg w-[160px] font-semibold -z-[999999] shadow-lg bg-white top-[80px]`}
+                  className={`absolute p-1 rounded-lg w-[160px] font-semibold -z-[999999] shadow-lg bg-white top-[65px]`}
                 >
                   <Link
                     href={'https://ddocs.new'}
@@ -272,34 +276,33 @@ const HeadNav = ({
               <img src={xicon.src} className="w-8" alt="x-icon" />
             </div>
             <div className="font-semibold mt-6 flex flex-col gap-[6px]">
-              <Link href={'https://portal.fileverse.io/#/contracts'} passHref>
+              <Link
+                href={'https://ddocs.new'}
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+              >
                 <div
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
                     setSideMenu(false);
                   }}
                 >
-                  My Portals
-                </div>
-              </Link>
-              <Link href={'https://portal.fileverse.io/#/manifesto'} passHref>
-                <div
-                  onClick={() => {
-                    if (html) html.classList.remove('overflow-y-hidden');
-                    setSideMenu(false);
-                  }}
-                >
-                  FAQ
+                  dDocs
                 </div>
               </Link>
               <Link href={'/portal'} passHref>
                 <div
+                  className="flex gap-1 items-center"
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
                     setSideMenu(false);
                   }}
                 >
                   Portal
+                  <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A] h-fit">
+                    Private beta
+                  </p>
                 </div>
               </Link>
               <Link
@@ -311,26 +314,54 @@ const HeadNav = ({
                   setSideMenu(false);
                 }}
               >
-                Fileverse Solo
-              </Link>
-              <Link href={'/features'} passHref>
+                {' '}
                 <div
+                  className="flex gap-1 items-center"
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
                     setSideMenu(false);
                   }}
                 >
-                  Features
+                  Solo
+                  <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A] h-fit">
+                    Public alpha
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href={'https://agents.fileverse.io/'}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (html) html.classList.remove('overflow-y-hidden');
+                  setSideMenu(false);
+                }}
+              >
+                <div
+                  className="flex gap-1 items-center"
+                  onClick={() => {
+                    if (html) html.classList.remove('overflow-y-hidden');
+                    setSideMenu(false);
+                  }}
+                >
+                  AI Agent
+                  <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A] h-fit">
+                    SDK
+                  </p>
                 </div>
               </Link>
               <Link href={'/heartbit'} passHref>
                 <div
+                  className="flex gap-1 items-center"
                   onClick={() => {
                     if (html) html.classList.remove('overflow-y-hidden');
                     setSideMenu(false);
                   }}
                 >
-                  HeartBit SDK
+                  HeartBit
+                  <p className="bg-[#E8EBEC] text-[10px] font-normal rounded py-[2px] px-1 text-[#77818A] h-fit">
+                    SDK
+                  </p>
                 </div>
               </Link>
             </div>
