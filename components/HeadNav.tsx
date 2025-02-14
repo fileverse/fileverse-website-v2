@@ -79,7 +79,7 @@ const HeadNav = ({
     <div
       className={`flex ${
         top && !defaultColor ? 'bg-yellow' : 'bg-white'
-      }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99] min-h-[10vh] justify-center`}
+      }  fixed  transition duration-500 ease-in-out w-[100vw] z-[99999] min-h-[10vh] justify-center`}
     >
       <div
         className={`flex flex-col w-full justify-center items-center ${
