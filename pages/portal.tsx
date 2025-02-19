@@ -11,6 +11,7 @@ import HeadSectionLayout from '../components/HeadSectionLayout';
 import PrimaryButton from '../components/PrimaryButton';
 import dropDownArrow from '../public/assets/dropDownArrow.svg';
 import heroMobile from '../public/assets/hero-mobile.png';
+import loginIcon from '../public/assets/login-icon.svg';
 import nextArrow from '../public/assets/nextArrow.svg';
 import portalHero from '../public/assets/portalHero.png';
 import step1 from '../public/assets/step1.png';
@@ -211,14 +212,21 @@ const Subdomain = () => {
                   your productivity.
                 </p>
                 <div
-                  className={`mt-8  ${
-                    isMediaMax1025px && 'flex justify-center'
+                  className={`mt-8 flex justify-center gap-4  ${
+                    isMediaMax1025px && ''
                   } `}
                 >
                   <PrimaryButton
                     title={'Create My Portal'}
                     linkTo={'https://portal.fileverse.io/#/claim'}
                     openNewTab={true}
+                    customCSS="bg-white text-black border-2 border-black py-3 px-6"
+                  />
+                  <PrimaryButton
+                    title={'Log in'}
+                    linkTo={'https://portal.fileverse.io/#/contracts'}
+                    openNewTab={true}
+                    icon={loginIcon}
                   />
                 </div>
 
