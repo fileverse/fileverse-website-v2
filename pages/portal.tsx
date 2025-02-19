@@ -211,11 +211,7 @@ const Subdomain = () => {
                   forms of group coordination, regain your privacy, and master
                   your productivity.
                 </p>
-                <div
-                  className={`mt-8 flex justify-center gap-4  ${
-                    isMediaMax1025px && ''
-                  } `}
-                >
+                <div className={`mt-8 flex justify-center gap-4 `}>
                   <PrimaryButton
                     title={'Create My Portal'}
                     linkTo={'https://portal.fileverse.io/#/claim'}
