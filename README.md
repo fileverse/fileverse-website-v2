@@ -1,10 +1,8 @@
 # Fileverse | About
 
-Web3’s Simplest Way to Share Files, Collaborate and Coordinate.
+Fileverse your onchain space for collaboration and knowledge management. Use it as a privacy preserving alternative to Google Suite and Notion for note-taking, real-time collaboration on docs, file-sharing, sketching ideas and more.
 
-Your personal collaboration tool and workspace for on-chain file management and content creation, all without cutting corners on privacy and decentralisation.
-
-Visit [Fileverse](https://fileverse.io/) now to experience it live.
+Visit [Fileverse](https://fileverse.io/) to learn more.
 
 ## Getting Started
 
