@@ -9,6 +9,7 @@ import { WagmiProvider } from 'wagmi';
 import { rainbowkitConfig } from '../utils/wagmi-config';
 
 import '@rainbow-me/rainbowkit/styles.css';
+import PlausibleProvider from 'next-plausible';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
@@ -45,7 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <WagmiProvider config={rainbowkitConfig}>
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider>
-            <Component {...pageProps} />
+            <PlausibleProvider domain="fileverse.io">
+              <Component {...pageProps} />
+            </PlausibleProvider>
           </RainbowKitProvider>
         </QueryClientProvider>
       </WagmiProvider>
