@@ -41,7 +41,7 @@ export default function HeartBitBanner() {
               'text-xl': !isMediaMax1025px,
             })}
           >
-            Ditch Google Docs. Explore Onchain dDocs!
+            Ditch G*ogle D*cs. Explore Onchain dDocs!
           </p>
           {isMediaMax1025px && (
             <HeartBitUI
