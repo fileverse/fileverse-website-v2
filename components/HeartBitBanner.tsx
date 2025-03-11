@@ -41,7 +41,7 @@ export default function HeartBitBanner() {
               'text-xl': !isMediaMax1025px,
             })}
           >
-            Agent SDK - Explore Multi Agent Collaboration Onchain
+            Ditch G*ogle D*cs. Explore Onchain dDocs!
           </p>
           {isMediaMax1025px && (
             <HeartBitUI
@@ -55,7 +55,7 @@ export default function HeartBitBanner() {
         <div className={clsx(isMediaMax1025px && 'text-xs')}>
           <PrimaryButton
             title="Try Now"
-            linkTo="https://www.npmjs.com/package/@fileverse/agents"
+            linkTo="https://ddocs.new"
             openNewTab
             customCSS={clsx('bg-white text-black', {
               'px-3 py-2': isMediaMax1025px,
