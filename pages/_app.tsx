@@ -1,7 +1,6 @@
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '../styles/globals.css';
-import PlausibleProvider from 'next-plausible';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -42,11 +41,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <Head>
         <link rel="canonical" href="https://fileverse.io/" />
-        <PlausibleProvider
-          taggedEvents={true}
-          enabled={true}
-          domain={'fileverse.io'}
-        />
       </Head>
       <WagmiProvider config={rainbowkitConfig}>
         <QueryClientProvider client={queryClient}>
