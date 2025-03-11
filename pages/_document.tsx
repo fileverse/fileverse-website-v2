@@ -1,3 +1,4 @@
+import PlausibleProvider from 'next-plausible';
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
 
@@ -13,6 +14,11 @@ const Document = () => {
         <Script
           src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"
           strategy="beforeInteractive"
+        />
+        <PlausibleProvider
+          taggedEvents={true}
+          enabled={true}
+          domain={'fileverse.io'}
         />
       </Head>
       <body>
