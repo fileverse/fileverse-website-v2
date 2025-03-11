@@ -137,7 +137,7 @@ const Home: NextPage = () => {
                 productName={`dDocs.new`}
                 CTAButtonLink={'https://docs.fileverse.io/'}
                 firstDescription={
-                  'Time to ditch Go*gle d*cs ddocs.new: Privacy-enhancing. Peer-to-peer. Self-sovereign.'
+                  'Time to ditch G*ogle D*cs. Explore ddocs.new: Privacy-enhancing. Peer-to-peer. Self-sovereign.'
                 }
                 CTAButtonTitle={'Open document'}
                 CTAbuttonDisabled={false}

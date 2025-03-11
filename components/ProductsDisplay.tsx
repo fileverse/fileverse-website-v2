@@ -31,10 +31,12 @@ const ProductsDisplay = ({
   const isMediaMax1440px = useMediaQuery('(max-width: 1440px)');
   return (
     <div
-      className={` ${
-        background ? `${background} p-10` : 'bg-yellow p-20'
-      } m-2 flex flex-col items-center justify-center rounded-[16px]   ${
-        isMediaMax1440px ? 'w-full mt-4' : 'min-w-[400px] w-full max-h-[636px]'
+      className={`${
+        background ? `${background}` : 'bg-yellow'
+      } m-2 flex flex-col items-center justify-center rounded-[16px] ${
+        isMediaMax1440px
+          ? 'w-full mt-4 p-10'
+          : `min-w-[400px] w-full max-h-[636px] ${background ? 'p-10' : 'p-20'}`
       }`}
     >
       <div
